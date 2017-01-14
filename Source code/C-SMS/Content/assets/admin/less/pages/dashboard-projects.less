@@ -1,0 +1,57 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * DASHBOARD PROJECTS
+ * ======================================================================== */
+.top-assign-chart{
+  width: 84%;
+  li{
+    height: 30px;
+    line-height: 27px;
+    font-size: 11px;
+    &.current{
+      &:before{
+        left: 41px;
+        color: #8f8f8f;
+      }
+      .bar{
+        background-color: #2A2A2A;
+      }
+      .number{
+        padding-left: 38px;
+        color: #2A2A2A;
+      }
+    }
+    .number{
+      top: 1px;
+    }
+    img{
+      vertical-align: inherit;
+      width: 30px;
+    }
+  }
+}
+
+.table-time-report{
+  thead{
+    tr{
+      th{
+        font-size: 10px;
+        vertical-align: top;
+        &:first-child{
+          width: 230px;
+        }
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        background-color: transparent;
+      }
+    }
+  }
+}

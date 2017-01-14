@@ -1,0 +1,104 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Common.ViewModels.HangHoaViewModel>
+@using Common.Ultil
+@using Common.ViewModels
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th class="text-center" style="width: 4%;">
+                @Html.DisplayName("Mã sản phẩm")
+            </th>
+            <th class="text-center" style="width: 20%;">
+                @Html.DisplayName("Sản phẩm")
+            </th>
+            <th class="text-center" style="width: 7%;">
+                @Html.DisplayName("Số lượng tồn")
+            </th>
+            <th class="text-center" style="width: 4%;">
+                @Html.DisplayName("Giá bán")
+            </th>
+            <th class="text-center" style="width: 5%;">
+                @Html.DisplayName("Giảm giá")
+            </th>
+            <th class="text-center" style="width: 5%;">
+                @Html.DisplayName("Xuất xứ")
+            </th>
+            <th class="text-center" style="width: 6%;">
+                @Html.DisplayName("Bảo hành")
+            </th>
+            <th class="text-center" style="width: 9%;">
+                @Html.DisplayName("Trạng thái")
+            </th>
+            <th class="text-center" style="width: 5%;">
+                Hành động
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            FormatNumber number = new FormatNumber();
+            <tr class="border-warning">
+                <td>@item.maHangHoa</td>
+                <td>
+                    <img src="~/Content/client/product/@item.hinhAnh" width="50" height="50" class="img-circle img-bordered-theme">
+                    <span>@item.tenHangHoa</span>
+                </td>
+                <td>@item.soLuongTon</td>
+                <td>@number.FormatNumbers(@item.giaBan.ToString())</td>
+                <td>@number.FormatNumbers(@item.giamGia.ToString())</td>
+                <td>@item.xuatXu</td>
+                <td>@item.thoiGianBaoHanh tháng</td>
+                @if (@item.trangThai == true)
+                {
+                    <td>Đang kinh doanh</td>
+
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" tabindex="-1">Thao tác</button>
+                            <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" data-toggle="dropdown" tabindex="-1">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="@Url.Action("ViewInfo", new { id = item.maHangHoa })"><i class="fa fa-eye"></i> Xem</a></li>
+                                @if (((NhanVienViewModel)Session["Account"]).maChucVu == 3 || ((NhanVienViewModel)Session["Account"]).maChucVu == 5)
+                                {
+                                    <li><a href="@Url.Action("Edit", new { id = item.maHangHoa })"><i class="fa fa-edit"></i> Sửa</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                }
+                else
+                {
+                    <td>Ngừng kinh doanh</td>
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" tabindex="-1">Thao tác</button>
+                            <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" data-toggle="dropdown" tabindex="-1">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="@Url.Action("ViewInfo", new { id = item.maHangHoa })"><i class="fa fa-eye"></i> Xem</a></li>
+                                @if (((NhanVienViewModel)Session["Account"]).maChucVu == 3 || ((NhanVienViewModel)Session["Account"]).maChucVu == 5)
+                                {
+                                    <li><a href="@Url.Action("Edit", new { id = item.maHangHoa })"><i class="fa fa-edit"></i> Sửa</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pull-left" style="padding-top:20px">
+    <h3 class="panel-title">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</h3>
+</div>
+<div class="pull-right">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

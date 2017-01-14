@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuChiViewModel>
+
+@{
+    ViewBag.Title = "Thông tin chi tiết phiếu chi";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Chi</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "PhieuChi") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Tạo mới phiếu chi
+            </button>
+
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "PhieuChi") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+                       
+                            <div class="form-body">
+                                @{Html.RenderAction("ThongTinPhieuChi", "PhieuChi");}
+                            </div>
+          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.min.js"></script>

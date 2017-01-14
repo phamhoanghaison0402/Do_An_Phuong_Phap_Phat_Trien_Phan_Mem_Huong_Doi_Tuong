@@ -1,0 +1,96 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * DASHBOARD MARKETING CAMPAIGN
+ * ======================================================================== */
+.body-content{
+  padding: 0;
+  min-height: 1380px;
+}
+
+.marketing-header{
+  padding: 20px 20px 0 20px;
+  background-color: #F4F4F4;
+  border-bottom: 1px solid $border-color;
+  .marketing-subheading{
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+.marketing-body{
+  padding: 20px;
+  #grid-container{
+    border-top: 1px dashed $border-color;
+    padding-top: 35px;
+    height: 375px !important;
+  }
+}
+
+.marketing-percent{
+  h1{
+    margin-top: 0;
+    text-align: center;
+    font-size: 80px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    color: $color-success;
+  }
+  p{
+    margin: 0;
+    .label{
+      display: inline-block;
+      i{
+        margin-top: 1px;
+        margin-left: -1px;
+      }
+    }
+  }
+}
+.marketing-chart{
+  ul{
+    margin-left: 50px;
+    li{
+      .label{
+        margin-right: 5px;
+      }
+      .label, .inline{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+/* Facebook color chart */
+.ct-series-a .ct-bar,
+.ct-series-a .ct-point {
+  stroke: $social-facebook;
+}
+
+/* Twitter color chart */
+.ct-series-b .ct-bar,
+.ct-series-b .ct-point {
+  stroke: $social-twitter;
+}
+
+/* Google+ color chart */
+.ct-series-c .ct-bar,
+.ct-series-c .ct-point {
+  stroke: $social-googleplus;
+}
+
+/* Youtube color chart */
+.ct-series-d .ct-bar,
+.ct-series-d .ct-point {
+  stroke: $social-youtube;
+}
+
+.cbp-l-inline{
+  margin: 25px 0;
+}

@@ -1,0 +1,130 @@
+﻿@using Common.ViewModels
+
+<div class="header_mobile">
+    <div id="dl-menu-mobile" class="container nav-fly-bound nav-fly-bound-mtb dl-menuwrapper">
+        <a class="dl-trigger toggle-fly glyphicon glyphicon-align-justify" href="#mmenu"></a>
+        <div class="logo-top">
+            <h1>
+                <a href='#' target='_self'>
+                    <img src='~/Content/client/vnt_upload/weblink/logo.png' width='260' class='png' />
+                </a>
+                <strong style="display: none">BK Computer | Hệ thống bán lẻ điện thoại và linh kiện giá rẻ</strong>
+            </h1>
+        </div>
+        <img src='~/Content/client/vnt_upload/weblink/search.png' width='30' class='icon-search fa fa-search fa-2x' />
+    </div>
+</div>
+
+<header class="header">
+    <div id="vnt-header" class="container">
+        <div class="row">
+            <div class="logo col-md-3 col-sm-3 col-xs-12">
+                <h1>
+                    <a href='@Url.Action("Index", "Home")' target='_self'>
+                        <img src='~/Content/client/vnt_upload/weblink/logo.png' width='200' class='png' />
+                    </a>
+                    <strong style="display: none">BK Computer | Hệ thống bán lẻ điện thoại và linh kiện giá rẻ</strong>
+                </h1>
+            </div>
+            <div class="headert_search col-md-3 col-sm-3 col-xs-12">
+                <div class="box_search">
+                    @using (Ajax.BeginForm("TimKiemSanPham", "Home", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }))
+                    {
+                        <input name="searchString" id="search-keyword" type="text" class="text_search" placeholder="Bạn muốn tìm gì ?" value="" autocomplete="off" onkeydown="CheckTimer()" onkeyup="SuggestSearch(event);" />
+                        <span class="input-group-btn">
+                            <button id="do_submit" name="do_submit" type="submit" class="btn_search" value="Tìm kiếm"></button>
+                        </span>
+                    }
+                   
+                    <div id="SuggestSearch"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="palo-service col-md-6 col-sm-6 col-xs-12 nopadding-right">
+                <div class="col-md-3 col-sm-3 col-xs-12 nopadding-left">
+                    <a data-original-title="Miễn Phí 100% Phí Vận Chuyển 64 Tỉnh Thành. Nhận Hàng rồi Thanh Toán tiền. Giao Hàng Nội Thành trong Hồ Chí Minh chỉ 60 Phút" data-placement="bottom" data-toggle="tooltip">
+                        <img src="~/Content/client/skins/default/images/icon_giaohang.png" title="Vận Chuyển Miễn Phí" />
+                        <span>Vận chuyển miễn phí</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 nopadding">
+                    <a data-original-title="Bạn có thể đổi trả hàng trong vòng 30 ngày kể từ ngày mua hàng và hoàn toàn miễn phí" data-placement="bottom" data-toggle="tooltip">
+                        <img src="~/Content/client/skins/default/images/icon_doitra.png" title="30 ngày đổi trả hàng" />
+                        <span>30 ngày đổi trả hàng</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 nopadding">
+                    <a data-original-title="Chúng tôi sẽ mang lại sự hài lòng cho bạn" data-placement="bottom" data-toggle="tooltip">
+                        <img src="~/Content/client/skins/default/images/icon_camket.png" title="Cam kết hài lòng 100%" />
+                        <span>Cam kết hài lòng 100%</span>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 nopadding">
+                    <a href="@Url.Action("Index", "PhieuDatHang")" data-placement="bottom" data-toggle="tooltip">
+                        <img src="~/Content/client/skins/default/images/iconcart.png" title="Giỏ hàng" />
+                        <span>Giỏ hàng</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div_menu">
+        @Html.Action("DanhSachLoaiHangHoa", "Home", new { data = Model })
+    </div>
+</header>
+<style>
+    .ui-autocomplete {
+        max-height: 100px;
+        /*width:200px;*/
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+
+    * html .ui-autocomplete {
+        height: 100px;
+    }
+</style>
+
+<link href="~/Content/client/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="~/Content/client/jquery-ui.min.js"></script>
+
+<script>
+    var common = {
+        init: function () {
+            common.registerEvent();
+        },
+        registerEvent: function () {
+            $("#search-keyword").autocomplete({
+                minLength: 0,
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/Home/ListTenHangHoa",
+                        dataType: "json",
+                        data: {
+                            q: request.term
+                        },
+                        success: function (res) {
+                            response(res.data);
+                        }
+                    });
+                },
+                focus: function (event, ui) {
+                    $("#search-keyword").val(ui.item.label);
+                    return false;
+                },
+                select: function (event, ui) {
+                    $("#search-keyword").val(ui.item.label);
+                    return false;
+                }
+            })
+         .autocomplete("instance")._renderItem = function (ul, item) {
+             return $("<li>")
+               .append("<a>" + item.label + "</a>")
+               .appendTo(ul);
+         };
+        }
+    }
+    common.init();
+</script>

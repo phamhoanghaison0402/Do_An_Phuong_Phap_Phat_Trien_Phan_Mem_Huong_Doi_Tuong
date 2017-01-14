@@ -1,0 +1,22 @@
+/*
+ *  Usage:
+ *
+ *    <div class="sk-spinner sk-spinner-pulse"></div>
+ *
+ */
+.sk-spinner-pulse {
+  width: 40px;
+  height: 40px;
+  margin: 40px auto;
+  background-color: #333;
+  border-radius: 100%;
+  animation: sk-pulseScaleOut 1.0s infinite ease-in-out; }
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1);
+    opacity: 0; } }
+
+/*# sourceMappingURL=5-pulse.css.map */

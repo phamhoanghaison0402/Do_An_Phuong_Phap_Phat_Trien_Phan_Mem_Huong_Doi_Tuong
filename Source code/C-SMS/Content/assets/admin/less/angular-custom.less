@@ -1,0 +1,45 @@
+// CORE
+@import "../../global/less/core/variable.less";
+@import "../../global/less/core/mixins.less";
+@import "../../global/less/core/functions.less";
+
+/* ========================================================================
+ * ACCORDION
+ * ======================================================================== */
+.ng-accordion{
+  .panel-group{
+    margin-bottom: 0px;
+    .panel{
+      .panel-heading{
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * LOADING BAR
+ * ======================================================================== */
+#loading-bar{
+  .bar {
+    background: @color-theme-angular;
+    height: 4px;
+  }
+}
+
+#loading-bar-spinner{
+  .spinner-icon {
+    width: 18px;
+    height: 18px;
+    border: solid 4px transparent;
+    border-top-color: lighten(@color-theme-angular, 15%);
+    border-left-color: lighten(@color-theme-angular, 15%);
+  }
+}
+
+/* ========================================================================
+ * MISC
+ * ======================================================================== */
+.ng-leave {
+  display: none;
+}

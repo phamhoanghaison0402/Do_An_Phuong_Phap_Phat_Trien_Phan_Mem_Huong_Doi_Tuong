@@ -1,0 +1,45 @@
+/* ========================================================================
+ * WELCOME
+ * ======================================================================== */
+#welcome{
+  margin-bottom: 50px;
+  .panel-title{
+    font-size: 25px;
+    text-align: center;
+  }
+  ul{
+    margin-bottom: 5px;
+  }
+  blockquote{
+    min-height: 150px;
+    font-size: 14px;
+    padding-top: 0;
+  }
+  .mascot{
+    width: 150px;
+  }
+}
+@media (max-width: 1024px) {
+  #welcome{
+    .mascot {
+      width: 120px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  #welcome{
+    .panel-title{
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  #welcome{
+    blockquote{
+      margin-top: 20px;
+      padding: 0;
+      border-left: none;
+      min-height: 70px;
+    }
+  }
+}

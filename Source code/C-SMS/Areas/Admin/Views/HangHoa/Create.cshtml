@@ -1,0 +1,205 @@
+﻿@model Common.ViewModels.HangHoaViewModel
+
+@{
+    ViewBag.Title = "Thêm sản phẩm";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<link href="~/Content/assets/css/generalMessageError.css" rel="stylesheet" />
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i> Sản Phẩm</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit" onclick="return ValidateExtension()"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "HangHoa") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+        </div>
+    </div>
+
+   
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+                        @using (Html.BeginForm("Create", "HangHoa", FormMethod.Post, new { id = "basic-validate", enctype = "multipart/form-data" }))
+                        {
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label>Tên sản phẩm</label>
+                                    <input type="text" name="tenhanghoa" class="form-control rounded" maxlength="50" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Model name</label>
+                                    <input type="text" id="modelname" name="modelname" class="form-control rounded" required />
+                                  
+                                    <h3 style="margin-top:0%" hidden class="error  notifyinputModelName messageErrorinputModelName">Model name đã tồn tại!</h3>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Xuất xứ
+                                    </label>
+                                    <input type="text" name="xuatxu" class="form-control rounded" maxlength="200" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Thời gian bảo hành (Tháng)
+                                    </label>
+                                    <input type="text" name="thoigianbaohanh" class="form-control rounded" />
+
+                                    <input type="hidden" id="checkmodelname" name="checkmodelname" class="form-control rounded" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Đơn vị tính
+                                    </label>
+                                    <input type="text" name="donvitinh" class="form-control rounded" maxlength="50" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Loại hàng hóa
+                                    </label>
+                                    @Html.DropDownList("maloaihanghoa", new SelectList(ViewBag.loaihanghoa, "Value", "Text"), new { @class = "form-control rounded" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Hình ảnh</label>
+                                    <p id="error1" style="display:none; color:#FF0000;">
+                                        Định dạng ảnh không hợp lệ! Định dạng hình ảnh phải là: JPG, JPEG, PNG.
+                                    </p>
+                                    <p id="error2" style="display:none; color:#FF0000;">
+                                        Kích thước file hình phải nhỏ hơn 1MB.
+                                    </p>
+                                    
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-preview thumbnail" name="hinhanh" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                        <div>
+                                            <span class="btn btn-info btn-file">
+                                                <span class="fileinput-new">Chọn hình ảnh</span><span class="fileinput-exists" id="change">Thay đổi</span>
+                                                <input type="file" name="hinhanh" id="fileUpload" accept="image/*">
+                                                <input type="hidden" id="file" name="hinhanh" class="form-control" style="margin-left:5px">
+                                            </span>
+                                            <a href="#" class="btn btn-danger fileinput-exists" id="xoa" data-dismiss="fileinput">Xóa</a>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <span id="lblError" style="color: red;"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Thông số kỹ thuật
+                                    </label>
+
+                                    <div class="form-group">
+                                        <textarea id="thongsokythuat" name="thongsokythuat" class="form-control rounded" rows="10" placeholder="Enter text ..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        Mô tả
+                                    </label>
+
+                                    <div class="form-group">
+                                        <textarea id="mota" name="mota" class="form-control rounded" rows="10" placeholder="Enter text ..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->
+                <!--/ End input fields - basic form-->
+            </div><!-- /.col-md-6 -->
+        </div>
+    </div>
+</section>
+<script>
+    $('#submit').click(function () {
+        $('#basic-validate').submit();
+    });
+</script>
+
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Content/assets/ckeditor/ckeditor.js"></script>
+<script>
+    $(document).ready(function () {
+        CKEDITOR.replace('mota', { filebrowserBrowseUrl: '#' });
+        CKEDITOR.replace('thongsokythuat', { filebrowserBrowseUrl: '#' });
+    });
+</script>
+
+<script>
+    $("#modelname").on('keyup input propertychange paste change', function () {
+        $.getJSON('@Url.Action("CheckModelName", "HangHoa")', { modelname: $(this).val() }, function (data) {
+            if (data.isDuplicate) {
+                $(".messageErrorinputModelName").text("Model name đã tồn tại!");
+                $(".notifyinputModelName").slideDown(250).removeClass("hidden");
+                var str1 = document.getElementById("modelname").value;
+                $('#checkmodelname').val(str1);
+                document.getElementById("submit").disabled = true;
+            }
+            else {
+                $(".notifyinputModelName").addClass("hidden");
+                document.getElementById("submit").disabled = false;
+            }
+        });
+    });
+</script>
+
+<script>
+    var a = 0;
+    //binds to onchange event of your input field
+    $('#fileUpload').bind('change', function () {
+        if ($('input:submit').attr('disabled', false)) {
+            // $('input:submit').attr('disabled', true);
+            document.getElementById("submit").disabled = true;
+        }
+        var ext = $('#fileUpload').val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['png', 'jpg', 'jpeg']) == -1) {
+            $('#error1').slideDown("slow");
+            $('#error2').slideUp("slow");
+            a = 0;
+        } else {
+            var picsize = (this.files[0].size);
+            if (picsize > 1000000) {
+                $('#error2').slideDown("slow");
+                a = 0;
+            } else {
+                a = 1;
+                $('#error2').slideUp("slow");
+            }
+            $('#error1').slideUp("slow");
+            if (a == 1) {
+                //$('input:submit').attr('disabled', false);
+                document.getElementById("submit").disabled = false;
+            }
+        }
+    });
+
+    $("#xoa").on('click keyup input propertychange paste change', function () {
+        $("#error1").addClass("hidden");
+        $("#error2").addClass("hidden");
+        document.getElementById("submit").disabled = false;
+    });
+</script>

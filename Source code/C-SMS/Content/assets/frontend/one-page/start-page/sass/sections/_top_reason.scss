@@ -1,0 +1,41 @@
+/* ========================================================================
+ * TOP REASON
+ * ======================================================================== */
+#top-reasons{
+  .inner{
+    padding: 100px 0px;
+  }
+  h2, p, ul{
+    text-align: center;
+  }
+  h2{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  p{
+    max-width: 600px;
+    margin: 0px auto;
+  }
+  i, span{
+    color: #81b71a;
+    display: block;
+  }
+  span{
+    margin-top: 20px;
+  }
+  .row{
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 800px){
+  #top-reasons{
+    border-bottom: 1px solid $border-color;
+    .inner{
+      padding: 20px 0px;
+    }
+    [class*="col-"]{
+      margin-bottom: 50px;
+    }
+  }
+}

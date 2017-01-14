@@ -1,0 +1,504 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../global/sass/core/variable";
+@import "../../global/sass/core/functions";
+
+/* ========================================================================
+ * GLOBAL CSS
+ * ======================================================================== */
+body {
+  font-family: Roboto, sans-serif !important;
+}
+.has-feedback .form-control {
+  padding-right: 0;
+}
+
+/* ========================================================================
+ * SECTION - HEADER
+ * ======================================================================== */
+#header{
+  height: 70px;
+  .header-left{
+    .navbar-header {
+      height: 70px;
+      .navbar-brand{
+        height: 70px;
+        img {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+  .header-right{
+    .navbar{
+      .navbar-brand {
+        height: 69px;
+        padding: 15px 22px;
+      }
+      .navbar-nav {
+        > li {
+          > div{
+            cursor: pointer;
+            > i{
+              font-size: 30px;
+              line-height: 38px;
+              color: $color-theme-material;
+            }
+          }
+          > a{
+            color: #636E7B;
+          }
+        }
+      }
+      .navbar-message{
+        .media-list {
+          height: 258px;
+          > .media{
+            padding: 15px;
+          }
+        }
+      }
+      .navbar-notification{
+        .media-list {
+          height: 258px;
+          > .media{
+            padding: 15px;
+          }
+        }
+      }
+      &.navbar-toolbar {
+        .navbar-right {
+          .dropdown-menu{
+            @include border-radius(0);
+            @include box-shadow(0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19));
+            .dropdown-header{
+              height: 50px;
+              line-height: 50px;
+              font-weight: 400;
+              font-size: 15px;
+              .title, .option{
+                font-weight: 400;
+                font-size: 15px;
+              }
+            }
+            .dropdown-footer{
+              border-bottom: none;
+              height: 45px;
+              line-height: 45px;
+              font-size: 16px;
+              font-weight: 400;
+            }
+          }
+          > .dropdown, > li {
+            > a {
+              padding: 21px 19px 17px;
+              .count{
+                top: 13px;
+                right: 10px;
+                padding: 0.5em 0.7em;
+              }
+              > i {
+                font-size: 30px;
+              }
+            }
+          }
+          .navbar-profile{
+            .dropdown-menu{
+              li{
+                a{
+                  padding: 5px 15px;
+                  font-size: 13px;
+                }
+              }
+            }
+            > a{
+              padding-top: 17px !important;
+              padding-bottom: 17px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+  #header{
+    .header-left{
+      .navbar-header {
+        .navbar-brand {
+          img {
+            margin: -5px auto 0;
+          }
+        }
+      }
+    }
+    .header-right{
+      top: 70px;
+    }
+    .navbar-brand{
+      padding: 15px 20px;
+    }
+  }
+}
+
+/* ========================================================================
+ * SECTION - SIDEBAR LEFT
+ * ======================================================================== */
+#sidebar-left{
+  z-index: inherit !important;
+  ul.collapsible-accordion{
+    > li{
+      &.active{
+        > .collapsible-body{
+          display: block;
+        }
+      }
+    }
+  }
+  &:after{
+    background-color: transparent;
+  }
+  .collapsible{
+    .collapsible-header{
+      .pull-right{
+        margin-top: 20px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * SECTION - PAGE CONTENT
+ * ======================================================================== */
+#page-content{
+  margin-left: 0;
+  .header-content{
+    padding: 15px 20px;
+    h2{
+      font-size: 25px;
+      span{
+        font-size: 15px;
+      }
+    }
+    .breadcrumb-wrapper{
+      top: 20px;
+      .label{
+        font-size: 13px;
+      }
+      .breadcrumb{
+        li{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .body-content{
+    min-height: inherit;
+  }
+  .footer-content{
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 768px){
+  #page-content{
+    margin-top: 70px;
+    .header-content {
+      .breadcrumb-wrapper{
+        right: 20px;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * PAGES - MAIL
+ * ======================================================================== */
+.table-email .star i {
+  font-size: 20px;
+  margin-top: 5px;
+}
+.table-email .media-attach i {
+  font-size: 15px;
+}
+
+/* ========================================================================
+ * PAGES - GLYPHICONS
+ * ======================================================================== */
+.bs-glyphicons-list {
+  padding: 0 !important;
+  li{
+    margin: 0 !important;
+    border: none !important;
+  }
+}
+
+/* ========================================================================
+ * PAGES - GALLERY
+ * ======================================================================== */
+.gallery-author{
+  .media, .media-body{
+    overflow: visible !important;
+  }
+  .media{
+    .media-heading{
+      margin-top: 0;
+    }
+  }
+}
+
+/* ========================================================================
+ * PAGES - SEARCH
+ * ======================================================================== */
+.list-search .media img {
+  @include border-radius(0 !important);
+}
+
+/* ========================================================================
+ * PAGES - SIGN IN
+ * ======================================================================== */
+#sign-wrapper{
+  a {
+    font-size: 15px;
+    line-height: 35px;
+  }
+  label{
+    font-weight: 300 !important;
+  }
+  .input-field{
+    .prefix{
+      margin-top: 10px;
+    }
+  }
+  .filled-in[type="checkbox"]:checked + label::before,
+  .filled-in[type="checkbox"]:checked + label::after,
+  .filled-in[type="checkbox"]:not(:checked) + label::after
+  {
+    top: 6px;
+  }
+}
+.page-backstretch{
+  #sign-wrapper{
+    label, input{
+      color: #ffffff;
+    }
+    .input-field{
+      .prefix{
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - BLOG
+ * ======================================================================== */
+.blog-title {
+  font-size: 25px;
+}
+.blog-subtitle{
+  font-size: 20px;
+  margin-top: 0;
+}
+
+/* ========================================================================
+ * COMPONENT - FORMS
+ * ======================================================================== */
+.input-icon {
+  > i{
+    margin: 15px 3px 5px 10px;
+  }
+  > .form-control {
+    padding-left: 35px;
+    width: 94%;
+  }
+  &.right{
+    > .form-control {
+      width: 92%;
+    }
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - PANEL
+ * ======================================================================== */
+.panel{
+  @include box-shadow(inherit);
+  .panel-heading{
+    .pull-right{
+      .btn{
+        line-height: 10px;
+        margin: 0 8px 0 0;
+        &:last-child{
+          margin-right: 0;
+        }
+        &:hover{
+          color: inherit;
+          > i{
+            color: inherit;
+          }
+        }
+        i{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+.panel-tab{
+  .nav-tabs{
+    height: 80px;
+    li{
+      height: 80px;
+    }
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - MODAL
+ * ======================================================================== */
+.modal-title{
+  font-size: 17px;
+}
+.modal-footer{
+  .btn + .btn{
+    margin: 0;
+  }
+  .btn-group > .btn:first-child{
+    margin: 0 10px 0 0 !important;
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - TABLE
+ * ======================================================================== */
+.table{
+  .filled-in + label{
+    padding: 8px;
+    margin: 0;
+    line-height: 10px;
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - MISC
+ * ======================================================================== */
+#back-top {
+  left: 35px;
+  bottom: 60px;
+}
+.load-more{
+  margin-bottom: 20px;
+  .preloader-wrapper{
+    display: block;
+    margin: 0 auto 15px;
+  }
+}
+
+/* ========================================================================
+ * WIDGET - MINI OVERVIEW
+ * ======================================================================== */
+.mini-stat{
+  .mini-stat-icon{
+    margin-right: 10px;
+  }
+  .mini-stat-info{
+    span{
+      margin-top: -2px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* ========================================================================
+ * WIDGET - WEATHER CURRENT
+ * ======================================================================== */
+.weather-current-city {
+  img{
+    height: 145px;
+  }
+}
+
+/* ========================================================================
+ * WIDGET - TIMELINE
+ * ======================================================================== */
+.timeline-desk h1 {
+  padding: 10px;
+}
+.time-show .btn {
+  width: 130px !important;
+}
+
+/* ========================================================================
+ * WIDGET - SOCIAL
+ * ======================================================================== */
+.widget-social-overview {
+  .overview-heading {
+    h3 {
+      font-size: 25px;
+    }
+  }
+  .panel-body {
+    h3 {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+    .pull-right {
+      a {
+        i {
+          font-size: 20px;
+          font-weight: 300;
+          color: #A5A5A5;
+        }
+      }
+    }
+    p{
+      line-height: 35px;
+    }
+  }
+}
+
+/* ========================================================================
+ * PLUGINS - MATERIAL DESIGN BOOTSTRAP
+ * ======================================================================== */
+.z-depth-1{
+  @include box-shadow(0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12) !important);
+}
+.z-depth-2 {
+  @include box-shadow(0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19) !important);
+}
+.tile{
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.input-field{
+  label{
+    left: 0;
+  }
+}
+.fixed-action-btn{
+  padding: 0;
+  ul{
+    display: none;
+  }
+  &:hover{
+    ul{
+      display: block;
+    }
+  }
+}
+
+/* ========================================================================
+ * PLUGINS - WYSIWYG
+ * ======================================================================== */
+.note-editor{
+  .btn-sm .fa, .btn-sm-full .fa{
+    font-size: 13px;
+  }
+}

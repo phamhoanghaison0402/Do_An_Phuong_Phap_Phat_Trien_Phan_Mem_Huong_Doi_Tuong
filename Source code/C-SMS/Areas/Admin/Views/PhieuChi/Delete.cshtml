@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuChiViewModel>
+
+@{
+    ViewBag.Title = "Thông Tin Chi Tiết Phiếu Chi";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Loại Hàng Hóa</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+
+            @using (Html.BeginForm("Delete", "PhieuChi"))
+            {
+                <button class="btn btn-sm btn-danger btn-xs btn-push" id="submit">
+                    <i class="fa fa-trash"></i> Hủy phiếu chi
+                </button>
+            }
+
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="alert alert-danger1 fade in">
+                <span><i class="fa fa-bullhorn"></i> Bạn có chắc chắn muốn hủy?</span>
+            </div>
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+
+                        <div class="form-body">
+                            @{Html.RenderAction("ThongTinPhieuChi", "PhieuChi");}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.min.js"></script>

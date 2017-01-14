@@ -1,0 +1,92 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * RIBBONS
+ * ======================================================================== */
+.ribbon-wrapper{
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  z-index: 250;
+  &.top-left{
+    left: -2px;
+    .ribbon{
+      .transform(rotate(-45deg));
+      left: -30px;
+    }
+  }
+  &.bottom-right{
+    right: -2px;
+    bottom: -2px;
+    top: inherit;
+    .ribbon{
+      .transform(rotate(-45deg));
+      left: -6px;
+      top: 40px;
+    }
+  }
+  &.bottom-left{
+    left: -3px;
+    bottom: -3px;
+    top: inherit;
+    .ribbon{
+      left: -28px;
+      top: 40px;
+    }
+  }
+  .ribbon{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFF;
+    text-align: center;
+    .transform(rotate(45deg));
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #797979;
+    &:before{
+      left: 0;
+      bottom: -1px;
+    }
+    &:after{
+      right: 0;
+    }
+    &:before, &:after{
+      content: "";
+      border-top: 2px solid #797979;
+      border-left: 2px solid rgba(0, 0, 0, 0);
+      border-right: 2px solid rgba(0, 0, 0, 0);
+      position: absolute;
+      bottom: -2px;
+    }
+    &.ribbon-shadow{
+      .box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+    }
+    &.transparent{
+      background-color: fade(#797979,30%) !important;
+    }
+  }
+}
+
+.ribbon-color(default,@color-default);
+.ribbon-color(primary,@color-primary);
+.ribbon-color(success,@color-success);
+.ribbon-color(info,@color-info);
+.ribbon-color(warning,@color-warning);
+.ribbon-color(danger,@color-danger);
+.ribbon-color(lilac,@color-lilac);
+.ribbon-color(teals,@color-teal);
+.ribbon-color(inverse,@color-inverse);
+

@@ -1,0 +1,286 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * TIMELINE
+ * ======================================================================== */
+// FUNCTION ALERT COLOR ---------------------------------------------------
+@mixin panel-color($selector,$color){
+  .panel-#{$selector}{
+    .panel-heading{
+      .arrow-alt{
+        border-left:8px solid $color !important;
+      }
+      .arrow{
+        border-right:8px solid $color !important;
+      }
+    }
+    a{
+      color: $color;
+    }
+  }
+}
+
+.timeline{
+  border-collapse: collapse;
+  border-spacing: 0px;
+  display: table;
+  position: relative;
+  table-layout: fixed;
+  width: 100%;
+
+  &:before{
+    background-color:#d8d9df;
+    bottom:30px;
+    content:"";
+    left:50%;
+    position:absolute;
+    top:30px;
+    width:1px;
+    z-index:0;
+  }
+
+  .time-show {
+    margin-right:-75px;
+    margin-top:30px;
+    position:relative;
+    margin-bottom:30px;
+    &.first {
+      /*margin-top:-80px;*/
+    }
+    a {
+      color:#fff;
+    }
+  }
+
+  .timeline-icon {
+    left:-60px;
+    position:absolute;
+    top:5px;
+    background:#C7CBD6;
+    display:block;
+    height:30px;
+    width:30px;
+    text-align:center;
+    color:#fff;
+    @include transition(all 0.5s ease-in-out 0s);
+    i {
+      margin-top:9px;
+    }
+  }
+
+  .time-icon{
+    &:before {
+      font-size:16px;
+      margin-top:5px;
+    }
+  }
+
+  .timeline-date {
+    left: -218px;
+    position: absolute;
+    text-align: right;
+    top: 9px;
+    width: 150px;
+    display: block;
+    color: #999;
+    font-size: 12px;
+  }
+
+
+}
+
+.timeline-title {
+  color:#C8CCD7;
+  font-size:20px;
+  font-weight:400;
+  margin:0 0 5px;
+  text-transform:uppercase;
+}
+
+.time-show{
+  .btn {
+    width:150px;
+  }
+}
+
+.t-info {
+  color:#C8CCD7;
+}
+
+.timeline-item{
+  display:table-row;
+  &.alt{
+    &:before {
+      display:none;
+    }
+    &:after{
+      content:"";
+      display:block;
+      width:50%;
+    }
+    .timeline-desk{
+      // CONTEXTUAL CLASSES TIMELINE PANEL ---------------------------------------------------
+      @include panel-color(primary,$color-primary);
+      @include panel-color(success,$color-success);
+      @include panel-color(info,$color-info);
+      @include panel-color(warning,$color-warning);
+      @include panel-color(danger,$color-danger);
+      @include panel-color(lilac,$color-lilac);
+      @include panel-color(inverse,$color-inverse);
+      .panel-teal{
+        .panel-heading{
+          .arrow-alt{
+            border-left:8px solid $color-teal !important;
+          }
+        }
+      }
+      .panel-title{
+        text-align: right;
+      }
+      .arrow-alt {
+        border-bottom:8px solid transparent;
+        border-top:8px solid transparent;
+        border-left:8px solid #FBFBFB;
+        display:block;
+        height:0;
+        right:-7px;
+        position:absolute;
+        top:13px;
+        width:0;
+        left:auto;
+      }
+      .album {
+        margin-top:20px;
+        float:right;
+      }
+    }
+    .timeline-icon {
+      left:auto;
+      right:-60px;
+    }
+    .timeline-date {
+      left:auto;
+      right:-245px;
+      text-align:left;
+      display:none;
+    }
+    .panel {
+      margin-left:0;
+      margin-right:45px;
+    }
+    h1, p{
+      text-align: right;
+    }
+  }
+  &:before{
+    content:"";
+    display:block;
+    width:50%;
+  }
+  .timeline-desk{
+    // CONTEXTUAL CLASSES TIMELINE PANEL ---------------------------------------------------
+    @include panel-color(primary,$color-primary);
+    @include panel-color(success,$color-success);
+    @include panel-color(info,$color-info);
+    @include panel-color(warning,$color-warning);
+    @include panel-color(danger,$color-danger);
+    @include panel-color(lilac,$color-lilac);
+    @include panel-color(inverse,$color-inverse);
+    .panel-teal{
+      .panel-heading{
+        .arrow{
+          border-right:8px solid $color-teal !important;
+        }
+      }
+    }
+    .panel-title{
+      text-align: left;
+    }
+    .arrow {
+      border-bottom:8px solid transparent;
+      border-top:8px solid transparent;
+      border-right:8px solid #FBFBFB;
+      display:block;
+      height:0;
+      left:-7px;
+      position:absolute;
+      top:13px;
+      width:0;
+    }
+  }
+}
+
+.timeline-desk {
+  display:table-cell;
+  vertical-align:top;
+  width:50%;
+  h1 {
+    font-size:16px;
+    font-weight:300;
+    margin:0 0 5px;
+  }
+  .panel {
+    display:block;
+    margin-left:45px;
+    position:relative;
+    text-align:left;
+    background:#fff;
+    margin-bottom:5px;
+    .panel-heading{
+      padding: 5px 10px;
+    }
+    &:hover{
+      .timeline-icon{
+        box-shadow: 0px 0px 10px 5px #FFF;
+      }
+    }
+    &.rounded{
+      overflow: inherit !important;
+      .panel-body{
+        @include border-radius($rounded !important);
+      }
+    }
+    &.circle{
+      .panel-body{
+        @include border-radius($circle !important);
+      }
+    }
+  }
+  .album {
+    margin-top:20px;
+    text-align: center;
+    img{
+      margin: 5px;
+      display: inline-block;
+    }
+  }
+  .notification {
+    background:none repeat scroll 0 0 #FFFFFF;
+    margin-top:20px;
+    padding:8px;
+  }
+  span {
+    a {
+      text-transform:uppercase;
+    }
+  }
+  h5 {
+    span {
+      color:#999999;
+      display:block;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+  }
+  p {
+    font-size:14px;
+    margin-bottom:0;
+    color:#999;
+  }
+}

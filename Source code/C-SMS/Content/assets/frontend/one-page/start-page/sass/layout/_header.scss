@@ -1,0 +1,60 @@
+/* ========================================================================
+ * HEADER
+ * ======================================================================== */
+#top-bar{
+  opacity: 0.4;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 53px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  @include transition(opacity 0.3s linear 0s);
+  &:hover{
+    opacity: 1;
+  }
+  a{
+    color: #FFF;
+  }
+  .nav{
+    > li{
+      > a{
+        @include transition(opacity 0.3s linear 0s);
+        &:hover, &:active, &:focus{
+          background-color: rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+  .navbar-brand{
+    padding: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo-mobile{
+    display: none;
+  }
+}
+
+@media (max-width: 720px){
+  .navbar-toggle{
+    background-color: white;
+    padding: 3px 8px;
+    margin-top: 7px;
+    i{
+      font-size: 27px;
+    }
+  }
+  .navbar-nav{
+    margin: 0px -15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    li{
+      text-align: right;
+    }
+  }
+}

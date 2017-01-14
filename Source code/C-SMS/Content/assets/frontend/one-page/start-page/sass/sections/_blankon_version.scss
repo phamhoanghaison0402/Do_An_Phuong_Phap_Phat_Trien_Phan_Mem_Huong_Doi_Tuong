@@ -1,0 +1,46 @@
+/* ========================================================================
+ * BLANKON VERSIONS
+ * ======================================================================== */
+#blankon-versions{
+  .inner{
+    padding: 100px 0px;
+  }
+  h3{
+    margin-bottom: 45px;
+  }
+  h2, p, ul{
+    text-align: center;
+  }
+  h2{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  p{
+    max-width: 600px;
+    margin: 0px auto;
+  }
+  i, span{
+    color: #81b71a;
+    display: block;
+  }
+  span{
+    margin-top: 20px;
+  }
+  .row{
+    margin-top: 60px;
+  }
+  img{
+    width: 100%;
+  }
+  .label-version{
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    color: $white;
+    @include border-radius(50%);
+    @include resize(40px);
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

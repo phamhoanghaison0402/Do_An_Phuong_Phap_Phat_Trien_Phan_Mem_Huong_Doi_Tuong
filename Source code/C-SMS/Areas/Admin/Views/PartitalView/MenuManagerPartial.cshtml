@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Common.ViewModels.NhanVien_QuyenViewModel>
+@using Common.ViewModels
+
+@{
+    var listMenu = @Model;
+    var listParent = ViewBag.listParent;
+}
+<aside id="sidebar-left" class="sidebar-circle">
+    <!-- Start left navigation - profile shortcut -->
+    <div id="tour-8" class="sidebar-content">
+        @{
+            NhanVienViewModel account = (NhanVienViewModel)Session["Account"];
+            <div class="media">
+                <a class="pull-left has-notif avatar" href="@Url.Action("Index","Home")">
+                    <img src="~/Content/image/user/@account.avatar">
+                    <i class="online"></i>
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading"><span>Xin chào!</span></h4>
+                    <small>@account.tenChucVu</small>
+                </div>
+            </div>
+        }
+    </div><!-- /.sidebar-content -->
+    <!--/ End left navigation -  profile shortcut -->
+    <!-- Start left navigation - menu -->
+    @if (Session["Account"] != null && Session["Account"].ToString() != "Error")
+    {
+        <ul id="tour-9" class="sidebar-menu">
+            <!-- Start navigation - dashboard -->
+            <li class="submenu active">
+                <a href="javascript:void(0);">
+                    <span class="icon"><i class="fa fa-home"></i></span>
+                    <span class="text">Trang chính</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+            <!--/ End navigation - dashboard -->
+            <!-- Start navigation - frontend themes -->
+            @foreach (String itemParent in listParent)
+            {
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        @switch (itemParent)
+                        {
+
+                            case "Quản Lý Nhập Kho":
+                                {
+                                    <span class="icon"><i class="fa fa-server"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Xuất Kho":
+                                {
+                                    <span class="icon"><i class="fa fa-leaf"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Kiểm Kho":
+                                {
+                                    <span class="icon"><i class="fa fa-calendar-check-o"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Đặt Hàng":
+                                {
+                                    <span class="icon"><i class="fa fa-shopping-cart"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Bán Hàng":
+                                {
+                                    <span class="icon"><i class="fa fa-cart-arrow-down"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Phiếu Chi":
+                                {
+                                    <span class="icon"><i class="fa fa-object-group"></i></span>
+                                    break;
+                                }
+                            case "Xuất Báo Cáo":
+                                {
+                                    <span class="icon"><i class="fa fa-bar-chart"></i></span>
+                                    break;
+                                }
+
+
+                            case "Quản Lý Sản Phẩm":
+                                {
+                                    <span class="icon"><i class="fa fa-magic"></i></span>
+                                    break;
+                                }
+
+                            case "Quản Lý Loại Sản Phẩm":
+                                {
+                                    <span class="icon"><i class="fa fa-fire"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Bảo Hành":
+                                {
+                                    <span class="icon"><i class="fa fa-wrench"></i></span>
+                                    break;
+                                }
+                            @*case "Phiếu Nhập":
+                                {
+                                    <span class="icon"><i class="fa fa-leaf"></i></span>
+                                    break;
+                                }*@
+                            case "Quản Lý Nhà Cung Cấp":
+                                {
+                                    <span class="icon"><i class="fa fa-user-secret"></i></span>
+                                    break;
+                                }
+                            case "Quản Lý Nhân Viên":
+                                {
+                                    <span class="icon"><i class="fa fa-user"></i></span>
+                                    break;
+                                }
+                        }
+                        <span class="text">@itemParent</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul>
+                        @foreach (var itemMenu in listMenu)
+                        {
+                            if (itemMenu.parent == itemParent)
+                            {
+                                <li><a href="@Url.Action("Index", @itemMenu.maQuyen)">@itemMenu.tenQuyen</a></li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+            <!--/ End documentation - api documentation -->
+
+        </ul><!-- /.sidebar-menu -->
+    }
+    <!--/ End left navigation - menu -->
+    <!-- Start left navigation - footer -->
+    <div id="tour-10" class="sidebar-footer hidden-xs hidden-sm hidden-md">
+        <a id="setting1" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Setting"><i class="fa fa-cog"></i></a>
+        <a id="fullscreen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Fullscreen"><i class="fa fa-desktop"></i></a>
+        <a id="lock-screen1" data-url="#" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Lock Screen"><i class="fa fa-lock"></i></a>
+        <a id="logout1" data-url="#" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Logout"><i class="fa fa-power-off"></i></a>
+    </div><!-- /.sidebar-footer -->
+    <!--/ End left navigation - footer -->
+
+</aside>
+

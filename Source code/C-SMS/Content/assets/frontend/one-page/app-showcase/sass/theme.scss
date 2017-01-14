@@ -1,0 +1,49 @@
+// Import compass library
+@import "compass/css3";
+
+// Import Bootstrap library
+@import "../../../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Core preprocessor
+@import "core/variables";
+@import "core/mixins";
+@import "core/functions";
+
+/* ========================================================================
+ * PLUGIN - PRELOADER
+ * ======================================================================== */
+#loader-wrapper .loader-section {
+  background-color: $color-theme;
+}
+
+/* ========================================================================
+ * SECTION - NEW FEATURE
+ * ======================================================================== */
+#new-feature{
+  background-color: $color-theme;
+}
+
+/* ========================================================================
+ * SECTION - PRICING TABLE
+ * ======================================================================== */
+#pricing-table{
+  .pricing-list{
+    &.selected{
+      .pricing-header{
+        .pricing-money{
+          border: 1px solid $color-theme;
+          background-color: $color-theme;
+        }
+      }
+      .pricing-body{
+        ul{
+          li{
+            &:before{
+              color: $color-theme;
+            }
+          }
+        }
+      }
+    }
+  }
+}

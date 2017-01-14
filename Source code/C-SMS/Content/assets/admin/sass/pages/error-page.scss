@@ -1,0 +1,56 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * ERROR PAGE
+ * ======================================================================== */
+#page-content{
+  .body-content{
+    min-height: 504px !important;
+  }
+}
+.error-wrapper{
+  text-align: center;
+  width: 570px;
+  margin: 10% auto 0px;
+  h1{
+    font-size: 130px;
+    margin: 0;
+    line-height: 130px;
+  }
+  h3{
+    margin: 0;
+    font-size: 23px;
+  }
+  h4{
+    font-size: 13px;
+  }
+  form{
+    width: 350px;
+    margin: 20px auto 0 auto;
+  }
+  input{
+    background-color: darken($page-content-bg,2%);
+  }
+}
+
+@media (max-width: 768px){
+  .error-wrapper{
+    width: 100%;
+    padding: 0 20px;
+    form{
+      width: 250px;
+    }
+  }
+}
+
+@media (max-width: 320px){
+  .error-wrapper{
+    padding: 0 5px;
+  }
+}

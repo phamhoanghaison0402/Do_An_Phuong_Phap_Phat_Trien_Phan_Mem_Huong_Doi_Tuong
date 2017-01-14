@@ -1,0 +1,48 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * PROGRESS BAR
+ * ======================================================================== */
+.progress{
+  .box-shadow(none);
+  .border-radius(0px);
+  &.progress-lg{
+    height: 25px;
+  }
+  &.progress-sm{
+    height: 15px;
+  }
+  &.progress-xs{
+    height: 10px;
+  }
+  &.progress-xxs{
+    height: 5px;
+  }
+}
+
+.progress-bar-color(primary,@color-primary);
+.progress-bar-color(success,@color-success);
+.progress-bar-color(info,@color-info);
+.progress-bar-color(warning,@color-warning);
+.progress-bar-color(danger,@color-danger);
+.progress-bar-color(lilac,@color-lilac);
+.progress-bar-color(inverse,@color-inverse);
+
+.progress-bar-teal{
+  background-color: @color-teal;
+}
+
+/* ========================================================================
+ * IE SUPPORT
+ * ======================================================================== */
+.ie8, .ie9 {
+  .progress-striped{
+    .hidden-ie {
+      display: none !important;
+    }
+  }
+}
+

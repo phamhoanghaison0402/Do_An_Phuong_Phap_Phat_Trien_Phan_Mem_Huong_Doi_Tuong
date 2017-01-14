@@ -1,0 +1,38 @@
+/* ========================================================================
+ * BOOTSTRAP TAG INPUT
+ * ======================================================================== */
+input{
+  &.rounded{
+    + .bootstrap-tagsinput{
+      .border-radius(@rounded);
+      .tag{
+        .border-radius(@rounded);
+      }
+    }
+  }
+}
+
+.bootstrap-tagsinput{
+  padding: 5px 7px 7px;
+  .box-shadow(none) !important;
+  .border-radius(0px);
+  width: 100%;
+  input{
+    border: none !important;
+    &:focus{
+      border: none !important;
+    }
+  }
+  .tag{
+    display: inline-block;
+    padding: 5px 7px 8px;
+  }
+}
+
+@media (max-width: 360px){
+  .bootstrap-tagsinput{
+    .tag{
+      margin-bottom: 4px;
+    }
+  }
+}

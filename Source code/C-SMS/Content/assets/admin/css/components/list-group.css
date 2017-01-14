@@ -1,0 +1,12 @@
+/* ========================================================================
+ * LIST GROUP
+ * ======================================================================== */
+.media-list > .media .media-body .media-meta.device {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.media-list > .media .media-body .media-meta.time {
+  float: right;
+  margin-top: 3px;
+}

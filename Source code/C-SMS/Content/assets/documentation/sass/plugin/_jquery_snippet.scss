@@ -1,0 +1,21 @@
+/* ========================================================================
+ * JQUERY SNIPPET
+ * ======================================================================== */
+.scroll{
+  height: 300px;
+}
+.snippet-wrap{
+  .snippet-menu, .snippet-hide {
+    font-size: 0.5em !important;
+  }
+}
+@media (max-width: 980px) {
+  .snippet-wrap{
+    .snippet-num{
+      margin: 0 0 5px -9px;
+      li {
+        line-height: 25px;
+      }
+    }
+  }
+}

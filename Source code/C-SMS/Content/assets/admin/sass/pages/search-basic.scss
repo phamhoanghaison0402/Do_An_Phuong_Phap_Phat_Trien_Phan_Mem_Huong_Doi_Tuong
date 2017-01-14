@@ -1,0 +1,177 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * SEARCH COURSES
+ * ======================================================================== */
+
+.list-search{
+  background: transparent !important;
+  .media{
+    background-color: $white;
+    margin-bottom: 20px !important;
+    padding: 0px !important;
+    &.selected{
+      .meta-search{
+        .meta-action{
+          color: $color-success;
+          cursor: default;
+        }
+      }
+    }
+    img{
+      border-radius: $rounded 0px 0px $rounded;
+      width: 225px;
+    }
+    .media-object{
+      width: 100% !important;
+      height: inherit !important;
+    }
+    .media-left{
+      min-width: 240px;
+    }
+  }
+  .media-body{
+    padding: 10px 10px 10px 0px;
+    min-height: 150px;
+    position: relative;
+    width: 100%;
+  }
+  .meta-provider{
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    background-color: rgba(89, 103, 104, 0.44);
+    padding: 7px;
+    color: $white;
+    margin-left: -5px;
+    font-size: 12px;
+    &.primary{
+      border-left: 5px solid $color-primary;
+    }
+    &.success{
+      border-left: 5px solid $color-success;
+    }
+    &.info{
+      border-left: 5px solid $color-info;
+    }
+    &.warning{
+      border-left: 5px solid $color-warning;
+    }
+    &.danger{
+      border-left: 5px solid $color-danger;
+    }
+  }
+  .meta-search{
+    border-top: 1px solid $border-color;
+    padding: 10px 10px 0px 0px;
+    width: 100%;
+    .meta-mounth, .meta-level{
+      margin-right: 40px;
+    }
+    .meta-selected{
+      background-color: $gray;
+      padding: 3px 5px;
+      border-left: 3px solid $color-success;
+    }
+    .meta-price{
+      margin-right: 10px;
+      font-weight: bold;
+      small{
+        font-weight: 300;
+      }
+    }
+    .meta-action{
+      font-size: 20px;
+      border-left: 1px dotted $border-color;
+      padding-left: 10px;
+      color: $border-color;
+      &:hover{
+        color: $color-success;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .list-search{
+    .media{
+      img{
+        height: 165px !important;
+      }
+      .media-body{
+        min-height: 165px;
+      }
+    }
+    .selected{
+      .meta-search{
+        .meta-mounth, .meta-level{
+          display: none;
+        }
+      }
+    }
+    .meta-search{
+      .meta-mounth, .meta-level{
+        margin-right: 15px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .list-search{
+    .meta-search{
+      .meta-mounth{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .list-search{
+    .media{
+      > a{
+        float: none !important;
+        display: block;
+        margin: 0px;
+        img{
+          width: 100% !important;
+          height: 100% !important;
+          @include border-radius($rounded $rounded 0px 0px);
+        }
+      }
+      .media-body{
+        padding: 10px;
+        min-height: 190px;
+      }
+    }
+    .meta-provider{
+      top: 20px;
+      bottom: inherit;
+    }
+    .meta-search{
+      margin-left: -10px;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .list-search{
+    .media-left{
+      width: 100%;
+      display: block;
+      padding-right: 0px;
+      img{
+        width: 100% !important;
+        height: inherit !important;
+      }
+    }
+  }
+}

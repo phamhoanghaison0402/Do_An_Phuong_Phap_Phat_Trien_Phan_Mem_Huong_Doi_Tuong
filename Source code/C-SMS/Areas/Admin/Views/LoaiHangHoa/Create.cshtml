@@ -1,0 +1,58 @@
+﻿@model Common.ViewModels.LoaiHangHoaViewModel
+@{
+    ViewBag.Title = "Thêm loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Loại sản phẩm</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "LoaiHangHoa") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+                        @using (Html.BeginForm("Create", "LoaiHangHoa", FormMethod.Post, new { id = "basic-validate" }))
+                        {
+                            <div class="form-body">
+
+                                <div class="form-group">
+                                    <label class="control-label">Tên loại sản phẩm</label>
+                                    <input type="text" name="tenloaihanghoa" class="form-control rounded" maxlength="50" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Phần trăm lợi nhuận (%)</label>
+                                    <input type="text" name="phantramloinhuan" class="form-control rounded" required />
+                                </div>
+                            </div><!-- /.form-body -->
+                           
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    $('#submit').click(function () {
+        $('#basic-validate').submit();
+    });
+</script>

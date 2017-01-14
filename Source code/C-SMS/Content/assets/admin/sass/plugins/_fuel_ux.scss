@@ -1,0 +1,100 @@
+/* ========================================================================
+ * FUEL UX
+ * ======================================================================= */
+.fuelux{
+  .repeater-thumbnail{
+    width: 109px;
+    img{
+      margin-top: 0px;
+    }
+  }
+  .repeater-thumbnail-cont{
+    &.align-left {
+      .repeater-thumbnail{
+        font-size: 13px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  .repeater, .repeater-header{
+    @include border-radius(0px);
+  }
+  .repeater-list-header{
+    td{
+      &.sortable{
+        &:last-child{
+          text-align: center;
+        }
+        &:hover{
+          background: transparent;
+        }
+      }
+    }
+  }
+  .repeater-list-items{
+    td{
+      &:last-child{
+        text-align: center;
+      }
+    }
+  }
+  .repeater-list {
+    table {
+      thead {
+        > tr {
+          > th{
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .repeater{
+    table{
+      thead{
+        tr{
+          th{
+            &:nth-child(1), &:nth-child(3), &:nth-child(6){
+              text-align: center;
+            }
+            &:nth-child(2){
+              width: 200px !important;
+            }
+            &:nth-child(4){
+              text-align: right;
+            }
+            &:last-child{
+              text-align: center;
+            }
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            vertical-align: middle;
+            font-size: 12px;
+            &:nth-child(1), &:nth-child(3), &:nth-child(6){
+              text-align: center;
+            }
+            &:nth-child(4){
+              text-align: right;
+            }
+            &:last-child{
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.repeater-header-right{
+  .repeater-filters{
+    > button{
+      width: 150px !important;
+      text-align: left !important;
+    }
+  }
+}

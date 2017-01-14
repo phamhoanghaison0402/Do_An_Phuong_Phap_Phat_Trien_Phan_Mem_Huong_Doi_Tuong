@@ -1,0 +1,41 @@
+﻿@using PagedList.Mvc
+@model List<Common.ViewModels.BaoCaoTonKhoViewModel>
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Mã hàng hoá")
+            </th>
+            <th>
+                @Html.DisplayName("Tên hàng hoá")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng tồn đầu")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng nhập")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng xuất")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng tồn cuối")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="border-warning">
+                <td>@item.maHangHoa</td>
+                <td>@item.tenHangHoa</td>
+                <td>@item.soLuongTonDau</td>
+                <td>@item.soLuongNhap</td>
+                <td>@item.soLuongXuat</td>
+                <td>@item.soLuongTonCuoi</td>
+            </tr>
+        }
+    </tbody>
+</table>

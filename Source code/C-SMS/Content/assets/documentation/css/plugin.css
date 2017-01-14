@@ -1,0 +1,320 @@
+/* ========================================================================
+ * BOOTSTRAP
+ * ======================================================================== */
+.row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.row-merge {
+  margin: 0px;
+}
+
+.row-merge > [class*="col-"] {
+  padding: 0px;
+}
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.form-control {
+  outline: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span,
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/* ========================================================================
+ * DATATABLES
+ * ======================================================================== */
+.dt-responsive {
+  width: 100% !important;
+}
+
+.sorting_disabled {
+  padding-right: 5px !important;
+}
+
+@media (max-width: 800px) {
+  table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+    padding-top: 8px;
+    padding-left: 34px;
+  }
+  table.dataTable.dtr-inline.collapsed > tbody > tr > td:before, table.dataTable.dtr-inline.collapsed > tbody > tr > th:before {
+    left: 7px !important;
+  }
+}
+@media (max-width: 640px) {
+  #table-credit_length, #table-change-log_length {
+    display: none;
+  }
+
+  #table-credit_filter, #table-change-log_filter {
+    text-align: right;
+  }
+}
+/* ========================================================================
+ * DATATABLES RESPONSIVE
+ * ======================================================================== */
+.dt-responsive .row-detail ul li {
+  padding: 10px;
+}
+.dt-responsive .row-detail ul li.text-center {
+  text-align: left !important;
+}
+
+/* ========================================================================
+ * JQUERY SNIPPET
+ * ======================================================================== */
+.scroll {
+  height: 300px;
+}
+
+.snippet-wrap .snippet-menu, .snippet-wrap .snippet-hide {
+  font-size: 0.5em !important;
+}
+
+@media (max-width: 980px) {
+  .snippet-wrap .snippet-num {
+    margin: 0 0 5px -9px;
+  }
+  .snippet-wrap .snippet-num li {
+    line-height: 25px;
+  }
+}
+/* ========================================================================
+ * JQUERY STEPS
+ * ======================================================================== */
+.wizard > .content {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.wizard > .steps ul li:first-child a {
+  margin-top: 0;
+}
+.wizard > .steps ul li:first-child a:hover, .wizard > .steps ul li:first-child a:active {
+  margin-top: 0;
+}
+.wizard > .steps ul li a {
+  margin: 20px 0 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.wizard > .steps ul li a:hover, .wizard > .steps ul li a:active {
+  margin: 20px 0 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.wizard > .actions a {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.wizard > .actions a:hover, .wizard > .actions a:active {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/* ========================================================================
+ * PRELOADER
+ * ======================================================================== */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);
+  /* IE 9 */
+  transform: translateX(-100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);
+  /* IE 9 */
+  transform: translateX(100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+}
+
+.loader-text {
+  z-index: 99999;
+  display: block;
+  position: relative;
+  color: #FFFFFF;
+  margin: 5px auto;
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
+.sk-three-bounce {
+  z-index: 10002;
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 58%;
+  width: 160px;
+  margin: -75px 0 0 -75px;
+}
+.sk-three-bounce .sk-child {
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+}
+
+/* ========================================================================
+ * SELECT2
+ * ======================================================================== */
+.page-select2 {
+  width: 100%;
+}
+.page-select2.select2-hidden-accessible {
+  width: inherit !important;
+}
+
+.select2.select2-container {
+  margin-top: 10px;
+}
+
+.select2-container--default .select2-selection--single {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #DDD;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #DDD;
+}
+
+.select2-dropdown {
+  border: 1px solid #DDD;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.select2-results__group {
+  background-color: #EBEBEB;
+}
+
+@media (max-width: 980px) {
+  .select2-container {
+    width: 100% !important;
+  }
+}
+@media (max-width: 640px) {
+  .select2-container {
+    margin-bottom: 20px;
+  }
+}

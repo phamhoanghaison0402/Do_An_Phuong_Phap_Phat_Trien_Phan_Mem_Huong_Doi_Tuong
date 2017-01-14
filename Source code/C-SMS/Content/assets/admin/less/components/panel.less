@@ -1,0 +1,471 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * PANEL
+ * ======================================================================== */
+
+/* ========================================================================
+ * TABLE OF CONTENT
+ * ========================================================================
+   01. PANEL
+   02. PANEL HEADING
+   03. PANEL SUB HEADING
+   04. PANEL BODY
+   05. PANEL FOOTER
+   06. CONTEXTUAL CLASSES PANEL
+   07. PANEL SCROLLABLE
+   08. PANEL TAB
+   09. PANEL TAB DOUBLE
+   10. PANEL TAB VERTICAL
+   11. PANEL GROUP
+ * ======================================================================== */
+
+// PANEL ---------------------------------------------------
+.panel{
+  border: none;
+  position: relative;
+  .border-radius(0px);
+  .box-shadow(none);
+
+  &.panel-fullsize {
+    position: fixed;
+    width: 96%;
+    top: 25px;
+    left: 25px;
+    z-index: 9999;
+    .chartjs{
+      max-width: inherit !important;
+      height: 470px !important;
+    }
+  }
+
+  .panel-heading{
+    padding: 5px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom: 1px solid @border-color;
+    .border-radius(0px);
+    .has-feedback{
+      .form-control {
+        padding-right: 0;
+      }
+    }
+    > .pull-right{
+      margin-top: 5px;
+      margin-right: 5px;
+      > i{
+        padding: 5px;
+      }
+      > .progress{
+        min-width: 120px;
+      }
+    }
+    .panel-title{
+      padding: 10px;
+      font-size: 17px;
+      > i{
+        margin-right: 5px;
+      }
+    }
+    >.panel-title{
+      vertical-align: middle;
+    }
+    .nav{
+      > li{
+        > a{
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .panel-search {
+    padding: 15px;
+    position: relative;
+    color: #333;
+    display: none;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    i{
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      color: #A2A2A2;
+    }
+  }
+
+  .panel-sub-heading{
+    display: block;
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #CFD9DB;
+    h4{
+      margin: 0px;
+    }
+    p{
+      margin: 0px;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+
+  .panel-body{
+    position: relative;
+    background-color: #FBFBFB;
+    padding: 10px;
+    .table-responsive{
+      margin-top: -1px;
+    }
+    &.out{
+      display: none;
+    }
+    .sample-wrapper{
+      h4{
+
+      }
+      p{
+        font-size: 13px;
+        color: #999;
+      }
+    }
+    .page-header{
+      &:first-child{
+        margin-top: 10px;
+      }
+    }
+    .list-group{
+      .list-group-item{
+        border-top: none;
+        border-right: none;
+        border-bottom: 2px solid @border-color;
+        border-left: none;
+        .border-radius-top(0px);
+        &:last-child{
+          border-bottom: none !important;
+        }
+      }
+    }    
+    table{
+      margin-bottom: 0px;
+      thead{
+        tr{
+          th{
+            .border-radius(0px);
+          }
+        }
+      }
+    }
+  }
+
+  .panel-footer{
+    padding: 10px;
+    .border-radius(0px);
+  }
+
+  &.panel-default{
+    .panel-heading{
+      .option{
+        .btn{
+          &:hover{
+            background-color: darken(@color-default,5%);
+          }
+        }
+      }
+    }
+  }
+
+  &.rounded{
+    .ribbon-wrapper{
+      + .panel-body{
+        .border-radius(@rounded)
+      }
+    }
+  }
+
+  &.no-overflow{
+    .panel-body, .panel-footer, .form-footer{
+      .border-radius(0px 0px @rounded @rounded);
+    }
+  }
+
+}
+
+.panel-color(primary,@color-primary);
+.panel-color(success,@color-success);
+.panel-color(info,@color-info);
+.panel-color(warning,@color-warning);
+.panel-color(danger,@color-danger);
+.panel-color(inverse,@color-inverse);
+.panel-color(lilac,@color-lilac);
+
+.panel-teal{
+  .panel-heading{
+    background-color: @color-teal;
+    border: 1px solid darken(@color-teal,1%);
+    color: white;
+    .option{
+      .btn{
+        &:hover{
+          background-color: darken(@color-teal,5%);
+          color: white;
+        }
+        i{
+          color: white;
+        }
+      }
+    }
+  }
+}
+.panel-bg-teal{
+  .panel-body{
+    background-color: @color-teal;
+    color: white;
+    .text-muted{
+      color: darken(white,5%);
+    }
+  }
+}
+
+// PANEL SCROLLABLE ---------------------------------------------------
+.panel-scrollable{
+  .panel-body{
+    height: 300px;
+  }
+}
+
+// PANEL TAB ---------------------------------------------------
+.panel-tab{
+  background-color: #FBFBFB;
+  .panel-heading{
+    ul{
+      position: relative;
+      overflow: visible;
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      border: none;
+      margin-bottom: -6px;
+      li{
+        line-height: 25px;
+        &.active{
+          color: #444;
+          a{
+            color: #444;
+            background: #F7F7F7;
+            &:hover{
+              background: #F7F7F7;
+            }
+            i{
+              color: @color-theme;
+            }
+          }
+        }
+        a{
+          width: auto;
+          margin: 0px;
+          display: block;
+          padding: 10px 15px;
+          position: relative;
+          overflow: hidden;
+          color: #999;
+          text-decoration: none;
+          border: none;
+          border-right: 1px solid @border-color;
+          .border-radius(0px);
+          &:hover, &:focus{
+            border: none;
+            border-right: 1px solid @border-color;
+          }
+          &:hover{
+            background-color: transparent;
+            i{
+              color: @color-theme;
+            }
+          }
+          > i, > span{
+            margin: 0px auto;
+            text-align: center;
+          }
+          > div{
+            text-align: center;
+          }
+          i{
+            width: 100%;
+            height: 30px;
+            line-height: 20px;
+            font-size: 25px;
+            color: #CCC;
+          }
+          span{
+            display: block;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+  }
+  .panel-sub-heading{
+    background: #F7F7F7;
+  }
+  .panel-body{
+    background: #F7F7F7;
+    .tab-content{
+      background: #F7F7F7;
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none;
+      .tab-pane{
+        > h4{
+          margin-top: 0px;
+        }
+        > p{
+          margin: 0px;
+        }
+      }
+    }
+  }
+  .nav-pills {
+    > li + li {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (max-width: 360px){
+  .panel-tab{
+    .panel-heading{
+      .pull-right{
+        float: inherit !important;
+        display: block;
+        width: 100%;
+      }
+      ul{
+        li{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// PANEL TAB DOUBLE ---------------------------------------------------
+.panel-tab-double{
+  .panel-heading{
+    ul{
+      li{
+        min-width: 100px;
+        a{
+          padding: 15px 15px 15px 15px;
+          > i, > div{
+            float: left;
+          }
+          > div{
+            text-align: left;
+            span{
+              &:last-child{
+                margin-top: 3px;
+              }
+            }
+          }
+          i{
+            margin-top: 5px;
+            margin-right: 5px;
+            .resize(35px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px){
+  .panel-tab.panel-tab-double{
+    .panel-heading{
+      ul{
+        li{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// PANEL TAB VERTICAL ---------------------------------------------------
+.panel-tab-vertical{
+  padding-bottom: 5px;
+  .panel-heading{
+    border-bottom: none;
+    ul{
+      display: block;
+      height: auto;
+      li{
+        float: none;
+        display: block;
+        border-right: none;
+        border-bottom: 1px solid #EFEFEF;
+        a{
+          min-height: 40px;
+        }
+        &:first-child{
+          a{
+            .border-radius-top-left(3px);
+          }
+        }
+        &:last-child{
+          a{
+            .border-radius-bottom-left(3px);
+          }
+        }
+      }
+    }
+  }
+  .panel-body{
+    box-shadow: none;
+  }
+}
+
+// PANEL GROUP ---------------------------------------------------
+.panel-group{
+  .panel{
+    border-top: 1px solid @border-color;
+    .border-radius(0px);
+    &:first-child{
+      border-top: none;
+      .border-radius-top(3px);
+    }
+    &:last-child{
+      .border-radius-bottom(3px);
+    }
+    + .panel{
+      margin-top: 0px;
+    }
+    .panel-heading{
+      padding: 0px;
+      .panel-title{
+        padding: 0px;
+        a{
+          padding: 14px 15px;
+          display: block;
+          text-decoration: none;
+          .transition(all 0.3s);
+          &:hover{
+            background-color: #F3F3F3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.panel-fullsize-backdrop{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.27);
+}

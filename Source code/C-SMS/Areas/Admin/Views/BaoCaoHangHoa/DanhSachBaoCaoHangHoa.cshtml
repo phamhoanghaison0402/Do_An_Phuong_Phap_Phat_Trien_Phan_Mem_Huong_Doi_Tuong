@@ -1,0 +1,43 @@
+﻿@using PagedList.Mvc
+@model List<Common.ViewModels.BaoCaoHangHoaViewModel>
+@using Common.Ultil
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Mã sản phẩm")
+            </th>
+            <th>
+                @Html.DisplayName("Tên sản phẩm")
+            </th>
+            <th>
+                @Html.DisplayName("Model name")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng tồn")
+            </th>
+            <th>
+                @Html.DisplayName("Giá bán (VNĐ)")
+            </th>
+            <th>
+                @Html.DisplayName("Giảm giá (VNĐ)")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            FormatNumber number = new FormatNumber();
+            <tr class="border-warning">
+                <td>@item.maHangHoa</td>
+                <td>@item.tenHangHoa</td>
+                <td>@item.modelName</td>
+                <td>@item.soLuongTon</td>
+                <td>@number.FormatNumbers(@item.giaBan.ToString())</td>
+                <td>@number.FormatNumbers(@item.giamGia.ToString())</td>
+            </tr>
+        }
+    </tbody>
+</table>

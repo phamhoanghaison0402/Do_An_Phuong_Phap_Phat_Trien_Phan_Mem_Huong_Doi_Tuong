@@ -1,0 +1,45 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * DASHBOARD RETAIL
+ * ======================================================================== */
+.top-product-chart, .top-store-chart{
+  width: 65%;
+  li{
+    height: 30px;
+    line-height: 27px;
+    font-size: 11px;
+    margin-bottom: 5px;
+    &.current{
+      &:before{
+        top: 1px;
+        left: 40px;
+        color: #FFFFFF;
+      }
+      .bar{
+        background-color: #505050;
+      }
+      .number{
+        padding-left: 38px;
+        color: #2A2A2A;
+      }
+    }
+    .bar{
+      margin-left: 35px;
+    }
+    .number{
+      top: 1px;
+      margin-left: 5px;
+      font-size: 13px;
+    }
+    img{
+      vertical-align: inherit;
+      width: 30px;
+      height: 100%;
+      position: absolute;
+    }
+  }
+}

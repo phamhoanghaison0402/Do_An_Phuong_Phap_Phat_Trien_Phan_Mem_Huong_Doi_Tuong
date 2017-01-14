@@ -1,0 +1,33 @@
+/* ========================================================================
+ * FOOTER
+ * ======================================================================== */
+#footer{
+  background-color: #DDD;
+  .inner{
+    padding: 15px 0px;
+    text-align: center;
+  }
+  .copyright{
+    font-size: 14px;
+    a, span{
+      color: #666;
+      margin: 0px 6px;
+    }
+  }
+}
+
+@media (max-width: 360px){
+  #footer{
+    .copyright{
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 320px){
+  #footer{
+    .copyright{
+      font-size: 11px;
+    }
+  }
+}

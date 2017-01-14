@@ -1,0 +1,60 @@
+/* ========================================================================
+ * ACCORDION
+ * ======================================================================== */
+.ng-accordion .panel-group {
+  margin-bottom: 0;
+}
+.ng-accordion .panel-group .panel .panel-heading {
+  border-bottom: none;
+}
+
+/* ========================================================================
+ * FRONTEND THEMES PAGE
+ * ======================================================================== */
+.list-frontend-theme .image-scroll.landing-page {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.corporate {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.portfolio {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.personal-cv {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.agency {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.blog {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll.shop {
+  background-image: url("../../../img/frontend-themes/start-page.jpg");
+}
+.list-frontend-theme .image-scroll .image-ribbon {
+  background: url("../../../img/frontend-themes/ribbon.png") no-repeat scroll right top transparent;
+}
+
+/* ========================================================================
+ * LOADING BAR
+ * ======================================================================== */
+#loading-bar .bar {
+  background: #A90329;
+  height: 4px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  width: 18px;
+  height: 18px;
+  border: solid 4px transparent;
+  border-top-color: #f4043b;
+  border-left-color: #f4043b;
+}
+
+/* ========================================================================
+ * MISC
+ * ======================================================================== */
+.ng-leave {
+  display: none;
+}

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuChiViewModel>
+@using Common.ViewModels
+@{
+    ViewBag.Title = "Danh sách phiếu chi";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu chi</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-sm btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "PhieuChi") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Lập phiếu chi
+            </button>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Danh sách phiếu chi</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body">
+                        <div class="form-body">
+                            @using (Ajax.BeginForm("DanhSachPhieuChi", "PhieuChi", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Từ ngày</label>
+                                        <input type="date" id="dateFrom" name="dateFrom" data-date-format="dd/mm/yyyy" required class="form-control rounded" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Đến ngày</label>
+                                        <div class="input-group">
+                                            <input type="date" id="dateTo" name="dateTo" required class="form-control rounded" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            @using (Ajax.BeginForm("DanhSachPhieuChi", "PhieuChi", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label>Trạng thái</label>
+                                        <div class="input-group">
+                                            @Html.DropDownList("trangthai", new SelectList(ViewBag.trangthai, "Value", "Text"), new { @class = "form-control rounded" })
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            }
+
+                            @using (Ajax.BeginForm("DanhSachPhieuChi", "PhieuChi", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group"> 
+                                    <div class="col-md-12">
+                                        <label>Tìm Kiếm</label>
+                                        <div class="input-group">
+                                            @Html.TextBox("SearchString", null, new { @class = "form-control rounded", @placeholder = "Tìm kiếm" })
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            }
+                            <div id="list">
+                                @{Html.RenderAction("DanhSachPhieuChi", "PhieuChi");}
+                            </div>
+                        </div><!-- /.form-body -->
+
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->
+                <!--/ End input fields - basic form-->
+            </div><!-- /.col-md-6 -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+﻿@model List<Common.ViewModels.BaoCaoTonKhoViewModel>
+@using Common.ViewModels
+@{
+    ViewBag.Title = "Báo cáo tồn kho";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Báo cáo tồn kho</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" tabindex="-1">Xuất ra file</button>
+                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" data-toggle="dropdown" tabindex="-1">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="@Url.Action("XuatFilePDF", "BaoCaoTonKho")">Xuất file PDF</a></li>
+                    <li><a href="@Url.Action("XuatFileEXE", "BaoCaoTonKho")">Xuất file Excel</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Hàng hóa tồn kho</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-body">
+                            @using (Ajax.BeginForm("DanhSachBaoCaoTonKho", "BaoCaoTonKho", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Chọn tháng</label>
+                                        @Html.DropDownList("thang", new SelectList(ViewBag.Thang, "Value", "Text"), new { @id = "thang", @class = "form-control rounded" })
+                                      
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Chọn năm</label>
+                                        <div class="input-group">
+                                            @Html.DropDownList("nam", new SelectList(ViewBag.Nam, "Value", "Text"), new { @id = "nam", @class = "form-control rounded" })
+                                           
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            }
+                            <div id="list">
+                                @{Html.RenderAction("DanhSachBaoCaoTonKho", "BaoCaoTonKho");}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>

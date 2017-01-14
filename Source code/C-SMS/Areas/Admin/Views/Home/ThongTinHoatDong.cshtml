@@ -1,0 +1,173 @@
+﻿@model IEnumerable<Common.ViewModels.ThongTinHoatDongViewModel>
+
+<h3>Hoạt động gần đây</h3>
+
+<!-- End recent activity item -->
+<!-- Start recent activity item -->
+<div class="recent-activity-item recent-activity-success">
+    <div class="recent-activity-badge">
+        <span class="recent-activity-badge-userpic"></span>
+    </div>
+    <div class="recent-activity-body">
+        <div class="recent-activity-body-head">
+            <div class="recent-activity-body-head-caption">
+                <h3 class="recent-activity-body-title">Bán Hàng</h3>
+            </div>
+        </div>
+        @foreach (var item in ViewBag.thongTinHoatDongBanHang)
+        {
+            <div class="recent-activity-body-content">
+                @if (@item.trangThaiBanHang == true)
+                {
+                    <p>
+                        @item.tenNhanVienBanHang đã tạo phiếu bán hàng số @item.soPhieuBanHang vào ngày <span class="text-muted">@item.ngayChinhSuaBanHang</span>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        @item.tenNhanVienBanHang đã hủy phiếu bán hàng số @item.soPhieuBanHang vào ngày <span class="text-muted">@item.ngayChinhSuaBanHang</span>
+                    </p>
+                }
+            </div>
+        }
+
+    </div>
+</div>
+<!-- Start recent activity item -->
+<div class="recent-activity-item recent-activity-warning">
+    <div class="recent-activity-badge">
+        <span class="recent-activity-badge-userpic"></span>
+    </div>
+    <div class="recent-activity-body">
+        <div class="recent-activity-body-head">
+            <div class="recent-activity-body-head-caption">
+                <h3 class="recent-activity-body-title">Kiểm Kho</h3>
+            </div>
+        </div>
+        @foreach (var item in ViewBag.thongTinHoatDongKiemKho)
+        {
+            <div class="recent-activity-body-content">
+                @if (@item.trangThaiKiemKho == true)
+                {
+                    <p>
+                        @item.tenNhanVienKiemKho đã tạo mới phiếu kiểm kho số @item.soPhieuKiemKho vào ngày
+                        <span class="text-muted">@item.ngayChinhSuaKiemKho</span>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        @item.tenNhanVienKiemKho đã hủy phiếu kiểm kho số @item.soPhieuKiemKho vào ngày
+                        <span class="text-muted">@item.ngayChinhSuaKiemKho</span>
+                    </p>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<!-- End recent activity item -->
+<!-- Start recent activity item -->
+<div class="recent-activity-item recent-activity-primary">
+    <div class="recent-activity-badge">
+        <span class="recent-activity-badge-userpic"></span>
+    </div>
+    <div class="recent-activity-body">
+
+        <div class="recent-activity-body-head">
+            <div class="recent-activity-body-head-caption">
+                <h3 class="recent-activity-body-title">Xuất kho</h3>
+            </div>
+        </div>
+        @foreach (var item in ViewBag.thongTinHoatDongXuatKho)
+        {
+            <div class="recent-activity-body-content">
+                @if (@item.trangThaiXuatKho == true)
+                {
+                    <p>
+                        @item.tenNhanVienXuatKho đã tạo mới phiếu xuất kho số @item.soPhieuXuatKho vào ngày
+                        <span class="text-muted"> @item.ngayChinhSuaXuatKho</span>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        @item.tenNhanVienXuatKho đã hủy phiếu xuất kho số @item.soPhieuXuatKho vào ngày
+                        <span class="text-muted"> @item.ngayChinhSuaXuatKho</span>
+                    </p>
+                }
+            </div>
+        }
+
+    </div>
+</div>
+
+
+<!-- End recent activity item -->
+<!-- Start recent activity item -->
+<div class="recent-activity-item recent-activity-danger">
+    <div class="recent-activity-badge">
+        <span class="recent-activity-badge-userpic"></span>
+    </div>
+    <div class="recent-activity-body">
+        <div class="recent-activity-body-head">
+            <div class="recent-activity-body-head-caption">
+                <h3 class="recent-activity-body-title">Nhập Kho</h3>
+            </div>
+        </div>
+        @foreach (var item in ViewBag.thongTinHoatDongNhapKho)
+        {
+            <div class="recent-activity-body-content">
+                @if (@item.trangThaiNhapKho == true)
+                {
+                    <p>
+                        @item.tenNhanVienNhapKho đã tạo mới phiếu nhập kho số @item.soPhieuNhapKho vào ngày
+                        <span class="text-muted"> @item.ngayChinhSuaXuatKho</span>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        @item.tenNhanVienXuatKho đã hủy phiếu nhập kho số @item.soPhieuNhapKho vào ngày
+                        <span class="text-muted"> @item.ngayChinhSuaNhapKho</span>
+                    </p>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<!-- End recent activity item -->
+<!-- Start recent activity item -->
+<div class="recent-activity-item recent-activity-success">
+    <div class="recent-activity-badge">
+        <span class="recent-activity-badge-userpic"></span>
+    </div>
+    <div class="recent-activity-body">
+        <div class="recent-activity-body-head">
+            <div class="recent-activity-body-head-caption">
+                <h3 class="recent-activity-body-title">Chi Tiêu</h3>
+            </div>
+        </div>
+        @foreach (var item in ViewBag.thongTinHoatDongChi)
+        {
+            <div class="recent-activity-body-content">
+                @if (@item.trangThaiChi == true)
+                {
+                    <p>
+                        @item.tenNhanVienChi đã chi @item.tongTienChi cho phiếu nhập số @item.maPhieuNhap
+                    <span class="text-block text-muted">vào ngày @item.ngayChinhSuaChi</span>
+                </p>
+                }
+                else
+                {
+                    <p>
+                        @item.tenNhanVienChi đã hủy phiếu chi số @item.soPhieuChi
+                        <span class="text-block text-muted">vào ngày @item.ngayChinhSuaChi</span>
+                    </p>
+                }
+            </div>
+        }
+    </div>
+</div>

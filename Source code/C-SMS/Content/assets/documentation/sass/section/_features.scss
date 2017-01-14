@@ -1,0 +1,19 @@
+/* ========================================================================
+ * FEATURES
+ * ======================================================================== */
+#features{
+  ul{
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    li{
+      padding: 2px 0;
+      &:before{
+        font-family: "simple-line-icons";
+        content: "\e080";
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

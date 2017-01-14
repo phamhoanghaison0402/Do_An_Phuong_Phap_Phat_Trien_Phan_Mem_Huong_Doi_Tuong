@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Common.ViewModels.NhanVienViewModel>
+
+@{
+    ViewBag.Title = "Danh sách nhân viên";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Nhân Viên</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-sm btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "NhanVien") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Thêm nhân viên
+            </button>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Danh sách nhân viên</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body">
+                        <div class="form-body">
+                            @using (Ajax.BeginForm("DanhSachNhanVien", "NhanVien", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <label>Tìm Kiếm</label>
+                                    <div class="input-group">
+                                        @Html.TextBox("SearchString", null, new { @class = "form-control", @placeholder = "Tìm kiếm" })
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            }
+
+                            @using (Ajax.BeginForm("DanhSachNhanVien", "NhanVien", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <label>Trạng thái</label>
+                                    <div class="input-group">
+                                        @Html.DropDownList("trangthai", new SelectList(ViewBag.data, "Value", "Text"), new { @class = "form-control rounded" })
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            }
+                            <div id="list">
+                                @{Html.RenderAction("DanhSachNhanVien", "NhanVien");}
+                            </div>
+                        </div><!-- /.form-body -->
+
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->
+                <!--/ End input fields - basic form-->
+            </div><!-- /.col-md-6 -->
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+
+
+@*<div>
+        <div class="x_panel">
+            <div class="x_content">
+
+                @using (Ajax.BeginForm("DanhSachNhanVien", "NhanVien", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                {
+                    <div class="form-group clearfix">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Trạng thái</label>
+                            @Html.DropDownList("trangthai", new SelectList(ViewBag.data, "Value", "Text"), "Tất cả", new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Chức vụ</label>
+                            @Html.DropDownList("chucvu", new SelectList(ViewBag.chucvu, "Value", "Text"), "Tất cả",  new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label class="control-label">Tìm kiếm</label>
+                            <div class="input-group">
+                                @Html.TextBox("SearchString", null, new { @class = "form-control", @placeholder = "Tìm kiếm", @aria_describedby = "basic-addon2" })
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                <div id="list">
+                    @{Html.RenderAction("DanhSachNhanVien", "NhanVien");}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script>
+        $('#trangthai').change(function () {
+            $('#filter_div').submit();
+        });
+
+        $('#chucvu').change(function () {
+            $('#filter_div').submit();
+        });
+    </script>*@
+

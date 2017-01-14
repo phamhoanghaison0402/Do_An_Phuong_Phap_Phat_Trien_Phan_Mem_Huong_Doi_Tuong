@@ -1,0 +1,150 @@
+/* ========================================================================
+ * FOOTER
+ * ======================================================================== */
+#footer{
+  position: relative;
+  font-size: 12px;
+  font-weight: 300;
+  .footer-menu{
+    background-color: $color-footer-menu;
+    padding: 25px;
+    color: #CCC;
+    .footer-logo{
+      margin-bottom: 15px;
+    }
+    .footer-title{
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      &:after{
+        content: '';
+        display: block;
+        border: 2px solid #cccccc;
+        width: 75px;
+        margin-top: 10px;
+      }
+    }
+    .footer-tags{
+      margin: 0;
+      padding: 0;
+      li{
+        display: block;
+        float: left;
+        margin: 0 8px 8px 0;
+        a{
+          border: 1px solid #555;
+          float: left;
+          font-size: 12px;
+          height: 33px;
+          line-height: 100%;
+          padding: 10px 15px 0;
+          text-decoration: none;
+          @include transition(all 0.5s ease);
+          &:hover{
+            color: #cccccc;
+          }
+        }
+      }
+    }
+    .footer-photos{
+      margin: 0;
+      padding: 0;
+      li{
+        display: block;
+        float: left;
+        padding: 0 10px 10px 0;
+        width: 33%;
+        a{
+          background-color: #BBB;
+          float: left;
+          width: 100%;
+          position: relative;
+          &:before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+          }
+          img{
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .media{
+      .media-left{
+        img{
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+  .footer-link{
+    background-color: $color-footer-link;
+    padding: 25px;
+    .footer-copyright{
+      color: #FFFFFF;
+      margin-top: 3px;
+      a{
+        color: #ffffff;
+      }
+    }
+    .footer-social{
+      margin: 0;
+      padding: 0;
+      li{
+        display: inline-block;
+        a{
+          padding: 10px;
+          &:hover{
+            i{
+              color: #ffffff;
+            }
+          }
+          i{
+            font-size: 20px;
+            color: #cccccc;
+            @include transition(all 0.5s ease);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  #footer{
+    .footer-menu{
+      .footer-title {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px){
+  #footer{
+    .footer-menu{
+      .footer-photos {
+        li{
+          width: 15%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #footer{
+    .footer-link{
+      .footer-copyright{
+        margin-bottom: 20px;
+      }
+      .footer-social{
+        float: left !important;
+      }
+    }
+  }
+}

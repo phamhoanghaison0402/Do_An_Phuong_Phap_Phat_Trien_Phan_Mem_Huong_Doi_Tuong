@@ -1,0 +1,167 @@
+// ===========================================================================
+// TABLE OF CONTENT
+// ===========================================================================
+// 01. FONT STYLE
+// 02. BASED COLOR (10 COLORS)
+// 03. VARIANT BASED COLOR (29 COLORS)
+// 04. SOCIAL COLOR
+// 05. SECOND BASED COLOR
+// 06. CHOOSE COLOR FOR THEME
+// 07. HOVER COLOR
+// 08. BORDER COLOR
+// 09. LAYOUT COLOR
+// ===========================================================================
+
+// FONT STYLE --------------------------------------
+$font-family-open-sans    : "Open Sans",sans-serif;
+$font-family-oswald       : "Oswald",sans-serif;
+$font-family-base         : $font-family-open-sans;
+
+// CHOOSE COLOR FOR THEME --------------------------------------
+$color-theme-html         : #81B71A; // theme color for HTML version
+$color-theme-angular      : #A90329; // theme color for AngularJS version
+$color-theme-laravel      : #F4645F; // theme color for Laravel version
+$color-theme-ajax         : #6880B0; // theme color for AJAX version
+$color-theme-php          : #5a67a5; // theme color for PHP version
+$color-theme-codeigniter  : #DD4814; // theme color for Codeigniter version
+$color-theme-material     : #2196F3; // theme color for Material design version
+
+// SET THEME
+$color-theme              : $color-theme-html;
+
+// BASED COLOR (10 COLORS) --------------------------------------
+$gray                     : #EEEEEE;
+$cyan                     : #37BC9B;
+$green                    : #8CC152;
+$blue                     : #00B1E1;
+$red                      : #E9573F;
+$yellow                   : #F6BB42;
+$purple                   : #906094;
+$brown                    : #D39174;
+$white                    : #FFFFFF;
+$black                    : #2A2A2A;
+
+// ADDITIONAL COLOR (19 COLORS) --------------------------------------
+$green-army               : #9FB478;
+$blue-sea                 : #63D3E9;
+$blue-gray                : #5577B4;
+$purple-gray              : #AF86B9;
+$purple-wine              : #CC6788;
+$alizarin-crimson         : #F06F6F;
+$black-and-white          : #979797;
+$amazon                   : #8BC4B9;
+$amber                    : #B0B069;
+$android-green            : #A9C784;
+$antique-brass            : #B3998A;
+$antique-bronze           : #8D8D6E;
+$artichoke                : #B0B69D;
+$atomic-tangerine         : #F19B69;
+$bazaar                   : #98777B;
+$bistre-brown             : #C3A961;
+$bittersweet              : #D6725E;
+$blueberry                : #7789D1;
+$bud-green                : #6FA362;
+
+// SOCIAL COLOR (29 COLORS) --------------------------------------
+$social-adobe             : #ff0000;
+$social-bitbucket         : #205081;
+$social-behance           : #053eff;
+$social-delicious         : #205cc0;
+$social-dribbble          : #ea4c89;
+$social-facebook          : #3b5998;
+$social-flickr            : #ff0084;
+$social-forrst            : #5b9a68;
+$social-foursquare        : #25a0ca;
+$social-googleplus        : #db4a39;
+$social-instagram         : #3f729b;
+$social-kippt             : #e03500;
+$social-linkedin          : #0e76a8;
+$social-linkility         : #144966;
+$social-path              : #e41f11;
+$social-pinterest         : #c8232c;
+$social-pocket            : #ee4056;
+$social-rdio              : #008fd5;
+$social-rss               : #ee802f;
+$social-skype             : #00aff0;
+$social-soundcloud        : #ff7700;
+$social-spotify           : #81b71a;
+$social-tumblr            : #34526f;
+$social-twitter           : #00a0d1;
+$social-vimeo             : #86c9ef;
+$social-wordpress         : #21759b;
+$social-yahoo             : #720e9e;
+$social-youtube           : #c4302b;
+$social-github            : #EEEEEE;
+
+// SECOND BASED COLOR --------------------------------------
+$color-default            : $gray;
+$color-primary            : $blue;
+$color-success            : $green;
+$color-info               : $blue-sea;
+$color-danger             : $red;
+$color-warning            : $yellow;
+$color-lilac              : $purple;
+$color-teal               : $cyan;
+$color-inverse            : $black;
+
+// HOVER COLOR --------------------------------------
+$hover-color-default      : $color-default;
+$hover-color-primary      : lighten($color-primary, 10%);
+$hover-color-success      : lighten($color-success, 10%);
+$hover-color-info         : lighten($color-info, 10%);
+$hover-color-danger       : lighten($color-danger, 10%);
+$hover-color-warning      : lighten($color-warning, 10%);
+
+// BORDER COLOR --------------------------------------
+$border-color             : #DDD;
+
+// Z-INDEX --------------------------------------
+$top-zindex               : 1000;
+$top-super-zindex         : 99999;
+
+// LAYOUT BODY ---------------------------------------
+$body-bg                  : #E9EAED; // body,html background
+$body-fg                  : #636E7B; // body,html foreground
+
+// LAYOUT HEADER ---------------------------------------
+$header-zindex            : 300;
+$navbar-bg                : $white; // navbar background default
+$navbar-height            : 50px;
+$navbar-dark              : #2A2A2A; // contextual classes navbar theme dark
+$navbar-primary           : $color-primary; // contextual classes navbar theme primary
+$navbar-success           : $color-success; // contextual classes navbar theme success
+$navbar-info              : $color-info; // contextual classes navbar theme info
+$navbar-warning           : $color-warning; // contextual classes navbar theme warning
+$navbar-danger            : $color-danger; // contextual classes navbar theme danger
+
+// LAYOUT PAGE CONTENT ---------------------------------------
+$pagecontent-zindex       : 100;
+$page-content-bg          : #F3F3F4;
+
+// LAYOUT SIDEBAR ---------------------------------------
+$sidebar-zindex           : 200;
+$sidebar-bg               : #2A2A2A; // sidebar global color background
+$sidebar-color            : #777; // sidebar color font, icon
+$sidebar-left-bg          : $sidebar-bg; // sidebar left background
+$sidebar-right-bg         : $sidebar-bg; // sidebar right background
+$sidebar-active-level1    : lighten($sidebar-left-bg,7%); // sidebar active background with 7% mixin color dark from sidebar background
+$sidebar-active-level2    : darken($sidebar-color,80%);; // sidebar active background with 80% mixin color dark from sidebar background
+$sidebar-category-bg      : lighten($sidebar-left-bg,3%); // #323232 (sidebar category background with 3% mixin color from sidebar background)
+$sidebar-line             : lighten($sidebar-left-bg,5%); // #373737 (line customize on menu sidebar with 5% mixin color from sidebar background)
+$sidebar-circle           : lighten($sidebar-left-bg,5%); // #373737 (circle customize on menu sidebar with 5% mixin color from sidebar background)
+$sidebar-hover            : darken($sidebar-color,80%); // hover color sidebar with 80% mixin color dark from sidebar color
+$sidebar-border           : rgba(255, 255, 255, 0.05); // border color sidebar
+$sidebar-width            : 220px; // sidebar width default
+$sidebar-width-minimize   : 75px;
+$sidebar-light            : lighten($page-content-bg,5%); // contextual classes sidebar theme light
+$sidebar-primary          : $color-primary; // contextual classes sidebar theme primary
+$sidebar-success          : $color-success; // contextual classes sidebar theme success
+$sidebar-info             : $color-info; // contextual classes sidebar theme info
+$sidebar-warning          : $color-warning; // contextual classes sidebar theme warning
+$sidebar-danger           : $color-danger; // contextual classes sidebar theme danger
+
+// MISC --------------------------------------
+$rounded                  : 3px;
+$circle                   : 50%;
+$shadow                   : 0px 1px 1px rgba(0, 0, 0, 0.05);
+

@@ -1,0 +1,74 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../global/sass/core/variable";
+@import "../../global/sass/core/mixins";
+@import "../../global/sass/core/functions";
+
+/* ========================================================================
+ * RESET
+ * ======================================================================== */
+body, html{
+  background-color: $body-bg;
+  font-family: $font-family-base;
+  color: $body-fg;
+  -webkit-font-smoothing: antialiased;
+  direction: ltr;
+  line-height: 21px;
+  font-size: 13px;
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+}
+a,button{
+  outline: none !important;
+}
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+select{
+  border: 1px solid $border-color;
+  @include box-shadow(none !important);
+  color: darken($color-default,30%) !important;
+  font-size: 13px !important;
+  @include border-radius(0px);
+  &:focus{
+    box-shadow: none !important;
+  }
+}
+input[type=file]{
+  border: none !important;
+}
+input[type=checkbox]:disabled + label, input[type=radio]:disabled + label{
+  color: #999;
+  cursor: not-allowed;
+}
+label{
+  font-weight: normal;
+}
+code{
+  background: transparent;
+}
+pre{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+svg{
+  width:100%;
+}
+
+
+

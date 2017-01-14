@@ -1,0 +1,203 @@
+/* ========================================================================
+ * DATATABLE
+ * ======================================================================= */
+.table-default{
+  &.table.dataTable thead .sorting, &.table.dataTable thead .sorting_asc, &.table.dataTable thead .sorting_desc, &.table.dataTable thead .sorting_asc_disabled, &.table.dataTable thead .sorting_desc_disabled {
+    background: #EEE !important;
+  }
+}
+table.dataTable{
+  tbody{
+    tr{
+      td{
+        &.sorting_1{
+          background: @color-default;
+          border-bottom: 1px solid @border-color;
+        }
+      }
+    }
+  }
+}
+
+table.has-columns-hidden{
+  > tbody{
+    > tr{
+      > td{
+        > span{
+          &.responsiveExpander{
+            vertical-align: middle;
+            &:before{
+              font-family: "fontawesome";
+              content: "\f0fe";
+              margin-right: 10px;
+              cursor: pointer;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table.has-columns-hidden{
+  > tbody{
+    > tr.detail-show{
+      > td{
+        span{
+          &.responsiveExpander{
+            vertical-align: middle;
+            &:before{
+              font-family: "fontawesome";
+              content: "\f146";
+              margin-right: 10px;
+              cursor: pointer;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+div.dataTables_filter{
+  input{
+    margin-left: 10px;
+  }
+}
+
+div.dataTables_length{
+  select{
+    margin-right: 10px;
+  }
+}
+
+.dataTable{
+  thead{
+    tr{
+      th{
+        &:first-child{
+          min-width: 150px;
+        }
+      }
+    }
+  }
+}
+
+table.dataTable th.dataTables_empty, td.dataTables_empty{
+  padding: 30px !important;
+  text-align: center;
+  &:before{
+    font-family: "fontawesome";
+    content: "\f119";
+    display: block;
+    font-size: 110px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 768px){
+
+  div.dataTables_length{
+    label{
+      width: 93%;
+    }
+    select{
+      display: inline-block;
+    }
+  }
+
+  div.dataTables_filter{
+    label {
+      line-height: 30px;
+    }
+    input{
+      display: inline-block;
+      float: right;
+      width: 13em !important;
+      margin-right: 0px;
+    }
+  }
+
+  div.dataTables_info{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  div.dataTables_paginate{
+    float: none !important;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  table.dataTable{
+    thead{
+      tr{
+        th{
+          &:first-child{
+            .border-radius(3px 3px 0px 0px) !important;
+          }
+        }
+      }
+    }
+    tfoot{
+      tr{
+        th{
+          &:first-child{
+            .border-radius(0px 0px 3px 3px) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .dataTables_wrapper{
+    .col-xs-6{
+      width: 100%;
+    }
+  }
+
+  div.dataTables_length{
+    label{
+      display: none;
+    }
+  }
+
+}
+
+@media (max-width: 360px){
+
+  .dataTables_paginate{
+    .pagination{
+      .previous{
+        display: none;
+      }
+      > li{
+        &:nth-child(2){
+          a{
+            .border-radius(3px 0px 0px 3px);
+          }
+        }
+      }
+    }
+  }
+
+  div.dataTables_filter{
+    input{
+      width: 19em;
+    }
+  }
+
+}
+
+@media (max-width: 320px){
+  div.dataTables_filter{
+    input {
+      width: 16em !important;
+    }
+  }
+}

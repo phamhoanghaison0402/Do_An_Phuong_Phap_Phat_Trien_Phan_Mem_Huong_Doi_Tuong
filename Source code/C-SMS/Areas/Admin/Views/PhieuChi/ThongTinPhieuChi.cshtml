@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuChiViewModel>
+@using Common.Ultil
+
+@foreach (var a in ViewBag.phieuChi)
+{
+    FormatNumber Number = new FormatNumber();
+    <div class="form-group">
+        <label class="control-label">Số phiếu chi</label>
+        <input type="text" value="@a.soPhieuChi" class="form-control rounded" disabled="disabled" />
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Ngày chi</label>
+        <input type="text" value="@a.ngayChi.ToString("dd/MM/yyyy")" class="form-control rounded" disabled="disabled" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Nhân viên</label>
+        <input type="text" value="@a.tenNhanVien" class="form-control rounded" disabled="disabled" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Số phiếu nhập</label>
+        <input type="text" value="@a.maPhieuNhap" class="form-control rounded" disabled="disabled" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Tổng tiền (VNĐ)</label>
+        <input type="text" name="phantramloinhuan" value="@Number.FormatNumbers(@a.tongTienChi.ToString())" class="form-control rounded" disabled="disabled" />
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Ghi chú</label>
+        <input type="text" value="@a.ghiChu" class="form-control rounded" disabled="disabled" />
+    </div>
+}

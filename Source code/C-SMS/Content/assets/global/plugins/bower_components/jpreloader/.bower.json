@@ -1,0 +1,14 @@
+{
+  "name": "jpreloader",
+  "homepage": "https://github.com/kennyooi/jpreloader",
+  "_release": "68b5d78728",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "68b5d7872862aa1a10568cbe47c095b51ca0f40b"
+  },
+  "_source": "git://github.com/kennyooi/jpreloader.git",
+  "_target": "*",
+  "_originalSource": "jpreloader",
+  "_direct": true
+}

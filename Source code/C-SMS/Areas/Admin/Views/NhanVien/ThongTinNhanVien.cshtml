@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Common.ViewModels.NhanVienViewModel>
+@using Common.ViewModels
+
+@foreach (var item in Model)
+{
+    <div class="form-group">
+        <label>Mã nhân viên</label>
+        <input type="text" name="manhanvien" value="@item.maNhanVien" class="form-control rounded" disabled="disabled" />
+    </div>
+
+
+    <div class="form-group">
+        <label>Tên nhân viên</label>
+        <input type="text" name="tennhanvien" value="@item.tenNhanVien" class="form-control rounded" required="required" />
+    </div>
+
+    <div class="form-group">
+        <label >Tên đăng nhập </label>
+        <input type="text" id="username" name="username" value="@item.userName" class="form-control rounded" required="required" maxlength="100" />
+        <h3 style="margin-top:0%" hidden class="error  notifyinputUserName messageErrorinputUserName">User name đã tồn tại!</h3>
+        <input type="hidden" id="checkusername" name="checkusername" class="form-control rounded" />
+    </div>
+
+    <div class="form-group">
+        <label >Số điện thoại  </label>
+        <input type="text" id="sodienthoai" name="sodienthoai" value="@item.soDienThoai" class="form-control rounded" required="required" maxlength="15" />
+        <h3 style="margin-top:0%" hidden class="error  notifyinputPhone messageErrorinputPhone">Số điện thoại đã tồn tại!</h3>
+        <input type="hidden" id="checkphone" name="checkphone" class="form-control rounded" />
+    </div>
+
+    <div class="form-group">
+        <label >Email   </label>
+        <input type="text" id="email" name="email" value="@item.email" class="form-control rounded" required maxlength="30" />
+        <h3 style="margin-top:0%" hidden class="error  notifyinputEmail messageErrorinputEmail">Email đã tồn tại!</h3>
+        <input type="hidden" id="checkemail" name="checkemail" class="form-control rounded" />
+    </div>
+    <div class="form-group">
+        <label >Địa chỉ   </label>
+        <input type="text" name="diachi" value="@item.diaChi" class="form-control rounded" required maxlength="30" />
+    </div>
+    <div class="form-group">
+        <label >Số CMND   </label>
+        <input type="text" id="cmnd" name="cmnd" value="@item.CMND" class="form-control rounded" required maxlength="30" />
+        <h3 style="margin-top:0%" hidden class="error  notifyinputCMND messageErrorinputCMND">CMND đã tồn tại!</h3>
+        <input type="hidden" id="checkcmnd" name="checkcmnd" class="form-control rounded" />
+    </div>
+
+    if (@item.maNhanVien == 1)
+    {
+        <div class="form-group">
+            <label>Chức vụ </label>
+            @Html.DropDownList("machucvu", new SelectList(@ViewBag.Admin, "Value", "Text"), new { @class = "form-control rounded", @disabled = "disabled" })
+        </div>
+
+        <div class="form-group">
+            <label>Trạng thái</label>
+            @Html.DropDownList("trangthai", new SelectList(@ViewBag.data, "Value", "Text"), new { @class = "form-control rounded", @disabled = "disabled" })
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label>Chức vụ </label>
+            @Html.DropDownList("machucvu", new SelectList(ViewBag.chucvu, "Value", "Text"), new { @class = "form-control rounded" })
+        </div>
+
+        <div class="form-group">
+            <label>Trạng thái</label>
+            @Html.DropDownList("trangthai", new SelectList(@ViewBag.data, "Value", "Text"), new { @class = "form-control rounded" })
+        </div>
+    }
+
+    <input type="hidden" id="checkImage" name="checkImage" value="@item.avatar" class="form-control rounded" />
+    <div class="form-group">
+        <label >Hình đại diện</label>
+        <p id="error1" style="display:none; color:#FF0000;">
+            Định dạng ảnh không hợp lệ! Định dạng hình ảnh phải là: JPG, JPEG, PNG.
+        </p>
+        <p id="error2" style="display:none; color:#FF0000;">
+            Kích thước file hình phải nhỏ hơn 1MB.
+        </p>
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-preview thumbnail" name="avatar"  data-trigger="fileinput" style="width: 200px; height: 150px;">
+                <img src="~/Content/image/user/@item.avatar" style="width: 200px; height: 150px;">
+            </div>
+            <div>
+                <span class="btn btn-info btn-file">
+                    <span class="fileinput-new">Chọn hình ảnh</span><span class="fileinput-exists">Thay đổi</span>
+                    <input type="file" name="avatar" id="fileUpload" accept="image/*">
+                   
+                </span>
+                <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Xóa</a>
+            </div>
+        </div>
+    </div>
+}

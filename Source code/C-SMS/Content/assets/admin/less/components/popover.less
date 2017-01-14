@@ -1,0 +1,42 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * POPOVER
+ * ======================================================================== */
+.popover{
+  .border-radius(0);
+  &.top {
+    > .arrow {
+      &:after{
+        border-top-color: #FFFFFF;
+      }
+    }
+  }
+  &.bottom {
+    > .arrow {
+      &:after{
+        border-bottom-color: #F7F7F7;
+      }
+    }
+  }
+  &.left {
+    > .arrow {
+      &:after{
+        border-left-color: #F7F7F7;
+      }
+    }
+  }
+  &.right {
+    > .arrow {
+      &:after{
+        border-right-color: #F7F7F7;
+      }
+    }
+  }
+  .popover-title{
+    .border-radius(0);
+  }
+}

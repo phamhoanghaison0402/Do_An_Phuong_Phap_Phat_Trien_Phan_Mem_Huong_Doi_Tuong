@@ -1,0 +1,61 @@
+/* ========================================================================
+ * TYPOGRAPHY
+ * ======================================================================== */
+.text-thin {
+  font-weight: 300 !important;
+}
+.text-xlarge {
+  font-size: 50px !important;
+  line-height: 50px !important;
+}
+.text-xs {
+  font-size: 10px !important;
+}
+.text-sm {
+  font-size: 12px !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-strong {
+  font-weight: bold !important;
+}
+.text-white {
+  color: white !important;
+}
+.text-block {
+  display: block !important;
+}
+.text-default {
+  color: #eeeeee !important;
+}
+.text-primary {
+  color: #00b1e1 !important;
+}
+.text-success {
+  color: #8cc152 !important;
+}
+.text-info {
+  color: #63d3e9 !important;
+}
+.text-warning {
+  color: #f6bb42 !important;
+}
+.text-danger {
+  color: #e9573f !important;
+}
+.text-lilac {
+  color: #906094 !important;
+}
+.text-inverse {
+  color: #2a2a2a !important;
+}
+.text-teal {
+  color: #37bc9b !important;
+}

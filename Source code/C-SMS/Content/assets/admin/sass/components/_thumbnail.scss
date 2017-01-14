@@ -1,0 +1,37 @@
+/* ========================================================================
+ * THUMBNAIL
+ * ======================================================================== */
+.thumbnail{
+  h3{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  .caption{
+    p{
+      color: darken($gray,40%);
+    }
+  }
+  .thumbnail-action{
+    background: $gray;
+    padding: 10px;
+  }
+  &.thumbnail-flat{
+    padding: 0;
+    border: none;
+    .subtitle{
+      color: #959595;
+    }
+    p{
+      color: darken($gray,40%);
+    }
+    .desc{
+      margin-top: 15px;
+    }
+    .caption{
+      border-left: 1px solid #DDD;
+      border-right: 1px solid #DDD;
+      border-bottom: 1px solid #DDD;
+    }
+  }
+}

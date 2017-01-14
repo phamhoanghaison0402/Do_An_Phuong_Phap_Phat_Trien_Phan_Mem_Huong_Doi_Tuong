@@ -1,0 +1,46 @@
+/* ========================================================================
+ * TYPOGRAPHY
+ * ======================================================================== */
+.text-thin{
+  font-weight: 300 !important;
+}
+.text-xlarge{
+  font-size: 50px !important;
+  line-height: 50px !important;
+}
+.text-xs{
+  font-size: 10px !important;
+}
+.text-sm{
+  font-size: 12px !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-capitalize{
+  text-transform: capitalize !important;
+}
+.text-strong{
+  font-weight: bold !important;
+}
+.text-white{
+  color: white !important;
+}
+.text-block{
+  display: block !important;
+}
+
+@include text-color(default,$color-default);
+@include text-color(primary,$color-primary);
+@include text-color(success,$color-success);
+@include text-color(info,$color-info);
+@include text-color(warning,$color-warning);
+@include text-color(danger,$color-danger);
+@include text-color(lilac,$color-lilac);
+@include text-color(inverse,$color-inverse);
+.text-teal{
+  color: $color-teal !important;
+}

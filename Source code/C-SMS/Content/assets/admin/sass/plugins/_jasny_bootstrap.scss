@@ -1,0 +1,27 @@
+/* ========================================================================
+ * JASNY BOOTSTRAP
+ * ======================================================================== */
+.fileinput-new{
+  .form-control{
+    border-right: none;
+  }
+  .btn-file{
+    @include border-radius(0px);
+  }
+  &.input-group {
+    .btn-file{
+      @include border-radius(0px);
+    }
+  }
+  .input-group {
+    .btn-file{
+      @include border-radius(0px);
+    }
+  }
+}
+
+.close {
+  &.fileinput-exists{
+    color: $color-danger;
+  }
+}

@@ -1,0 +1,1383 @@
+// ===========================================================================
+// TABLE OF CONTENTS
+// ===========================================================================
+// FUNCTION NAVBAR COLOR
+// FUNCTION SIDEBAR COLOR
+// ---------------------------------------------------------------------------
+// FUNCTION ALERT COLOR
+// FUNCTION BADGE COLOR
+// FUNCTION BUTTON FLAT COLOR
+// FUNCTION BUTTON SOCIAL COLOR
+// FUNCTION CHECKBOX COLOR
+// FUNCTION FORM GROUP COLOR
+// FUNCTION RADIO COLOR
+// FUNCTION BORDER COLOR
+// FUNCTION BORDER IMG COLOR
+// FUNCTION LABEL COLOR
+// ---------------------------------------------------------------------------
+
+// FUNCTION BACKGROUND GRADIENT
+// FUNCTION FOREGROUND COLOR
+// FUNCTION BACKGROUND COLOR
+// ---------------------------------------------------------------------------
+
+// FUNCTION AUTO NUMBER DIMENSION PADDING
+// FUNCTION AUTO NUMBER DIMENSION PADDING TOP
+// FUNCTION AUTO NUMBER DIMENSION MARGIN
+// FUNCTION AUTO NUMBER DIMENSION MARGIN TOP
+// FUNCTION AUTO NUMBER DIMENSION MARGIN RIGHT
+// FUNCTION AUTO NUMBER DIMENSION TOP ABSOLUTE
+// FUNCTION AUTO NUMBER DIMENSION RIGHT ABSOLUTE
+// FUNCTION AUTO NUMBER DIMENSION LINE HEIGHT
+// ---------------------------------------------------------------------------
+
+// FUNCTION EVENT COLOR
+// FUNCTION BOOTSTRAP SWITCH COLOR
+// FUNCTION SLIDER COLOR
+// FUNCTION MODAL COLOR
+// FUNCTION PANEL COLOR
+// FUNCTION PROGRESS BAR COLOR
+// FUNCTION RATING COLOR
+// FUNCTION RIBBON COLOR
+// FUNCTION TABLE COLOR
+// FUNCTION TEXT COLOR
+// FUNCTION RECENT ACTIVITY
+// BORDER TABS COLOR
+// ===========================================================================
+
+// FUNCTION NAVBAR COLOR ---------------------------------------------------
+@mixin navbar-color($selector,$color,$background){
+  .navbar-#{$selector}{
+    background-color: $background;
+    color: $color;
+    &:before{
+      border-bottom: none !important;
+    }
+    .sidebar-minimize{
+      i{
+        color: $white;
+      }
+    }
+    .navbar-left{
+      .navbar-minimize{
+        border-right: none;
+        a{
+          &:hover, &:focus, &:active{
+            background-color: lighten($background,15%);
+            i{
+              color: $white;
+            }
+          }
+          i{
+            color: $color;
+          }
+        }
+      }
+      .navbar-search{
+        .navbar-form{
+          input{
+            background-color: lighten($background,15%) !important;
+            color: $color !important;
+            &::-webkit-input-placeholder  { color: $color; }
+            &:-moz-placeholder           { color: $color; }
+            &::-moz-placeholder           { color: $color; }
+            &:-ms-input-placeholder      { color: $color; }
+          }
+          button[type=submit]{
+            &:before{
+              color: $color;
+            }
+          }
+        }
+      }
+    }
+    .navbar-right{
+      .dropdown{
+        > a{
+          &:hover, &:focus, &:active, &:visited{
+            background-color: lighten($background,15%) !important;
+          }
+          > i{
+            color: $color;
+          }
+        }
+      }
+      .navbar-setting{
+        border-left: none;
+        a{
+          &:hover, &:focus, &:active, &:visited{
+            background-color: lighten($background,15%) !important;
+          }
+          i{
+            color: $color;
+          }
+        }
+      }
+      .navbar-profile{
+        > a{
+          .meta{
+            .text, .caret{
+              color: $color;
+            }
+          }
+        }
+      }
+      .navbar-chat{
+        border-left: none;
+        a{
+          i{
+            color: $color;
+          }
+        }
+      }
+    }
+    .navbar-form{
+      input{
+        border: 1px solid $background !important;
+        &:focus, &:active{
+          border: 1px solid $background !important;
+        }
+      }
+      .form-group{
+        .btn{
+          background-color: $background;
+          border: 1px solid $background;
+        }
+      }
+    }
+  }
+}
+
+// FUNCTION SIDEBAR COLOR ---------------------------------------------------
+@mixin sidebar-color($selector,$color,$background){
+  .sidebar-#{$selector}{
+    background-color: darken($background,3%) !important;
+    &:after{
+      background-color: darken($background,3%) !important;
+    }
+    > .sidebar-menu{
+      > li{
+        &:hover{
+          background-color: darken($background, 5%) !important;
+          &.submenu{
+            > ul{
+              > li{
+                &:hover{
+                  a{
+                    background-color: darken($background, 8%) !important;
+                  }
+                }
+                > ul{
+                  background-color: darken($background, 3%) !important;
+                }
+              }
+            }
+          }
+        }
+        &:first-child{
+          > a{
+            > .icon{
+              &:after{
+                top: -1px;
+              }
+            }
+          }
+        }
+        &:last-child{
+          > a{
+            > .icon{
+              &:after{
+                bottom: 6px;
+              }
+            }
+          }
+        }
+        &.sidebar-category{
+          background-color: lighten($background,3%) !important;
+        }
+        > a{
+          &:hover{
+            .text, .icon > i{
+              color: $color;
+            }
+          }
+          > .icon{
+            i{
+              color: #ffffff;
+            }
+          }
+          > .count{
+            background-color: lighten($background,5%);
+            color: $color;
+          }
+          > span{
+            color: $color;
+          }
+        }
+        &.active{
+          background-color: lighten($background,5%) !important;
+          > a{
+            > .icon{
+              text-shadow: none !important;
+              i{
+                color: $color !important;
+              }
+            }
+            span{
+              color: $color;
+            }
+          }
+        }
+        > ul{
+          > li{
+            background-color: darken($background, 10%);
+            &:after{
+              background-color: lighten($background,3%) !important;
+            }
+            a{
+              color: $color;
+              &:before{
+                color: lighten($background,3%) !important;
+              }
+              &:hover{
+                &:before{
+                  color: $color !important;
+                }
+              }
+            }
+            &.active{
+              a{
+                color: $color;
+                &:before{
+                  color: lighten($background,5%);
+                }
+              }
+            }
+            ul{
+              background-color: darken($background,3%);
+            }
+          }
+        }
+      }
+      li{
+        color: $color !important;
+        &.sidebar-category{
+          background-color: lighten($background,3%) !important;
+        }
+      }
+    }
+    > .sidebar-content{
+      border-bottom: 2px solid lighten($background,5%);
+      img, .online{
+        border: 2px solid lighten($background,5%) !important;
+      }
+      .media-heading{
+        span{
+          color: $color;
+        }
+      }
+      small, .media-heading{
+        color: $color;
+      }
+      .online{
+        background-color: darken($green,10%) !important;
+      }
+    }
+    > .sidebar-footer{
+      background-color: lighten($background,3%);
+      a{
+        color: $color;
+      }
+    }
+    .nicescroll-rails{
+      div{
+        background-color: lighten($background,7%) !important;
+      }
+    }
+
+    &.sidebar-box, &.sidebar-rounded, &.sidebar-circle{
+      .sidebar-menu{
+        > li{
+          &.active{
+            > a{
+              > .icon{
+                i{
+                  background-color: lighten($background,10%) !important;
+                }
+              }
+            }
+          }
+          > a{
+            > .icon{
+              &:after{
+                border: 1px solid lighten($background,3%);
+              }
+              i{
+                border: 2px solid lighten($background,3%);
+                background-color: lighten($background,2%);
+              }
+            }
+          }
+          > ul{
+            &:after{
+              border-left: 2px solid $background !important;
+            }
+            > li{
+              &:after{
+                z-index: 1;
+                width: 8px;
+                height: 8px;
+                left: 26px;
+                top: 13px;
+                bottom: auto;
+                border-color: rgba(0, 0, 0, 0);
+                @include transition(all 0.5s ease-in-out 0s);
+                @include box-shadow(0 0 0 2px $background);
+              }
+              a{
+                &:before {
+                  content: "\2014\00a0";
+                  margin-left: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@mixin sidebar-color-default($selector,$color,$background){
+  .sidebar-#{$selector}{
+    background-color: $white !important;
+    &:after{
+      background-color: $white !important;
+    }
+    .sidebar-content{
+      border-bottom: 2px solid $border-color !important;
+      img, .online{
+        border: 2px solid $border-color !important;
+      }
+    }
+    .sidebar-menu{
+      > li{
+        &:hover{
+          background-color: darken($background, 10%) !important;
+          &.submenu{
+            > ul{
+              background-color: darken($background, 3%) !important;
+              > li{
+                &:hover{
+                  a{
+                    background-color: darken($background, 4%) !important;
+                  }
+                }
+                > ul{
+                  background-color: darken($background, 3%) !important;
+                }
+              }
+            }
+          }
+        }
+        &:first-child{
+          > a{
+            > .icon{
+              &:after{
+                top: -1px;
+              }
+            }
+          }
+        }
+        &:last-child{
+          > a{
+            > .icon{
+              &:after{
+                bottom: 6px;
+              }
+            }
+          }
+        }
+        > a{
+          &:hover{
+            .text, .icon > i{
+              color: $color;
+            }
+          }
+          > .icon{
+            i{
+              color: $sidebar-color;
+            }
+          }
+          > .count{
+            background-color: lighten($background,5%);
+            color: $color;
+          }
+          > span{
+            color: $color;
+            &.label, &.badge{
+              color: $white !important;
+            }
+          }
+        }
+        &.active{
+          background-color: darken($background,2%) !important;
+          > a{
+            > .icon{
+              text-shadow: none !important;
+              i{
+                color: $white !important;
+              }
+            }
+            span{
+              color: $color;
+            }
+          }
+        }
+        > ul{
+          background-color: $background;
+          > li{
+            &:after{
+              background-color: lighten($background,3%) !important;
+            }
+            a{
+              color: $color;
+              &:before{
+                color: $border-color !important;
+              }
+              &:hover{
+                &:before{
+                  color: $color !important;
+                }
+              }
+            }
+            &.active{
+              a{
+                color: $color;
+                &:before{
+                  color: lighten($background,5%);
+                }
+              }
+            }
+            ul{
+              background-color: darken($background,3%);
+            }
+          }
+        }
+      }
+      li{
+        color: $color !important;
+        &.sidebar-category{
+          background-color: $border-color !important;
+        }
+      }
+    }
+    > .sidebar-content{
+      border-bottom: 2px solid lighten($background,5%);
+      .media-heading{
+        span{
+          color: $color;
+        }
+      }
+      small, .media-heading{
+        color: $color;
+      }
+      .online{
+        border: 2px solid lighten($background,3%);
+        background-color: darken($green,10%) !important;
+      }
+    }
+    > .sidebar-footer{
+      background-color: lighten($background,3%);
+      a{
+        color: $color;
+      }
+    }
+    .nicescroll-rails{
+      div{
+        background-color: lighten($background,7%) !important;
+      }
+    }
+
+    &.sidebar-box, &.sidebar-rounded, &.sidebar-circle{
+      .sidebar-menu{
+        > li{
+          > a{
+            > .icon{
+              &:after{
+                border: 1px solid $border-color;
+              }
+              i{
+                border: 2px solid $border-color;
+                background-color: lighten($background,2%);
+              }
+            }
+          }
+          > ul{
+            &:after{
+              border-left: 2px solid $border-color !important;
+            }
+            > li{
+              &:after{
+                z-index: 1;
+                width: 8px;
+                height: 8px;
+                left: 26px;
+                top: 13px;
+                bottom: auto;
+                border-color: rgba(0, 0, 0, 0);
+                @include transition(all 0.5s ease-in-out 0s);
+                @include box-shadow(0 0 0 2px $border-color);
+              }
+              a{
+                &:before {
+                  content: "\2014\00a0";
+                  margin-left: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+// FUNCTION ALERT COLOR ---------------------------------------------------
+@mixin alert-color($selector,$color){
+  .alert-#{$selector}{
+    background-color: lighten($color,30%);
+    border-color: lighten($color,30%);
+    color: darken($color,20%);
+    padding: 10px;
+    .alert-icon{
+      background-color: darken($color,15%);
+    }
+    .alert-link, a{
+      color: darken($color,30%) !important;
+      font-weight: bold;
+    }
+    .notification-sender{
+      a{
+        color: darken($color,20%);
+      }
+    }
+  }
+}
+
+// FUNCTION BADGE COLOR ---------------------------------------------------
+@mixin badge-color($selector,$color){
+  .badge-#{$selector}{
+    background-color: $color;
+    &.badge-stroke{
+      background-color: transparent;
+      border: 1px solid $color;
+      color: $color;
+    }
+  }
+}
+
+// FUNCTION BUTTON FLAT COLOR ---------------------------------------------------
+@mixin button-color($selector,$color){
+  .btn-#{$selector}{
+    background-color: $color;
+    border-color: $color;
+    color: white;
+    &:hover,&:focus,&:active,&.active,&[disabled],&.disabled{
+      background-color: darken($color,5%);
+      border-color: transparent;
+      color: white;
+    }
+    &.dropdown-toggle{
+      &.btn-#{$selector}{
+        background-color: $color;
+        border-color: darken($color,5%);
+        color: white;
+      }
+    }
+    &.btn-alt{
+      background-color: darken($color,5%);
+      border: 1px solid $color;
+      &:hover{
+        background-color: darken($color,10%);
+      }
+    }
+
+    // BUTTON STROKE
+    &.btn-stroke{
+      border: 1px double $color;
+      background-color: transparent;
+      color: $color;
+      &:hover{
+        background-color: darken($color,5%);
+        border-color: transparent;
+        color: white;
+      }
+    }
+
+    // BUTTON SOLID
+    &.btn-solid{
+      border: 1px solid $color;
+    }
+
+    // BUTTON DASHED
+    &.btn-dashed{
+      border: 1px dashed $color;
+    }
+
+    // BUTTON DOTTED
+    &.btn-dotted{
+      border: 1px dotted $color;
+    }
+
+    // BUTTON DOUBLE
+    &.btn-double{
+      border: 4px double $color;
+    }
+
+    // BUTTON INSET
+    &.btn-inset{
+      border: 4px inset $color;
+    }
+
+    // BUTTON CIRCLE
+    &.btn-circle{
+      padding-left: 0;
+      padding-right: 0;
+      width: 34px;
+      @include border-radius(50% 50% 50% 50%);
+    }
+
+    // BUTTON SLIDE DOWN
+    &.btn-slidedown{
+      &:after{
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        background-color: darken($color,10%);
+        z-index: -1;
+      }
+      &:hover,&:active{
+        color: white;
+        &:after{
+          height: 100%;
+        }
+      }
+    }
+
+    // BUTTON SLIDE RIGHT
+    &.btn-slideright{
+      &:after{
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: darken($color,10%);
+        z-index: -1;
+      }
+      &:hover,&:active{
+        color: white;
+        &:after{
+          width: 100%;
+        }
+      }
+    }
+
+    // BUTTON EXPAND
+    &.btn-expand{
+      &:after{
+        width: 0;
+        height: 103%;
+        top: 50%;
+        left: 50%;
+        background-color: darken($color,10%);
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%));
+      }
+      &:hover{
+        &:after{
+          width: 90%;
+          opacity: 1;
+        }
+      }
+      &:active{
+        &:after{
+          width: 101%;
+          opacity: 1;
+        }
+      }
+    }
+
+    // BUTTON ROTATE
+    &.btn-rotate{
+      overflow: hidden;
+      &:after{
+        width: 100%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background-color: darken($color,10%);
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+      }
+      &:hover{
+        &:after{
+          height: 260%;
+          opacity: 1;
+        }
+      }
+      &:active{
+        &:after{
+          height: 400%;
+          opacity: 1;
+        }
+      }
+    }
+
+    // BUTTON OPEN
+    &.btn-open{
+      overflow: hidden;
+      &:after{
+        width: 101%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background-color: darken($color,10%);
+        opacity: 0;
+        @include transform(translateX(-50%) translateY(-50%));
+      }
+      &:hover{
+        &:after{
+          height: 75%;
+          opacity: 1;
+        }
+      }
+      &:active{
+        &:after{
+          height: 130%;
+          opacity: 1;
+        }
+      }
+    }
+
+    // BUTTON PUSH
+    &.btn-push{
+      background: $color;
+      box-shadow: 0 6px darken($color,10%);
+      @include transition(none);
+      &:hover{
+        box-shadow: 0 4px darken($color,10%);
+        top: 2px;
+      }
+      &:active{
+        box-shadow: 0 0 darken($color,10%);
+        top: 6px;
+      }
+    }
+
+    // BUTTON PUSH RIGHT
+    &.btn-pushright{
+      background: $color;
+      box-shadow: 6px 0 darken($color,10%);
+      @include transition(none);
+      &:hover{
+        box-shadow: 4px 0 darken($color,10%);
+        left: 2px;
+      }
+      &:active{
+        box-shadow: 0 0 darken($color,10%);
+        left: 6px;
+      }
+    }
+
+  }
+}
+
+// FUNCTION BUTTON SOCIAL COLOR ---------------------------------------------------
+@mixin social-button-color($selector,$color){
+  .btn-#{$selector}{
+    color: #FFF;
+    background-color: $color;
+    border-color: $color;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+    &:hover,&:focus,&:active{
+      color: #FFF !important;
+      background-color: darken($color,5%);
+    }
+
+    // BUTTON STROKE SOCIAL
+    &.btn-stroke{
+      border: 1px double $color;
+      background-color: transparent;
+      color: $color;
+      &:hover{
+        color: #FFF !important;
+        background-color: darken($color,5%);
+      }
+    }
+
+    // BUTTON SOLID SOCIAL
+    &.btn-solid{
+      border: 1px solid $color;
+    }
+
+    // BUTTON DASHED SOCIAL
+    &.btn-dashed{
+      border: 1px dashed $color;
+    }
+
+    // BUTTON DOTTED SOCIAL
+    &.btn-dotted{
+      border: 1px dotted $color;
+    }
+
+    // BUTTON DOUBLE SOCIAL
+    &.btn-double{
+      border: 4px double $color;
+    }
+
+    // BUTTON INSET SOCIAL
+    &.btn-inset{
+      border: 4px inset $color;
+    }
+
+    // BUTTON CIRCLE SOCIAL
+    &.btn-circle{
+      padding-left: 0;
+      padding-right: 0;
+      width: 34px;
+      @include border-radius(50% 50% 50% 50%);
+    }
+  }
+}
+
+// FUNCTION CHECKBOX COLOR ---------------------------------------------------
+@mixin ckbox-color($selector,$color){
+  .ckbox-#{$selector}{
+    input[type=checkbox]{
+      &:checked + label::after{
+        border-color: $color;
+        background-color: $color;
+      }
+    }
+    input[type=checkbox][disabled]{
+      &:checked + label::after{
+        border-color: $color;
+        opacity: .5;
+      }
+    }
+  }
+}
+
+// FUNCTION FORM GROUP COLOR ---------------------------------------------------
+@mixin has-color($selector,$color){
+  &.has-#{$selector}{
+    .control-label{
+      color: $color;
+    }
+    .form-control{
+      border-color: $color;
+      &:focus{
+        border-color: darken($color,10%) !important;
+      }
+    }
+    .form-control-feedback{
+      color: $color;
+    }
+    .help-inline{
+      color: $color;
+    }
+  }
+}
+
+// FUNCTION RADIO COLOR ---------------------------------------------------
+@mixin rdio-color($selector,$color){
+  .rdio-#{$selector}{
+    input[type=radio]{
+      &:checked + label::after{
+        border-color: $color;
+        background-color: $color;
+      }
+    }
+    input[type=radio][disabled]{
+      &:checked + label::after{
+        border-color: $color;
+        opacity: .5;
+      }
+    }
+  }
+}
+
+// FUNCTION BORDER COLOR ---------------------------------------------------
+@mixin border-top-color($selector,$color){
+  .border-top-#{$selector}{
+    border-top: 3px solid $color;
+  }
+}
+
+// FUNCTION BORDER IMG COLOR ---------------------------------------------------
+@mixin img-bordered-color($selector,$color){
+  .img-bordered-#{$selector}{
+    border: 2px solid $color;
+  }
+}
+
+// FUNCTION LABEL COLOR ---------------------------------------------------
+@mixin label-color($selector,$color){
+  .label-#{$selector}{
+    background-color: $color;
+    &.label-stroke{
+      background-color: transparent;
+      border: 1px solid $color;
+      color: $color;
+    }
+  }
+}
+
+// FUNCTION FOREGROUND COLOR ---------------------------------------------------
+@mixin fg-color($selector,$color){
+  .fg-#{$selector}{
+    color: $color !important;
+  }
+}
+
+// FUNCTION BACKGROUND COLOR ---------------------------------------------------
+@mixin bg-color($selector,$color){
+  .bg-#{$selector}{
+    background-color: $color !important;
+    border: 1px solid $color;
+    color: white;
+    a,i,span,small,p{
+      color: white;
+    }
+    // COLOR FOR LABEL FLOW CHART
+    .flot-tick-label.tickLabel{
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+    // COLOR MORRIS CHART
+    .morris-hover-row-label{
+      background-color: darken($color,10%);
+    }
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION PADDING ---------------------------------------------------
+@mixin p-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    padding: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION PADDING LEFT ---------------------------------------------------
+@mixin pl-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    padding-left: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION PADDING TOP ---------------------------------------------------
+@mixin pt-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    padding-top: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION MARGIN ---------------------------------------------------
+@mixin m-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    margin: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION MARGIN TOP ---------------------------------------------------
+@mixin mt-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    margin-top: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION MARGIN RIGHT ---------------------------------------------------
+@mixin mr-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    margin-right: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION MARGIN LEFT ---------------------------------------------------
+@mixin ml-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    margin-left: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION MARGIN BOTTOM ---------------------------------------------------
+@mixin mb-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    margin-bottom: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION TOP ABSOLUTE ---------------------------------------------------
+@mixin top-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    top: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION RIGHT ABSOLUTE ---------------------------------------------------
+@mixin right-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    right: $value-length px !important;
+  }
+}
+
+// FUNCTION AUTO NUMBER DIMENSION LINE HEIGHT ---------------------------------------------------
+@mixin line-height-value($name,$value-length){
+  .#{$name}-#{$value-length}{
+    line-height: $value-length px !important;
+  }
+}
+
+// FUNCTION EVENT COLOR ---------------------------------------------------
+@mixin event-color($selector,$color){
+  .event-#{$selector}{
+    background-color: $color !important;
+  }
+}
+@mixin dh-event-color($selector,$color){
+  .dh-event-#{$selector}{
+    background-color: $color !important;
+    border: none;
+    &:hover{
+      background-color: darken($color,5%);
+    }
+    .cal-hours{
+      color: darken($color, 35%);
+    }
+    a{
+      color: white;
+    }
+  }
+}
+
+// FUNCTION BOOTSTRAP SWITCH COLOR ---------------------------------------------------
+@mixin bootstrap-switch-color($selector,$color){
+  .bootstrap-switch-#{$selector}{
+    background: $color;
+    color: white;
+    border: 1px solid $color;
+  }
+  .bootstrap-switch-#{$selector} + .bootstrap-switch-label{
+    border: 1px solid $color;
+  }
+  .bootstrap-switch-#{$selector} + .bootstrap-switch-label + .bootstrap-switch-handle-off{
+    border: 1px solid $color;
+    border-left: none;
+  }
+}
+
+// FUNCTION SLIDER COLOR ---------------------------------------------------
+@mixin slider-color($selector,$color){
+  .slider-#{$selector}{
+
+    .irs-diapason {
+      background-color: lighten($color,5%) !important;
+    }
+
+    .irs-slider {
+      background-color: $color !important;
+    }
+    #irs-active-slider, .irs-slider:hover {
+      background-color: $color !important;
+    }
+    .irs-from, .irs-to, .irs-single {
+      background-color: $color !important;
+    }
+    .irs-from:after, .irs-to:after, .irs-single:after {
+      border-top-color: $color !important;
+    }
+    .circle{
+      .irs-slider {
+        top: 21px;
+        @include resize(20px);
+        @include border-radius(50%);
+      }
+    }
+    .donut{
+      .irs-slider {
+        background: #e1e4e9 !important;
+        top: 21px;
+        @include resize(20px);
+        @include border-radius(50%);
+        border: 4px solid $color;
+        margin-left: -3px;
+      }
+    }
+  }
+}
+
+// FUNCTION MODAL COLOR ---------------------------------------------------
+@mixin modal-color($selector,$color){
+  .modal-#{$selector}{
+    .modal-header{
+      background-color: $color;
+      color: white;
+      border-bottom: 1px solid $color;
+      position: relative;
+      &:before{
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        content: "";
+        border-top: 1px solid $color;
+        border-left: 1px solid $color;
+        border-right: 1px solid $color;
+      }
+    }
+    .modal-content{
+      border: 1px solid $color;
+    }
+  }
+}
+
+// FUNCTION PANEL COLOR ---------------------------------------------------
+@mixin panel-color($selector,$color){
+  .panel-#{$selector}{
+    > .panel-heading{
+      background-color: $color;
+      border: 1px solid darken($color,1%);
+      color: white;
+      .option{
+        .btn{
+          &:hover{
+            background-color: darken($color,5%);
+            color: white;
+          }
+          i{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .panel-bg-#{$selector}{
+    .panel-body{
+      background-color: $color;
+      color: white;
+      .text-muted{
+        color: darken(white,5%);
+      }
+    }
+  }
+}
+
+// FUNCTION PROGRESS BAR COLOR ---------------------------------------------------
+@mixin progress-bar-color($selector,$color){
+  .progress-bar-#{$selector}{
+    background-color: $color;
+  }
+}
+
+// FUNCTION RATING COLOR ---------------------------------------------------
+@mixin rating-color($selector,$color){
+  .rating-#{$selector}{
+    .star{
+      &:hover{
+        &:before{
+          color: $color !important;
+        }
+      }
+      &.active{
+        &:before{
+          color: $color !important;
+        }
+        &~.star{
+          &:before{
+            color: $color !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FUNCTION RIBBON COLOR ---------------------------------------------------
+@mixin ribbon-color($selector,$color){
+  .ribbon-#{$selector}{
+    background-color: $color !important;
+    &:before, &:after{
+      border-top: 2px solid $color !important;
+    }
+    &.transparent{
+      background-color: fade($color,40%) !important;
+      &:before, &:after{
+        border-top: 2px solid fade($color,40%) !important;
+      }
+    }
+    &.ribbon-shadow{
+      @include box-shadow(0 0 3px fade($color,50%) !important);
+    }
+  }
+}
+
+// FUNCTION TABLE COLOR ---------------------------------------------------
+@mixin table-color($selector,$color){
+  .table-#{$selector}{
+    thead{
+      tr{
+        th{
+          background-color: $color !important;
+          border-color: lighten($color,5%) lighten($color,5%) darken($color,7%) !important;
+          color: #fff;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          &.sorting_1{
+            background: lighten($color,13%) !important;
+            color: white;
+            border-bottom: 1px solid lighten($color,20%) !important;
+          }
+        }
+      }
+    }
+    tfoot{
+      tr{
+        th{
+          background-color: $color !important;
+          border-color: darken($color,7%) lighten($color,5%) lighten($color,5%) !important;
+          color: #fff;
+        }
+      }
+    }
+    &.table-bordered{
+      border: 1px solid $color;
+      thead, tfoot{
+        tr{
+          th{
+            &:first-child, &:last-child{
+              @include border-radius(0px !important);
+            }
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            &.sorting_1{
+              border-right: 1px solid lighten($color,20%) !important;
+            }
+          }
+        }
+      }
+    }
+
+    // ICON PLUS DATATABLE
+    table.has-columns-hidden{
+      > tbody{
+        > tr{
+          > td{
+            > span{
+              &.responsiveExpander{
+                &:before{
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // ICON MINUS DATATABLE
+    table.has-columns-hidden{
+      > tbody{
+        > tr.detail-show{
+          > td{
+            span{
+              &.responsiveExpander{
+                &:before{
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin table-border-color($selector, $size, $color){
+  &.border-#{$selector}{
+  td{
+    background: inherit !important;
+    &:first-child{
+      position: relative;
+      padding-left: 10px;
+      &:before{
+        border-left: $size solid $color;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -1px;
+        bottom: 0;
+      }
+    }
+  }
+}
+}
+
+// FUNCTION TEXT COLOR ---------------------------------------------------
+@mixin text-color($selector,$color){
+  .text-#{$selector}{
+    color: $color !important;
+  }
+}
+
+// FUNCTION RECENT ACTIVITY ---------------------------------------------------
+@mixin recent-activity-color($selector,$color){
+  &.recent-activity-#{$selector}{
+  &:before{
+    background: $color;
+  }
+  .recent-activity-badge-userpic{
+    border: 3px solid $color;
+  }
+}
+}
+
+// BORDER TABS COLOR ---------------------------------------------------
+@mixin nav-border-top($selector,$color){
+  .nav-border-top-#{$selector}{
+  &.active{
+    &:after{
+      border: 2px solid $color;
+      top: 0;
+      left: -1px;
+      right: 0;
+    }
+  }
+}
+}
+@mixin nav-border-left($selector,$color){
+  .nav-border-left-#{$selector}{
+  &.active{
+    &:after{
+      border: 2px solid $color;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+}

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Common.Models.LoaiHangHoa>
+
+@foreach (var item in Model)
+{
+    <div class="form-group">
+        <label class="control-label">Mã loại sản phẩm</label>
+        <input type="text" name="maloaihanghoa" value="@item.MaLoaiHangHoa" class="form-control rounded" disabled="disabled" />
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Tên loại sản phẩm</label>
+        <input type="text" name="tenloaihanghoa" value="@item.TenLoaiHangHoa" class="form-control rounded" required="required" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Phần trăm lợi nhuận (%)</label>
+        <input type="text" name="phantramloinhuan" value="@item.PhanTramLoiNhuan" class="form-control rounded" required="required"/>
+    </div>
+}
+

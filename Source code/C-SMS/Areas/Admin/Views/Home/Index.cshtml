@@ -1,0 +1,274 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+@using Common.Ultil
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/assets/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/reset.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/layout.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/components.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/plugins.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/themes/default.theme.css" rel="stylesheet" id="theme">
+    <link href="~/Content/assets/admin/css/pages/sign.css" rel="stylesheet">
+    <link href="~/Content/assets/admin/css/custom.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!--/ END THEME STYLES -->
+
+    <link href="~/Content/assets/admin/css/pages/dashboard-retail.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/dropzone/downloads/css/dropzone.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/jquery.gritter/css/jquery.gritter.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/jvectormap/jquery-jvectormap.css" rel="stylesheet">
+    <link href="~/Content/assets/global/plugins/bower_components/horizontal-chart/build/css/horizBarChart.css" rel="stylesheet">
+</head>
+<!--/ END HEAD -->
+
+<body class="page-sound">
+    @if (Session["Account"] == null)
+    {
+        <div id="sign-wrapper">
+            <!-- Login form -->
+            <form class="sign-in form-horizontal shadow rounded no-overflow" action="/Admin/Home/Login" method="post">
+                <div class="sign-header">
+                    <div class="form-group">
+                        <div class="sign-text">
+                            <!--<span>Member Area</span>-->
+                            <span>BK Computer - Group 2</span>
+                        </div>
+                    </div><!-- /.form-group -->
+                </div><!-- /.sign-header -->
+                <div class="sign-body">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg rounded no-overflow">
+                            <input type="text" class="form-control input-sm" placeholder="Tên đăng nhập" name="username" required>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        </div>
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <div class="input-group input-group-lg rounded no-overflow">
+                            <input type="password" class="form-control input-sm" placeholder="Mật khẩu" name="password" required>
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        </div>
+                    </div><!-- /.form-group -->
+                </div><!-- /.sign-body -->
+                @if (@TempData["notify"] != null)
+                {
+                    <h3 class="notify" style="color:red">@Html.Raw(@TempData["notify"])</h3>
+                }
+                <div class="sign-footer">
+                    <div class="form-group">
+                        <div class="row">
+
+                        </div>
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-theme btn-lg btn-block no-margin rounded" id="login-btn">Đăng Nhập</button>
+                    </div><!-- /.form-group -->
+                </div><!-- /.sign-footer -->
+            </form><!-- /.form-horizontal -->
+
+        </div><!-- /#sign-wrapper -->
+    }
+    else
+    {
+        FormatNumber number = new FormatNumber();
+        <section id="page-content">
+            <div id="tour-11" class="header-content">
+                <h2><i class="fa fa-home"></i>Trang chính - Hoạt động hôm nay</h2>
+            </div>
+            <div class="body-content animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="mini-stat-type-3 shadow border-danger">
+                            <div class="ribbon-wrapper">
+                                <a href="#" class="ribbon ribbon-success ribbon-shadow">Đơn đặt hàng</a>
+                            </div>
+                            <span class="text-uppercase text-block text-center">Số đơn đặt hàng</span>
+                            <h3 class="text-strong text-center"><span class="counter">@ViewBag.soDonDatHang</span></h3>
+                            
+                            <div class="meta-stat">
+                                <span class="pull-left text-strong" style="font-size:120%">Xác nhận: <span class="counter"> @ViewBag.soDonDatDaXacNhan</span></span>
+                                <span class="pull-right text-strong" style="font-size:120%">Thanh toán: <span class="counter"> @ViewBag.soDonDatDaThanhToan</span></span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="mini-stat-type-3 shadow border-danger">
+                            <div class="ribbon-wrapper">
+                                <a href="#" class="ribbon ribbon-danger ribbon-shadow">Doanh thu</a>
+                            </div>
+                            <span class="text-uppercase text-block text-center">Tiền bán hàng</span>
+                            <h3 class="text-strong text-center"><span class="counter">@number.FormatNumbers(@ViewBag.tongTienBanHang.ToString())</span></h3>
+                           
+                            <div class="meta-stat">
+                                <span class="pull-left text-strong" style="font-size:120%; font-weight:bold">Tổng số phiếu: <span class="counter"> @ViewBag.soDonBanHang</span> </span>
+                                <span class="pull-right text-strong" style="font-size:120%; font-weight:bold">Hủy: <span class="counter"> @ViewBag.soDonBanHangHuy</span> </span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="mini-stat-type-3 shadow border-danger">
+                            <div class="ribbon-wrapper">
+                                <a href="#" class="ribbon ribbon-primary ribbon-shadow">Doanh thu</a>
+                            </div>
+                            <span class="text-uppercase text-block text-center">Tiền bán online</span>
+                            <h3 class="text-strong text-center"><span class="counter">@number.FormatNumbers(@ViewBag.tongTienDatHang.ToString())</span></h3>
+                            <div class="meta-stat">
+                                <span class="pull-left text-strong" style="font-size:120%; font-weight:bold">Tổng số phiếu: <span class="counter"> @ViewBag.soDonDatHang</span> </span>
+                                <span class="pull-right text-strong" style="font-size:120%; font-weight:bold">Hủy: <span class="counter"> @ViewBag.soDonDatHangHuy</span> </span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="mini-stat-type-3 shadow border-danger">
+                            <div class="ribbon-wrapper">
+                                <a href="#" class="ribbon ribbon-warning ribbon-shadow">Chi tiêu</a>
+                            </div>
+                            <span class="text-uppercase text-block text-center">Tiền chi</span>
+                            <h3 class="text-strong text-center"><span class="counter">@number.FormatNumbers(@ViewBag.tongTienChi.ToString())</span></h3>
+                            <div class="meta-stat">
+                                <span class=" text-block text-center" style="font-size:120%; font-weight:bold">Tổng số phiếu: <span class="counter"> @ViewBag.soPhieuChi</span> </span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <!-- Start list bank table -->
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"><b>Thông tin kho</b></h3>
+                                    </div><!-- /.panel-heading -->
+                                    <div class="panel-body no-padding">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="pull-left text-capitalize">Hết hàng</span>
+                                                            <span class="pull-right text-strong fg-teals"><span class="counter">@ViewBag.sanPhamHetHang</span> sản phẩm</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="pull-left text-capitalize">Sắp hết hàng (số lượng tồn < 5)</span>
+                                                            <span class="pull-right text-strong fg-teals"><span class="counter">@ViewBag.sanPhamSapHetHang</span> sản phẩm</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><!-- /.panel-body -->
+                                </div>
+                                <!--/ End list bank table -->
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <!-- Start list bank table -->
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"><b>Thông tin sản phẩm</b></h3>
+                                    </div><!-- /.panel-heading -->
+                                    <div class="panel-body no-padding">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="pull-left text-capitalize">Sản phẩm / Loại sản phẩm</span>
+                                                            <span class="pull-right text-strong fg-teals"><span class="counter">@ViewBag.tongSanPham</span>/<span class="counter">@ViewBag.tongLoaiSanPham</span></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="pull-left text-capitalize">Đang kinh doanh / Ngừng kinh doanh</span>
+                                                            <span class="pull-right text-strong fg-teals"><span class="counter">@ViewBag.sanPhamDangKinhDoanh </span>/@ViewBag.sanPhamNgungKinhDoanh</span>
+                                                        </td>
+                                                    </tr>
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><!-- /.panel-body -->
+                                </div>
+                                <!--/ End list bank table -->
+
+                            </div>
+                        </div>
+                        
+                        <div class="row hidden-xs">
+                            <div class="col-md-12">
+                                <div class="panel panel-tab shadow">
+                                    <!-- Start tabs heading -->
+                                    <div class="panel-heading no-padding">
+                                        <ul class="nav nav-tabs" style="width: 100%;">
+                                            <li class="active nav-border nav-border-top-danger" style="min-width: 50%;">
+                                                <a href="#tab-product" data-toggle="tab" class="text-center">
+                                                    TOP 15 SẢN PHẨM BÁN CHẠY NHẤT
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div><!-- /.panel-heading -->
+                                    <!--/ End tabs heading -->
+                                    <!-- Start tabs content -->
+                                    <div class="panel-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="tab-product">
+                                                <ul class="chart top-product-chart no-margin" style="height: inherit;">
+                                                    @foreach (var item in @ViewBag.sanPhamBanChayNhat)
+                                                    {
+                                                        <li class="current" title="@item.TenHangHoa">
+                                                            <img src="~/Content/client/product/@item.HinhAnh" width="30px" />
+                                                            <span class="bar" data-number="@item.SoLuongTon"></span>
+                                                            @*<span class="number">900K</span>*@
+                                                        </li>
+                                                    }
+                                                   
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div><!-- /.panel-body -->
+                                    <!--/ End tabs content -->
+                                </div><!-- /.panel -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="recent-activity">
+
+                            @{
+                                Html.RenderAction("ThongTinHoatDong", "Home");
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    }
+     
+</body>
+<!-- END BODY -->
+</html>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+

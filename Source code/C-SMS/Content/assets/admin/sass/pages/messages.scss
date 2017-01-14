@@ -1,0 +1,124 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * MESSAGES
+ * ======================================================================== */
+.message{
+  form{
+    padding: 6px 15px;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #E6EBED;
+    .has-icon{
+      .form-control-icon{
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        width: 34px;
+        line-height: 33px;
+        text-align: center;
+        color: #777;
+      }
+    }
+  }
+  > a{
+    position: relative;
+  }
+  .indicator{
+    text-align: center;
+    .spinner{
+      left: 26%;
+      width: 200px;
+      font-size: 13px;
+      line-height: 17px;
+      color: #999;
+    }
+  }
+}
+
+.message-wrapper{
+  position: relative;
+  padding: 0px;
+  background-color: #ffffff;
+  margin: 0px;
+  .message-sideleft{
+    vertical-align: top !important;
+    &[class*="col-"]{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+  .message-sideright{
+    background-color: lighten($color-default,4%);
+    &[class*="col-"]{
+      padding: 30px;
+    }
+    .panel{
+      border-top: 1px dotted $border-color;
+      padding-top: 20px;
+      &:first-child{
+        border-top: none;
+        padding-top: 0px;
+      }
+      .panel-heading{
+        border-bottom: none;
+      }
+    }
+  }
+  .panel{
+    background-color: transparent !important;
+    @include box-shadow(none !important);
+    .panel-heading, .panel-body{
+      background-color: transparent !important;
+    }
+  }
+  .media{
+    .media-body{
+      font-weight: 300;
+    }
+    .media-heading{
+      margin-bottom: 0px;
+    }
+    small{
+      color: #999999;
+      font-weight: 400;
+    }
+  }
+}
+
+.list-message{
+  .list-group-item{
+    padding: 15px;
+    color: #999999 !important;
+    border-right: 3px solid $color-success !important;
+    &.active{
+      background-color: $color-default;
+      border-bottom: 1px solid $border-color !important;
+      p{
+        color: #999999 !important;
+      }
+      &:hover, &:focus, &:active{
+        background-color: $color-default;
+      }
+    }
+    small{
+      font-size: 12px;
+    }
+    .list-group-item-heading{
+      color: #999999 !important;
+    }
+    .list-group-item-text{
+      margin-bottom: 10px;
+    }
+    &:last-child{
+      @include border-radius(0px);
+      border-bottom: 1px solid $border-color !important;
+    }
+  }
+}

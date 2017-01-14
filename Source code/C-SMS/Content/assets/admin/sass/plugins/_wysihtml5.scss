@@ -1,0 +1,62 @@
+/* ========================================================================
+ * WYSIHTML5
+ * ======================================================================= */
+textarea{
+  &.rounded{
+    + input{
+      + .wysihtml5-sandbox{
+        @include border-radius($rounded !important);
+      }
+    }
+  }
+  &.circle{
+    + input{
+      + .wysihtml5-sandbox{
+        @include border-radius($circle !important);
+      }
+    }
+  }
+  + input{
+    + .wysihtml5-sandbox{
+      @include border-radius(0px !important);
+      border: 1px solid $border-color !important;
+    }
+  }
+}
+.icon-list, .icon-th-list, .icon-indent-right, .icon-indent-left, .icon-share, .icon-picture{
+  &:before{
+    font-family: 'FontAwesome';
+    font-style: normal;
+    color: #99999C;
+  }
+}
+.icon-list{
+  &:before {
+    content: "\f03a";
+  }
+}
+.icon-th-list{
+  &:before {
+    content: "\f00b";
+  }
+}
+.icon-indent-right{
+  &:before {
+    content: "\f03b";
+  }
+}
+.icon-indent-left{
+  &:before {
+    content: "\f03c";
+  }
+}
+.icon-share{
+  &:before {
+    content: "\f0c1";
+  }
+}
+.icon-picture{
+  &:before {
+    content: "\f03e";
+  }
+}

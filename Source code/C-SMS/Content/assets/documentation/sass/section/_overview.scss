@@ -1,0 +1,65 @@
+/* ========================================================================
+ * OVERVIEW
+ * ======================================================================== */
+#overview{
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li{
+      display: inline-block;
+      padding: 0 25px;
+      &:first-child{
+        padding-left: 0;
+      }
+      &:last-child{
+        border-right: none;
+      }
+      b, span{
+        display: block;
+      }
+      b{
+        font-size: 25px;
+      }
+    }
+  }
+  .panel{
+    .panel-body{
+      background-color: #EAEBED;
+    }
+  }
+  .dl-horizontal{
+    dt{
+      width: 175px;
+    }
+  }
+}
+@media (max-width: 768px){
+  #getting-started{
+    ul{
+      li{
+        padding: 0 5px;
+        b{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px){
+  #getting-started{
+    ul{
+      li{
+        display: block;
+        padding: 5px 0;
+        border-bottom: 1px dotted $color-border;
+        &:last-child{
+          border-bottom: none;
+        }
+        b{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/* ========================================================================
+ * JQUERY COLORPICKER
+ * ======================================================================== */
+#colorselector {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: url('../plugins/jquery-colorpicker/images/select2.png');
+  div{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    background: url('../plugins/jquery-colorpicker/images/select2.png') center;
+  }
+}

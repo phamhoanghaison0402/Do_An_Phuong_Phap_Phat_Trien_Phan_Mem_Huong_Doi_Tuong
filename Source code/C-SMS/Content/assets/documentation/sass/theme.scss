@@ -1,0 +1,168 @@
+// Import compass library
+@import "compass/css3";
+
+// Import Bootstrap library
+@import "../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Core preprocessor
+@import "core/variable";
+@import "core/mixins";
+@import "core/functions";
+
+// Set up variable color theme
+$color-theme-html         : #81B71A; // theme color for HTML version
+$color-theme-angularjs    : #A90329; // theme color for AngularJS version
+$color-theme-laravel      : #F4645F; // theme color for Laravel version
+$color-theme-ajax         : #6880B0; // theme color for AJAX version
+$color-theme-php          : #5a67a5; // theme color for PHP version
+$color-theme-codeigniter  : #DD4814; // theme color for Codeigniter version
+$color-theme-yeoman       : #5AADBB; // theme color for Yeoman version
+
+$color-theme: $color-theme-html;
+
+/* ========================================================================
+ * ADDITIONAL - PRELOADER
+ * ======================================================================== */
+#loader-wrapper .loader-section {
+  background-color: $color-theme;
+}
+
+/* ========================================================================
+ * SECTION - HEADER
+ * ======================================================================== */
+#header{
+  .navbar{
+    background-color: $color-theme;
+    .navbar-user{
+      background-color: darken($color-theme, 10%);
+    }
+    .navbar-header{
+      .dropdown-menu{
+        li{
+          &.active{
+            &:before{
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              border-left: 3px solid $color-theme;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * SECTION - SIDEBAR LEFT
+ * ======================================================================== */
+#sidebar-left{
+  .sidebar-left-body{
+    > .nav{
+      > li{
+        &.active, &.active:hover, &.active:focus{
+          > a{
+            color: $color-theme;
+            &:after{
+              border-right: 3px solid $color-theme;
+            }
+          }
+          > .nav{
+            > li{
+              &.active, &.active:hover, &.active:focus{
+                > a{
+                  color: $color-theme;
+                  &:after{
+                    border-right: 3px solid $color-theme;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * SECTION - FEATURES
+ * ======================================================================== */
+#features{
+  ul{
+    li{
+      &:before{
+        color: $color-theme;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * PLUGIN - BOOTSTRAP
+ * ======================================================================== */
+.modal-header{
+  background-color: $color-theme;
+  color: #ffffff;
+}
+
+/* ========================================================================
+ * PLUGIN - JQUERY STEPS
+ * ======================================================================== */
+.wizard{
+  > .steps{
+    .current{
+      a{
+        background-color: $color-theme;
+        &:hover, &:active{
+          background-color: $color-theme;
+        }
+      }
+    }
+    .done{
+      a{
+        background-color: lighten($color-theme, 25%);
+        &:hover, &:active{
+          background-color: lighten($color-theme, 25%);
+        }
+      }
+    }
+  }
+}
+
+.select2-container--default{
+  .select2-results__option{
+    .select2-results__option{
+      &:hover, &:visited, &:focus, &:active{
+        background-color: $color-theme;
+      }
+    }
+  }
+}
+
+.pagination{
+  > .active {
+    > a, span {
+      background-color: $color-theme;
+      border-color: $color-theme;
+      &:hover, &:focus{
+        background-color: $color-theme;
+        border-color: $color-theme;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * COMPONENT - PANEL
+ * ======================================================================== */
+.panel{
+  &.panel-theme{
+    .panel-heading{
+      background-color: $color-theme;
+    }
+  }
+}

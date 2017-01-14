@@ -1,0 +1,146 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// IMPORT BOOTSTRAP BUTTON SASS
+@import "../../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+@mixin datatable-color($selector,$color,$background){
+  .table-#{$selector}{
+    &.dataTable{
+      tr{
+        &.selected{
+          th, td{
+            color: $color;
+            background-color: $background !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * TABLES ADVANCED
+ * ======================================================================== */
+@include datatable-color("default",#636E7B,$color-default);
+@include datatable-color("primary",#FFFFFF,lighten($color-primary, 20%));
+@include datatable-color("danger",#FFFFFF,lighten($color-danger, 20%));
+@include datatable-color("success",#FFFFFF,lighten($color-success, 20%));
+@include datatable-color("info",#FFFFFF,lighten($color-info, 20%));
+@include datatable-color("warning",#FFFFFF,lighten($color-warning, 20%));
+@include datatable-color("lilac",#FFFFFF,lighten($color-lilac, 20%));
+@include datatable-color("inverse",#FFFFFF,lighten($color-inverse, 20%));
+
+.dt-button{
+  padding: 0.3em 1em !important;
+  border: 1px solid $border-color !important;
+  background-image: inherit !important;
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+
+div.dt-button-collection{
+  border: none !important;
+  @include border-radius(0 !important);
+}
+
+table.dataTable{
+  .ckbox{
+    width: 20px;
+    margin: 0 auto;
+  }
+  thead{
+    tr{
+      th{
+        &:first-child{
+          width: 1%;
+          padding: 0;
+          text-align: center;
+          min-width: inherit !important;
+        }
+      }
+    }
+  }
+  tr{
+    td{
+      &:first-child{
+        text-align: center;
+      }
+      &:last-child{
+        width: 1%;
+        text-align: center;
+        .btn{
+          margin: 0;
+        }
+      }
+      .btn.btn-xs{
+        padding: 4px 6px !important;
+      }
+    }
+  }
+}
+.dataTables_length{
+  label{
+    margin: 0;
+  }
+}
+.dataTables_info{
+  float: left;
+  margin: 10px 0 10px;
+  padding: 0 !important;
+}
+div.dataTables_wrapper{
+  div.dataTables_paginate{
+    ul.pagination{
+      margin: 10px 0 20px;
+    }
+  }
+}
+table.dataTable.select tbody tr,
+table.dataTable thead th:first-child {
+  cursor: pointer;
+}
+.dropdown-table-colors, .dropdown-table-language{
+  padding: 5px;
+  .dropdown-list{
+    @include resize(34px);
+    opacity: 0.7;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 3px;
+    &.flag-icon{
+      width: 34px;
+      height: 23px;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.dropdown-toggle-column{
+  li{
+    i{
+      color: $color-success;
+    }
+    &.selected{
+      i{
+        color: $color-danger;
+      }
+    }
+  }
+}
+.text-language{
+  text-transform: capitalize;
+}
+.gritter-position{
+  position:fixed;
+  left:45%;
+  right:33%;
+  top:33%;
+  width: 300px;
+}

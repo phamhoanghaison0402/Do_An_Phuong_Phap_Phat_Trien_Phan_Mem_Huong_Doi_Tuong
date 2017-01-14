@@ -1,0 +1,81 @@
+﻿@using Common.ViewModels
+
+<header id="header">
+    <!-- Start header left -->
+    <div class="header-left">
+        <!-- Start offcanvas left: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
+        <div class="navbar-minimize-mobile left">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!--/ End offcanvas left -->
+        <!-- Start navbar header -->
+        <div class="navbar-header">
+
+            <!-- Start brand -->
+            <a id="tour-1" class="navbar-brand" href="@Url.Action("Index","Home")">
+                <img class="logo" src="~/Content/image/logo.png" alt="brand logo">
+            </a><!-- /.navbar-brand -->
+            <!--/ End brand -->
+
+        </div><!-- /.navbar-header -->
+        <!--/ End navbar header -->
+        <!-- Start offcanvas right: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
+        <div class="navbar-minimize-mobile right">
+            <i class="fa fa-cog"></i>
+        </div>
+        <!--/ End offcanvas right -->
+
+        <div class="clearfix"></div>
+    </div><!-- /.header-left -->
+    <!--/ End header left -->
+    <!-- Start header right -->
+    <div class="header-right">
+        <!-- Start navbar toolbar -->
+        <div class="navbar navbar-toolbar">
+
+            <!-- Start left navigation -->
+            <ul class="nav navbar-nav navbar-left">
+
+                <!-- Start sidebar shrink -->
+                <li id="tour-2" class="navbar-minimize">
+                    <a href="javascript:void(0);" title="Minimize sidebar">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+
+            </ul><!-- /.nav navbar-nav navbar-left -->
+            <!--/ End left navigation -->
+            <!-- Start right navigation -->
+            <ul class="nav navbar-nav navbar-right">
+
+                <!-- Start profile -->
+                @{
+                    NhanVienViewModel account = (NhanVienViewModel)Session["Account"];
+                    <li id="tour-6" class="dropdown navbar-profile">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="meta">
+                                <span class="avatar"><img src="~/Content/image/user/@account.avatar" class="img-circle"></span>
+                                <span class="text hidden-xs hidden-sm text-muted">@account.tenNhanVien</span>
+                                <span class="caret"></span>
+                            </span>
+                        </a>
+                        <!-- Start dropdown menu -->
+                        <ul class="dropdown-menu animated flipInX">
+                            <li class="dropdown-header">Tài khoản</li>
+                            <li><a href="@Url.Action("UpdatePassword", "Home")"><i class="fa fa-edit"></i>Cập nhật mật khẩu</a></li>
+                            <li><a href="@Url.Action("Logout", "Home")"><i class="fa fa-sign-out"></i>Đăng xuất</a></li>
+                        </ul>
+                        <!--/ End dropdown menu -->
+                    </li><!-- /.dropdown navbar-profile -->
+                }
+            </ul>
+            <!--/ End right navigation -->
+
+        </div><!-- /.navbar-toolbar -->
+        <!--/ End navbar toolbar -->
+    </div><!-- /.header-right -->
+    <!--/ End header left -->
+
+</header> <!-- /#header -->
+<!--/ END HEADER -->
+<script src="~/Scripts/bootstrap.min.js"></script>

@@ -1,0 +1,33 @@
+/* ========================================================================
+ * THUMBNAIL
+ * ======================================================================== */
+.thumbnail h3 {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.thumbnail .caption p {
+  color: #888888;
+}
+.thumbnail .thumbnail-action {
+  background: #eeeeee;
+  padding: 10px;
+}
+.thumbnail.thumbnail-flat {
+  padding: 0;
+  border: none;
+}
+.thumbnail.thumbnail-flat .subtitle {
+  color: #959595;
+}
+.thumbnail.thumbnail-flat p {
+  color: #888888;
+}
+.thumbnail.thumbnail-flat .desc {
+  margin-top: 15px;
+}
+.thumbnail.thumbnail-flat .caption {
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+}

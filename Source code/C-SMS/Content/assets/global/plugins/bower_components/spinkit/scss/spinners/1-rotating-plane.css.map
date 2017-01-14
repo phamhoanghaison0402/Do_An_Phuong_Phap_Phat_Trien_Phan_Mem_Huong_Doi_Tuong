@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;AAQA,kBAAmB;EACjB,KAAK,ECRQ,IAAI;EDSjB,MAAM,ECTO,IAAI;EDUjB,gBAAgB,ECTM,IAAI;EDU1B,MAAM,ECZiB,SAAU;EDajC,SAAS,EAAE,wCAAwC;;AAGrD,yBAQC;EAPC,EAAG;IACD,SAAS,EAAE,8CAA8C;EACzD,GAAI;IACJ,SAAS,EAAE,mDAAmD;EAC9D,IAAK;IACL,SAAS,EAAE,sDAAsD",
+"sources": ["1-rotating-plane.scss","../_variables.scss"],
+"names": [],
+"file": "1-rotating-plane.css"
+}

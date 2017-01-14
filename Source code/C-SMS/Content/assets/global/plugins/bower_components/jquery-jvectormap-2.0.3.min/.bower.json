@@ -1,0 +1,15 @@
+{
+  "name": "jquery-jvectormap-2.0.3.min",
+  "_cacheHeaders": {
+    "ETag": "\"562a2eac-df1c\"",
+    "Last-Modified": "Fri, 23 Oct 2015 12:57:16 GMT",
+    "Content-Length": "57116",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:562a2eac-",
+  "main": "index.js",
+  "_source": "http://jvectormap.com/js/jquery-jvectormap-2.0.3.min.js",
+  "_target": "*",
+  "_originalSource": "http://jvectormap.com/js/jquery-jvectormap-2.0.3.min.js",
+  "_direct": true
+}

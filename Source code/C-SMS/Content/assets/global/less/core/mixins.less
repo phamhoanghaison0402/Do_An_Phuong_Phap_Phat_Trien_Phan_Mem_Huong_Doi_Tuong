@@ -1,0 +1,134 @@
+// ===========================================================================
+// TABLE OF CONTENT
+// ===========================================================================
+// 01. BORDER RADIUS
+// 02. BOX SHADOW
+// 03. TRANSITION
+// 04. TRANSFORM
+// 05. RESIZE
+// 06. BOX SIZING
+// 07. ANIMATION
+// ===========================================================================
+
+// BORDER RADIUS ---------------------------------------------------
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius-top(@radius){
+  -webkit-border-top-left-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  border-top-left-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-radius-topright: @radius;
+  border-top-right-radius: @radius;
+}
+.border-radius-top-left(@radius){
+  -webkit-border-top-left-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  border-top-left-radius: @radius;
+}
+.border-radius-top-right(@radius){
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-radius-topright: @radius;
+  border-top-right-radius: @radius;
+}
+.border-radius-right(@radius){
+  border-top-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+.border-radius-bottom(@radius){
+  -webkit-border-bottom-left-radius: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  border-bottom-left-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  -moz-border-radius-bottomright: @radius;
+  border-bottom-right-radius: @radius;
+}
+.border-radius-bottom-left(@radius){
+  -webkit-border-bottom-left-radius: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+// BOX SHADOW ---------------------------------------------------
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+.box-shadow-double(@shadow1,@shadow2) {
+  -webkit-box-shadow: @shadow1,@shadow2;
+  -moz-box-shadow: @shadow1,@shadow2;
+  box-shadow: @shadow1,@shadow2;
+}
+
+// TRANSITION ---------------------------------------------------
+.transition(@transition){
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+// TRANSFORM ---------------------------------------------------
+.transform(@transform){
+  -webkit-transform: @transform;
+  -moz-transform: @transform;
+  -ms-transform: @transform;
+  -o-transform: @transform;
+  transform: @transform;
+}
+
+// RESIZE ---------------------------------------------------
+.resize(@size){
+  width: @size;
+  height: @size;
+}
+
+// BOX SIZING ---------------------------------------------------
+.box-sizing(@box){
+  -webkit-box-sizing: @box;
+  -moz-box-sizing: @box;
+  box-sizing: @box;
+}
+
+.appearance(@appear){
+  -webkit-appearance:@appear;
+  -moz-appearance:@appear;
+  appearance:@appear;
+}
+
+// ANIMATION ---------------------------------------------------
+.animation(@animation){
+  animation: @animation;
+  -webkit-animation: @animation;
+}
+.animation-keyframe-opacity(@scaleStart,@scaleEnd){
+  @keyframes opacity-badge {
+    0% {
+      transform: scale(@scaleStart)
+    }
+    100% {
+      transform: scale(@scaleEnd)
+    }
+  }
+  @-webkit-keyframes opacity-badge {
+    0% {
+      transform: scale(@scaleStart)
+    }
+    100% {
+      transform: scale(@scaleEnd)
+    }
+  }
+}
+
+// COLUMN COUNT ---------------------------------------------------
+.column-count(@count){
+  -moz-column-count: @count;
+  -webkit-column-count: @count;
+  column-count: @count;
+}
+

@@ -1,0 +1,247 @@
+﻿@model IEnumerable<Common.Models.HangHoa>
+@using Common.Ultil
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div id="vnt-container" class="container">
+    <div class="banner_news row">
+        <div class="column Column1 col-md-8 column-first nopadding">
+            <div id="flexslider_middle" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <a href="#">
+                            <img src="~/Content/client/vnt_upload/weblink/banner/BANER_TRANG_CHU/S7_EDGE/Untitled-2.jpg" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Content/client/vnt_upload/weblink/banner/BANER_TRANG_CHU/urbane_2nd.jpg" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column Column2 col-md-4 column-last nopadding">
+            <div class='news-tech'>
+                <h3><a href="#">Tin công nghệ</a></h3><ul class="list-newstech">
+                    <li>
+                        <a href='#'>
+                            <img src="~/Content/client/vnt_upload/news/12_2016/12/thumbs/500_pts.jpg" alt='Top 5 chiếc smartphone có camera đẹp giúp bạn và gấu thoả sức “sống ảo” trong mùa Noel' title='Top 5 chiếc smartphone có camera đẹp giúp bạn và gấu thoả sức “sống ảo” trong mùa Noel' />
+                        </a>
+                        <a href='#'> Top 5 chiếc smartphone có camera đẹp giúp bạn và ...</a>
+                        <p class='note'>1424 lượt xem | 12/12/2016</p>
+                    </li>
+                    <li>
+                        <a href='#l'>
+                            <img src="~/Content/client/vnt_upload/news/12_2016/10/thumbs/500_dslssldffs.jpg" alt='Tin mừng dành cho người dùng Galaxy S7 và S7 Edge, đến cuối cùng Samsung đã thỏa mãn sự mong đợi' title='Tin mừng dành cho người dùng Galaxy S7 và S7 Edge, đến cuối cùng Samsung đã thỏa mãn sự mong đợi' />
+                        </a>
+                        <a href='#'> Tin mừng dành cho người dùng Galaxy S7 và S7 Edge, ...</a>
+                        <p class='note'>3674 lượt xem | 10/12/2016</p>
+                    </li>
+                    <li>
+                        <a href='#'>
+                            <img src="~/Content/client/vnt_upload/news/12_2016/10/thumbs/500_0000000001.jpg" alt='Đến tận bây giờ Apple vẫn chưa quyết định thời điểm lên kệ của Airpods' title='Đến tận bây giờ Apple vẫn chưa quyết định thời điểm lên kệ của Airpods' />
+                        </a>
+                        <a href='#'> Đến tận bây giờ Apple vẫn chưa quyết định ...</a>
+                        <p class='note'>592 lượt xem | 10/12/2016</p>
+                    </li>
+                    <li class='last'>
+                        <a href='#'>
+                            <img src="~/Content/client/vnt_upload/news/12_2016/09/thumbs/500_pts_1.jpg" alt='Bước đột phá này sẽ giúp smartphone của bạn chạy được nhiều hệ điều hành' title='Bước đột phá này sẽ giúp smartphone của bạn chạy được nhiều hệ điều hành' />
+                        </a>
+                        <a href='#'> Bước đột phá này sẽ giúp smartphone của bạn ...</a>
+                        <p class='note'>780 lượt xem | 09/12/2016</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="newshot-block row">
+        <div class="col-md-6 col-sm-6 col-xs-12 block">
+            <div class="block-inner">
+                <a class='table' href='#' target='_blank' title='LG V10: Điện thoại thời trang'>
+                    <div class='inner'>
+                        <h3>LG V10: Điện thoại thời trang</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/v10_1.png" alt="LG V10: Điện thoại thời trang" />
+                </figure>
+            </div>
+        </div><div class="col-md-6 col-sm-6 col-xs-12 block last">
+            <div class="block-inner">
+                <a class='table' href='#' target='_blank' title='Chuyên các dòng Samsung độc nhất'>
+                    <div class='inner'>
+                        <h3>Chuyên các dòng Samsung độc nhất</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/DSC_8642.jpg" alt="Chuyên các dòng Samsung độc nhất" />
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="vnt-content">
+        <div class="main row">
+            <div class="box_pro_main">
+                <div class="box_title_pro">
+                    <h3><b>Sản Phẩm <span>Mới</span></b></h3>
+                </div>
+                <div class="box-content">
+                    <div id="List_Product" class="List_Product grid-bound grid-bound-km">
+                        @foreach (var item in ViewBag.hangHoaMoiNhat)
+                        {
+                            FormatNumber number = new FormatNumber();
+                            var url = "HangHoa/ChiTietSanPham/" + item.MaHangHoa;
+
+                            <div class='item1 nopadding product-grid'>
+                                <div class='boxItem'>
+                                    <span class="icon-product" style="background: #c20202; border: 1px solid #ffffff; color:#ffffff;">NEW</span>
+                                    <a href="@url" title='@item.TenHangHoa'>
+                                        <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                                    </a>
+                                    <h3>
+                                        <a href="@url" title='@item.TenHangHoa'>@item.TenHangHoa</a>
+                                    </h3>
+                                    <h3 title="@item.TenHangHoa">Xuất Xứ: @item.XuatXu</h3>
+                                    <p class="price">
+                                        <span class="price-promotion">@number.FormatNumbers(@item.GiaBan.ToString()) đ &nbsp;</span>
+                                    </p>
+                                    <div class="promotion-km">
+
+                                    </div>
+                                    <div class="btn-km-bound">
+                                        <div class="btn-order-bound"><a class="btn-order-link" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1">Đặt ngay</a></div>
+                                        <div class="btn-view-bound"><a class="btn-view-link" href="@url">Xem ngay</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="box_pro_main">
+                <div class="box_title_pro">
+                    <h3><b>Sản Phẩm <span>Giảm Giá</span></b></h3>
+                </div>
+                <div class="box-content">
+                    <div id="List_Product" class="List_Product grid-bound grid-bound-km">
+                        @foreach (var item in ViewBag.hangHoaGiamGia)
+                        {
+                            FormatNumber number = new FormatNumber();
+                            var url = "HangHoa/ChiTietSanPham/" + item.MaHangHoa;
+                            <div class='item1 nopadding product-grid'>
+                                <div class='boxItem'>
+                                    <span class="icon-product" style="background: #c20202; border: 1px solid #ffffff; color:#ffffff;">Giảm Giá</span>
+                                    <a href="@url" title='@item.TenHangHoa'>
+                                        <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                                    </a>
+                                    <h3><a href="@url" title='@item.TenHangHoa'>@item.TenHangHoa</a> </h3>
+                                    <h3 title="@item.TenHangHoa">Xuất Xứ: @item.XuatXu</h3>
+                                    <p class="price">
+                                        <span class="price-promotion">@number.FormatNumbers(@item.GiamGia.ToString()) đ &nbsp;</span>
+                                        <span class="price-primary price-old">@number.FormatNumbers(@item.GiaBan.ToString()) đ</span>
+                                    </p>
+                                    <div class="btn-km-bound">
+                                        <div class="btn-order-bound"><a class="btn-order-link" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1">Đặt ngay</a></div>
+                                        <div class="btn-view-bound"><a class="btn-view-link" href="@url">Xem ngay</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_pro_main">
+                <div class="box_title_pro">
+                    <h3><b>Sản Phẩm <span>Bán Chạy Nhất</span></b></h3>
+                </div>
+                <div class="box-content">
+                    <div id="List_Product" class="List_Product grid-bound grid-bound-km">
+                        @foreach (var item in ViewBag.HangHoaBanChayNhat)
+                        {
+                            FormatNumber number = new FormatNumber();
+                            var url = "HangHoa/ChiTietSanPham/" + item.MaHangHoa;
+                            <div class='item1 nopadding product-grid'>
+                                <div class='boxItem'>
+                                    <span class="icon-product" style="background: #c20202; border: 1px solid #ffffff; color:#ffffff;">HOT</span>
+                                    <a href="@url" title='@item.TenHangHoa'>
+                                        <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                                    </a>
+                                    <h3>
+                                        <a href="@url" title='@item.TenHangHoa'>@item.TenHangHoa</a>
+                                    </h3>
+                                    <h3 title="@item.TenHangHoa">Xuất Xứ: @item.XuatXu</h3>
+                                    <p class="price">
+                                        <span class="price-promotion">@number.FormatNumbers(@item.GiaBan.ToString()) đ &nbsp;</span>
+                                    </p>
+                                    <div class="promotion-km">
+
+                                    </div>
+                                    <div class="btn-km-bound">
+                                        <div class="btn-order-bound"><a class="btn-order-link" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1">Đặt ngay</a></div>
+                                        <div class="btn-view-bound"><a class="btn-view-link" href="@url">Xem ngay</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/Content/client/modules/main/css/main.css" type="text/css" />
+<link rel="stylesheet" href="~/Content/client/js/FlexSlider/flexslider.css" type="text/css" />
+<script type="text/javascript" src="~/Content/client/js/FlexSlider/jquery.flexslider.js"></script>
+<script type="text/javascript" src="~/Content/client/js/FlexSlider/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="~/Content/client/js/FlexSlider/jquery.easing.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#owl-customer').owlCarousel({
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            pagination: false,
+            items: 4,
+            itemsDesktop: [1199, 4],
+            itemsDesktopSmall: [979, 4],
+            itemsTablet: [768, 2],
+            itemsMobile: [979, 2]
+
+        });
+    });
+
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: 'slide',
+            directionNav: true
+        });
+    });
+
+    $(document).ready(function () {
+        $('#testimonials_owl').owlCarousel({
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            pagination: false
+
+        });
+    });
+
+</script>

@@ -1,0 +1,174 @@
+/* ========================================================================
+ * BANNER
+ * ======================================================================== */
+#banner{
+  position: relative;
+  z-index: 1;
+  color: #333;
+  overflow: hidden;
+  background: url("../../../../../img/showcase/banner.jpg") no-repeat;
+  background-repeat: repeat;
+  background-size: 100%;
+  h1{
+    font-weight: 300;
+    font-size: 50px;
+  }
+  .action{
+    display: inline-block;
+    font-size: 15px;
+    color: #FFF;
+    border-radius: 20px;
+    font-weight: 400;
+    padding: 9px 25px;
+    background-color: $color-theme;
+    text-decoration: none;
+    &:hover{
+      background-color: darken($color-theme, 5%);
+    }
+  }
+  &.banner-view{
+    color: #FFF;
+    height: 775px;
+    .live-preview{
+      display: inline-block;
+      margin-left: 5px;
+      a{
+        font-weight: 300;
+        color: #FFF;
+        &:after{
+          padding: 2px 5px 1px;
+          border-radius: 5px;
+          background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+    .inner{
+      height: auto;
+      padding-top: 150px;
+      text-align: center;
+      padding-bottom: 150px;
+      h1{
+        margin-bottom: 30px;
+        -webkit-font-smoothing: antialiased;
+        font-size: 35px;
+        line-height: 46px;
+        opacity: .9;
+        text-align: center;
+        max-width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+        strong,i,span{
+          display: block;
+        }
+        span{
+          font-size: 30px;
+        }
+      }
+    }
+    .action{
+      padding-right: 50px;
+      padding-left: 50px;
+      margin-right: 20px;
+    }
+  }
+  .banner-overlay{
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 800px){
+  #banner{
+    &.banner-view{
+      .inner{
+        h1{
+          font-size: 23px;
+          span{
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    .arrow{
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 540px){
+  #banner{
+    &.banner-view{
+      .inner{
+        h1{
+          font-size: 21px;
+          line-height: 25px;
+          span{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #banner{
+    &.banner-view{
+      .inner{
+        h1{
+          font-size: 17px;
+          line-height: 25px;
+          span{
+            font-size: 15px;
+            line-height: 25px;
+          }
+        }
+      }
+      .action{
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-right: 15px;
+      }
+      .live-preview{
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px){
+  #banner{
+    &.banner-view{
+      .inner{
+        h1{
+          font-size: 13px;
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px){
+  #banner{
+    &.banner-view{
+      .inner{
+        h1{
+          font-size: 12px;
+        }
+      }
+      .action{
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px !important;
+      }
+    }
+  }
+}

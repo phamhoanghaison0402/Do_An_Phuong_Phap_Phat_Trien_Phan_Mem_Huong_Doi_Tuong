@@ -1,0 +1,122 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * TABS
+ * ======================================================================== */
+.nav-tabs{
+  .nav-border{
+    position: relative;
+    &:first-child{
+      &.active{
+        &:after{
+          left: 0;
+        }
+      }
+    }
+    &.active{
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+  .nav-border-top(danger, @color-danger);
+  .nav-border-top(primary, @color-primary);
+  .nav-border-top(success, @color-success);
+  .nav-border-top(info, @color-info);
+  .nav-border-top(warning, @color-warning);
+  .nav-border-top(lilac, @color-lilac);
+  .nav-border-top(inverse, @color-inverse);
+  .nav-border-top-teal{
+    &.active{
+      &:after{
+        border: 2px solid @color-teal;
+        top: 0;
+        left: -1px;
+        right: 0;
+      }
+    }
+  }
+
+  .nav-border-left(danger, @color-danger);
+  .nav-border-left(primary, @color-primary);
+  .nav-border-left(success, @color-success);
+  .nav-border-left(info, @color-info);
+  .nav-border-left(warning, @color-warning);
+  .nav-border-left(lilac, @color-lilac);
+  .nav-border-left(inverse, @color-inverse);
+  .nav-border-left-teal{
+    &.active{
+      &:after{
+        border: 2px solid @color-teal;
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+
+  &.nav-justified{
+    width: 100%;
+    border-bottom: 0;
+    > li{
+      > a{
+        padding: 15px;
+        background-color: @gray;
+        color: darken(@gray,25%);;
+        border: 0;
+        .border-radius(0px);
+      }
+      &:last-child{
+        > a{
+          border-top-right-radius: 3px;
+        }
+      }
+    }
+    > .active{
+      > a{
+        color: #333;
+        background-color: #FBFBFB;
+        border: 0;
+        border-color: #FFF;
+        border-bottom-color: #FCFCFC;
+        .border-radius-top(3px);
+        &:hover, &:focus{
+          border: 0;
+          border-color: #FFF;
+          border-bottom-color: #FCFCFC;
+          background-color: #FBFBFB;
+        }
+      }
+    }
+  }
+}
+
+.tab-content{
+  background-color: #FBFBFB;
+  padding: 15px;
+  -moz-box-shadow: 0 3px 0 rgba(12,12,12,0.03);
+  -webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+
+@media (max-width: 800px) {
+  .panel{
+    .nav-tabs{
+      li{
+        a{
+          border-right: none !important;
+        }
+      }
+    }
+  }
+}
+

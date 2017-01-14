@@ -1,0 +1,108 @@
+/* ========================================================================
+ * BOOTSTRAP DATEPICKER
+ * ======================================================================== */
+.datepicker{
+  padding: 0px;
+  table{
+    thead{
+      tr{
+        color: white;
+        &:first-child{
+          .border-radius-top(3px);
+          th{
+            border-bottom: none;
+          }
+          &:first-child{
+            th{
+              .border-radius-top-left(3px);
+            }
+          }
+          &:last-child{
+            th{
+              .border-radius-top-right(3px);
+            }
+          }
+        }
+        th{
+          font-weight: 300;
+          min-width: 40px;
+          vertical-align: middle;
+          border-width: 1px 1px 7px;
+          border-style: solid;
+          .border-radius(0px) !important;
+        }
+        .prev, .switch, .next{
+          .border-radius(0px);
+        }
+      }
+    }
+    tbody{
+      tr{
+        &:first-child{
+          td{
+            border-top: none;
+          }
+        }
+        td{
+          min-width: 40px;
+          background-color: @color-default;
+          .border-radius(0px);
+          padding: 9px;
+          &:first-child{
+            color: @color-danger;
+          }
+          &.old, &.new{
+            background-color: darken(@color-default,3%);
+          }
+          &.active, &.active:hover, &.active:disabled, &.active.disabled:hover{
+            text-shadow: none;
+          }
+          &.active{
+            &.active{
+              text-shadow: none;
+              background-image: none;
+              background-repeat: no-repeat;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    tfoot{
+      tr{
+        .today{
+          background-color: darken(@color-default,10%);
+          .border-radius(0px);
+          &:hover{
+            background-color: darken(@color-default,5%);
+          }
+        }
+      }
+    }
+  }
+  .icon-arrow-left{
+    &:before{
+      font-family: "FontAwesome";
+      content: "\f104";
+    }
+  }
+  .icon-arrow-right{
+    &:before{
+      font-family: "FontAwesome";
+      content: "\f105";
+    }
+  }
+}
+
+.datepicker-dropdown{
+  border: none;
+  box-shadow: none;
+}
+
+@media (max-width: 320px){
+  .datepicker-inline{
+    table{
+      margin-left: -14px !important;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/* ========================================================================
+ * FONT AWESOME
+ * ======================================================================= */
+.fontawesome-icon-list{
+  .fa-hover{
+    a{
+      display: block;
+      line-height: 32px;
+      height: 32px;
+      color: $body-fg;
+      text-decoration: none;
+      padding-left: 10px;
+      &:hover{
+        background-color: $gray;
+      }
+      .fa{
+        font-size: 14px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+}

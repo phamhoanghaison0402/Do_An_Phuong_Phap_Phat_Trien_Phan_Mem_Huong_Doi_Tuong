@@ -1,0 +1,105 @@
+/* ========================================================================
+ * DROPZONE
+ * ======================================================================== */
+.dropzone{
+  padding: 20px 0px 0px 0px !important;
+  border: none !important;
+  .dz-preview{
+    @include border-radius(3px !important);
+    padding: 0px !important;
+    margin: 0px 0px 20px 20px !important;
+    .dz-filename{
+      text-align: center !important;
+    }
+    .dz-details {
+      height: 110px !important;
+      img {
+        position: absolute !important;
+        top: 5px !important;
+        width: 90px !important;
+        height: 100px !important;
+      }
+      .dz-size{
+        line-height: 32px !important;
+      }
+    }
+    .dz-error-message{
+      min-width: 100px !important;
+      padding: 0px 10px !important;
+      overflow: hidden !important;
+      height: 0px !important;
+    }
+  }
+  .dz-error{
+    width: 102px !important;
+    height: 134px !important;
+  }
+}
+
+.dz-size{
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+}
+
+.dropzone{
+  @include border-radius(0px !important);
+  &.dz-started{
+    .dz-default.dz-message{
+      display: none !important;
+    }
+  }
+  .dz-default.dz-message{
+    position: relative !important;
+    width: 265px !important;
+    height: 257px !important;
+    top: inherit !important;
+    left: inherit !important;
+    margin: 25px auto !important;
+    background-image: url('../../../assets/global/img/plugins/dropzone/uploadfile.png') !important;
+    background-size: 150px !important;
+    background-position: 50% !important;
+  }
+}
+
+@media (max-width: 320px){
+  .dropzone {
+    .dz-default{
+      &.dz-message{
+        background-position: -15px 0px !important;
+        background-size: 205px;
+        margin-left: 50px !important;
+      }
+    }
+  }
+}
+
+.dropzone .dz-preview, .dropzone-previews .dz-preview{
+  @include box-shadow(none !important);
+  border: 1px solid $border-color !important;
+}
+
+.dz-file-preview{
+  .dz-details{
+    &:before{
+      font-family: "Glyphicons Halflings" !important;
+      content: "\e117" !important;
+      font-size: 45px !important;
+      position: absolute !important;
+      top: 50px !important;
+      left: 27px !important;
+    }
+  }
+}
+
+@media (max-width: 360px){
+  .dropzone{
+    .dz-preview{
+      margin-bottom: 30px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+      width: 114px !important;
+    }
+  }
+}

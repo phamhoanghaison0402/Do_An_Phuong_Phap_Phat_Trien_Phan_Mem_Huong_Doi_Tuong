@@ -1,0 +1,112 @@
+/* ========================================================================
+ * RATING STAR
+ * ======================================================================== */
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 13px;
+}
+.rating.rating-2x {
+  font-size: 26px;
+}
+.rating.rating-3x {
+  font-size: 39px;
+}
+.rating.rating-4x {
+  font-size: 52px;
+}
+.rating.rating-5x {
+  font-size: 65px;
+}
+.rating .star {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  cursor: pointer;
+}
+.rating .star:hover:before {
+  content: "\f005";
+}
+.rating .star:before {
+  content: "\f006";
+  padding-right: 0;
+}
+.rating .star.active:before {
+  content: "\f005";
+}
+.rating .star.active ~ .star:before {
+  content: "\f005";
+}
+.rating-primary .star:hover:before {
+  color: #00b1e1 !important;
+}
+.rating-primary .star.active:before {
+  color: #00b1e1 !important;
+}
+.rating-primary .star.active ~ .star:before {
+  color: #00b1e1 !important;
+}
+.rating-success .star:hover:before {
+  color: #8cc152 !important;
+}
+.rating-success .star.active:before {
+  color: #8cc152 !important;
+}
+.rating-success .star.active ~ .star:before {
+  color: #8cc152 !important;
+}
+.rating-info .star:hover:before {
+  color: #63d3e9 !important;
+}
+.rating-info .star.active:before {
+  color: #63d3e9 !important;
+}
+.rating-info .star.active ~ .star:before {
+  color: #63d3e9 !important;
+}
+.rating-warning .star:hover:before {
+  color: #f6bb42 !important;
+}
+.rating-warning .star.active:before {
+  color: #f6bb42 !important;
+}
+.rating-warning .star.active ~ .star:before {
+  color: #f6bb42 !important;
+}
+.rating-danger .star:hover:before {
+  color: #e9573f !important;
+}
+.rating-danger .star.active:before {
+  color: #e9573f !important;
+}
+.rating-danger .star.active ~ .star:before {
+  color: #e9573f !important;
+}
+.rating-lilac .star:hover:before {
+  color: #906094 !important;
+}
+.rating-lilac .star.active:before {
+  color: #906094 !important;
+}
+.rating-lilac .star.active ~ .star:before {
+  color: #906094 !important;
+}
+.rating-teals .star:hover:before {
+  color: #37bc9b !important;
+}
+.rating-teals .star.active:before {
+  color: #37bc9b !important;
+}
+.rating-teals .star.active ~ .star:before {
+  color: #37bc9b !important;
+}
+.rating-inverse .star:hover:before {
+  color: #2a2a2a !important;
+}
+.rating-inverse .star.active:before {
+  color: #2a2a2a !important;
+}
+.rating-inverse .star.active ~ .star:before {
+  color: #2a2a2a !important;
+}

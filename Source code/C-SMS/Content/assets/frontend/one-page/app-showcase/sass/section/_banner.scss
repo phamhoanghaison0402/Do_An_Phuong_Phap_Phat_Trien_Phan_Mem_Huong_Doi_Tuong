@@ -1,0 +1,12 @@
+#banner{
+  .logo-image{
+    margin-left: 20px;
+  }
+  .page-scroll{
+    color: inherit !important;
+    text-decoration: none;
+    &:active, &:hover, &:visited{
+      color: inherit !important;
+    }
+  }
+}

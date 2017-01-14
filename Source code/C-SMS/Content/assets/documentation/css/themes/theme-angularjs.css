@@ -1,0 +1,85 @@
+/* ========================================================================
+ * SECTION - HEADER
+ * ======================================================================== */
+#header .navbar {
+  background-color: #A90329;
+}
+#header .navbar .navbar-user {
+  background-color: #77021d;
+}
+#header .navbar .navbar-header .dropdown-menu li.active:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-left: 3px solid #A90329;
+}
+
+/* ========================================================================
+ * SECTION - SIDEBAR LEFT
+ * ======================================================================== */
+#sidebar-left .sidebar-left-body > .nav > li.active > a, #sidebar-left .sidebar-left-body > .nav > li.active:hover > a, #sidebar-left .sidebar-left-body > .nav > li.active:focus > a {
+  color: #A90329;
+}
+#sidebar-left .sidebar-left-body > .nav > li.active > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:hover > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:focus > a:after {
+  border-right: 3px solid #A90329;
+}
+#sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active > a, #sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active:hover > a, #sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active:focus > a, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active > a, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active:hover > a, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active:focus > a, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active > a, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active:hover > a, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active:focus > a {
+  color: #A90329;
+}
+#sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active > a:after, #sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active:hover > a:after, #sidebar-left .sidebar-left-body > .nav > li.active > .nav > li.active:focus > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active:hover > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:hover > .nav > li.active:focus > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active:hover > a:after, #sidebar-left .sidebar-left-body > .nav > li.active:focus > .nav > li.active:focus > a:after {
+  border-right: 3px solid #A90329;
+}
+
+/* ========================================================================
+ * SECTION - FEATURES
+ * ======================================================================== */
+#features ul li:before {
+  color: #A90329;
+}
+
+/* ========================================================================
+ * PLUGIN - BOOTSTRAP
+ * ======================================================================== */
+.modal-header {
+  background-color: #A90329;
+  color: #ffffff;
+}
+
+/* ========================================================================
+ * PLUGIN - JQUERY STEPS
+ * ======================================================================== */
+.wizard > .steps .current a {
+  background-color: #A90329;
+}
+.wizard > .steps .current a:hover, .wizard > .steps .current a:active {
+  background-color: #A90329;
+}
+.wizard > .steps .done a {
+  background-color: #fb305f;
+}
+.wizard > .steps .done a:hover, .wizard > .steps .done a:active {
+  background-color: #fb305f;
+}
+
+.select2-container--default .select2-results__option .select2-results__option:hover, .select2-container--default .select2-results__option .select2-results__option:visited, .select2-container--default .select2-results__option .select2-results__option:focus, .select2-container--default .select2-results__option .select2-results__option:active {
+  background-color: #A90329;
+}
+
+.pagination > .active > a, .pagination > .active span {
+  background-color: #A90329;
+  border-color: #A90329;
+}
+.pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active span:hover, .pagination > .active span:focus {
+  background-color: #A90329;
+  border-color: #A90329;
+}
+
+/* ========================================================================
+ * COMPONENT - PANEL
+ * ======================================================================== */
+.panel.panel-theme .panel-heading {
+  background-color: #A90329;
+}

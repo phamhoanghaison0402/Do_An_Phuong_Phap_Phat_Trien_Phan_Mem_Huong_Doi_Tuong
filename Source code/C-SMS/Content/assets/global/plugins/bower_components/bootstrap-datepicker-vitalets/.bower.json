@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap-datepicker-vitalets",
+  "homepage": "https://github.com/vitalets/bootstrap-datepicker",
+  "_release": "c7af15b809",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c7af15b809a121145f416b841afe646f15ae4f22"
+  },
+  "_source": "git://github.com/vitalets/bootstrap-datepicker.git",
+  "_target": "*",
+  "_originalSource": "bootstrap-datepicker-vitalets",
+  "_direct": true
+}

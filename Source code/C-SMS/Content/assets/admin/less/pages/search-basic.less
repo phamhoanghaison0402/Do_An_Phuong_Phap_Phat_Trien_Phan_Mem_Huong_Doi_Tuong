@@ -1,0 +1,74 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * SEARCH BASIC
+ * ======================================================================== */
+
+.search-basic-form{
+  padding: 15px;
+  background-color: darken(@gray, 5%);
+}
+.search-basic-list{
+  margin-top: 20px;
+  h4{
+    margin-bottom: 3px;
+    a{
+      color: #1A0DAB;
+    }
+  }
+  p{
+    color: #545454;
+  }
+  > a{
+    color: #006621;
+    font-size: 13px;
+  }
+  .media{
+    img{
+      width: 155px;
+    }
+    .media-heading{
+      margin-bottom: 3px;
+      + a{
+        color: #006621;
+        font-size: 13px;
+      }
+    }
+  }
+}
+.cbp-l-filters-big{
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-align: left;
+  .cbp-filter-item{
+    margin: 0;
+    padding: 10px 20px 7px;
+  }
+}
+.cbp-l-grid-tabs{
+  .cbp-item{
+    text-align: left;
+    max-width: 100%;
+  }
+}
+#js-grid-tabs{
+  .cbp-item{
+    &:last-child{
+      padding-top: 20px;
+    }
+  }
+}
+#js-grid-lightbox-search{
+  .cbp-wrapper-outer{
+    overflow: inherit !important;
+  }
+  .cbp-wrapper-outer, .cbp-wrapper, .cbp-wrapper-helper{
+    .cbp-item{
+      max-width: inherit;
+      right: inherit;
+    }
+  }
+}

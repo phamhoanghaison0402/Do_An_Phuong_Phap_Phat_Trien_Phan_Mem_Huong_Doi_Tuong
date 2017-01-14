@@ -1,0 +1,31 @@
+﻿@using PagedList.Mvc
+@model List<Common.ViewModels.BaoCaoPhieuChiViewModel>
+@using Common.Ultil
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Ngày chi")
+            </th>
+            <th>
+                @Html.DisplayName("Ghi chú")
+            </th>
+            <th>
+                @Html.DisplayName("Tổng tiền chi (VNĐ)")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            FormatNumber number = new FormatNumber();
+            <tr class="border-warning">
+                <td>@item.ngayChi.ToString("dd/MM/yyyy")</td>
+                <td>@item.ghiChu</td>
+                <td>@number.FormatNumbers(@item.tongTienChi.ToString())</td>
+            </tr>
+        }
+    </tbody>
+</table>

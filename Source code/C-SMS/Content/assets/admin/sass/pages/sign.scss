@@ -1,0 +1,297 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * SIGN
+ * ======================================================================== */
+body{
+  &.page-boxed{
+    background-color: lighten($sidebar-bg,15%);
+    &:before{
+      background-color: lighten($sidebar-bg,15%);
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      content: "";
+    }
+    #sign-wrapper{
+      background-color: $body-bg;
+      form{
+        width: 350px;
+        margin: 0px auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  body{
+    &.page-boxed{
+      #sign-wrapper{
+        width: 1220px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  body{
+    &.page-boxed{
+      #sign-wrapper{
+        width: 970px;
+      }
+    }
+  }
+}
+// SIGN WRAPPER --------------------------------------------------
+#sign-wrapper{
+  width: 350px;
+  margin: 0px auto;
+  padding-top: 5%;
+  height: 100%;
+  position: relative;
+
+  // RESET --------------------------------------------------
+  a{
+    font-size: 13px;
+  }
+
+  // FORM --------------------------------------------------
+  form{
+    background-color: $white;
+    &.rounded{
+      .sign-header{
+        @include border-radius-top($rounded);
+      }
+      .sign-body{
+        .form-group{
+          .error{
+            @include border-radius($rounded)
+          }
+        }
+      }
+    }
+    &.circle{
+      .sign-header{
+        @include border-radius-top($circle);
+      }
+      .sign-body{
+        .form-group{
+          .error{
+            @include border-radius($circle)
+          }
+        }
+      }
+    }
+  }
+
+  // INPUT --------------------------------------------------
+  input{
+    font-size: 12px !important;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
+  // FORM GROUP --------------------------------------------------
+  .form-group{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .input-group{
+      .input-group-addon{
+        border: none;
+        padding-left: 0px;
+      }
+      input[type=text], input[type=password], input[type=email]{
+        box-shadow: none !important;
+        border: none !important;
+        color: #B6B6B6;
+      }
+      i{
+        font-size: 23px;
+        color: #B6B6B6;
+      }
+    }
+    .input-group-addon{
+      background-color: white;
+      i{
+
+      }
+    }
+  }
+
+  // CHECKBOX --------------------------------------------------
+  .ckbox{
+    label{
+      color: #B6B6B6;
+    }
+  }
+
+  // BRAND --------------------------------------------------
+  .brand{
+    text-align: center;
+    margin-bottom: 20px;
+    >img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  hr{
+    margin: 5px 0px 10px;
+  }
+
+  // TEXT MUTED ------------------------------------------------
+  .text-muted{
+    font-size: 13px;
+  }
+
+  // SIGN LINK
+  .sign-link{
+    margin-top: 20px;
+  }
+
+}
+
+// SIGN HEADER --------------------------------------------------
+.sign-header{
+  color: white;
+  padding: 20px 15px;
+  margin-bottom: 0px;
+  p, strong{
+    color: white;
+  }
+}
+
+// SIGN BODY --------------------------------------------------
+.sign-body{
+  background-color: rgba(234, 234, 236, 0.72);
+  margin: 0px;
+  padding: 15px 0px;
+
+  // ERROR --------------------------------------------------
+  .form-group{
+    .error{
+      position: absolute;
+      background-color: $color-danger;
+      padding: 5px 10px;
+      top: 9px;
+      color: white !important;
+    }
+    &:first-child{
+      .error{
+        left: -205px;
+        &:after{
+          content: "____";
+          position: absolute;
+          right: -20px;
+          color: $color-danger;
+          top: 0px;
+        }
+      }
+    }
+    &:last-child{
+      .error{
+        right: -190px;
+        &:before{
+          content: "____";
+          position: absolute;
+          left: -20px;
+          color: $color-danger;
+          top: 0px;
+        }
+      }
+    }
+  }
+
+}
+
+// SIGN BODY --------------------------------------------------
+.sign-footer{
+  padding: 15px 0px;
+}
+
+// SIGN LOCK --------------------------------------------------
+.lock{
+  .sign-text{
+    &:before{
+      top: 40%;
+    }
+  }
+}
+
+// SIGN TEXT --------------------------------------------------
+.sign-text{
+  color: #777;
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+  &:before{
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+  span{
+    display: inline-block;
+    padding: 0 10px;
+    position: relative;
+    color: white;
+    font-weight: 300;
+  }
+  img{
+    position: relative;
+  }
+  p{
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+}
+
+// MEDIA QUERY ----------------------------------------------------
+@media (min-width: 1200px) {
+  body{
+    &.page-boxed{
+      #sign-wrapper{
+        width: 1220px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  body{
+    &.page-boxed{
+      #sign-wrapper{
+        width: 100%
+      }
+    }
+  }
+}
+
+@media (max-width: 360px){
+  #sign-wrapper{
+    form{
+      width: 95% !important;
+    }
+  }
+}

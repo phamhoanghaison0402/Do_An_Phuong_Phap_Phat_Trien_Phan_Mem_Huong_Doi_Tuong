@@ -1,0 +1,25 @@
+/* ========================================================================
+ * POPOVER
+ * ======================================================================== */
+.popover {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.popover.top > .arrow:after {
+  border-top-color: #FFFFFF;
+}
+.popover.bottom > .arrow:after {
+  border-bottom-color: #F7F7F7;
+}
+.popover.left > .arrow:after {
+  border-left-color: #F7F7F7;
+}
+.popover.right > .arrow:after {
+  border-right-color: #F7F7F7;
+}
+.popover .popover-title {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}

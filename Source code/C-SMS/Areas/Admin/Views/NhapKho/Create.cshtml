@@ -1,0 +1,166 @@
+﻿@model Common.ViewModels.PhieuNhapKhoViewModel
+@{
+    ViewBag.Title = "Lập phiếu nhập kho";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<script src="~/Scripts/Son/phieunhapkhoScripts.js"></script>
+<link href="~/Content/assets/css/generalMessageError.css" rel="stylesheet" />
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Nhập Kho</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="print"><i class="glyphicon glyphicon-print"></i> In</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "NhapKho") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Start bordered form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Thông tin sản phẩm</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="gender" class="col-sm-2 control-label">Sản Phẩm</label>
+                                <div class="col-sm-12">
+                                    <select id="maHangHoa" class="chosen-select">
+                                        @foreach (var item in ViewBag.danhSachHangHoa)
+                                        {
+                                            <option value="@item.Value">@item.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <table class="table table-responsive">
+                                <tr>
+                                    <td>Sản Phẩm</td>
+                                    <td>Đơn Vị Tính</td>
+                                    <td>Số Lượng Nhập</td>
+                                    <td>Giá Nhập</td>
+                                    <td>Thành Tiền</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr class="mycontainer" id="mainrow">
+                                    <td>
+                                        <input id="tenHangHoa" disabled="disabled" type="text" class="form-control rounded" />
+                                    </td>
+                                    <td>
+                                        <input type="text" id="donViTinh" class="form-control rounded" disabled="disabled" />
+                                       
+                                    </td>
+                                    <td>
+                                        <input type="text" id="soLuongNhap" name="soLuongNhap" class="form-control rounded" required  onkeypress="return checkNumber(event, this)" maxlength="4" min="1" />
+                                        <h3 style="margin-top:-1%" hidden class="messageError  notifyinputQuantity messageErrorinputQuantity">Nhập số lượng!</h3>
+                                        <h3 style="margin-top:-1%" hidden class="messageError  notifyinputQuantity1 messageErrorinputQuantity1">Nhập số lượng!</h3>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="giaNhap" class="form-control rounded"onkeypress="return checkNumber(event, this)" maxlength="10" />
+                                        <h3 style="margin-top:-1%" hidden class="messageError  notifyinputPrice messageErrorinputPrice">Nhập giá!</h3>
+                                        <h3 style="margin-top:-1%" hidden class="messageError  notifyinputQuantity2 messageErrorinputQuantity2">Giá nhập phải lớn hơn 0</h3>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" id="thanhTien" disabled="disabled" class="form-control rounded" />
+                                       
+                                    </td>
+                                    <td>
+                                        <input type="button" id="add" value="Thêm" style="padding:4px" class="btn btn-lg btn-success btn-xs btn-push" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <span id="productItemError" class="messageError" style="color:red"></span>
+                            <div id="orderItems" class="table-responsive" style="padding-top:25px"></div>
+                            <div id="Items" hidden class="table-responsive"></div>
+                            <input value="@ViewBag.maNhanVien" id="maNhanVien" type="hidden" class="form-control" style="width:200px" disabled="disabled" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Thông tin phiếu nhập kho</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding">
+                        <form class="form-horizontal form-bordered" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label">Số phiếu</label>
+                                    <div class="col-sm-8">
+                                        <input value="@ViewBag.soPhieuNhapKhoTuTang" type="text" id="soPhieuNhapKho" class="form-control rounded" disabled="disabled" />
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <label for="password-1" class="col-sm-4 control-label">Ngày lập</label>
+                                    <div class="col-sm-8">
+                                        <input id="ngayNhapKho" value="@DateTime.Now.ToString("dd/MM/yyyy")" disabled="disabled" type="text" class="form-control rounded" />
+
+                                    </div>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label">Nhân viên</label>
+                                    <div class="col-sm-8">
+                                        <input value="@ViewBag.tenNhanVien" id="tenNhanVien" type="text" class="form-control rounded" disabled="disabled" />
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label">Nhà cung cấp</label>
+                                    <div class="col-sm-8">
+                                        @Html.DropDownList("nhacungcap", new SelectList(ViewBag.nhaCungCap, "Value", "Text"), new { @class = "form-control rounded" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label">Ghi chú</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="ghiChu" placeholder="Ghi chú viết tại đây" class="form-control rounded"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-divider">
+                                    <div class="form-inner">
+                                        <h4 class="no-margin">Thông tin thanh toán</h4>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label">Tổng tiền</label>
+                                    <div class="col-sm-8">
+                                        <input id="tongTien" disabled="disabled" type="text" class="form-control rounded" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-12 control-label" style="color:red; font-weight: bold;">(*) Lưu ý tiền được tính theo VNĐ</label>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.min.js"></script>

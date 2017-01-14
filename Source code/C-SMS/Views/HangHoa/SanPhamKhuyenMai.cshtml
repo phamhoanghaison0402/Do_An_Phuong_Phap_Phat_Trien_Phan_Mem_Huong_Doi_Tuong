@@ -1,0 +1,92 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Common.Models.HangHoa>
+@using Common.Ultil
+
+@{
+    ViewBag.Title = "Sản Phẩm Khuyến Mãi";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div id="vnt-container" class="container">
+    <div class="navation row"><a href="#" class="home">Trang chủ</a> <span>&nbsp;/&nbsp;</span><span>Khuyến mãi</span></div>
+    <section class="newshot-block row">
+        <div class="col-md-6 col-sm-6 col-xs-12 block">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='LG V10: Điện thoại thời trang'>
+                    <div class='inner'>
+                        <h3>LG V10: Điện thoại thời trang</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/v10_1.png" alt="LG V10: Điện thoại thời trang" />
+                </figure>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 block last">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='Chuyên các dòng Samsung độc nhất'>
+                    <div class='inner'>
+                        <h3>Chuyên các dòng Samsung độc nhất</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure><div class="frame"><span> </span></div><img src="~/Content/client/vnt_upload/weblink/banner/DSC_8642.jpg" alt="Chuyên các dòng Samsung độc nhất" /> </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="vnt-content">
+        <div class="main row">
+            <div class="sort">
+                <div class="filter-bound">
+                </div>
+
+                <div class="search-fast-bound">
+                    <div class="search-fast">
+                        <strong><span>Giảm giá có @ViewBag.tongSanPham sản phẩm</span></strong>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="List_Product" class="List_Product grid-bound grid-bound-km">
+                @foreach (var item in Model)
+                {
+                    FormatNumber number = new FormatNumber();
+                    var url = "/HangHoa/" + "ChiTietSanPham/" + @item.MaHangHoa;
+
+                    <div class='item1 nopadding product-grid'>
+                        <div class='boxItem'>
+                            <a href="@url" title='@item.TenHangHoa'>
+                                <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                            </a>
+                            <h3><a href="@url" title='@item.TenHangHoa'>@item.TenHangHoa</a> </h3>
+                            <h3 title="@item.TenHangHoa">Xuất Xứ: @item.XuatXu</h3>
+                            <p class="price">
+                                @if (@item.GiamGia > 0)
+                                {
+                                    <span class="price-promotion">@number.FormatNumbers(@item.GiamGia.ToString()) đ &nbsp;</span>
+                                    <span class="price-primary price-old">@number.FormatNumbers(@item.GiaBan.ToString()) đ</span>
+                                }
+                                else
+                                {
+                                    <span class="price-promotion">@number.FormatNumbers(@item.GiaBan.ToString()) đ &nbsp;</span>
+                                }
+
+                            </p>
+                            <div class="btn-km-bound">
+                                <div class="btn-order-bound"><a class="btn-order-link" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1">Đặt ngay</a></div>
+                                <div class="btn-view-bound"><a class="btn-view-link" href="@url">Xem ngay</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            @Html.PagedListPager(Model, page => Url.Action("SanPhamKhuyenMai", new { page }))
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

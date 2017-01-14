@@ -1,0 +1,126 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * DASHBOARD REAL ESTATE
+ * ======================================================================== */
+.list-real-estate{
+  position: relative;
+  margin: 0;
+  li{
+    padding: 10px 0;
+    border-bottom: 1px dashed @border-color;
+    &:first-child{
+      padding-top: 0;
+    }
+    &:last-child{
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    a{
+      text-decoration: none;
+      p{
+        margin: 0;
+        color: #B3B3B3;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+      h3{
+        margin: 3px 0 0 0;
+        color: #333;
+        font-size: 20px;
+        font-weight: 300;
+        .counter{
+          font-size: 20px !important;
+        }
+        span{
+          font-size: 15px;
+        }
+      }
+      .status{
+        i{
+          font-size: 25px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.sales-price{
+  margin: 10px 0;
+}
+
+.ct-series-a{
+  .ct-line{
+    stroke: @color-success;
+  }
+  .ct-point{
+    stroke: darken(@color-success, 25%);
+  }
+  .ct-area{
+    fill: darken(@color-success, 25%);
+  }
+}
+
+.real-estate-quick-view{
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 20px;
+  .title{
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: bold;
+    a{
+      color: #636E7B;
+    }
+  }
+  .media{
+    margin-top: 10px;
+    .media-heading{
+      font-size: 10px;
+      text-align: right;
+      span{
+        display: block;
+      }
+    }
+  }
+  .table{
+    tbody{
+      tr{
+        td{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .ct-label.ct-horizontal.ct-end{
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 320px) {
+  .real-estate-quick-view{
+    .title{
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+  }
+  .media-body, .media-left, .media-right{
+    display: block;
+  }
+  .media-left{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .media-body{
+    width: 100%;
+  }
+}

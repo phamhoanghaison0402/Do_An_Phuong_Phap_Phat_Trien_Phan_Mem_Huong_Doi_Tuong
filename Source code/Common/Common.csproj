@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F268A9F8-BB95-4BBB-9F4D-E6CD993797B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\BaoCaoTonKho.cs" />
+    <Compile Include="Models\ChiTietPhieuBanHang.cs" />
+    <Compile Include="Models\ChiTietPhieuBaoHanh.cs" />
+    <Compile Include="Models\ChiTietPhieuDatHang.cs" />
+    <Compile Include="Models\ChiTietPhieuKiemKho.cs" />
+    <Compile Include="Models\ChiTietPhieuNhap.cs" />
+    <Compile Include="Models\ChiTietPhieuXuatKho.cs" />
+    <Compile Include="Models\ChucVu.cs" />
+    <Compile Include="Models\HangHoa.cs" />
+    <Compile Include="Models\LoaiHangHoa.cs" />
+    <Compile Include="Models\NhaCungCap.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\NhanVien_Quyen.cs" />
+    <Compile Include="Models\PhanQuyen.cs" />
+    <Compile Include="Models\PhieuBanHang.cs" />
+    <Compile Include="Models\PhieuBaoHanh.cs" />
+    <Compile Include="Models\PhieuChi.cs" />
+    <Compile Include="Models\PhieuDatHang.cs" />
+    <Compile Include="Models\PhieuKiemKho.cs" />
+    <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\PhieuXuatKho.cs" />
+    <Compile Include="Models\SMSEntities.cs" />
+    <Compile Include="Models\ThamSo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ultil\CodeMasterGen.cs" />
+    <Compile Include="Ultil\ConvertToUnSign.cs" />
+    <Compile Include="Ultil\FindController.cs" />
+    <Compile Include="Ultil\FormatNumber.cs" />
+    <Compile Include="Ultil\Md5Encode.cs" />
+    <Compile Include="Ultil\SentMail.cs" />
+    <Compile Include="ViewModels\BaoCaoBanHangViewModel.cs" />
+    <Compile Include="ViewModels\BaoCaoDatHangViewModel.cs" />
+    <Compile Include="ViewModels\BaoCaoHangHoaViewModel.cs" />
+    <Compile Include="ViewModels\BaoCaoPhieuChiViewModel.cs" />
+    <Compile Include="ViewModels\BaoCaoTonKhoViewModel.cs" />
+    <Compile Include="ViewModels\ChiTietPhieuBanHangViewModel.cs" />
+    <Compile Include="ViewModels\ChiTietPhieuDatHangViewModel.cs" />
+    <Compile Include="ViewModels\ChiTietPhieuKiemKhoViewModel.cs" />
+    <Compile Include="ViewModels\ChiTietPhieuNhapKhoViewModel.cs" />
+    <Compile Include="ViewModels\ChiTietPhieuXuatKhoViewModel.cs" />
+    <Compile Include="ViewModels\HangHoaViewModel.cs" />
+    <Compile Include="ViewModels\KiemKhoViewModel.cs" />
+    <Compile Include="ViewModels\LoaiHangHoaViewModel.cs" />
+    <Compile Include="ViewModels\NhanVienViewModel.cs" />
+    <Compile Include="ViewModels\NhanVien_QuyenViewModel.cs" />
+    <Compile Include="ViewModels\PhieuBanHangViewModel.cs" />
+    <Compile Include="ViewModels\PhieuBaoHanhViewModel.cs" />
+    <Compile Include="ViewModels\PhieuChiViewModel.cs" />
+    <Compile Include="ViewModels\PhieuDatHangViewModel.cs" />
+    <Compile Include="ViewModels\PhieuNhapKhoViewModel.cs" />
+    <Compile Include="ViewModels\PhieuXuatKhoViewModel.cs" />
+    <Compile Include="ViewModels\ThongTinHoatDongViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

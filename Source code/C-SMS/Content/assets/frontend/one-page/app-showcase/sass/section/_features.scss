@@ -1,0 +1,54 @@
+/* ========================================================================
+ * SECTION FEATURES
+ * ======================================================================== */
+#features{
+  padding: 50px 0;
+  .feature-device{
+    text-align: center;
+    img{
+      width: 100%;
+    }
+  }
+  .feature-item{
+    margin-bottom: 30px;
+    .media-body{
+      font-size: 11px;
+      .media-heading{
+        color: #494f4c;
+      }
+      color: #9E9F9F;
+    }
+  }
+  .feature-left{
+    .feature-item{
+      text-align: right;
+      .media-body{
+        padding-right: 15px;
+      }
+    }
+  }
+  .feature-right{
+    .feature-item{
+      .media-body{
+        padding-left: 15px;
+      }
+    }
+  }
+  .feature-icon{
+    font-size: 30px;
+    padding: 20px;
+    background-color: #EEEEEE;
+    color: #AAAAB4;
+    line-height: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  #features{
+    .feature-left{
+      .feature-item {
+        text-align: left;
+      }
+    }
+  }
+}

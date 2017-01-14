@@ -1,0 +1,13 @@
+/* ========================================================================
+ * SUMMERNOTE
+ * ======================================================================= */
+
+.note-editor{
+  border: 1px solid $border-color;
+  .note-toolbar{
+    border-bottom: 1px solid $border-color;
+  }
+  .note-editable{
+    min-height: 200px;
+  }
+}

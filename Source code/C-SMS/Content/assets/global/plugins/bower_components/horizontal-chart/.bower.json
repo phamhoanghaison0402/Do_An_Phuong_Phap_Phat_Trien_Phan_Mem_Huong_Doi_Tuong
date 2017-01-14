@@ -1,0 +1,14 @@
+{
+  "name": "horizontal-chart",
+  "homepage": "https://github.com/eriku/horizontal-chart",
+  "_release": "0a0231df29",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0a0231df2927d4bcb647d1d5952f42b58951d6cc"
+  },
+  "_source": "https://github.com/eriku/horizontal-chart.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/eriku/horizontal-chart.git",
+  "_direct": true
+}

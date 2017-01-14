@@ -1,0 +1,19 @@
+// Import compass library
+@import "compass/css3";
+
+// Import Bootstrap library
+@import "../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Core preprocessor
+@import "core/variable";
+@import "core/mixins";
+@import "core/functions";
+
+// Plugins
+@import "plugin/bootstrap";
+@import "plugin/datatables";
+@import "plugin/datatables_responsive";
+@import "plugin/jquery_snippet";
+@import "plugin/jquery_steps";
+@import "plugin/preloader";
+@import "plugin/select2";

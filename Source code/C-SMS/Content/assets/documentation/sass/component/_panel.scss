@@ -1,0 +1,22 @@
+/* ========================================================================
+ * PANEL
+ * ======================================================================== */
+.panel{
+  @include border-radius(0);
+  @include box-shadow(none);
+  .panel-heading{
+    @include border-radius(0);
+  }
+  .panel-body{
+    p{
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.panel-theme{
+    .panel-heading{
+      color: #ffffff;
+    }
+  }
+}

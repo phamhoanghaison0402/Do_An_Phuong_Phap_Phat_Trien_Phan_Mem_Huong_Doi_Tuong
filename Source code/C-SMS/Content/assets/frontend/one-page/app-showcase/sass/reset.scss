@@ -1,0 +1,44 @@
+// Import compass library
+@import "compass/css3";
+
+// Import Bootstrap library
+@import "../../../../global/plugins/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Core preprocessor
+@import "core/variables";
+@import "core/mixins";
+@import "core/functions";
+
+@font-face {
+  font-family: "proxima-nova";
+  src: url("../font/proxima-nova.woff") format("woff");
+}
+
+// General reset
+body {
+  background-color: #FFFFFF;
+  font-family: "proxima-nova", sans-serif;
+  color: #494f4c;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+a{
+  color: $color-theme;
+}
+a, input, label, button {
+  outline: none;
+}
+a:active, a:visited, a:focus, input:active, input:visited, input:focus, label:active, label:visited, label:focus {
+  outline: none;
+}
+@media (max-width: 360px) {
+  h1{
+    font-size: 32px;
+  }
+}

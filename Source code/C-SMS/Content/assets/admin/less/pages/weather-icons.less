@@ -1,0 +1,33 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * WEATHER ICONS
+ * ======================================================================== */
+.example{
+  text-align: center;
+  margin: 10px 3px;
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  .icon{
+    font-size: 20px;
+    float: left;
+    width: 35px;
+  }
+  .class{
+    text-align: center;
+    font-size: 17px;
+    float: left;
+    margin-top: 0;
+    font-weight: 400;
+    margin-left: 10px;
+    color: #333;
+  }
+}

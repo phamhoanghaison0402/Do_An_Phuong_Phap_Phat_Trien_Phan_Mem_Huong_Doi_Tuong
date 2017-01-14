@@ -1,0 +1,42 @@
+﻿
+.btn {
+    border-radius: 3px;
+}
+
+button {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0097fb;
+    border-color: #0097fb;
+}
+
+.error {
+    border: red;
+    background: white;
+}
+
+.messageError {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: -40px;
+}
+
+.messageError1 {
+    text-align: left;
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+    /*margin-bottom: -40px;*/
+    
+}
+form .form-group.has-error .form-control {
+    border-color: #E9573F;
+}

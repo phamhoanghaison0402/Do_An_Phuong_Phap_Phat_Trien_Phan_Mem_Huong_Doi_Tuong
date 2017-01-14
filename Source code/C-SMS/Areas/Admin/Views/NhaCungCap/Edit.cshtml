@@ -1,0 +1,61 @@
+﻿@model IList<Common.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "Sửa thông tin nhà cung cấp";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i> Nhà cung cấp</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+            
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "NhaCungCap") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Thêm mới nhà cung cấp
+            </button>
+
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "NhaCungCap") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+                       
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+                        @using (Html.BeginForm("Edit", "NhaCungCap", FormMethod.Post, new { id = "basic-validate" }))
+                        {
+                            <div class="form-body">
+                                @{Html.RenderAction("ThongTinNhaCungCap", "NhaCungCap");}
+
+                            </div>
+                           
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    $('#submit').click(function () {
+        $('#basic-validate').submit();
+    });
+</script>
+

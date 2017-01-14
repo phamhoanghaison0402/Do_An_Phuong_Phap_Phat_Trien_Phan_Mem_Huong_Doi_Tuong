@@ -1,0 +1,52 @@
+/* ========================================================================
+ * COMPONENT MISC
+ * ======================================================================== */
+
+/* ========================================================================
+ * COMMON
+ * ======================================================================== */
+.section-header{
+  margin-bottom: 100px;
+  position: relative;
+  h1{
+    position: relative;
+  }
+  &.section-border{
+    &:after{
+      background-color: #888;
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 55px;
+      bottom: 0;
+      width: 80px;
+      height: 4px;
+      margin-left: -40px;
+    }
+  }
+}
+
+/* ========================================================================
+ * BACK TOP
+ * ======================================================================== */
+#back-top {
+  position: fixed;
+  bottom: 85px;
+  left: 40px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #313131;
+  border: 1px solid #CCC;
+  @include resize(40px);
+  @include transition(all 0.2s ease-out 0s);
+  &:hover{
+    i{
+      color: #CCC;
+    }
+  }
+  i{
+    font-size: 20px;
+    line-height: 35px;
+    color: #CCC;
+  }
+}

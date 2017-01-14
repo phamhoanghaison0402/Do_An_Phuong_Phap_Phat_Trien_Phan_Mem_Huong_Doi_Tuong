@@ -1,0 +1,130 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * ALERT
+ * ======================================================================== */
+.alert{
+  position: relative;
+}
+
+.alert-dismissable, .alert-dismissible {
+  .close {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+  }
+}
+
+.alert-color(default,@color-default);
+.alert-color(primary,@color-primary);
+.alert-color(success,@color-success);
+.alert-color(info,@color-info);
+.alert-color(warning,@color-warning);
+.alert-color(danger,@color-danger);
+.alert-color(lilac,@color-lilac);
+.alert-color(teals,@color-teal);
+.alert-color(inverse,@color-inverse);
+
+.alert-icon{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 100%;
+  i{
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #FFF;
+  }
+}
+
+.notification-info{
+  margin-left: 56px;
+  margin-top: -40px;
+  min-height: 40px;
+  p{
+    margin: 0px;
+    line-height: 13px;
+  }
+}
+
+.notification-meta{
+  margin-bottom: 3px;
+  padding-left: 0px;
+  list-style: none outside none;
+}
+
+.notification-sender {
+  color: #414147;
+}
+
+.notification-time {
+  font-style: italic;
+  color: #999;
+}
+
+/* ========================================================================
+ * CALLOUT
+ * ======================================================================= */
+.callout{
+  position: relative;
+  min-height: 60px;
+  margin: 0px;
+  padding: 5px 30px 5px 60px;
+  border-left: 5px solid #EEE;
+  font-size: 0.9em;
+  word-wrap: break-word;
+  h4{
+    margin-top: 0;
+  }
+  p{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  code, .highlight{
+    background-color: transparent;
+  }
+}
+
+.color-callout(@selector,@color,@content){
+  &.callout-@{selector}{
+    background-color: lighten(@color,30%);
+    border-color: @color;
+    &:before{
+      position: absolute;
+      left: 10px;
+      top: 10px !important;
+      display: block;
+      background: @color;
+      color: #fff;
+      width: 40px;
+      text-align: center;
+      height: 40px;
+      font-size: 1.5em;
+      font-family: 'FontAwesome';
+      content: @content;
+      line-height: 39px;
+    }
+    h4{
+      color: darken(@color,10%);
+    }
+    a{
+      color: darken(@color,5%);
+      font-weight: bold;
+      &:hover{
+        color: darken(@color,10%);
+      }
+    }
+  }
+}
+
+.color-callout(info,@color-info,"\f0a2");
+.color-callout(warning,@color-warning,"\f071");
+.color-callout(danger,@color-danger,"\f0e7");

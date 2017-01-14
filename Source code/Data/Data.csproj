@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B82F28B8-175D-47DD-83A9-FF73144D6955}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\GenericRepository.cs" />
+    <Compile Include="Implements\BaoCaoTonKhoRepository.cs" />
+    <Compile Include="Implements\ChiTietPhieuBanHangRepository.cs" />
+    <Compile Include="Implements\ChiTietPhieuDatHangRepository.cs" />
+    <Compile Include="Implements\ChiTietPhieuKiemKhoRepository.cs" />
+    <Compile Include="Implements\ChiTietPhieuNhapKhoRepository.cs" />
+    <Compile Include="Implements\ChiTietPhieuXuatKhoRepository.cs" />
+    <Compile Include="Implements\ChucVuRepository.cs" />
+    <Compile Include="Implements\GenericRepository.cs" />
+    <Compile Include="Implements\HangHoaRepository.cs" />
+    <Compile Include="Implements\LoaiHangHoaRepository.cs" />
+    <Compile Include="Implements\NhaCungCapRepository.cs" />
+    <Compile Include="Implements\NhanVienRepository.cs" />
+    <Compile Include="Implements\NhanVien_QuyenRepository.cs" />
+    <Compile Include="Implements\PhanQuyenRepository.cs" />
+    <Compile Include="Implements\PhieuBanHangRepository.cs" />
+    <Compile Include="Implements\PhieuBaoHanhRepository.cs" />
+    <Compile Include="Implements\PhieuChiRepository.cs" />
+    <Compile Include="Implements\PhieuDatHangRepository.cs" />
+    <Compile Include="Implements\PhieuKiemKhoRepository.cs" />
+    <Compile Include="Implements\PhieuNhapKhoRepository.cs" />
+    <Compile Include="Implements\PhieuXuatKhoRepository.cs" />
+    <Compile Include="Interfaces\IChucVuRepository.cs" />
+    <Compile Include="Interfaces\IGenericRepository.cs" />
+    <Compile Include="Interfaces\INhanVienRepository.cs" />
+    <Compile Include="Interfaces\INhanVien_QuyenRepository.cs" />
+    <Compile Include="Interfaces\IPhanQuyenRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f268a9f8-bb95-4bbb-9f4d-e6cd993797b4}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

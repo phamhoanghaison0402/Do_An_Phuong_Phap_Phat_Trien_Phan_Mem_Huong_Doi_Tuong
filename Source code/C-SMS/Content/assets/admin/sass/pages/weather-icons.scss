@@ -1,0 +1,36 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * WEATHER ICONS
+ * ======================================================================== */
+.example{
+  text-align: center;
+  margin: 10px 3px;
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  .icon{
+    font-size: 20px;
+    float: left;
+    width: 35px;
+  }
+  .class{
+    text-align: center;
+    font-size: 17px;
+    float: left;
+    margin-top: 0;
+    font-weight: 400;
+    margin-left: 10px;
+    color: #333;
+  }
+}

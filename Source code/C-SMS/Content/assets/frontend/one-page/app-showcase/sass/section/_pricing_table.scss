@@ -1,0 +1,111 @@
+/* ========================================================================
+ * SECTION PRICING TABLE
+ * ======================================================================== */
+#pricing-table{
+  padding: 50px 0;
+  .pricing-list{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    &.selected{
+      .pricing-header{
+        .pricing-money{
+          color: #FFFFFF;
+        }
+      }
+    }
+    .ribbon-wrapper {
+      width: 85px;
+      height: 88px;
+      overflow: hidden;
+      position: absolute;
+      top: -3px;
+      right: 8px;
+      z-index: 250;
+      .ribbon{
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #FFF;
+        text-align: center;
+        @include transform(rotate(45deg));
+        position: relative;
+        padding: 7px 0;
+        left: -5px;
+        top: 15px;
+        width: 120px;
+        line-height: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #797979;
+        @include box-shadow(0 0 3px rgba(140, 193, 82, 0.5));
+      }
+    }
+    .pricing-header{
+      background-color: $color-border;
+      border: 1px solid $color-border;
+      font-size: 15px;
+      height: 147px;
+      position: relative;
+      padding: 35px 0 0;
+      text-align: center;
+      @include border-radius(2px 2px 0 0);
+      h3{
+        margin-top: 0;
+      }
+      .pricing-money{
+        border: 1px solid $color-border;
+        background-color: #FFFFFF;
+        margin: 35px auto 0;
+        @include resize(100px);
+        @include border-radius(50%);
+        b{
+          display: block;
+          margin-top: 30px;
+          font-size: 20px;
+          margin-bottom: -7px;
+        }
+        span{
+          font-size: 11px;
+        }
+      }
+    }
+    .pricing-body{
+      padding-top: 70px;
+      padding-bottom: 30px;
+      background-color: #FFF;
+      border-left: 1px solid $color-border;
+      border-right: 1px solid $color-border;
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li{
+          padding: 10px 15px;
+          border-bottom: 1px solid $color-border;
+          &:before{
+            font-family: "simple-line-icons";
+            content: "\e080";
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .pricing-footer{
+      text-align: center;
+      border: 1px solid $color-border;
+      background-color: $color-border;
+      padding: 15px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  #pricing-table{
+    .pricing-list{
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+/* ========================================================================
+ * BOOTSTRAP SWITCH
+ * ======================================================================== */
+
+.bootstrap-switch{
+  min-width: 60px !important;
+  border: none !important;
+  .border-radius(0px) !important;
+  &.bootstrap-switch-on {
+    .bootstrap-switch-label{
+      .border-radius(0px);
+    }
+  }
+  .bootstrap-switch-container, .bootstrap-switch-on .bootstrap-switch-label, .bootstrap-switch-handle-off, .bootstrap-switch-handle-on{
+    .border-radius(0px) !important;
+  }
+  .bootstrap-switch-handle-on, .bootstrap-switch-handle-off, .bootstrap-switch-label{
+    line-height: 15px !important;
+    font-size: 11px !important;
+    // CONTEXTUAL CLASSES BOOTSTRAP SWITCH ---------------------------------------------------
+    .bootstrap-switch-color(default,@color-default);
+    .bootstrap-switch-color(primary,@color-primary);
+    .bootstrap-switch-color(success,@color-success);
+    .bootstrap-switch-color(info,@color-info);
+    .bootstrap-switch-color(warning,@color-warning);
+    .bootstrap-switch-color(danger,@color-danger);
+    .bootstrap-switch-color(lilac,@color-lilac);
+    .bootstrap-switch-color(inverse,@color-inverse);
+
+    &.bootstrap-switch-default{
+      color: gray !important;
+      border: 1px solid @color-default !important;
+    }
+    &.bootstrap-switch-default + .bootstrap-switch-label{
+      border: 1px solid @color-default !important;
+    }
+    &.bootstrap-switch-default + .bootstrap-switch-label + .bootstrap-switch-handle-off{
+      border: 1px solid @color-default !important;
+      border-left: none !important;
+    }
+    &.bootstrap-switch-teal{
+      background: @color-teal !important;
+      border: 1px solid @color-teal !important;
+      color: white !important;
+    }
+    &.bootstrap-switch-teal + .bootstrap-switch-label{
+      border: 1px solid @color-teal !important;
+    }
+    &.bootstrap-switch-teal + .bootstrap-switch-label + .bootstrap-switch-handle-off{
+      border: 1px solid @color-teal !important;
+      border-left: none !important;
+    }
+  }
+  &.bootstrap-switch-focused{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  &.bootstrap-switch-off {
+    .bootstrap-switch-label{
+      .border-radius(0px) !important;
+    }
+  }
+  .bootstrap-switch{
+    &.bootstrap-switch-handle-on
+      &.bootstrap-switch-on {
+        .bootstrap-switch-label{
+          .border-radius(0px) !important;
+        }
+      }
+  }
+}

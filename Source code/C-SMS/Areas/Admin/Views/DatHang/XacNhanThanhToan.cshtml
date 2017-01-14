@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuDatHangViewModel>
+
+@{
+    ViewBag.Title = "Xác nhận phiếu đặt hàng";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Đặt Hàng</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+           @using (Html.BeginForm("XacNhanThanhToans", "DatHang"))
+           {
+                <button class="btn btn-sm btn-success btn-xs btn-push" id="submit">
+                    <i class="fa fa-check"></i> Xác nhận thanh toán phiếu đặt hàng
+                </button>
+                <input value="" type="hidden" id="id" name="id" class="form-control input-sm" />
+           }
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="alert alert-danger1 fade in">
+                <span><i class="fa fa-bullhorn"></i> Bạn muốn xác nhận khách hàng đã thanh toán?</span>
+            </div>
+
+            @{Html.RenderAction("ThongTinPhieuDatHang", "DatHang");}
+        </div>
+
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script>
+    $("#submit").on('click keyup input propertychange paste change', function () {
+        var str1 = document.getElementById("soPhieuDatDang").value;
+        $('#id').val(str1);
+    });
+</script>

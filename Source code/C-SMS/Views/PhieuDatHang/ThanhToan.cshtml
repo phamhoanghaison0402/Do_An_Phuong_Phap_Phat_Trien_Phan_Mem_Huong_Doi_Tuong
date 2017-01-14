@@ -1,0 +1,205 @@
+﻿@model List<Common.ViewModels.PhieuDatHangViewModel>
+@using Common.Ultil
+@{
+    ViewBag.Title = "Thanh Toán";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div id="vnt-container" class="container">
+    <div class="navation row"><a href="#" class="home">Trang chủ</a> <span>&nbsp;/&nbsp;</span><span>Giỏ hàng</span></div>
+    <section class="newshot-block row">
+        <div class="col-md-6 col-sm-6 col-xs-12 block">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='LG V10: Điện thoại thời trang'>
+                    <div class='inner'>
+                        <h3>LG V10: Điện thoại thời trang</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/v10_1.png" alt="LG V10: Điện thoại thời trang" />
+                </figure>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 block last">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='Chuyên các dòng Samsung độc nhất'>
+                    <div class='inner'>
+                        <h3>Chuyên các dòng Samsung độc nhất</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure><div class="frame"><span> </span></div><img src="~/Content/client/vnt_upload/weblink/banner/DSC_8642.jpg" alt="Chuyên các dòng Samsung độc nhất" /> </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="vnt-content">
+
+        <div class="row">
+            <div class="box_mid">
+                <div class="mid-title">
+                    <div class="titleL">Thông tin đặt hàng</div>
+                    <div class="titleR"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="mid-content">
+
+                    
+                    <div class="order">
+                       @using (Html.BeginForm("Update", "PhieuDatHang", FormMethod.Post, new { id = "filter_div" }))
+                       {
+                            <div class="section group">
+                                @if (Model.Count > 0)
+                                {
+                                    <table class="table" id="productTable">
+                                        <thead>
+                                            <tr>
+                                                <td> <label>Mã Sản Phẩm</label></td>
+                                                <td> <label>Sản Phẩm </label></td>
+                                                <td> <label>Hình Ảnh</label> </td>
+                                                <td> <label>Số lượng </label>  </td>
+                                                <td> <label>Đơn giá</label> </td>
+                                                <td> <label>Thành tiền</label> </td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                FormatNumber number = new FormatNumber();
+                                                <tr>
+                                                    <td>@item.maHangHoa</td>
+                                                    <td>@item.tenHangHoa</td>
+                                                    <td><img src="~/Content/client/product/@item.hinhAnh" width="100" /></td>
+                                                    <td><input type="text" id="soLuong" name="soLuong" value="@item.soLuong" class="form-control" style="width:50px" maxlength="3" onkeypress="return checkNumber(event, this)" /></td>
+
+                                                    @if (@item.giamGia <= 0)
+                                                    {
+                                                        <td>@number.FormatNumbers(@item.giaBan.ToString()) VND</td>
+                                                        <td>@number.FormatNumbers((@item.giaBan * @item.soLuong).ToString()) VND</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@number.FormatNumbers(@item.giamGia.ToString()) VND</td>
+                                                        <td>@number.FormatNumbers((@item.giamGia * @item.soLuong).ToString()) VND</td>
+                                                    }
+                                                    <td>
+                                                        <button class=" btn-danger">
+                                                            <a href="@Url.Action("Delete", new { id = item.maHangHoa })" class=" btn-danger"> Xóa</a>
+                                                        </button>
+
+                                                    </td>
+                                                </tr>
+                                            }
+                                            <tr>
+
+                                                <td colspan="7">
+                                                    <label class="col-sm-9 control-label">Tổng tiền (VNĐ)</label>
+                                                    <div class="col-sm-2">
+                                                        <input type="text" id="tongTien" name="tongTien" class="form-control" readonly>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-danger fade in">
+                                        <span><i class="fa fa-bullhorn" style="padding-right: 7px" aria-hidden="true"></i>Chưa có sản phẩm nào trong giỏ hàng</span>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        @if (Model.Count > 0)
+                        {
+                            <div style="text-align: center;">
+                                <button class="btn btn-success" id="submit"> Cập nhật giỏ hàng </button>
+                                <button class="btn btn-success" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'"); "> Tiếp tục mua hàng </button>
+                                <button class="btn btn-success" onclick="@("window.location.href='" + @Url.Action("DeleteAll", "PhieuDatHang") + "'"); "> Xóa giỏ hàng </button>
+                                <button class="btn btn-success" onclick="@("window.location.href='" + @Url.Action("ThanhToan", "PhieuDatHang") + "'"); "> Thanh toán </button>
+
+                            </div>
+                        }
+
+                        <br />
+                        @if (Model.Count > 0)
+                        {
+                            <div class="alert alert-success fade in">
+                                <span><i class="fa fa-bullhorn" style="padding-right: 7px" aria-hidden="true"></i>VUI LÒNG NHẬP THÔNG TIN CỦA QUÝ KHÁCH (Nhập thông tin phải có dấu)</span>
+                            </div>
+                            <div class="section group">
+                                <div class="col-md-12">
+                                    @using (Html.BeginForm("ThanhToan", "PhieuDatHang", FormMethod.Post, new { id = "installmentForm" }))
+
+                                    {
+                                        <div class="form-group">
+                                            <label>Người nhận</label>
+                                            <input name="tenKhachHang" class="form-control" placeholder="Họ và tên của bạn (Bắt buộc)" required maxlength="200"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Điện thoại</label>
+                                            <input name="soDienThoai" class="form-control" placeholder="Số điện thoại của bạn (Bắt buộc)" required maxlength="15"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Địa chỉ</label>
+                                            <input name="diaChi" class="form-control" placeholder="Địa chỉ của bạn (Bắt buộc)" required maxlength="200"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input name="email" class="form-control" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Hình thức thanh toán</label>
+                                            @Html.DropDownList("hinhthucthanhtoan", new SelectList(ViewBag.hinhThucThanhToan, "Text", "Text"), new { @class = "form-control" })
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Ghi chú</label>
+                                            <textarea name="ghichu" class="form-control" placeholder="Yêu cầu khác"> </textarea>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <button type="submit" class="btn btn-success">Gửi đơn hàng</button>
+                                        </div>
+
+                                    }
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var amount;
+        var total = 0.0;
+        var row = document.getElementById('productTable').rows.length;
+        for (var i = 1; i < row; i++) {
+            amount = document.getElementById("productTable").rows[i].cells[5].innerHTML.replace(/,/gi, "");
+
+            total += parseFloat(amount);
+            $('#tongTien').val(formatNumber(parseFloat(total)));
+        }
+    })
+
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
+</script>
+
+<script>
+    $('#submit').click(function () {
+        $('#filter_div').submit();
+    });
+</script>

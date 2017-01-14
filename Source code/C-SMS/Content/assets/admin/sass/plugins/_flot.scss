@@ -1,0 +1,29 @@
+/* ========================================================================
+ * FlOT CHART
+ * ======================================================================== */
+#flotTip{
+  font-size: 12px !important;
+  font-weight: 600;
+  position: relative;
+  z-index: 5;
+  padding: 4px 5px !important;
+  border-radius: 3px !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: #444 !important;
+  color: #EEE !important;
+}
+
+.tooltipflot{
+  background-color: $black;
+  color: $white !important;
+  padding: 2px 4px;
+  @include border-radius(2px);
+  font-size: 12px;
+}
+
+.legendColorBox{
+  > div{
+    margin-right: 5px;
+    border: none !important;
+  }
+}

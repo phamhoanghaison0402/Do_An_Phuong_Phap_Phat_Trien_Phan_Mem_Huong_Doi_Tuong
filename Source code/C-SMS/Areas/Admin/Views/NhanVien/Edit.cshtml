@@ -1,0 +1,163 @@
+﻿@model IList<Common.ViewModels.NhanVienViewModel>
+
+@{
+    ViewBag.Title = "Sửa thông tin nhân viên";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Nhân Viên</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "NhanVien") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Tạo mới nhân viên
+            </button>
+
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "NhanVien") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Start input fields - basic form -->
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">@ViewBag.Title</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+
+                    <div class="panel-body no-padding">
+                       @using (Html.BeginForm("Edit", "NhanVien", FormMethod.Post, new { id = "basic-validate", enctype = "multipart/form-data" }))
+                       {
+                            <div class="form-body">
+                                @{Html.RenderAction("ThongTinNhanVien", "NhanVien");}
+
+                            </div>
+                           
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    $('#submit').click(function () {
+        $('#basic-validate').submit();
+    });
+</script>
+
+<script>
+    $("#username").on('keyup input propertychange paste change', function () {
+        $.getJSON('@Url.Action("CheckUserName", "NhanVien")', { username: $(this).val() }, function (data) {
+            if (data.isDuplicate) {
+                $(".messageErrorinputUserName").text("User name đã tồn tại!");
+                $(".notifyinputUserName").slideDown(250).removeClass("hidden");
+                var str1 = document.getElementById("username").value;
+                $('#checkusername').val(str1);
+                document.getElementById("submit").disabled = true;
+            }
+            else {
+                $(".notifyinputUserName").addClass("hidden");
+                document.getElementById("submit").disabled = false;
+            }
+        });
+    });
+
+    $("#email").on('keyup input propertychange paste change', function () {
+        $.getJSON('@Url.Action("CheckUserName", "NhanVien")', { email: $(this).val() }, function (data) {
+            if (data.isDuplicate) {
+                $(".messageErrorinputEmail").text("Email đã tồn tại!");
+                $(".notifyinputEmail").slideDown(250).removeClass("hidden");
+                var str2 = document.getElementById("email").value;
+                $('#checkemail').val(str2);
+                document.getElementById("submit").disabled = true;
+            }
+            else {
+                $(".notifyinputEmail").addClass("hidden");
+                document.getElementById("submit").disabled = false;
+            }
+        });
+    });
+
+    $("#sodienthoai").on('keyup input propertychange paste change', function () {
+        $.getJSON('@Url.Action("CheckUserName", "NhanVien")', { sodienthoai: $(this).val() }, function (data) {
+            if (data.isDuplicate) {
+                $(".messageErrorinputPhone").text("Số điện thoại đã tồn tại!");
+                $(".notifyinputPhone").slideDown(250).removeClass("hidden");
+                var str3 = document.getElementById("sodienthoai").value;
+                $('#checkphone').val(str3);
+                document.getElementById("submit").disabled = true;
+            }
+            else {
+                $(".notifyinputPhone").addClass("hidden");
+                document.getElementById("submit").disabled = false;
+            }
+        });
+    });
+
+    $("#cmnd").on('keyup input propertychange paste change', function () {
+        $.getJSON('@Url.Action("CheckUserName", "NhanVien")', { cmnd: $(this).val() }, function (data) {
+            if (data.isDuplicate) {
+                $(".messageErrorinputCMND").text("CMND đã tồn tại!");
+                $(".notifyinputCMND").slideDown(250).removeClass("hidden");
+                var str4 = document.getElementById("cmnd").value;
+                $('#checkcmnd').val(str4);
+                document.getElementById("submit").disabled = true;
+            }
+            else {
+                $(".notifyinputCMND").addClass("hidden");
+                document.getElementById("submit").disabled = false;
+            }
+        });
+    });
+</script>
+
+<script>
+    var a = 0;
+    //binds to onchange event of your input field
+    $('#fileUpload').bind('change', function () {
+        if ($('input:submit').attr('disabled', false)) {
+            // $('input:submit').attr('disabled', true);
+            document.getElementById("submit").disabled = true;
+        }
+        var ext = $('#fileUpload').val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['png', 'jpg', 'jpeg']) == -1) {
+            $('#error1').slideDown("slow");
+            $('#error2').slideUp("slow");
+            a = 0;
+        } else {
+            var picsize = (this.files[0].size);
+            if (picsize > 1000000) {
+                $('#error2').slideDown("slow");
+                a = 0;
+            } else {
+                a = 1;
+                $('#error2').slideUp("slow");
+            }
+            $('#error1').slideUp("slow");
+            if (a == 1) {
+                //$('input:submit').attr('disabled', false);
+                document.getElementById("submit").disabled = false;
+            }
+        }
+    });
+
+    $("#xoa").on('click keyup input propertychange paste change', function () {
+        $("#error1").addClass("hidden");
+        $("#error2").addClass("hidden");
+        document.getElementById("submit").disabled = false;
+    });
+</script>
+  

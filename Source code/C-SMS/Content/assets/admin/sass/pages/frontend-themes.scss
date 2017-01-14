@@ -1,0 +1,36 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * FRONTEND THEMES PAGE
+ * ======================================================================== */
+.cbp-l-inline-left{
+  &.scroll{
+    height: 376px;
+    overflow-y: scroll;
+  }
+}
+.label-theme-color{
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.dl-horizontal{
+  dd{
+    margin-bottom: 5px !important;
+    .color-theme{
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}

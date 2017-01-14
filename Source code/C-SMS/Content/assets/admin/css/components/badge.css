@@ -1,0 +1,93 @@
+/* ========================================================================
+ * BADGE
+ * ======================================================================== */
+.badge {
+  padding: 4px 7px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.badge-default {
+  color: #999 !important;
+}
+.badge-default {
+  background-color: #eeeeee;
+}
+.badge-default.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  color: #eeeeee;
+}
+.badge-primary {
+  background-color: #00b1e1;
+}
+.badge-primary.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #00b1e1;
+  color: #00b1e1;
+}
+.badge-success {
+  background-color: #8cc152;
+}
+.badge-success.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #8cc152;
+  color: #8cc152;
+}
+.badge-info {
+  background-color: #63d3e9;
+}
+.badge-info.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #63d3e9;
+  color: #63d3e9;
+}
+.badge-warning {
+  background-color: #f6bb42;
+}
+.badge-warning.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #f6bb42;
+  color: #f6bb42;
+}
+.badge-danger {
+  background-color: #e9573f;
+}
+.badge-danger.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #e9573f;
+  color: #e9573f;
+}
+.badge-lilac {
+  background-color: #906094;
+}
+.badge-lilac.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #906094;
+  color: #906094;
+}
+.badge-teals {
+  background-color: #37bc9b;
+}
+.badge-teals.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #37bc9b;
+  color: #37bc9b;
+}
+.badge-inverse {
+  background-color: #2a2a2a;
+}
+.badge-inverse.badge-stroke {
+  background-color: transparent;
+  border: 1px solid #2a2a2a;
+  color: #2a2a2a;
+}
+.badge-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 10px;
+  height: 15px;
+  width: 15px;
+  display: block;
+}

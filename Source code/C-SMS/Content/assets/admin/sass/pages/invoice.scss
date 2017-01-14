@@ -1,0 +1,99 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * INVOICE
+ * ======================================================================== */
+.panel-invoice{
+
+  .panel-sub-heading{
+    padding: 20px;
+  }
+
+  address{
+    position: relative;
+    margin-bottom: 0px;
+  }
+
+  table{
+    thead{
+      tr{
+        th{
+          &:nth-child(1){
+            width: 40%;
+          }
+          &:nth-child(2){
+            width: 5%;
+          }
+          &:nth-child(3){
+            width: 12%;
+          }
+          &:nth-child(4){
+            width: 10%;
+          }
+          &:nth-child(5){
+            width: 5%;
+          }
+          &:nth-child(6){
+            width: 8%;
+          }
+        }
+      }
+    }
+    tbody{
+      h4{
+        padding: 0px 0px 3px;
+        margin: 0px;
+      }
+    }
+  }
+
+}
+
+.logo-block{
+  display: block;
+  background: none repeat scroll 0% 0% #FFF;
+  float: right;
+  max-width: 100px;
+  margin-top: 2px;
+  img{
+    display: inline-block;
+    max-width: 100%;
+    border: none;
+  }
+}
+
+.product-name{
+  position: relative;
+  margin-bottom: 0px;
+  padding-left: 70px;
+}
+
+.product-num{
+  position: absolute;
+  font-size: 0.9em;
+  padding: 7px;
+  width: 34px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  top: 0px;
+  left: 15px;
+}
+
+@media (max-width: 360px){
+  .panel-invoice{
+    .text-right{
+      text-align: left !important;
+      margin-top: 25px;
+    }
+    .logo-block{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* ========================================================================
+ * MORRIS CHART
+ * ======================================================================== */
+.morris-hover{
+  padding: 0px 0px 10px 0px;
+  text-align: center;
+  &.morris-default-style{
+    background-color: $white !important;
+    position: absolute !important;
+    min-width: 100px;
+    .morris-hover-row-label{
+      margin-bottom: 10px;
+      padding: 5px 0px;
+      text-align: center;
+    }
+    .morris-hover-point{
+      padding: 0px 10px;
+      text-align: left;
+    }
+  }
+}

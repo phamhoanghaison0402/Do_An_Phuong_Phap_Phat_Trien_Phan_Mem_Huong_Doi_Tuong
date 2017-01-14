@@ -1,0 +1,44 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * FONT ICON CSS
+ * ======================================================================== */
+.flag-wrapper {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  margin-bottom: 5px;
+  &:after{
+    padding-top: 75%;
+    display: block;
+    content: "";
+  }
+  .flag {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .img-thumbnail{
+    @include border-radius(0);
+    border: none;
+  }
+}
+
+.flag-icon-inner{
+  .col-md-1, .col-md-4, .col-sm-2{
+    padding-left: 0;
+  }
+}

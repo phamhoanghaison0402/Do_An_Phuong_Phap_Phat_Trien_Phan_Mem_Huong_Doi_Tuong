@@ -1,0 +1,76 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Common.ViewModels.NhanVienViewModel>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-middle table-lilac">
+        <thead>
+            <tr>
+                <th class="text-center" style="width: 20%;">Nhân viên</th>
+                <th class="text-center" style="width: 12%;">Tên đăng nhập</th>
+                <th class="text-center" style="width: 12%;">Chức vụ</th>
+                <th class="text-center" style="width: 12%;">Số điện thoại</th>
+                <th class="text-center" style="width: 12%;">Email</th>
+                <th class="text-center" style="width: 12%;">Trạng thái</th>
+                <th class="text-center" style="width: 10%;">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="border-warning">
+
+                    <td>
+                        <img src="~/Content/image/user/@item.avatar" width="50" height="50" class="img-circle img-bordered-theme">
+                        <span>@item.tenNhanVien</span>
+                    </td>
+                    <td>@item.userName</td>
+                    <td>@item.tenChucVu</td>
+                    <td>@item.soDienThoai</td>
+                    <td>@item.email</td>
+                    @if (@item.trangThai == true)
+                    {
+                        <td>Đang hoạt động</td>
+                        <td>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" tabindex="-1">Thao tác</button>
+                                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" data-toggle="dropdown" tabindex="-1">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="@Url.Action("Detail", new { id = item.maNhanVien })"><i class="fa fa-eye"></i> Xem</a></li>
+                                    <li><a href="@Url.Action("Edit", new { id = item.maNhanVien })"><i class="fa fa-edit"></i> Sửa</a></li>
+                                </ul>
+                            </div>
+                        </td>
+
+                    }
+                    else
+                    {
+                        <td>Ngừng hoạt động</td>
+                        <td>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" tabindex="-1">Thao tác</button>
+                                <button type="button" class="btn btn-lg btn btn-danger btn-xs btn-push pull-right" data-toggle="dropdown" tabindex="-1">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="@Url.Action("Detail", new { id = item.maNhanVien })"><i class="fa fa-eye"></i> Xem</a></li>
+
+                                </ul>
+                            </div>
+                        </td>
+
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="pull-left" style="padding-top:20px">
+    <h4 class="panel-title">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount </h4>
+</div>
+<div class="pull-right">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

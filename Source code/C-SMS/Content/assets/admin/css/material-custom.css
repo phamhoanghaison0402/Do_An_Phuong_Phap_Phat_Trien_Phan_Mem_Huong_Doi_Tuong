@@ -1,0 +1,420 @@
+/* ========================================================================
+ * GLOBAL CSS
+ * ======================================================================== */
+body {
+  font-family: Roboto, sans-serif !important;
+}
+
+.has-feedback .form-control {
+  padding-right: 0;
+}
+
+/* ========================================================================
+ * SECTION - HEADER
+ * ======================================================================== */
+#header {
+  height: 70px;
+}
+#header .header-left .navbar-header {
+  height: 70px;
+}
+#header .header-left .navbar-header .navbar-brand {
+  height: 70px;
+}
+#header .header-left .navbar-header .navbar-brand img {
+  margin: 10px auto;
+}
+#header .header-right .navbar .navbar-brand {
+  height: 69px;
+  padding: 15px 22px;
+}
+#header .header-right .navbar .navbar-nav > li > div {
+  cursor: pointer;
+}
+#header .header-right .navbar .navbar-nav > li > div > i {
+  font-size: 30px;
+  line-height: 38px;
+  color: #2196F3;
+}
+#header .header-right .navbar .navbar-nav > li > a {
+  color: #636E7B;
+}
+#header .header-right .navbar .navbar-message .media-list {
+  height: 258px;
+}
+#header .header-right .navbar .navbar-message .media-list > .media {
+  padding: 15px;
+}
+#header .header-right .navbar .navbar-notification .media-list {
+  height: 258px;
+}
+#header .header-right .navbar .navbar-notification .media-list > .media {
+  padding: 15px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .dropdown-menu {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .dropdown-menu .dropdown-header {
+  height: 50px;
+  line-height: 50px;
+  font-weight: 400;
+  font-size: 15px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .dropdown-menu .dropdown-header .title, #header .header-right .navbar.navbar-toolbar .navbar-right .dropdown-menu .dropdown-header .option {
+  font-weight: 400;
+  font-size: 15px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .dropdown-menu .dropdown-footer {
+  border-bottom: none;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right > .dropdown > a, #header .header-right .navbar.navbar-toolbar .navbar-right > li > a {
+  padding: 21px 19px 17px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right > .dropdown > a .count, #header .header-right .navbar.navbar-toolbar .navbar-right > li > a .count {
+  top: 13px;
+  right: 10px;
+  padding: 0.5em 0.7em;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right > .dropdown > a > i, #header .header-right .navbar.navbar-toolbar .navbar-right > li > a > i {
+  font-size: 30px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .navbar-profile .dropdown-menu li a {
+  padding: 5px 15px;
+  font-size: 13px;
+}
+#header .header-right .navbar.navbar-toolbar .navbar-right .navbar-profile > a {
+  padding-top: 17px !important;
+  padding-bottom: 17px !important;
+}
+
+@media (max-width: 768px) {
+  #header .header-left .navbar-header .navbar-brand img {
+    margin: -5px auto 0;
+  }
+  #header .header-right {
+    top: 70px;
+  }
+  #header .navbar-brand {
+    padding: 15px 20px;
+  }
+}
+/* ========================================================================
+ * SECTION - SIDEBAR LEFT
+ * ======================================================================== */
+#sidebar-left {
+  z-index: inherit !important;
+}
+#sidebar-left ul.collapsible-accordion > li.active > .collapsible-body {
+  display: block;
+}
+#sidebar-left:after {
+  background-color: transparent;
+}
+#sidebar-left .collapsible .collapsible-header .pull-right {
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+/* ========================================================================
+ * SECTION - PAGE CONTENT
+ * ======================================================================== */
+#page-content {
+  margin-left: 0;
+}
+#page-content .header-content {
+  padding: 15px 20px;
+}
+#page-content .header-content h2 {
+  font-size: 25px;
+}
+#page-content .header-content h2 span {
+  font-size: 15px;
+}
+#page-content .header-content .breadcrumb-wrapper {
+  top: 20px;
+}
+#page-content .header-content .breadcrumb-wrapper .label {
+  font-size: 13px;
+}
+#page-content .header-content .breadcrumb-wrapper .breadcrumb li {
+  font-size: 14px;
+}
+#page-content .body-content {
+  min-height: inherit;
+}
+#page-content .footer-content {
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  #page-content {
+    margin-top: 70px;
+  }
+  #page-content .header-content .breadcrumb-wrapper {
+    right: 20px;
+  }
+}
+/* ========================================================================
+ * PAGES - MAIL
+ * ======================================================================== */
+.table-email .star i {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.table-email .media-attach i {
+  font-size: 15px;
+}
+
+/* ========================================================================
+ * PAGES - GLYPHICONS
+ * ======================================================================== */
+.bs-glyphicons-list {
+  padding: 0 !important;
+}
+.bs-glyphicons-list li {
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* ========================================================================
+ * PAGES - GALLERY
+ * ======================================================================== */
+.gallery-author .media, .gallery-author .media-body {
+  overflow: visible !important;
+}
+.gallery-author .media .media-heading {
+  margin-top: 0;
+}
+
+/* ========================================================================
+ * PAGES - SEARCH
+ * ======================================================================== */
+.list-search .media img {
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
+}
+
+/* ========================================================================
+ * PAGES - SIGN IN
+ * ======================================================================== */
+#sign-wrapper a {
+  font-size: 15px;
+  line-height: 35px;
+}
+#sign-wrapper label {
+  font-weight: 300 !important;
+}
+#sign-wrapper .input-field .prefix {
+  margin-top: 10px;
+}
+#sign-wrapper .filled-in[type="checkbox"]:checked + label::before,
+#sign-wrapper .filled-in[type="checkbox"]:checked + label::after,
+#sign-wrapper .filled-in[type="checkbox"]:not(:checked) + label::after {
+  top: 6px;
+}
+
+.page-backstretch #sign-wrapper label, .page-backstretch #sign-wrapper input {
+  color: #ffffff;
+}
+.page-backstretch #sign-wrapper .input-field .prefix {
+  color: #ffffff;
+}
+
+/* ========================================================================
+ * COMPONENT - BLOG
+ * ======================================================================== */
+.blog-title {
+  font-size: 25px;
+}
+
+.blog-subtitle {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+/* ========================================================================
+ * COMPONENT - FORMS
+ * ======================================================================== */
+.input-icon > i {
+  margin: 15px 3px 5px 10px;
+}
+.input-icon > .form-control {
+  padding-left: 35px;
+  width: 94%;
+}
+.input-icon.right > .form-control {
+  width: 92%;
+}
+
+/* ========================================================================
+ * COMPONENT - PANEL
+ * ======================================================================== */
+.panel {
+  -moz-box-shadow: inherit;
+  -webkit-box-shadow: inherit;
+  box-shadow: inherit;
+}
+.panel .panel-heading .pull-right .btn {
+  line-height: 10px;
+  margin: 0 8px 0 0;
+}
+.panel .panel-heading .pull-right .btn:last-child {
+  margin-right: 0;
+}
+.panel .panel-heading .pull-right .btn:hover {
+  color: inherit;
+}
+.panel .panel-heading .pull-right .btn:hover > i {
+  color: inherit;
+}
+.panel .panel-heading .pull-right .btn i {
+  font-size: 13px;
+}
+
+.panel-tab .nav-tabs {
+  height: 80px;
+}
+.panel-tab .nav-tabs li {
+  height: 80px;
+}
+
+/* ========================================================================
+ * COMPONENT - MODAL
+ * ======================================================================== */
+.modal-title {
+  font-size: 17px;
+}
+
+.modal-footer .btn + .btn {
+  margin: 0;
+}
+.modal-footer .btn-group > .btn:first-child {
+  margin: 0 10px 0 0 !important;
+}
+
+/* ========================================================================
+ * COMPONENT - TABLE
+ * ======================================================================== */
+.table .filled-in + label {
+  padding: 8px;
+  margin: 0;
+  line-height: 10px;
+}
+
+/* ========================================================================
+ * COMPONENT - MISC
+ * ======================================================================== */
+#back-top {
+  left: 35px;
+  bottom: 60px;
+}
+
+.load-more {
+  margin-bottom: 20px;
+}
+.load-more .preloader-wrapper {
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* ========================================================================
+ * WIDGET - MINI OVERVIEW
+ * ======================================================================== */
+.mini-stat .mini-stat-icon {
+  margin-right: 10px;
+}
+.mini-stat .mini-stat-info span {
+  margin-top: -2px;
+  margin-bottom: 0;
+}
+
+/* ========================================================================
+ * WIDGET - WEATHER CURRENT
+ * ======================================================================== */
+.weather-current-city img {
+  height: 145px;
+}
+
+/* ========================================================================
+ * WIDGET - TIMELINE
+ * ======================================================================== */
+.timeline-desk h1 {
+  padding: 10px;
+}
+
+.time-show .btn {
+  width: 130px !important;
+}
+
+/* ========================================================================
+ * WIDGET - SOCIAL
+ * ======================================================================== */
+.widget-social-overview .overview-heading h3 {
+  font-size: 25px;
+}
+.widget-social-overview .panel-body h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.widget-social-overview .panel-body .pull-right a i {
+  font-size: 20px;
+  font-weight: 300;
+  color: #A5A5A5;
+}
+.widget-social-overview .panel-body p {
+  line-height: 35px;
+}
+
+/* ========================================================================
+ * PLUGINS - MATERIAL DESIGN BOOTSTRAP
+ * ======================================================================== */
+.z-depth-1 {
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.z-depth-2 {
+  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+}
+
+.input-field label {
+  left: 0;
+}
+
+.fixed-action-btn {
+  padding: 0;
+}
+.fixed-action-btn ul {
+  display: none;
+}
+.fixed-action-btn:hover ul {
+  display: block;
+}
+
+/* ========================================================================
+ * PLUGINS - WYSIWYG
+ * ======================================================================== */
+.note-editor .btn-sm .fa, .note-editor .btn-sm-full .fa {
+  font-size: 13px;
+}

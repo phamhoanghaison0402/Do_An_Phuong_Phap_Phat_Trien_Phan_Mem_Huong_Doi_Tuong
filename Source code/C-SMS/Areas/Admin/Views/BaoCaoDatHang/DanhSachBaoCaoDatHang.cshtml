@@ -1,0 +1,32 @@
+﻿@using PagedList.Mvc
+@model List<Common.ViewModels.BaoCaoDatHangViewModel>
+@using Common.Ultil
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Ngày đặt")
+            </th>
+            <th>
+                @Html.DisplayName("Số đơn đặt")
+            </th>
+            <th>
+                @Html.DisplayName("Tổng tiền (VNĐ)")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            FormatNumber number = new FormatNumber();
+            <tr class="border-warning">
+                <td>@item.ngayDat.ToString("dd/MM/yyyy")</td>
+                <td>@item.soDonHang</td>
+                <td>@number.FormatNumbers(@item.tongTien.ToString())</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

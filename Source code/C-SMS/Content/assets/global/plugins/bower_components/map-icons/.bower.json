@@ -1,0 +1,14 @@
+{
+  "name": "map-icons",
+  "homepage": "https://github.com/scottdejonge/Map-Icons",
+  "_release": "76db5c52aa",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "76db5c52aa44d372d3d15c3061c714817a4064f9"
+  },
+  "_source": "git://github.com/scottdejonge/Map-Icons.git",
+  "_target": "*",
+  "_originalSource": "map-icons",
+  "_direct": true
+}

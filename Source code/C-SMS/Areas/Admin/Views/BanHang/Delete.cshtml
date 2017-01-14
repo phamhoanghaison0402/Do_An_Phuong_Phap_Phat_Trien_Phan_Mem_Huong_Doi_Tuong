@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Common.ViewModels.PhieuBanHangViewModel>
+
+@{
+    ViewBag.Title = "Hủy phiếu bán hàng";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Bán Hàng</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            @using (Html.BeginForm("Deletes", "BanHang"))
+            {
+                <button class="btn btn-sm btn-danger btn-xs btn-push" id="submit">
+                    <i class="fa fa-trash"></i> Hủy Phiếu Bán Hàng
+                </button>
+                <input value="" type="hidden" id="id" name="id" class="form-control input-sm" />
+            }
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="alert alert-danger1 fade in">
+                <span><i class="fa fa-bullhorn"></i> Bạn có chắc chắn muốn hủy?</span>
+            </div>
+
+            @{Html.RenderAction("ThongTinPhieuBanHang", "BanHang");}
+        </div>
+
+    </div>
+</section>
+
+<script>
+    $("#submit").on('click keyup input propertychange paste change', function () {
+        var str1 = document.getElementById("soPhieuBanHang").value;
+        $('#id').val(str1);
+    });
+</script>

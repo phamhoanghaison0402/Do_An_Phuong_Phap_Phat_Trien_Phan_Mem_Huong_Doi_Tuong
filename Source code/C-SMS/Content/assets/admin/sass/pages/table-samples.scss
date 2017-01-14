@@ -1,0 +1,24 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * TABLES SAMPLES
+ * ======================================================================== */
+.cbp-l-grid-tabs{
+  .cbp-item{
+    max-width: inherit !important;
+    font: inherit !important;
+  }
+}
+.cbp{
+  img{
+    width: 30px !important;
+    margin: 0;
+    display: inline-block !important;
+  }
+}

@@ -1,0 +1,25 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * LIST GROUP
+ * ======================================================================== */
+.media-list{
+  > .media{
+    .media-body{
+      .media-meta{
+        &.device {
+          position: absolute;
+          top: 5px;
+          right: 15px;
+        }
+        &.time {
+          float: right;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+}

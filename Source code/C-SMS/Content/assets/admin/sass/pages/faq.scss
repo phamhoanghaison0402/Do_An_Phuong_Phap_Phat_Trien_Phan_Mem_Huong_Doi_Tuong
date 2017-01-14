@@ -1,0 +1,63 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * CUBE PORTFOLIO
+ * ======================================================================== */
+.cbp-l-filters-underline{
+  .cbp-filter-item.cbp-filter-item-active{
+    border-bottom-color: $color-theme;
+  }
+}
+.cbp-l-filters-underline{
+  .cbp-filter-item{
+    margin-top: 0px;
+  }
+}
+.cbp-item{
+  &:last-child{
+    .cbp-caption{
+      border-bottom: none !important;
+    }
+  }
+}
+.cbp-caption-expand{
+  .cbp-caption-defaultWrap, .cbp-l-caption-body{
+    font-family: $font-family-base;
+  }
+  .cbp-caption-defaultWrap{
+    padding: 12px 0 11px 40px;
+    i{
+      background-color: darken(#F3F3F4, 3%);
+      text-align: center;
+      line-height: 29px;
+      top: 8px;
+      @include border-radius(50%);
+      @include resize(30px !important);
+    }
+  }
+}
+
+/* ========================================================================
+ * COLOR PANEL
+ * ======================================================================== */
+.panel-primary, .panel-danger, .panel-warning, .panel-danger, .panel-info, .panel-success{
+  .cbp-l-filters-underline{
+    .cbp-filter-item{
+      color: darken($white, 12%);
+      &.cbp-filter-item-active{
+        color: $white;
+      }
+    }
+  }
+  .cbp-l-filters-underline{
+    .cbp-filter-item.cbp-filter-item-active{
+      border-bottom-color: $white;
+    }
+  }
+}

@@ -1,0 +1,278 @@
+﻿@model Common.ViewModels.PhieuBaoHanhViewModel
+@{
+    ViewBag.Title = "Lập phiếu bảo hành";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+<script src="~/Scripts/Quang/phieubaohanhScripts.js"></script>
+<link href="~/Content/assets/css/generalMessageError.css" rel="stylesheet" />
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Bảo Hành</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="submit"><i class="glyphicon glyphicon-save"></i> Lưu</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" id="print"><i class="glyphicon glyphicon-print"> </i> In</button>
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "BaoHanh") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title"> Thông tin sản phẩm</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="panel-body no-padding">
+                        <form class="form-horizontal form-bordered" method="post" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-3 control-label"> Model name</label>
+                                    <div class="col-sm-9">
+                                        <select id="modelName" class="chosen-select">
+                                            @foreach (var item in ViewBag.danhSachHangHoa)
+                                            {
+                                                <option value="@item.Value">@item.Text</option>
+                                            }
+                                        </select>
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-3 control-label"> Tên sản phẩm</label>
+                                    <div class="col-sm-9">
+                                        <input id="maHangHoa" type="text" class="form-control rounded" disabled="disabled" />
+                                        <h3 style="margin-top:0%" hidden class="messageError  notifyinputModelName messageErrorinputModelName"></h3>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password-1" class="col-sm-3 control-label"> Ngày nhận máy</label>
+                                    <div class="col-sm-9">
+                                        <input id="ngayLap" value="@DateTime.Now.ToString("dd/MM/yyyy")" disabled="disabled" type="text" class="form-control rounded" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password-1" class="col-sm-3 control-label"> Ngày trả máy</label>
+                                    <div class="col-sm-9">
+                                        <input id="ngayGiao" value="@DateTime.Now.AddDays(14).ToString("dd/MM/yyyy")" disabled="disabled" type="text" class="form-control rounded" />
+                                    </div>
+                                </div>
+
+                                <input value="@ViewBag.maNhanVien" id="maNhanVien" type="hidden" class="form-control" disabled="disabled" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title"> Thông tin phiếu bảo hành</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding">
+                        <form class="form-horizontal form-bordered" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label"> Số phiếu</label>
+                                    <div class="col-sm-8">
+                                        <input id="soPhieuBaoHanh" value="@ViewBag.soPhieuBaoHanh" type="text" class="form-control rounded" disabled="disabled" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password-1" class="col-sm-4 control-label"> Ngày lập</label>
+                                    <div class="col-sm-8">
+                                        <input value="@DateTime.Now.ToString("dd/MM/yyyy")" disabled="disabled" type="text" class="form-control rounded" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label"> Nhân viên</label>
+                                    <div class="col-sm-8">
+                                        <input value="@ViewBag.tenNhanVien" id="tenNhanVien" type="text" class="form-control rounded" disabled="disabled" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label"> Khách hàng</label>
+                                    <div class="col-sm-8">
+                                        <input id="tenKhachHang" type="text" class="form-control rounded" maxlength="200"/>
+                                        <h3 style="margin-top:0%" hidden class="messageError  notifyinputTenKhachHang messageErrorinputTenKhachHang">Nhập tên khách hàng!</h3>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label"> Số điện thoại</label>
+                                    <div class="col-sm-8">
+                                        <input id="soDienThoai" type="text" class="form-control rounded" maxlength="50" />
+                                        <h3 style="margin-top:0%" hidden class="messageError  notifyinputSoDienThoai messageErrorinputSoDienThoai">Nhập số điện thoại!</h3>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname-1" class="col-sm-4 control-label"> Ghi chú</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="ghiChu" placeholder="Ghi chú viết tại đây" class="form-control rounded"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script>
+    $('#print').click(function () {
+        Print();
+    });
+
+    //Function print inventory ballot
+    function Print() {
+        var popupWin = window.open('', '_blank', 'width=800,height=600'); //create new page
+        popupWin.document.open(); //open new page
+        popupWin.document.write('<html><body onload="window.print()">')
+
+        popupWin.document.write('<p style="text-align:center"><img src="/Content/image/header.png" class="img-responsive watch-right"  /></p>')
+
+        popupWin.document.write('<p style="text-align:center; font-weight: bold; font-size: 30px">Phiếu Bảo Hành</p>')
+
+        popupWin.document.write('<table style="border:solid; width:100%"; text-align:center">')
+        popupWin.document.write('Thông tin phiếu bảo hành');
+        popupWin.document.write('<tr><td>')
+        popupWin.document.write('Số phiếu bảo hành: ');
+        popupWin.document.write($('#soPhieuBaoHanh').val().trim());
+        popupWin.document.write('</td>')
+
+        popupWin.document.write('<td>')
+        popupWin.document.write('Ngày nhận máy: ');
+        popupWin.document.write($('#ngayLap').val().trim());
+        popupWin.document.write('</td></tr>')
+
+        popupWin.document.write('<tr><td>')
+        popupWin.document.write('Nhân viên: ');
+        popupWin.document.write($('#tenNhanVien').val().trim());
+        popupWin.document.write('</td>')
+
+        popupWin.document.write('<td>')
+        popupWin.document.write('Ngày trả máy: ');
+        popupWin.document.write($('#ngayGiao').val().trim());
+        popupWin.document.write('</td></tr>')
+
+        popupWin.document.write('<tr><td>')
+        popupWin.document.write('Khách hàng: ');
+        popupWin.document.write($('#tenKhachHang').val().trim());
+        popupWin.document.write('</td>')
+
+        popupWin.document.write('<td>')
+        popupWin.document.write('Số điện thoại: ');
+        popupWin.document.write($('#soDienThoai').val().trim());
+        popupWin.document.write('</td></tr>')
+
+        popupWin.document.write('<tr><td>')
+        popupWin.document.write('Sản phẩm: ');
+        popupWin.document.write($('#maHangHoa').val().trim());
+        popupWin.document.write('</td>')
+
+        popupWin.document.write('<td>')
+        popupWin.document.write('Model: ');
+        popupWin.document.write($('#modelName').find("option:selected").text());
+        popupWin.document.write('</td></tr>')
+
+        popupWin.document.write('<tr><td>')
+        popupWin.document.write('Ghi chú: ');
+        popupWin.document.write($('#ghiChu').val().trim());
+        popupWin.document.write('</td></tr>')
+
+
+        popupWin.document.write('</table>')
+
+        popupWin.document.write('<p style="text-align:center">')
+        popupWin.document.write('Nhân viên kỹ thuật')
+        popupWin.document.write('<br>')
+        popupWin.document.write('(Ký tên)')
+        popupWin.document.write('</p>')
+        popupWin.document.write('</html>');
+        popupWin.document.close();
+    }
+</script>
+
+
+<script>
+    $('#submit').click(function () {
+        //validation of inventory ballot detail
+        var isAllValid = true;
+        var errorTenKhachHang = 0;
+        errorTenKhachHang = CheckTenKhachHang(errorTenKhachHang);
+        var errorSoDienThoai = 0;
+        errorSoDienThoai = CheckSoDienThoai(errorSoDienThoai);
+
+        var errorModelName = 0;
+        errorModelName = CheckModelName(errorModelName);
+
+        var error = errorTenKhachHang + errorSoDienThoai + errorModelName;
+
+        //Save if valid
+        if (isAllValid == true && error == 0) {
+            var data = {
+                SoPhieuBaoHanh: $('#soPhieuBaoHanh').val().trim(),
+                NgayLap: $('#ngayLap').val().trim(),
+                NgayGiao: $('#ngayGiao').val().trim(),
+                MaNhanVien: $('#maNhanVien').val().trim(),
+                TenNhanVien: $('#tenNhanVien').val().trim(),
+                TenKhachHang: $('#tenKhachHang').val().trim(),
+                SoDienThoai: $('#soDienThoai').val().trim(),
+                GhiChu: $('#ghiChu').val().trim(),
+                //ModelName: $('#modelName').val().trim()
+                ModelName: $('#modelName').find("option:selected").text(),
+            }
+
+            $(this).val('Please wait...');
+
+            $.ajax({
+                url: "/BaoHanh/LuuPhieuBaoHanh",
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: "JSON",
+                contentType: "application/json",
+                success: function (d) {
+                    //check is successfully save to database                    
+                    if (d.status == true) {
+                        //will send status from server side
+                        //clear form
+                        $('#soPhieuBaoHanh').val('');
+                        $('#ngayLap').val('');
+                        $('#tenNhanVien').val('');
+                        $('#ghiChu').val('');
+                        window.location.href = '/Admin/BaoHanh/';
+                    }
+                    else {
+                        alert("Something wrong! Please try again", "error");
+                    }
+                    $('#submit').val('Lưu Phiếu Bảo Hành');
+                },
+                error: function () {
+                    alert('Error. Please try again.');
+                    $('#submit').val('Lưu Phiếu Bảo Hành');
+                }
+            });
+        }
+    });
+</script>

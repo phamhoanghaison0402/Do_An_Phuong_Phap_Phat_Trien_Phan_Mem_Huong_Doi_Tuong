@@ -1,0 +1,40 @@
+/* ========================================================================
+ * DATATABLES
+ * ======================================================================== */
+.dt-responsive{
+  width: 100% !important;
+}
+.sorting_disabled{
+  padding-right: 5px !important;
+}
+@media (max-width: 800px) {
+  table{
+    &.dataTable{
+      &.dtr-inline{
+        &.collapsed{
+          > tbody{
+            > tr{
+              > td, > th{
+                &:first-child{
+                  padding-top: 8px;
+                  padding-left: 34px;
+                }
+                &:before{
+                  left: 7px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 640px){
+  #table-credit_length, #table-change-log_length{
+    display: none;
+  }
+  #table-credit_filter, #table-change-log_filter{
+    text-align: right;
+  }
+}

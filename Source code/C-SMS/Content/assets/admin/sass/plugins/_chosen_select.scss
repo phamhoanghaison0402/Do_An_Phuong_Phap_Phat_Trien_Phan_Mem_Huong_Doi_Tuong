@@ -1,0 +1,106 @@
+/* ========================================================================
+ * CHOSEN SELECT
+ * ======================================================================= */
+.chosen-select{
+  &.rounded{
+    + .chosen-container-single{
+      .chosen-single{
+        @include border-radius($rounded !important);
+      }
+    }
+  }
+  &.circle{
+    + .chosen-container-single{
+      .chosen-single{
+        @include border-radius($circle !important);
+      }
+    }
+  }
+}
+
+.chosen-container{
+  width: 100% !important;
+  margin-bottom: 10px !important;
+  &:last-child{
+    margin-bottom: 0px;
+  }
+  .chosen-drop{
+    border: 1px solid $border-color !important;
+    @include box-shadow(none !important);
+  }
+  .chosen-results{
+    li{
+      &.group-result{
+        background-color: $gray;
+      }
+    }
+  }
+}
+
+.chosen-container-single{
+  .chosen-single{
+    color: #A2A2A2 !important;
+    @include border-radius(0px !important);
+  }
+  .chosen-drop{
+    @include border-radius(0px !important);
+  }
+}
+
+.chosen-container-single, .chosen-container-single.chosen-with-drop {
+  .chosen-single{
+    background: $white !important;
+    @include box-shadow(none !important);
+    border: 1px solid $border-color !important;
+    height: 28px !important;
+    line-height: 26px !important;
+    div{
+      b{
+        background-position: 0px 4px !important;
+      }
+    }
+  }
+}
+
+.chosen-container-multi {
+  .chosen-choices {
+    background-image: none !important;
+  }
+}
+
+.chosen-container-multi {
+  .chosen-choices {
+    border: 1px solid $border-color;
+    li.search-field {
+      input[type="text"]{
+        height: 25px;
+      }
+    }
+  }
+}
+
+.chosen-container-active {
+  .chosen-choices{
+    border-top: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    @include box-shadow(none !important);
+  }
+}
+
+.chosen-container-multi {
+  .chosen-choices {
+    li{
+      &.search-choice{
+        border: none;
+        background: $gray;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .chosen-container{
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,54 @@
+/* ========================================================================
+ * PROGRESS BAR
+ * ======================================================================== */
+.progress {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.progress.progress-lg {
+  height: 25px;
+}
+.progress.progress-sm {
+  height: 15px;
+}
+.progress.progress-xs {
+  height: 10px;
+}
+.progress.progress-xxs {
+  height: 5px;
+}
+.progress-bar-primary {
+  background-color: #00b1e1;
+}
+.progress-bar-success {
+  background-color: #8cc152;
+}
+.progress-bar-info {
+  background-color: #63d3e9;
+}
+.progress-bar-warning {
+  background-color: #f6bb42;
+}
+.progress-bar-danger {
+  background-color: #e9573f;
+}
+.progress-bar-lilac {
+  background-color: #906094;
+}
+.progress-bar-inverse {
+  background-color: #2a2a2a;
+}
+.progress-bar-teal {
+  background-color: #37bc9b;
+}
+/* ========================================================================
+ * IE SUPPORT
+ * ======================================================================== */
+.ie8 .progress-striped .hidden-ie,
+.ie9 .progress-striped .hidden-ie {
+  display: none !important;
+}

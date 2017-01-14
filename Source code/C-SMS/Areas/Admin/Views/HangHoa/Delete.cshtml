@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Common.ViewModels.HangHoaViewModel>
+
+    @{
+        ViewBag.Title = "Xóa sản phẩm";
+        Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+    }
+
+    <link href="~/Content/Css/Webgird.css" rel="stylesheet" />
+    <section id="page-content">
+        <div class="header-content">
+            <h2><i class="fa fa-list-alt"></i>Hàng Hóa</h2>
+        </div>
+        <div class="body-content animated fadeIn">
+            <div class="row">
+                <div class="alert alert-danger fade in">
+                    <span><i class="fa fa-bullhorn" style="padding-right: 7px" aria-hidden="true"></i>Bạn có chắc chắn muốn hủy?</span>
+                </div>
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="row">
+                                    @{Html.RenderAction("ThongTinHangHoa", "HangHoa");}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @using (Html.BeginForm("Delete", "HangHoa"))
+                {
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-sm-offset-3">
+                            <button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("Index", "HangHoa") + "'"); ">
+                                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+                            </button>
+                            <button class="btn btn-primary" id="submit"><i class="glyphicon glyphicon-remove"></i> Xóa Hàng Hóa</button>
+                        </div>
+                    </div>
+                }
+            </div>
+    </section>

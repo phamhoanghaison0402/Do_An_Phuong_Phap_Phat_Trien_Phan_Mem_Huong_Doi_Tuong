@@ -1,0 +1,9 @@
+/* ========================================================================
+ * BREADCRUMB
+ * ======================================================================== */
+.breadcrumb {
+  background-color: #F5F5F5;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}

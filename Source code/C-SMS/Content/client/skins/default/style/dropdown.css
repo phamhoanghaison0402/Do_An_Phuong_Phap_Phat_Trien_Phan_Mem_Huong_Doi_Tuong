@@ -1,0 +1,143 @@
+ul.dropdown {
+	position: relative;
+	z-index: 100;
+}
+ 
+ul.dropdown li.hover, ul.dropdown li:hover {
+	z-index: 200;
+	cursor: default;
+}
+ 
+ul.dropdown ul {
+	visibility: hidden;
+	position: absolute !important;
+	top: 36px;
+	left: 0;
+	z-index: 150;
+	width: 100%;
+	padding:20px;
+  background: #FFF;
+  border: 1px solid #ff4500;
+  border-bottom: 2px solid #ff4500;
+
+}
+ul.dropdown ul.ul_first {
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.35);
+	-moz-box-shadow:    0px 0px 6px 0px rgba(50, 50, 50, 0.35);
+	box-shadow:         0px 0px 6px 0px rgba(50, 50, 50, 0.35);
+}
+
+ul.dropdown ul li {
+	float: left;
+  clear: none !important;
+	height: auto;
+	overflow: hidden;
+	padding: 0px !important;
+	border-top: none;
+	border-bottom: none;
+  width: 225px;
+	text-align:left;
+}
+
+ul.dropdown ul > li {
+}
+
+ul.dropdown ul li ul li {
+	float: none;
+	clear: both;
+	width: 100%;
+	overflow: hidden;
+	border: none;
+}
+  
+ul.dropdown li ul li ul {
+    border:  none !important;
+		margin:0 !important;
+    padding: 0 !important; 
+}	
+	
+
+ul.dropdown ul ul {
+	position: relative !important;
+  float: none;
+  clear: both;
+	left: 0px;
+	top: -1px;
+	background: none;
+  overflow: hidden;
+  width: 100%;
+}
+ 
+ul.dropdown li:hover ul {
+	visibility: visible; 
+	
+}
+
+ul.dropdown li  > ul {
+}
+  
+/* For vertical menu */
+ul.dropdown-vertical {
+	 
+}
+
+ul.dropdown-vertical ul {
+
+}
+
+ul.dropdown-vertical li {
+	float: none;
+}
+  
+ul.dropdown li ul li > a {
+	line-height:18px;
+	border-bottom:1px solid #ff4500;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	display:block;
+	font-size:16px;
+	margin-right:20px;
+  font-family: Arial;
+  font-weight: normal;
+
+}
+
+ul.dropdown li ul li > .sub_title {	line-height:18px;
+  border-bottom:1px solid #ff4500;
+  padding-bottom:5px;
+  margin-bottom:5px;
+  display:block;
+  font-size:14px;
+  margin-right:20px;
+  font-family: Arial;
+  font-weight: normal;}
+
+ul.dropdown li.hover ul li a { 
+	background:none;
+	top:0px; 
+	line-height:18px;
+}   
+ul.dropdown li ul li li a {color:#000000;
+	border-bottom:none;
+	padding-bottom:0;
+	margin-bottom:0;
+	font-size:12px;
+	padding-top:0;
+	margin-right:0px;
+	display:block;
+	padding:2px 0;
+  text-transform: none
+}
+ul.dropdown li ul li li a:hover {
+  text-decoration:none;
+  font-weight: bold;
+  color: #ff4500;
+  }
+ul.dropdown ul ul a {
+	background:none; 
+	font-weight: normal;
+	font-size:12px; 
+}
+
+ 
+ 

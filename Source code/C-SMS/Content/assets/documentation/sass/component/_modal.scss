@@ -1,0 +1,11 @@
+/* ========================================================================
+ * MODAL
+ * ======================================================================== */
+.modal-header{
+  padding: 12px;
+}
+.modal-content{
+  border: none;
+  @include border-radius(0);
+  @include box-shadow(none);
+}

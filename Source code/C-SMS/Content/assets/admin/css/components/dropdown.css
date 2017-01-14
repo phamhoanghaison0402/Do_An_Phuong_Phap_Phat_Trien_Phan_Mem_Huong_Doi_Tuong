@@ -1,0 +1,22 @@
+/* ========================================================================
+ * DROPDOWN
+ * ======================================================================== */
+.dropdown-menu {
+  padding: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 12px;
+  border: 1px solid #dddddd;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.dropdown-menu .dropdown-header {
+  background-color: #FBFBFB;
+  border-top: none;
+  border-bottom: 1px solid #dddddd;
+}
+.dropdown-menu .divider {
+  margin: 0px;
+}

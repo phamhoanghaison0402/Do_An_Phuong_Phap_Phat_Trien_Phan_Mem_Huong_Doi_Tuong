@@ -1,0 +1,76 @@
+/* ========================================================================
+ * COMPONENT LABEL
+ * ======================================================================== */
+.label {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* ========================================================================
+ * COMPONENT TYPOGRAPHY
+ * ======================================================================== */
+.text-title {
+  color: #505050;
+}
+
+.text-subtitle {
+  color: #959698;
+}
+
+.text-thin {
+  font-weight: 300;
+}
+
+/* ========================================================================
+ * COMPONENT MISC
+ * ======================================================================== */
+/* ========================================================================
+ * COMMON
+ * ======================================================================== */
+.section-header {
+  margin-bottom: 100px;
+  position: relative;
+}
+.section-header h1 {
+  position: relative;
+}
+.section-header.section-border:after {
+  background-color: #888;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55px;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  margin-left: -40px;
+}
+
+/* ========================================================================
+ * BACK TOP
+ * ======================================================================== */
+#back-top {
+  position: fixed;
+  bottom: 85px;
+  left: 40px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #313131;
+  border: 1px solid #CCC;
+  width: 40px;
+  height: 40px;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out;
+  -webkit-transition-delay: 0s;
+  transition: all 0.2s ease-out 0s;
+}
+#back-top:hover i {
+  color: #CCC;
+}
+#back-top i {
+  font-size: 20px;
+  line-height: 35px;
+  color: #CCC;
+}

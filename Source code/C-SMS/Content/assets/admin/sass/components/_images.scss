@@ -1,0 +1,12 @@
+/* ========================================================================
+ * IMG BORDERED
+ * ======================================================================== */
+@include img-bordered-color(default,$color-default);
+@include img-bordered-color(primary,$color-primary);
+@include img-bordered-color(success,$color-success);
+@include img-bordered-color(info,$color-info);
+@include img-bordered-color(warning,$color-warning);
+@include img-bordered-color(danger,$color-danger);
+@include img-bordered-color(lilac,$color-lilac);
+@include img-bordered-color(teals,$color-teal);
+@include img-bordered-color(inverse,$color-inverse);

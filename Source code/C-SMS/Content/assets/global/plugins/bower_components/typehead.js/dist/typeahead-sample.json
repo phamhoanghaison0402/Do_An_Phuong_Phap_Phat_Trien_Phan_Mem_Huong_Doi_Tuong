@@ -1,0 +1,63 @@
+[
+    {
+        "value": "typeahead",
+        "name": "typeahead",
+        "description": "This is a really nice typeahead using json file – typing a lot of words here as 'blankon'",
+        "icon": "smile-o",
+        "color": "success",
+        "tokens": [
+            "a","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
+        ]
+    },
+    {
+        "value": "blankon",
+        "name": "blankon - fullpack admin theme",
+        "description": "Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.",
+        "icon": "thumbs-o-up",
+        "color": "success",
+        "tokens": [
+            "blankon"
+        ]
+    },
+    {
+        "value": "behance",
+        "name": "behance",
+        "description": "Showcase and discover the latest work from top online portfolios by creative professionals across industries.",
+        "icon": "behance-square",
+        "color": "primary",
+        "tokens": [
+            "behance"
+        ]
+    },
+    {
+        "value": "bitbucket",
+        "name": "bitbucket",
+        "description": "Bitbucket is a free code DVCS hosting site for Git and Mercurial. Manage your development with a hosted wiki, issue tracker and source code.",
+        "icon": "bitbucket",
+        "color": "info",
+        "tokens": [
+            "bitbucket"
+        ]
+    },
+    {
+        "value": "bobo",
+        "name": "bobo - istilahe wong jowo turu dab",
+        "description": "Inyong ngimpi karo jupe, wealah ....",
+        "icon": "heart",
+        "color": "danger",
+        "tokens": [
+            "bobo"
+        ]
+    }
+    ,
+    {
+        "value": "bootstrap",
+        "name": "Bootstrap",
+        "description": "Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
+        "icon": "code",
+        "color": "lilac",
+        "tokens": [
+            "bootstrap"
+        ]
+    }
+]

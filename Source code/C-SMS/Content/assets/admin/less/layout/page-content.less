@@ -1,0 +1,220 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+// ===========================================================================
+// TABLE OF CONTENTS
+// ===========================================================================
+// 01. PAGE CONTENT
+// 02. HEADER CONTENT
+// 03. BODY CONTENT
+// 04. FOOTER CONTENT
+// ===========================================================================
+
+
+/* ========================================================================
+ * PAGE CONTENT
+ * ======================================================================== */
+#page-content {
+  background-color: @page-content-bg;
+  margin-left: @sidebar-width;
+  z-index: @pagecontent-zindex;
+}
+
+@media (max-width: 1024px) {
+  #page-content{
+    .header-content{
+      h2{
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #page-content{
+    margin-right: 0px;
+    .header-content{
+      h2{
+        font-size: 20px;
+      }
+      .breadcrumb-wrapper{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  #page-content{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-left: 0px !important;
+    margin-top: 50px;
+    margin-right: 0px !important;
+    .header-content{
+      padding: 12px 10px;
+      .breadcrumb-wrapper{
+        right: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+  #page-content{
+    .navbar-form{
+      input{
+        min-width: 230px !important;
+      }
+      .tt-dropdown-menu{
+        width: 300px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #page-content{
+    .navbar-form{
+      input{
+        min-width: 200px !important;
+      }
+    }
+    .navbar-left{
+      margin: 7.5px 0px 7.5px 5px !important;
+    }
+    .navbar-right{
+      margin: 0px !important;
+    }
+  }
+}
+
+/* ========================================================================
+ * HEADER CONTENT
+ * ======================================================================== */
+.header-content{
+  padding: 12px 20px;
+  border-bottom: 1px solid @border-color;
+  background: lighten(@page-content-bg,3%);
+  position: relative;
+  margin: 0px;
+  h2{
+    font-size: 22px;
+    color: #1D2939;
+    letter-spacing: -0.5px;
+    margin: 0;
+    i{
+      font-size: 21px;
+      margin-right: 7px;
+      border-right: 1px dotted @border-color;
+      padding-right: 10px;
+    }
+    span{
+      font-size: 13px;
+      text-transform: none;
+      color: #999;
+      font-style: italic;
+      vertical-align: middle;
+      letter-spacing: 0;
+      margin-left: 5px;
+    }
+  }
+  .breadcrumb-wrapper{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    .label{
+      color: #999;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: normal;
+      display: inline-block;
+    }
+    .breadcrumb{
+      background: none;
+      display: inline-block;
+      padding: 0px;
+      margin: 0px;
+      border: none;
+      li{
+        font-size: 12px;
+        white-space: nowrap;
+        + li{
+          &:before{
+            content: "";
+            padding: 0px;
+          }
+        }
+        span, i{
+          color: #999;
+          width: 1.25em;
+          text-align: center;
+        }
+        span{
+          padding: 0px 3px;
+        }
+        a{
+          color: #999;
+        }
+        &.active{
+          color: #999;
+          padding-left: 3px;
+        }
+        &:last-child{
+          a{
+            text-decoration: none;
+            cursor: default;
+          }
+          i{
+            &:last-child{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * BODY CONTENT
+ * ======================================================================== */
+.body-content{
+  background-color: darken(@page-content-bg, 2%);
+  padding: 20px;
+  min-height: inherit;
+  position: relative;
+}
+
+/* ========================================================================
+ * FOOTER CONTENT
+ * ======================================================================== */
+.footer-content{
+  background-color: lighten(@page-content-bg,5%);
+  padding: 8px 11px;
+  font-size: 12px;
+  border-top: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
+  color: #999;
+}
+
+@media (max-width: 800px){
+  .footer-content{
+    text-align: center;
+    .pull-left, .pull-right{
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+

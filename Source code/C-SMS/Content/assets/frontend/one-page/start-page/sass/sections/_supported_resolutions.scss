@@ -1,0 +1,150 @@
+/* ========================================================================
+ * SUPPORTED RESOLUTIONS
+ * ======================================================================== */
+#supported-resolutions{
+  text-align: center;
+  overflow: hidden;
+  .inner{
+    padding: 90px 0px 50px;
+  }
+  h2 + p {
+    margin-bottom: 70px;
+  }
+  .panel{
+    box-shadow: none;
+    &.panel-scrollable{
+      .panel-body{
+        overflow: hidden;
+        height: 400px;
+      }
+    }
+    .panel-heading{
+      background-color: $color-theme;
+      color: white;
+      .panel-title{
+        margin-top: 5px;
+      }
+    }
+    .panel-body{
+      border-top: none;
+      border: 1px solid #ECECEC;
+      border-top: none;
+      @include border-radius(0px 0px 3px 3px);
+      > ul{
+        margin: 0px;
+        padding: 0px;
+        > li{
+          border-left: none;
+          border-right: none;
+          text-align: left;
+          padding: 10px;
+          &:first-child{
+            border-top: none;
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+          ul{
+            &:hover{
+              li{
+                a{
+                  display: block;
+                }
+              }
+            }
+            li{
+              vertical-align: top;
+              &:last-child{
+                float: right;
+              }
+              h4{
+                font-size: 14px;
+              }
+              a{
+                display: none;
+              }
+            }
+          }
+          a{
+            color: $color-theme;
+          }
+          i{
+            font-size: 15px;
+            color: $color-theme;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  #supported-resolutions{
+    .inner{
+      padding: 70px 0px 50px;
+    }
+    [class*="col-"]{
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #supported-resolutions{
+    .panel{
+      .panel-body{
+        > ul{
+          > li{
+            padding: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px){
+  #supported-resolutions{
+    .panel{
+      .panel-body{
+        > ul{
+          > li{
+            ul{
+              li{
+                &:first-child{
+                  display: none;
+                }
+                h4{
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px){
+  #supported-resolutions{
+    .inner{
+      padding: 40px 0px 0px;
+    }
+    .panel{
+      .panel-body{
+        > ul{
+          > li{
+            ul{
+              li{
+                h4{
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

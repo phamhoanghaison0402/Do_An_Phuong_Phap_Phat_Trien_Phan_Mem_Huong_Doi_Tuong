@@ -1,0 +1,24 @@
+/* ========================================================================
+ * PLUGIN - PRELOADER
+ * ======================================================================== */
+#loader-wrapper .loader-section {
+  background-color: #ff7700;
+}
+
+/* ========================================================================
+ * SECTION - NEW FEATURE
+ * ======================================================================== */
+#new-feature {
+  background-color: #ff7700;
+}
+
+/* ========================================================================
+ * SECTION - PRICING TABLE
+ * ======================================================================== */
+#pricing-table .pricing-list.selected .pricing-header .pricing-money {
+  border: 1px solid #ff7700;
+  background-color: #ff7700;
+}
+#pricing-table .pricing-list.selected .pricing-body ul li:before {
+  color: #ff7700;
+}

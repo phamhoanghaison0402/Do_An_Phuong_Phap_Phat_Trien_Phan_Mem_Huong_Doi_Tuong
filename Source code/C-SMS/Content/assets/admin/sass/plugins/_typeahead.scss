@@ -1,0 +1,87 @@
+/* ========================================================================
+ * TYPEAHEAD
+ * ======================================================================== */
+.tt-hint {
+  color: #999
+}
+
+.empty-message{
+  padding: 20px;
+}
+
+.tt-dropdown-menu {
+  top: 45px !important;
+  width: 350px;
+  max-height: 360px;
+  background-color: #fff;
+  border-bottom: 1px solid $border-color;
+  overflow-y: auto;
+  @include border-radius-bottom(3px !important);
+  a.media {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid $border-color;
+    &:hover {
+      background-color: $hover-color-default;
+    }
+  }
+  .media {
+    position: relative;
+    padding: 8px 15px;
+    &.border-dotted {
+      &:after {
+        border-bottom-style: dotted;
+      }
+    }
+    .media-heading{
+      text-transform: capitalize;
+    }
+    .media-object {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      margin-top: 10px;
+      i {
+        display: block;
+        width: 34px;
+        height: 34px;
+        margin: 0 auto;
+        line-height: 33px;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 50%;
+        &.bg-default{
+          background-color: gray;
+        }
+      }
+    }
+    .pull-left {
+      margin-right: 10px;
+      display: table-cell;
+    }
+    .media-body {
+      display: table-cell;
+      .media-text {
+        display: block;
+        color: #999;
+        font-size: 13px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.tt-suggestions {
+  .repo-language {
+    float: right;
+    font-style: italic;
+  }
+  .repo-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .repo-description {
+    margin: 0;
+    color: red !important;
+  }
+}

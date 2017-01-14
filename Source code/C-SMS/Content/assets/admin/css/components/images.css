@@ -1,0 +1,30 @@
+/* ========================================================================
+ * IMG BORDERED
+ * ======================================================================== */
+.img-bordered-default {
+  border: 2px solid #eeeeee;
+}
+.img-bordered-primary {
+  border: 2px solid #00b1e1;
+}
+.img-bordered-success {
+  border: 2px solid #8cc152;
+}
+.img-bordered-info {
+  border: 2px solid #63d3e9;
+}
+.img-bordered-warning {
+  border: 2px solid #f6bb42;
+}
+.img-bordered-danger {
+  border: 2px solid #e9573f;
+}
+.img-bordered-lilac {
+  border: 2px solid #906094;
+}
+.img-bordered-teals {
+  border: 2px solid #37bc9b;
+}
+.img-bordered-inverse {
+  border: 2px solid #2a2a2a;
+}

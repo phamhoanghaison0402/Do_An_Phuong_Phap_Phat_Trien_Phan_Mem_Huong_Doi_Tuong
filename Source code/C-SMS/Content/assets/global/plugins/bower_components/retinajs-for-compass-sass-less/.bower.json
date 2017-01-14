@@ -1,0 +1,14 @@
+{
+  "name": "retinajs-for-compass-sass-less",
+  "homepage": "https://github.com/michaelsacca/retinajs-for-compass-sass-less",
+  "_release": "d9933b6be8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d9933b6be86d3c285162f22c261b8238fd7583c1"
+  },
+  "_source": "https://github.com/michaelsacca/retinajs-for-compass-sass-less.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/michaelsacca/retinajs-for-compass-sass-less.git",
+  "_direct": true
+}

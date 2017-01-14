@@ -1,0 +1,536 @@
+/* ========================================================================
+ * PANEL
+ * ======================================================================== */
+/* ========================================================================
+ * TABLE OF CONTENT
+ * ========================================================================
+   01. PANEL
+   02. PANEL HEADING
+   03. PANEL SUB HEADING
+   04. PANEL BODY
+   05. PANEL FOOTER
+   06. CONTEXTUAL CLASSES PANEL
+   07. PANEL SCROLLABLE
+   08. PANEL TAB
+   09. PANEL TAB DOUBLE
+   10. PANEL TAB VERTICAL
+   11. PANEL GROUP
+ * ======================================================================== */
+.panel {
+  border: none;
+  position: relative;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.panel.panel-fullsize {
+  position: fixed;
+  width: 96%;
+  top: 25px;
+  left: 25px;
+  z-index: 9999;
+}
+.panel.panel-fullsize .chartjs {
+  max-width: inherit !important;
+  height: 470px !important;
+}
+.panel .panel-heading {
+  padding: 5px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom: 1px solid #dddddd;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.panel .panel-heading .has-feedback .form-control {
+  padding-right: 0;
+}
+.panel .panel-heading > .pull-right {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.panel .panel-heading > .pull-right > i {
+  padding: 5px;
+}
+.panel .panel-heading > .pull-right > .progress {
+  min-width: 120px;
+}
+.panel .panel-heading .panel-title {
+  padding: 10px;
+  font-size: 17px;
+}
+.panel .panel-heading .panel-title > i {
+  margin-right: 5px;
+}
+.panel .panel-heading > .panel-title {
+  vertical-align: middle;
+}
+.panel .panel-heading .nav > li > a {
+  padding: 10px;
+}
+.panel .panel-search {
+  padding: 15px;
+  position: relative;
+  color: #333;
+  display: none;
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.panel .panel-search i {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: #A2A2A2;
+}
+.panel .panel-sub-heading {
+  display: block;
+  background-color: #FBFBFB;
+  border-bottom: 1px solid #CFD9DB;
+}
+.panel .panel-sub-heading h4 {
+  margin: 0px;
+}
+.panel .panel-sub-heading p {
+  margin: 0px;
+  font-size: 13px;
+  color: #999;
+}
+.panel .panel-body {
+  position: relative;
+  background-color: #FBFBFB;
+  padding: 10px;
+}
+.panel .panel-body .table-responsive {
+  margin-top: -1px;
+}
+.panel .panel-body.out {
+  display: none;
+}
+.panel .panel-body .sample-wrapper p {
+  font-size: 13px;
+  color: #999;
+}
+.panel .panel-body .page-header:first-child {
+  margin-top: 10px;
+}
+.panel .panel-body .list-group .list-group-item {
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #dddddd;
+  border-left: none;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-right-radius: 0px;
+}
+.panel .panel-body .list-group .list-group-item:last-child {
+  border-bottom: none !important;
+}
+.panel .panel-body table {
+  margin-bottom: 0px;
+}
+.panel .panel-body table thead tr th {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.panel .panel-footer {
+  padding: 10px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.panel.panel-default .panel-heading .option .btn:hover {
+  background-color: #e1e1e1;
+}
+.panel.rounded .ribbon-wrapper + .panel-body {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.panel.no-overflow .panel-body,
+.panel.no-overflow .panel-footer,
+.panel.no-overflow .form-footer {
+  -webkit-border-radius: 0px 0px 3px 3px;
+  -moz-border-radius: 0px 0px 3px 3px;
+  border-radius: 0px 0px 3px 3px;
+}
+.panel-primary > .panel-heading {
+  background-color: #00b1e1;
+  border: 1px solid #00addc;
+  color: white;
+}
+.panel-primary > .panel-heading .option .btn:hover {
+  background-color: #009dc8;
+  color: white;
+}
+.panel-primary > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-primary .panel-body {
+  background-color: #00b1e1;
+  color: white;
+}
+.panel-bg-primary .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-success > .panel-heading {
+  background-color: #8cc152;
+  border: 1px solid #8ac04e;
+  color: white;
+}
+.panel-success > .panel-heading .option .btn:hover {
+  background-color: #7fb842;
+  color: white;
+}
+.panel-success > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-success .panel-body {
+  background-color: #8cc152;
+  color: white;
+}
+.panel-bg-success .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-info > .panel-heading {
+  background-color: #63d3e9;
+  border: 1px solid #5fd2e8;
+  color: white;
+}
+.panel-info > .panel-heading .option .btn:hover {
+  background-color: #4dcde6;
+  color: white;
+}
+.panel-info > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-info .panel-body {
+  background-color: #63d3e9;
+  color: white;
+}
+.panel-bg-info .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-warning > .panel-heading {
+  background-color: #f6bb42;
+  border: 1px solid #f6b93d;
+  color: white;
+}
+.panel-warning > .panel-heading .option .btn:hover {
+  background-color: #f5b22a;
+  color: white;
+}
+.panel-warning > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-warning .panel-body {
+  background-color: #f6bb42;
+  color: white;
+}
+.panel-bg-warning .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-danger > .panel-heading {
+  background-color: #e9573f;
+  border: 1px solid #e8533a;
+  color: white;
+}
+.panel-danger > .panel-heading .option .btn:hover {
+  background-color: #e64328;
+  color: white;
+}
+.panel-danger > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-danger .panel-body {
+  background-color: #e9573f;
+  color: white;
+}
+.panel-bg-danger .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-inverse > .panel-heading {
+  background-color: #2a2a2a;
+  border: 1px solid #272727;
+  color: white;
+}
+.panel-inverse > .panel-heading .option .btn:hover {
+  background-color: #1d1d1d;
+  color: white;
+}
+.panel-inverse > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-inverse .panel-body {
+  background-color: #2a2a2a;
+  color: white;
+}
+.panel-bg-inverse .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-lilac > .panel-heading {
+  background-color: #906094;
+  border: 1px solid #8d5e91;
+  color: white;
+}
+.panel-lilac > .panel-heading .option .btn:hover {
+  background-color: #815685;
+  color: white;
+}
+.panel-lilac > .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-lilac .panel-body {
+  background-color: #906094;
+  color: white;
+}
+.panel-bg-lilac .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-teal .panel-heading {
+  background-color: #37bc9b;
+  border: 1px solid #36b898;
+  color: white;
+}
+.panel-teal .panel-heading .option .btn:hover {
+  background-color: #31a88b;
+  color: white;
+}
+.panel-teal .panel-heading .option .btn i {
+  color: white;
+}
+.panel-bg-teal .panel-body {
+  background-color: #37bc9b;
+  color: white;
+}
+.panel-bg-teal .panel-body .text-muted {
+  color: #f2f2f2;
+}
+.panel-scrollable .panel-body {
+  height: 300px;
+}
+.panel-tab {
+  background-color: #FBFBFB;
+}
+.panel-tab .panel-heading ul {
+  position: relative;
+  overflow: visible;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  border: none;
+  margin-bottom: -6px;
+}
+.panel-tab .panel-heading ul li {
+  line-height: 25px;
+}
+.panel-tab .panel-heading ul li.active {
+  color: #444;
+}
+.panel-tab .panel-heading ul li.active a {
+  color: #444;
+  background: #F7F7F7;
+}
+.panel-tab .panel-heading ul li.active a:hover {
+  background: #F7F7F7;
+}
+.panel-tab .panel-heading ul li.active a i {
+  color: #81b71a;
+}
+.panel-tab .panel-heading ul li a {
+  width: auto;
+  margin: 0px;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  overflow: hidden;
+  color: #999;
+  text-decoration: none;
+  border: none;
+  border-right: 1px solid #dddddd;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.panel-tab .panel-heading ul li a:hover,
+.panel-tab .panel-heading ul li a:focus {
+  border: none;
+  border-right: 1px solid #dddddd;
+}
+.panel-tab .panel-heading ul li a:hover {
+  background-color: transparent;
+}
+.panel-tab .panel-heading ul li a:hover i {
+  color: #81b71a;
+}
+.panel-tab .panel-heading ul li a > i,
+.panel-tab .panel-heading ul li a > span {
+  margin: 0px auto;
+  text-align: center;
+}
+.panel-tab .panel-heading ul li a > div {
+  text-align: center;
+}
+.panel-tab .panel-heading ul li a i {
+  width: 100%;
+  height: 30px;
+  line-height: 20px;
+  font-size: 25px;
+  color: #CCC;
+}
+.panel-tab .panel-heading ul li a span {
+  display: block;
+  line-height: 15px;
+}
+.panel-tab .panel-sub-heading {
+  background: #F7F7F7;
+}
+.panel-tab .panel-body {
+  background: #F7F7F7;
+}
+.panel-tab .panel-body .tab-content {
+  background: #F7F7F7;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: none;
+}
+.panel-tab .panel-body .tab-content .tab-pane > h4 {
+  margin-top: 0px;
+}
+.panel-tab .panel-body .tab-content .tab-pane > p {
+  margin: 0px;
+}
+.panel-tab .nav-pills > li + li {
+  margin-left: 0px;
+}
+@media (max-width: 360px) {
+  .panel-tab .panel-heading .pull-right {
+    float: inherit !important;
+    display: block;
+    width: 100%;
+  }
+  .panel-tab .panel-heading ul li {
+    width: 100%;
+  }
+}
+.panel-tab-double .panel-heading ul li {
+  min-width: 100px;
+}
+.panel-tab-double .panel-heading ul li a {
+  padding: 15px 15px 15px 15px;
+}
+.panel-tab-double .panel-heading ul li a > i,
+.panel-tab-double .panel-heading ul li a > div {
+  float: left;
+}
+.panel-tab-double .panel-heading ul li a > div {
+  text-align: left;
+}
+.panel-tab-double .panel-heading ul li a > div span:last-child {
+  margin-top: 3px;
+}
+.panel-tab-double .panel-heading ul li a i {
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+}
+@media (max-width: 640px) {
+  .panel-tab.panel-tab-double .panel-heading ul li {
+    width: 100%;
+  }
+}
+.panel-tab-vertical {
+  padding-bottom: 5px;
+}
+.panel-tab-vertical .panel-heading {
+  border-bottom: none;
+}
+.panel-tab-vertical .panel-heading ul {
+  display: block;
+  height: auto;
+}
+.panel-tab-vertical .panel-heading ul li {
+  float: none;
+  display: block;
+  border-right: none;
+  border-bottom: 1px solid #EFEFEF;
+}
+.panel-tab-vertical .panel-heading ul li a {
+  min-height: 40px;
+}
+.panel-tab-vertical .panel-heading ul li:first-child a {
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+}
+.panel-tab-vertical .panel-heading ul li:last-child a {
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel-tab-vertical .panel-body {
+  box-shadow: none;
+}
+.panel-group .panel {
+  border-top: 1px solid #dddddd;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.panel-group .panel:first-child {
+  border-top: none;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
+}
+.panel-group .panel:last-child {
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-right-radius: 3px;
+}
+.panel-group .panel + .panel {
+  margin-top: 0px;
+}
+.panel-group .panel .panel-heading {
+  padding: 0px;
+}
+.panel-group .panel .panel-heading .panel-title {
+  padding: 0px;
+}
+.panel-group .panel .panel-heading .panel-title a {
+  padding: 14px 15px;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.panel-group .panel .panel-heading .panel-title a:hover {
+  background-color: #F3F3F3;
+}
+.panel-fullsize-backdrop {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.27);
+}

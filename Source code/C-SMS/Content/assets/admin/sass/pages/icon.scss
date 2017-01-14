@@ -1,0 +1,37 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * SIMPLE LINE ICONS
+ * ======================================================================== */
+
+.preview {
+  padding: 10px 0;
+  position: relative;
+}
+
+.icons {
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.code-preview {
+  display: none;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.show-code {
+  color: #101010;
+  &:hover, &:active, &:focus{
+    color: #252525;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,170 @@
+/* ========================================================================
+ * PAGE CONTENT
+ * ======================================================================== */
+#page-content {
+  background-color: #f3f3f4;
+  margin-left: 220px;
+  z-index: 100;
+}
+@media (max-width: 1024px) {
+  #page-content .header-content h2 span {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  #page-content {
+    margin-right: 0px;
+  }
+  #page-content .header-content h2 {
+    font-size: 20px;
+  }
+  #page-content .header-content .breadcrumb-wrapper {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #page-content {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-left: 0px !important;
+    margin-top: 50px;
+    margin-right: 0px !important;
+  }
+  #page-content .header-content {
+    padding: 12px 10px;
+  }
+  #page-content .header-content .breadcrumb-wrapper {
+    right: 10px;
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  #page-content .navbar-form input {
+    min-width: 230px !important;
+  }
+  #page-content .navbar-form .tt-dropdown-menu {
+    width: 300px !important;
+  }
+}
+@media (max-width: 480px) {
+  #page-content .navbar-form input {
+    min-width: 200px !important;
+  }
+  #page-content .navbar-left {
+    margin: 7.5px 0px 7.5px 5px !important;
+  }
+  #page-content .navbar-right {
+    margin: 0px !important;
+  }
+}
+/* ========================================================================
+ * HEADER CONTENT
+ * ======================================================================== */
+.header-content {
+  padding: 12px 20px;
+  border-bottom: 1px solid #dddddd;
+  background: #fbfbfb;
+  position: relative;
+  margin: 0px;
+}
+.header-content h2 {
+  font-size: 22px;
+  color: #1D2939;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.header-content h2 i {
+  font-size: 21px;
+  margin-right: 7px;
+  border-right: 1px dotted #dddddd;
+  padding-right: 10px;
+}
+.header-content h2 span {
+  font-size: 13px;
+  text-transform: none;
+  color: #999;
+  font-style: italic;
+  vertical-align: middle;
+  letter-spacing: 0;
+  margin-left: 5px;
+}
+.header-content .breadcrumb-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.header-content .breadcrumb-wrapper .label {
+  color: #999;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: normal;
+  display: inline-block;
+}
+.header-content .breadcrumb-wrapper .breadcrumb {
+  background: none;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li + li:before {
+  content: "";
+  padding: 0px;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li span,
+.header-content .breadcrumb-wrapper .breadcrumb li i {
+  color: #999;
+  width: 1.25em;
+  text-align: center;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li span {
+  padding: 0px 3px;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li a {
+  color: #999;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li.active {
+  color: #999;
+  padding-left: 3px;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li:last-child a {
+  text-decoration: none;
+  cursor: default;
+}
+.header-content .breadcrumb-wrapper .breadcrumb li:last-child i:last-child {
+  display: none;
+}
+/* ========================================================================
+ * BODY CONTENT
+ * ======================================================================== */
+.body-content {
+  background-color: #eeeeef;
+  padding: 20px;
+  min-height: inherit;
+  position: relative;
+}
+/* ========================================================================
+ * FOOTER CONTENT
+ * ======================================================================== */
+.footer-content {
+  background-color: #ffffff;
+  padding: 8px 11px;
+  font-size: 12px;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  color: #999;
+}
+@media (max-width: 800px) {
+  .footer-content {
+    text-align: center;
+  }
+  .footer-content .pull-left,
+  .footer-content .pull-right {
+    display: none;
+  }
+}

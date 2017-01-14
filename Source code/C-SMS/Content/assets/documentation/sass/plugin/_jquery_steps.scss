@@ -1,0 +1,38 @@
+/* ========================================================================
+ * JQUERY STEPS
+ * ======================================================================== */
+.wizard{
+  > .content{
+    @include border-radius(0);
+  }
+  > .steps{
+    ul{
+      li{
+        &:first-child{
+          a{
+            margin-top: 0;
+            &:hover, &:active{
+              margin-top: 0;
+            }
+          }
+        }
+        a{
+          margin: 20px 0 0;
+          @include border-radius(0);
+          &:hover, &:active{
+            margin: 20px 0 0;
+            @include border-radius(0);
+          }
+        }
+      }
+    }
+  }
+  > .actions{
+    a {
+      @include border-radius(0);
+      &:hover, &:active{
+        @include border-radius(0);
+      }
+    }
+  }
+}

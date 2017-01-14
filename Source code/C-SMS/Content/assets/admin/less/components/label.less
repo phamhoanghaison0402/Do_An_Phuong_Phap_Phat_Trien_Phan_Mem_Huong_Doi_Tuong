@@ -1,0 +1,32 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * LABEL
+ * ======================================================================== */
+.label{
+  .border-radius(0px);
+}
+
+.label-default{
+  color: #999 !important;
+}
+.label-color(default,@color-default);
+.label-color(primary,@color-primary);
+.label-color(success,@color-success);
+.label-color(info,@color-info);
+.label-color(warning,@color-warning);
+.label-color(danger,@color-danger);
+.label-color(lilac,@color-lilac);
+.label-color(teals,@color-teal);
+.label-color(inverse,@color-inverse);
+
+.label-circle{
+  .border-radius(50%);
+  line-height: 10px;
+  height: 15px;
+  width: 15px;
+  display: block;
+}

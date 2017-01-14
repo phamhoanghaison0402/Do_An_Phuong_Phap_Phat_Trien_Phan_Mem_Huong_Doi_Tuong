@@ -1,0 +1,48 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * BLOG SINGLE
+ * ======================================================================== */
+.icon-list, .icon-th-list, .icon-indent-right, .icon-indent-left, .icon-share, .icon-picture{
+  &:before{
+    font-family: 'FontAwesome';
+    font-style: normal;
+    color: #99999C;
+  }
+}
+.icon-list{
+  &:before {
+    content: "\f03a";
+  }
+}
+.icon-th-list{
+  &:before {
+    content: "\f00b";
+  }
+}
+.icon-indent-right{
+  &:before {
+    content: "\f03b";
+  }
+}
+.icon-indent-left{
+  &:before {
+    content: "\f03c";
+  }
+}
+.icon-share{
+  &:before {
+    content: "\f0c1";
+  }
+}
+.icon-picture{
+  &:before {
+    content: "\f03e";
+  }
+}

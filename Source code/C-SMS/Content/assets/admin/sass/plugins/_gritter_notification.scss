@@ -1,0 +1,24 @@
+/* ========================================================================
+ * GRITTER NOTIFICATION
+ * ======================================================================= */
+.gritter-item-wrapper, .gritter-item, .gritter-top, .gritter-bottom{
+  background: fadeout(#2A2A2A, 35% !important);
+  @include border-radius($rounded !important);
+}
+#gritter-notice-wrapper {
+  top: 70px !important;
+  right: 20px !important;
+  z-index: 1030 !important;
+}
+.gritter-close {
+  left: auto !important;
+  right: 3px !important;
+}
+.gritter-title {
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: none;
+}
+.gritter-item{
+  font-family: 'Open Sans';
+}

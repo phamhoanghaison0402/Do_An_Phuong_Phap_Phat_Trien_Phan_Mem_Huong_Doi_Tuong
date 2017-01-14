@@ -1,0 +1,99 @@
+// CORE
+@import "../../global/less/core/variable.less";
+@import "../../global/less/core/mixins.less";
+@import "../../global/less/core/functions.less";
+
+/* ========================================================================
+ * COLOR YII
+ * ======================================================================== */
+.gradient-yii-to-top{
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #DE451D), color-stop(0.5, #A3C43F), color-stop(1, #006DB5));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+}
+
+.gradient-yii-to-bottom-right{
+  /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #de451d), color-stop(0.5, #a3c43f), color-stop(1, #006db5));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+}
+
+/* ========================================================================
+ * NAVBAR HEADER
+ * ======================================================================== */
+#header{
+  .navbar-header{
+    .gradient-yii-to-bottom-right;
+  }
+}
+
+/* ========================================================================
+ * SIDEBAR
+ * ======================================================================== */
+#sidebar-left{
+  &.sidebar-box, &.sidebar-rounded, &.sidebar-circle{
+    .sidebar-menu{
+      > li{
+        &.active{
+          > a{
+            > .icon{
+              i{
+                .gradient-yii-to-bottom-right;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+body{
+  &.page-sidebar-minimize{
+    #header{
+      .navbar-minimize{
+        > a{
+          .gradient-yii-to-bottom-right;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * BACKGROUND THEME
+ * ======================================================================== */
+.bg-theme{
+  .gradient-yii-to-bottom-right;
+  border: none !important;
+}
+
+/* ========================================================================
+ * SIGN
+ * ======================================================================== */
+.sign-header{
+  .gradient-yii-to-bottom-right;
+  border-bottom: 10px solid darken(rgba(234, 234, 236, 0.72), 10%) !important;
+}
+.sign-text{
+  &:before{
+    height: 0px !important;
+  }
+  span{
+    background-color: transparent !important;
+  }
+}

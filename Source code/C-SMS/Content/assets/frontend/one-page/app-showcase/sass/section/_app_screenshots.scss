@@ -1,0 +1,19 @@
+/* ========================================================================
+ * SECTION APP SCREENSHOTS
+ * ======================================================================== */
+#app-screenshots{
+  position: relative;
+  padding: 50px 0;
+  .app-screenshot-list{
+    text-align: center;
+    img{
+      width: 100%;
+    }
+  }
+  .cbp-l-slider-title-block{
+    margin-bottom: 40px;
+  }
+  .cbp-nav-controls{
+    top: -62px;
+  }
+}

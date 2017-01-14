@@ -1,0 +1,671 @@
+// CORE
+@import "../../global/less/core/variable.less";
+@import "../../global/less/core/mixins.less";
+@import "../../global/less/core/functions.less";
+
+/* ========================================================================
+ * TABLE OF CONTENTS
+ * ========================================================================
+ 
+ * ========================================================================
+ * LAYOUT
+ * ========================================================================
+   01. HEADER
+   02. SIDEBAR LEFT & RIGHT
+   03. PAGE CONTENT
+ * ========================================================================
+ 
+ * ========================================================================
+ * PAGES
+ * ========================================================================
+   01. SIGN
+   02. ERROR
+   03. INVOICE
+ * ========================================================================
+ 
+ * ========================================================================
+ * COMPONENT
+ * ========================================================================
+   01. RESET
+   02. PANEL
+   03. MEDIA MANAGER
+   04. PAGINATION
+   05. RATING STAR
+   06. DROPDOWN
+   07. LIST GROUP
+   08. FORM
+   09. TABLE
+   10. BUTTON
+   11. MISC
+ * ========================================================================
+ 
+ * ========================================================================
+ * PLUGINS
+ * ========================================================================
+   01. CHOSEN
+   02. DROPZONE
+   03. JPRELOADER
+   04. DATEPICKER
+   05. ION SLIDER
+ * ======================================================================== */
+ 
+
+/* ========================================================================
+ * HEADER
+ * ======================================================================== */
+body{
+  &.page-sidebar-minimize{
+    #header{
+      .navbar-minimize{
+        > a{
+          background-color: @color-theme;
+          color: @white;
+        }
+        &:hover{
+          > a{
+            background-color: darken(@color-theme,5%);
+          }
+        }
+      }
+    }
+  }
+}
+#header{
+  .navbar-header{
+    background-color: @color-theme;
+  }
+}
+
+/* ========================================================================
+ * SIDEBAR LEFT & RIGHT
+ * ======================================================================== */
+// SIDEBAR LEFT ---------------------------------------------------
+#sidebar-left{
+  &.sidebar-box, &.sidebar-rounded, &.sidebar-circle{
+    // SIDEBAR CONTENT -------------------------------------------------------
+    .sidebar-content{
+      img{
+        border: 2px solid @color-theme;
+      }
+    }
+    .sidebar-menu{
+      > li{
+        &.active{
+          > a{
+            > .icon{
+              i{
+                background-color: @color-theme;
+              }
+            }
+          }
+        }
+        > ul{
+          > li{
+            &:hover{
+              &:after{
+                .box-shadow(0 0 0 5px darken(@color-theme,10%));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // SIDEBAR MENU -------------------------------------------------------
+  .sidebar-menu{
+    ul{
+      li{
+        &:hover{
+          &:after{
+            background-color: @color-theme;
+          }
+          a{
+            &:before{
+              color: @color-theme;
+            }
+          }
+        }
+        &.active{
+          &:after{
+            background-color: @color-theme;
+          }
+          > ul{
+            > li{
+              &.active{
+                a{
+                  &:before{
+                    color: @color-theme;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * PAGE CONTENT
+ * ======================================================================== */
+// NAVBAR MINIMIZE ---------------------------------------------------
+body{
+  &.page-sidebar-minimize, &.page-sidebar-minimize-auto{
+    .navbar-minimize{
+      border-right: 1px solid @color-theme !important;
+      a{
+        background-color: @color-theme;
+        border-bottom: 1px solid @color-theme;
+        &:hover{
+          background-color: darken(@color-theme,5%);
+          border-bottom: 1px solid darken(@color-theme,5%);
+        }
+        i{
+          color: @white;
+        }
+      }
+    }
+  }
+}
+
+.navbar-minimize-mobile{
+  background-color: @color-theme;
+  &:hover{
+    background-color: darken(@color-theme,5%);
+  }
+}
+
+@media (max-width: 768px){
+  body{
+    &.page-sidebar-left-show, &.page-sidebar-right-show{
+      .navbar-minimize-mobile{
+        background-color: darken(@color-theme,10%);
+        &:hover{
+          background-color: darken(@color-theme,5%);
+        }
+      }
+    }
+  }
+}
+
+// Navbar toolbar
+.navbar-toolbar{
+  .navbar-form{
+    input{
+      &:focus{
+        border: 1px solid @color-theme;
+      }
+    }
+    .btn-focus{
+      background-color: @color-theme;
+      box-shadow: none;
+      border: none;
+      color: @white;
+    }
+  }
+  .navbar-right{
+    .dropdown{
+      > a{
+        &:focus{
+          > i{
+            color: @color-theme;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * SIGN
+ * ======================================================================== */
+
+.sign-wrapper{
+  // RESET --------------------------------------------------
+  a{
+    color: @color-theme;
+    &:hover, &:focus, &:active{
+      color: darken(@color-theme,1%);
+    }
+  }
+}
+
+.sign-text{
+  &:before{
+    background-color: lighten(@color-theme,10%);
+  }
+}
+
+// SIGN HEADER --------------------------------------------------
+.sign-header{
+  background-color: @color-theme;
+  border-bottom: 10px solid darken(@color-theme,7%);
+}
+
+// SIGN TEXT --------------------------------------------------
+.sign-text{
+  span{
+    background-color: @color-theme;
+  }
+  img{
+    border: 7px solid @color-theme;
+  }
+}
+
+/* ========================================================================
+ * ERROR
+ * ======================================================================== */
+.error-wrapper{
+  h1{
+    color: @color-theme;
+  }
+}
+
+/* ========================================================================
+ * INVOICE
+ * ======================================================================== */
+.product-num{
+  background-color: @color-theme;
+}
+
+/* ========================================================================
+ * RESET
+ * ======================================================================== */
+a{
+  color: @color-theme;
+  &:hover,&:active,&:focus{
+    color: darken(@color-theme,10%);
+  }
+}
+input,textarea{
+  &.no-border-left{
+    &:focus{
+      border-top: 1px solid @color-theme !important;
+      border-right: 1px solid @color-theme !important;
+      border-bottom: 1px solid @color-theme !important;
+      border-left: none !important
+    }
+  }
+  &.no-border-right{
+    &:focus{
+      border-top: 1px solid @color-theme !important;
+      border-none: 1px solid @color-theme !important;
+      border-bottom: 1px solid @color-theme !important;
+      border-right: none !important
+    }
+  }
+  &:focus{
+    border: 1px solid @color-theme !important;
+  }
+}
+
+/* ========================================================================
+ * PANEL
+ * ======================================================================== */
+.panel-tab{
+  .panel-heading{
+    ul{
+      li{
+        &.active{
+          a{
+            i{
+              color: @color-theme;
+            }
+          }
+        }
+        a{
+          &:hover{
+            i{
+              color: @color-theme;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * MEDIA MANAGER
+ * ======================================================================== */
+.media-manager{
+  .media-manager-options{
+    .filter-type{
+      a{
+        &.active{
+          color: @color-theme;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * PAGINATION
+ * ======================================================================== */
+.pagination{
+  > li{
+    > a{
+      color: darken(@color-theme,10%);
+    }
+  }
+  > .active{
+    > a, > span{
+      background-color: darken(@color-theme,10%);
+      border: 1px solid darken(@color-theme,10%);
+      &:hover, &:focus{
+        background-color: @color-theme;
+        border: 1px solid @color-theme;
+      }
+    }
+  }
+}
+
+.pager{
+  > li{
+    > a{
+      color: darken(@color-theme,10%);
+    }
+  }
+}
+
+/* ========================================================================
+ * RATING STAR
+ * ======================================================================== */
+.rating{
+  .star{
+    &:hover{
+      &:before{
+        color: @color-theme;
+      }
+    }
+    &.active{
+      &:before{
+        color: @color-theme;
+      }
+      &~.star{
+        &:before{
+          color: @color-theme;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * DROPDOWN
+ * ======================================================================== */
+.dropdown-menu{
+  li{
+    position: relative;
+    &.active{
+      a{
+        background-color: @color-theme;
+      }
+      &:hover, &:focus, &:active{
+        a{
+          background-color: @color-theme;
+          cursor: default;
+        }
+      }
+    }
+    > a{
+      &:hover{
+        &:before{
+          display: block;
+          content: "";
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          bottom: 0px;
+          border-left: 3px solid darken(@color-theme, 5%);
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * LIST GROUP
+ * ======================================================================== */
+a{
+  &.list-group-item{
+    &.active{
+      background-color: @color-theme;
+      border-color: @color-theme;
+      &:hover, &:focus {
+        background-color: @color-theme;
+        border-color: @color-theme;
+      }
+    }
+  }
+}
+
+
+/* ========================================================================
+ * FORM
+ * ======================================================================== */
+
+// CONTEXTUAL CLASSES CHECKBOX COLOR
+.ckbox-color(theme,@color-theme);
+
+// CONTEXTUAL CLASSES RADIO COLOR
+.rdio-color(theme,@color-theme);
+
+// FORM CONTROL
+.form-control{
+  &:focus{
+    border: 1px solid @color-theme;
+    .box-shadow(none);
+  }
+}
+
+// FOCUS INPUT ACTION
+.form-focus{
+  border: 1px solid @color-theme;
+  .box-shadow(none);
+}
+
+/* ========================================================================
+ * TABLE
+ * ======================================================================== */
+
+// CONTEXTUAL CLASSES TABLE ---------------------------------------------------
+.table-color(theme,@color-theme);
+
+/* ========================================================================
+ * BUTTON
+ * ======================================================================== */
+
+// CONTECTUAL BUTTON THEME
+.button-color(theme,@color-theme);
+
+/* ========================================================================
+ * PANEL
+ * ======================================================================== */
+
+// CONTEXTUAL CLASSES PANEL ---------------------------------------------------
+.panel-color(theme,@color-theme);
+
+/* ========================================================================
+ * MISC
+ * ======================================================================== */
+.img-bordered-theme{
+  border: 2px solid @color-theme;
+}
+.progress-bar-theme{
+  background-color: @color-theme;
+}
+.fg-theme{
+  color: @color-theme !important;
+}
+.nicescroll-rails{
+  div{
+    background-color: @color-theme !important;
+  }
+}
+.sidebar{
+  .nicescroll-rails{
+    div{
+      background-color: @sidebar-category-bg !important;
+    }
+  }
+}
+.cal-month-box{
+  border-top: 7px solid darken(@color-theme,7%) !important;
+  .border-radius(0px);
+}
+.cal-row-head{
+  [class*="cal-cell1"],[class*="cal-cell"]{
+    background-color: @color-theme;
+    color: @white;
+    border-width: 0px 1px 0px !important;
+    border-style: solid;
+    border-color: lighten(@color-theme,5%) lighten(@color-theme,5%) darken(@color-theme,7%) !important;
+    border-left: none !important;
+    &:hover{
+      background-color: @color-theme !important;
+    }
+    &:first-child{
+      border-width: 0px 1px 0px !important;
+      border-style: solid;
+      border-color: lighten(@color-theme,5%) lighten(@color-theme,5%) darken(@color-theme,7%) !important;
+    }
+    &:last-child{
+      border-right: none !important;
+    }
+  }
+}
+
+#cal-day-panel{
+  border-top: 7px solid darken(@color-theme,7%) !important;
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.cal-day-today{
+  background-color: @color-theme !important;
+}
+
+.cal-row-head + .cal-day-hour{
+  background-color: darken(@color-theme, 7%) !important;
+  color: @white;
+}
+
+  // CONTEXTUAL CLASSES BACKGROUND
+.bg-color(theme,@color-theme);
+
+// BACK TOP
+#back-top {
+  &:hover{
+    background: @color-theme;
+    box-shadow: 0 0 0 6px @white;
+  }
+}
+
+// JQVMAP
+.jqvmap-zoomin,
+.jqvmap-zoomout {
+  background: @color-theme !important;
+  &:hover{
+    background: darken(@color-theme,10%) !important;
+  }
+}
+
+/* ========================================================================
+ * CHOSEN
+ * ======================================================================== */
+.chosen-container {
+  .chosen-results {
+    li {
+      &.highlighted {
+        background-color: @color-theme !important;
+        background-image: none !important;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * DROPZONE
+ * ======================================================================== */
+.dz-file-preview{
+  .dz-details{
+    &:before{
+      color: @color-theme;
+    }
+  }
+}
+
+/* ========================================================================
+ * JPRELOADER
+ * ======================================================================== */
+#jpreBar{
+  background-color: @color-theme;
+}
+
+/* ========================================================================
+ * DATEPICKER
+ * ======================================================================== */
+.datepicker{
+  table{
+    thead{
+      tr{
+        &:first-child{
+          background-color: @color-theme;
+        }
+        &:last-child{
+          background-color: darken(@color-theme,10%);
+        }
+        th{
+          background-color: @color-theme;
+          border-color: darken(@color-theme,5%) darken(@color-theme,5%) darken(@color-theme,7%);
+        }
+        .prev, .switch, .next{
+          &:hover{
+            background-color: darken(@color-theme,5%) !important;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          &.active, &.active:hover, &.active:disabled, &.active.disabled:hover{
+            background-color: @color-theme;
+          }
+          &.active{
+            &.active{
+              background-color: @color-theme;
+              &:hover{
+                background-color: darken(@color-theme,10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .icon-arrow-left{
+    &:before{
+      font-family: "FontAwesome";
+      content: "\f104";
+    }
+  }
+  .icon-arrow-right{
+    &:before{
+      font-family: "FontAwesome";
+      content: "\f105";
+    }
+  }
+}
+.datepicker-dropdown{
+  &:after{
+    border-bottom: 6px solid @color-theme;
+  }
+}
+
+/* ========================================================================
+ * ION SLIDER
+ * ======================================================================== */
+.slider-color(theme,@color-theme);

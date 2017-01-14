@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Common.Models.NhaCungCap>
+
+@foreach (var item in Model)
+{
+    <div class="form-group">
+        <label >Mã nhà cung cấp</label>
+        <input type="text" name="manhacungcap" value="@item.MaNhaCungCap" class="form-control rounded" disabled="disabled" />
+    </div>
+
+
+    <div class="form-group">
+        <label >Tên nhà cung cấp</label>
+        <input type="text" name="tennhacungcap" value="@item.TenNhaCungCap" class="form-control rounded" required="required" />
+    </div>
+
+    <div class="form-group">
+        <label >Địa chỉ</label>
+        <input type="text" name="diachi" value="@item.DiaChi" class="form-control rounded" required="required" maxlength="100" />
+    </div>
+
+    <div class="form-group">
+        <label >Số điện thoại</label>
+        <input type="text" name="sodienthoai" value="@item.SoDienThoai" class="form-control rounded" required="required" maxlength="15" />
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" value="@item.Email" class="form-control rounded" required maxlength="30" />
+    </div>
+}
+

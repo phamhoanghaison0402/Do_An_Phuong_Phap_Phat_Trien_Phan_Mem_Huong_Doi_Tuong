@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Danh sách loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i> Loại Sản Phẩm</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-sm btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Create", "LoaiHangHoa") + "'"); ">
+                <i class="glyphicon glyphicon-edit"></i>
+                Thêm loại sản phẩm
+            </button>
+        </div>
+    </div>
+
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Danh sách loại sản phẩm</h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-body">
+                            @using (Ajax.BeginForm("DanhSachLoaiHangHoa", "LoaiHangHoa", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "list", HttpMethod = "Get" }, new { id = "filter_div" }))
+                            {
+                                <div class="form-group">
+                                    <label>Tìm Kiếm</label>
+                                    <div class="input-group">
+                                        @Html.TextBox("SearchString", null, new { @class = "form-control", @placeholder = "Tìm kiếm theo tên loại sản phẩm, phần trăm lợi nhuận"})
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            }
+                            <div id="list">
+                                @{Html.RenderAction("DanhSachLoaiHangHoa", "LoaiHangHoa");}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/bootstrap.min.js"></script>

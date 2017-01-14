@@ -1,0 +1,28 @@
+/* ========================================================================
+ * BADGE
+ * ======================================================================== */
+.badge{
+  padding: 4px 7px;
+  @include border-radius(0px);
+}
+
+.badge-default{
+  color: #999 !important;
+}
+@include badge-color(default,$color-default);
+@include badge-color(primary,$color-primary);
+@include badge-color(success,$color-success);
+@include badge-color(info,$color-info);
+@include badge-color(warning,$color-warning);
+@include badge-color(danger,$color-danger);
+@include badge-color(lilac,$color-lilac);
+@include badge-color(teals,$color-teal);
+@include badge-color(inverse,$color-inverse);
+
+.badge-circle{
+  @include border-radius(50%);
+  line-height: 10px;
+  height: 15px;
+  width: 15px;
+  display: block;
+}

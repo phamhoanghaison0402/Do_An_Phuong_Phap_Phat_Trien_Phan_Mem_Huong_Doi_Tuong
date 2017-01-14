@@ -1,0 +1,52 @@
+/* ========================================================================
+ * TABLE
+ * ======================================================================== */
+.table{
+  tbody{
+    tr{
+      td{
+        p{
+          margin-bottom: 5px;
+        }
+        ul.list-unstyled{
+          li{
+            padding-bottom: 7px;
+            &:last-child{
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.table, .table-bordered{
+  > thead{
+    > tr{
+      > th{
+        border-bottom-width: 0;
+      }
+    }
+  }
+  > tbody{
+    > tr{
+      > td{
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+.table-number{
+  > tbody{
+    > tr{
+      > td{
+        &:first-child{
+          text-align: center;
+          width: 1%;
+        }
+      }
+    }
+  }
+}

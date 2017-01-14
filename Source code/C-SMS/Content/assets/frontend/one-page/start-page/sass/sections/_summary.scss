@@ -1,0 +1,45 @@
+/* ========================================================================
+ * SUMMARY
+ * ======================================================================== */
+#summary{
+  background-color: #EEE;
+  .inner{
+    text-align: center;
+    padding: 45px 0px 45px;
+  }
+  p{
+    color: #666;
+    font-size: 60px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 800px){
+  #summary{
+    .inner{
+      padding: 30px 0px;
+    }
+    p{
+      font-size: 45px;
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #summary{
+    p{
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 320px){
+  #summary{
+    .inner{
+      padding: 20px 0px;
+    }
+    p{
+      font-size: 25px;
+    }
+  }
+}

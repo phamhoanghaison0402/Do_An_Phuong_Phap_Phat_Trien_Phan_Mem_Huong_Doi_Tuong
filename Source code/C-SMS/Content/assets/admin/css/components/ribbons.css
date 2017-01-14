@@ -1,0 +1,262 @@
+/* ========================================================================
+ * RIBBONS
+ * ======================================================================== */
+.ribbon-wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  z-index: 250;
+}
+.ribbon-wrapper.top-left {
+  left: -2px;
+}
+.ribbon-wrapper.top-left .ribbon {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: -30px;
+}
+.ribbon-wrapper.bottom-right {
+  right: -2px;
+  bottom: -2px;
+  top: inherit;
+}
+.ribbon-wrapper.bottom-right .ribbon {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: -6px;
+  top: 40px;
+}
+.ribbon-wrapper.bottom-left {
+  left: -3px;
+  bottom: -3px;
+  top: inherit;
+}
+.ribbon-wrapper.bottom-left .ribbon {
+  left: -28px;
+  top: 40px;
+}
+.ribbon-wrapper .ribbon {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFF;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #797979;
+}
+.ribbon-wrapper .ribbon:before {
+  left: 0;
+  bottom: -1px;
+}
+.ribbon-wrapper .ribbon:after {
+  right: 0;
+}
+.ribbon-wrapper .ribbon:before,
+.ribbon-wrapper .ribbon:after {
+  content: "";
+  border-top: 2px solid #797979;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+  border-right: 2px solid rgba(0, 0, 0, 0);
+  position: absolute;
+  bottom: -2px;
+}
+.ribbon-wrapper .ribbon.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.ribbon-wrapper .ribbon.transparent {
+  background-color: rgba(121, 121, 121, 0.3) !important;
+}
+.ribbon-default {
+  background-color: #eeeeee !important;
+}
+.ribbon-default:before,
+.ribbon-default:after {
+  border-top: 2px solid #eeeeee !important;
+}
+.ribbon-default.transparent {
+  background-color: rgba(238, 238, 238, 0.4) !important;
+}
+.ribbon-default.transparent:before,
+.ribbon-default.transparent:after {
+  border-top: 2px solid rgba(238, 238, 238, 0.4) !important;
+}
+.ribbon-default.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(238, 238, 238, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(238, 238, 238, 0.5) !important;
+  box-shadow: 0 0 3px rgba(238, 238, 238, 0.5) !important;
+}
+.ribbon-primary {
+  background-color: #00b1e1 !important;
+}
+.ribbon-primary:before,
+.ribbon-primary:after {
+  border-top: 2px solid #00b1e1 !important;
+}
+.ribbon-primary.transparent {
+  background-color: rgba(0, 177, 225, 0.4) !important;
+}
+.ribbon-primary.transparent:before,
+.ribbon-primary.transparent:after {
+  border-top: 2px solid rgba(0, 177, 225, 0.4) !important;
+}
+.ribbon-primary.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(0, 177, 225, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(0, 177, 225, 0.5) !important;
+  box-shadow: 0 0 3px rgba(0, 177, 225, 0.5) !important;
+}
+.ribbon-success {
+  background-color: #8cc152 !important;
+}
+.ribbon-success:before,
+.ribbon-success:after {
+  border-top: 2px solid #8cc152 !important;
+}
+.ribbon-success.transparent {
+  background-color: rgba(140, 193, 82, 0.4) !important;
+}
+.ribbon-success.transparent:before,
+.ribbon-success.transparent:after {
+  border-top: 2px solid rgba(140, 193, 82, 0.4) !important;
+}
+.ribbon-success.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(140, 193, 82, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(140, 193, 82, 0.5) !important;
+  box-shadow: 0 0 3px rgba(140, 193, 82, 0.5) !important;
+}
+.ribbon-info {
+  background-color: #63d3e9 !important;
+}
+.ribbon-info:before,
+.ribbon-info:after {
+  border-top: 2px solid #63d3e9 !important;
+}
+.ribbon-info.transparent {
+  background-color: rgba(99, 211, 233, 0.4) !important;
+}
+.ribbon-info.transparent:before,
+.ribbon-info.transparent:after {
+  border-top: 2px solid rgba(99, 211, 233, 0.4) !important;
+}
+.ribbon-info.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(99, 211, 233, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(99, 211, 233, 0.5) !important;
+  box-shadow: 0 0 3px rgba(99, 211, 233, 0.5) !important;
+}
+.ribbon-warning {
+  background-color: #f6bb42 !important;
+}
+.ribbon-warning:before,
+.ribbon-warning:after {
+  border-top: 2px solid #f6bb42 !important;
+}
+.ribbon-warning.transparent {
+  background-color: rgba(246, 187, 66, 0.4) !important;
+}
+.ribbon-warning.transparent:before,
+.ribbon-warning.transparent:after {
+  border-top: 2px solid rgba(246, 187, 66, 0.4) !important;
+}
+.ribbon-warning.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(246, 187, 66, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(246, 187, 66, 0.5) !important;
+  box-shadow: 0 0 3px rgba(246, 187, 66, 0.5) !important;
+}
+.ribbon-danger {
+  background-color: #e9573f !important;
+}
+.ribbon-danger:before,
+.ribbon-danger:after {
+  border-top: 2px solid #e9573f !important;
+}
+.ribbon-danger.transparent {
+  background-color: rgba(233, 87, 63, 0.4) !important;
+}
+.ribbon-danger.transparent:before,
+.ribbon-danger.transparent:after {
+  border-top: 2px solid rgba(233, 87, 63, 0.4) !important;
+}
+.ribbon-danger.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(233, 87, 63, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(233, 87, 63, 0.5) !important;
+  box-shadow: 0 0 3px rgba(233, 87, 63, 0.5) !important;
+}
+.ribbon-lilac {
+  background-color: #906094 !important;
+}
+.ribbon-lilac:before,
+.ribbon-lilac:after {
+  border-top: 2px solid #906094 !important;
+}
+.ribbon-lilac.transparent {
+  background-color: rgba(144, 96, 148, 0.4) !important;
+}
+.ribbon-lilac.transparent:before,
+.ribbon-lilac.transparent:after {
+  border-top: 2px solid rgba(144, 96, 148, 0.4) !important;
+}
+.ribbon-lilac.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(144, 96, 148, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(144, 96, 148, 0.5) !important;
+  box-shadow: 0 0 3px rgba(144, 96, 148, 0.5) !important;
+}
+.ribbon-teals {
+  background-color: #37bc9b !important;
+}
+.ribbon-teals:before,
+.ribbon-teals:after {
+  border-top: 2px solid #37bc9b !important;
+}
+.ribbon-teals.transparent {
+  background-color: rgba(55, 188, 155, 0.4) !important;
+}
+.ribbon-teals.transparent:before,
+.ribbon-teals.transparent:after {
+  border-top: 2px solid rgba(55, 188, 155, 0.4) !important;
+}
+.ribbon-teals.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(55, 188, 155, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(55, 188, 155, 0.5) !important;
+  box-shadow: 0 0 3px rgba(55, 188, 155, 0.5) !important;
+}
+.ribbon-inverse {
+  background-color: #2a2a2a !important;
+}
+.ribbon-inverse:before,
+.ribbon-inverse:after {
+  border-top: 2px solid #2a2a2a !important;
+}
+.ribbon-inverse.transparent {
+  background-color: rgba(42, 42, 42, 0.4) !important;
+}
+.ribbon-inverse.transparent:before,
+.ribbon-inverse.transparent:after {
+  border-top: 2px solid rgba(42, 42, 42, 0.4) !important;
+}
+.ribbon-inverse.ribbon-shadow {
+  -webkit-box-shadow: 0 0 3px rgba(42, 42, 42, 0.5) !important;
+  -moz-box-shadow: 0 0 3px rgba(42, 42, 42, 0.5) !important;
+  box-shadow: 0 0 3px rgba(42, 42, 42, 0.5) !important;
+}

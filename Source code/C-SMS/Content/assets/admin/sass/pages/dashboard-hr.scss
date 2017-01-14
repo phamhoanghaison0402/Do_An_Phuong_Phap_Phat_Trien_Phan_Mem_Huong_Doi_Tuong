@@ -1,0 +1,35 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../global/sass/core/variable";
+@import "../../../global/sass/core/mixins";
+@import "../../../global/sass/core/functions";
+
+/* ========================================================================
+ * DASHBOARD HR
+ * ======================================================================== */
+.indicator-gender{
+  li{
+    padding: 0 20px;
+    i{
+      font-size: 160px;
+    }
+    span{
+      display: block;
+      margin-top: 10px;
+      height: 22px;
+      width: 100%;
+    }
+  }
+}
+.panel{
+  .panel-body{
+    padding: 30px;
+  }
+}
+.legendColorBox{
+  > div{
+    margin-right: 5px;
+  }
+}

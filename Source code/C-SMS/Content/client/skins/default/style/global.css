@@ -1,0 +1,179 @@
+body {
+ 	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px; 
+} 
+td,th { 
+ 	line-height:18px;
+}
+
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,blockquote,pre,form,input,textarea,section {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+label {
+  font-weight: normal;
+}
+.clear {clear: both; font-size: 0px; line-height: 0px; height:0;}
+p {margin:0px;padding:5px 0px;}
+ol,ul {	list-style: none;}
+
+a { text-decoration:none;
+  color:#333333;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+a:hover {  color:#333333; text-decoration: none; }
+
+img { border : 0px;
+  max-width:100% !important;
+  height: auto!important;
+}
+input {   color: #2a2a2a;}
+.input-warn {border:1px solid #FF0000;line-height:20px;	height:18px;}
+.input-ok { border:1px solid #00CC66; line-height:20px;	height:18px;}
+.button {
+	background:url(../images/button_bg.gif) center no-repeat;
+	cursor:pointer;
+	border:none;
+	color:#000;
+	padding: 5px 2px;
+	width:103px ;
+	
+}
+  
+/* OPTIONAL BUTTON STYLES for applying custom look and feel: */
+.textfiled {
+	border:1px solid #ccc;
+	background:#fff;
+	color:#2a2a2a;
+	line-height:25px;
+	height:25px;
+	font-size:12px;
+
+}
+.textarea{
+	border:1px solid #b7b7b7;
+	background:#fff;
+	color:#2a2a2a;
+	line-height:20px;
+	overflow:auto;
+
+}
+.select{
+	border:1px solid #b7b7b7;
+	background:#efefef;
+	color:#2a2a2a;
+	padding:5px 3px;
+	font-size:12px;
+
+}
+
+
+.clearfix:after
+	{
+	content: '[DO NOT LEAVE IT IS NOT REAL]'; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+	}
+.clearfix{
+	display: inline;
+	position: relative;
+	}
+/*\*/
+.clearfix	{
+	display: block;
+}
+
+.fl {float:left;}
+.fr {float:right;}
+.hidden {display:none;}
+.relative {position: relative}
+
+/* -------------------------------------------------------------------
+ format text
+------------------------------------------------------------------- */
+
+.font_err {	color:#FF0000;}
+.font_err a:active , .font_err a:link , .font_err a:visited {  text-decoration: none ; color:#FF0000}
+.font_err a:hover {  color:#FF0000; text-decoration: underline; }
+
+
+/********************* CSS for box_redirect ****************************/
+#box_redirect{ border:1px solid #505050; width:70% ;margin:0px auto;  }
+#box_redirect p { line-height:18px;}
+#box_redirect .top { background:#F78600;border-bottom:1px solid #5C5C5C; color:#FFFFFF;font-size:11px;font-weight:bold;text-transform:uppercase; height:22px;padding:2px; text-align:left; }
+#box_redirect .fontMess {color:#65D700;font-size:12px; font-weight:bold;text-align:center;padding:20px 10px;}
+#box_redirect .mess { background:#383838; color:#FFFFFF;text-align:center}
+#box_redirect .bottom { background:#FFF3DD; color:#000;text-align:center;padding:5px; font-size:12px;}
+
+/********************* CSS for boxMess ****************************/
+#boxMess{  border:1px solid #F08200;padding:2px 5px; background:#FCF5CD }
+#boxMess  h4.mess { background:url(../images/icon/icon_mess.gif) no-repeat left; padding:2px 30px; color:#FF0000; font-weight:bold; font-size:12px;}
+#boxMess  h4.err { background:url(../images/icon/icon_warning.gif) no-repeat left; padding:6px 30px; color:#FF0000; font-weight:bold;}
+#boxMess .font_err { color:#950000;}
+
+
+
+/******************** PHAN TRANG **************/
+.pagination{ 
+  display: block;
+  text-align: center;
+ 	padding-top:10px;
+ 
+}
+.pagination .pagetotal {
+	background-color:#868686;
+	color:#FFFFFF;
+	padding:2px 3px;
+}
+.pagination a, .pagination a:visited{
+	padding: 0px 2px;
+	display:inline-block ;
+	text-decoration: none; 
+	color: #868686;
+	font-weight:bold;
+	background:url(../images/page_bg.gif) center no-repeat;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	 text-align:center;
+}
+
+.pagination a:hover, .pagination a:active{
+	color: #3866bb;
+	text-decoration:none;
+}
+
+.pagination .pagecur{
+	font-weight: bold;
+	display:inline-block ;
+	padding: 0px 2px;
+	background:url(../images/page_on.gif) center no-repeat;
+	color: #fff;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	 text-align:center;
+}
+
+.pagination .btnPage{
+	color:#868686;
+	text-align:center;
+	font-weight:bold;
+}
+.pagination a:visited.btnPage  {
+	color:#868686;
+	font-weight:bold;
+}

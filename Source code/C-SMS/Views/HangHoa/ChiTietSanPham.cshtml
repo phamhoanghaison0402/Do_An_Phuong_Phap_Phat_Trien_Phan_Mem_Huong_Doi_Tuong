@@ -1,0 +1,538 @@
+﻿@model IEnumerable<Common.Models.HangHoa>
+@using Common.Ultil
+
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div id="vnt-container" class="container">
+    
+    <section class="newshot-block row">
+        <div class="col-md-6 col-sm-6 col-xs-12 block">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='LG V10: Điện thoại thời trang'>
+                    <div class='inner'>
+                        <h3>LG V10: Điện thoại thời trang</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure><div class="frame"><span> </span></div><img src="~/Content/client/vnt_upload/weblink/banner/v10_1.png" alt="LG V10: Điện thoại thời trang" /> </figure>
+            </div>
+        </div><div class="col-md-6 col-sm-6 col-xs-12 block last">
+            <div class="block-inner">
+                <a class='table' href='#' target='_self' title='Chuyên các dòng Samsung độc nhất'>
+                    <div class='inner'>
+                        <h3>Chuyên các dòng Samsung độc nhất</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure><div class="frame"><span> </span></div><img src="~/Content/client/vnt_upload/weblink/banner/DSC_8642.jpg" alt="Chuyên các dòng Samsung độc nhất" /> </figure>
+            </div>
+        </div>
+    </section>
+    <div id="vnt-content">
+        <ul class="item-control">
+            <li id="cp-thong-so">Thông <p>số</p></li>
+            <li id="cp-danh-gia">Đánh <p>giá</p></li>
+            <li id="cp-binh-luan">Bình <p>luận</p></li>
+        </ul>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                FormatNumber number = new FormatNumber();
+                <div itemscope=itemscope>
+                    <div id="divInfo">
+                        <div class="product-top">
+                            <div class="name-title">
+                                <div class="product-top1 nopadding">
+                                    <h1 class="name-sp" itemprop='name'><i>@item.TenHangHoa</i></h1>
+                                </div>
+                                <div class="product-top2 nopadding social">
+                                    <div class="fb-like" data-href="#" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                                    <script src="https://apis.google.com/js/platform.js">
+                                        { lang: 'vi' }
+                                    </script>
+                                    <div class="g-plus-bound">
+                                        <div class="g-plusone" data-size="medium" data-annotation="none" data-href="#"></div>
+                                        <div class="g-plus" data-action="share" data-annotation="bubble" data-href="#"></div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="col-detail-top1">
+                                <div id="albumDetail" class="fotorama"
+                                     data-fit="scaledown"
+                                     data-nav="thumbs"
+                                     data-allowfullscreen="true"
+                                     data-arrows="false"
+                                     data-click="false"
+                                     data-swipe="true"
+                                     data-auto="false">
+                                    <img src="~/Content/client/product/@item.HinhAnh" alt="picture_product" />
+                                    <img src="~/Content/client/product/@item.HinhAnh" alt="picture_product" />
+                                    <img src="~/Content/client/product/@item.HinhAnh" alt="picture_product" />
+                                    <img src="~/Content/client/product/@item.HinhAnh" alt="picture_product" />
+                                </div>
+                                <script>
+                                    $(function () {
+                                        $('#albumDetail').fotorama();
+                                        resize_control();
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="col-detail-top2">
+                                <form action="#" name="f_addcart" method="post" id="form_order">
+                                    <div itemprop="offers" itemscope=itemscope itemtype="http://schema.org/Offer">
+                                        @if (@item.GiamGia > 0)
+                                        {
+                                            <div class="div_price_market">Giá thị trường: <span class="price_old">14,690,000 đ</span></div>
+                                            <div class="prod_dt_price">Giá bán: @number.FormatNumbers(@item.GiaBan.ToString()) đ</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="prod_dt_price">Giá bán: @number.FormatNumbers(@item.GiaBan.ToString()) đ</div>
+                                        }
+
+                                        <div class="product-color"><div class="tit_color">Chọn màu :</div><ul class="color-list-show"><li id="color_id_2"><i id="thumb_2" class="item_color tooltips" style="display:inline-block; width:23px; height:23px; background:#ED008C"></i></li><li id="color_id_9"><i id="thumb_9" class="item_color tooltips" style="display:inline-block; width:23px; height:23px; background:#838383"></i></li><li id="color_id_12"><i id="thumb_12" class="item_color tooltips" style="display:inline-block; width:23px; height:23px; background:#333333"></i></li><li id="color_id_14"><i id="thumb_14" class="item_color tooltips" style="display:inline-block; width:23px; height:23px; background:#e3e3e3"></i></li><li id="color_id_22"><i id="thumb_22" class="item_color tooltips" style="display:inline-block; width:23px; height:23px; background:#f0d87a"></i></li></ul></div>
+
+                                    </div>
+                                    <div class="status_pro"><b>Tình Trạng: </b>
+                                    @if (@item.SoLuongTon > 0)
+                                    {
+                                        <span class="in_stock">Còn hàng - Trong kho có @item.SoLuongTon sản phẩm</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="in_stock">Hết hàng</span>
+                                    }
+                                   
+                                    </div>
+                                    <div class="short">
+                                        <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; font-size: 14px; line-height: 18px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif; text-align: center;">
+                                            <img alt="" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-08-22_luYc_10.31.23_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 107px; width: 360px;" />
+                                        </p>
+
+                                        <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; font-size: 14px; line-height: 18px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif; text-align: center;">
+                                        <iframe allowfullscreen="" frameborder="0" height="203" src="https://www.youtube.com/embed/FdRCE976NHQ?list=PLjWXWa4T_O7ImDZ5vrJP1CdQKLywPiKp8" width="360"></iframe>
+                                        </p>
+
+                                        <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; font-size: 14px; line-height: 18px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif;">
+                                        <span style="box-sizing: border-box; font-size: 16px;">
+                                            <strong style="box-sizing: border-box; font-size: 14px;">✔ Mới 100%,&nbsp;</strong>
+                                            <strong style="box-sizing: border-box; font-size: 14px;">Nguyên hộp:</strong>
+                                            <span style="box-sizing: border-box;">&nbsp;1 máy, 1 cable, 1 sạc, 1 tai nghe, tài liệu hướng dẫn, 1 cây chọt sim.</span>
+                                            </span>
+                                        </p>
+
+                                        <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; font-size: 14px; line-height: 18px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif;">
+                                            <span style="box-sizing: border-box; line-height: 20.8px; font-size: 16px;">
+                                                <strong font-size="" line-height="" new="" style="box-sizing: border-box;" times="">
+                                                    <img alt="AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 17px; width: 20px;" />&nbsp;Máy Được Kiểm Định Kỹ Trước Khi Bán
+                                                </strong>
+                                            </span><strong font-size="" line-height="" new="" style="box-sizing: border-box; line-height: 20.8px; font-size: 16px;" times="">.</strong>
+                                        </p>
+
+                                        <div font-size="" line-height="" new="" style="line-height: 20.8px; box-sizing: border-box; margin: 0px; padding: 0px;" times="">
+                                            <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif; line-height: 20.8px;">
+                                                <span style="box-sizing: border-box; font-size: 16px;">
+                                                    <strong style="box-sizing: border-box; line-height: 20.8px;">
+                                                        <span style="box-sizing: border-box;">
+                                                            <img alt="" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 17px; width: 20px;" />&nbsp;Chính Hãng @item.XuatXu
+                                                        </span>
+                                                    </strong>
+                                                </span>
+                                            </p>
+
+                                            <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif; line-height: 20.8px;">
+                                                <strong style="box-sizing: border-box; font-size: 16px; line-height: 20.8px;">
+                                                    <span style="box-sizing: border-box;">
+                                                        <img alt="AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 17px; width: 20px;" />&nbsp;1 Đổi 1 Trong 1 Năm
+                                                    </span>
+                                                </strong>
+                                            </p>
+
+                                            <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif;">
+                                                <strong style="font-size: 16px; line-height: 20.8px; box-sizing: border-box;">
+                                                    <span style="box-sizing: border-box;">
+                                                        <img alt="AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 17px; width: 20px;" />&nbsp;Trả Góp Nhanh Gọn, Thủ Tục Đơn Giản
+                                                    </span>
+                                                </strong>
+                                            </p>
+
+                                            <p style="box-sizing: border-box; margin: 0px; padding: 5px 0px; color: rgb(56, 56, 56); font-family: opensans, Helvetica, Arial, sans-serif;">
+                                                <strong style="box-sizing: border-box; font-size: 16px; line-height: 20.8px;">
+                                                    <span style="box-sizing: border-box;">
+                                                        <img alt="AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA" src="~/Content/client/vnt_upload/product/sale_page/AYnh_chuYp_MaYn_hiYnh_2016-07-01_luYc_12.01.50_SA.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: 17px; opacity: 0.9; width: 20px;" />&nbsp;
+                                                    </span>
+                                                </strong><span style="box-sizing: border-box; font-size: 16px;"><strong style="box-sizing: border-box; line-height: 20.8px;"><span style="box-sizing: border-box;">Giao Hàng Thu Tiền&nbsp;Mọi Miền Tổ Quốc</span></strong></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button class="btn-buy">
+                                        <a class="now-get get-cart-in" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1"> Mua Ngay</a>
+                                        <p><a class="now-get get-cart-in" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1"> Giao hàng tận nơi hoặc tại cửa hàng</a></p>
+                                    </button>
+
+                                    <input type="hidden" id="p_id" value="472" />
+                                    <input type="hidden" id="color_id" value="" />
+                                </form>
+
+                            </div>
+                            <div class="col-detail-top3">
+
+                                <div class="box-bound box-consultancy">
+                                    <div class="pic_consultancy">
+                                        <a onmousedown="return rwt(this,'advertise',54)" href='#' target='_self' title='tư vấn'>
+                                            <img src='~/Content/client/vnt_upload/weblink/img_consultancy_1.jpg' width='79' alt='tư vấn' class='png' />
+                                        </a>
+                                    </div>
+                                    <h3>Hãy để lại số điện thoại để chúng tôi tư vấn miễn phí cho bạn</h3>
+                                    <a href="javascript:void(0)" class="more" id="send_consultancy" data-toggle="modal"
+                                       data-target="#order-product-old" style="line-height: 30px;">Tư vấn</a>
+                                </div>
+
+                                <div class="box_address_company">
+                                    <h3><a href="javascript:void(0)" id="view_address">Danh sách của hàng BK Computer</a></h3>
+                                    <div class="address_company">
+                                        <p>
+                                            <span style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &#39;Trebuchet MS&#39;; font-size: 13px; line-height: 20.8px; background-color: rgb(255, 255, 255);"><strong>+ 650 Lê Hồng Phong, Q.10,&nbsp;</strong></span><strong>TPHCM</strong><span style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &#39;Trebuchet MS&#39;; font-size: 13px; line-height: 20.8px; background-color: rgb(255, 255, 255);">&nbsp;</span><br style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &#39;Trebuchet MS&#39;; font-size: 13px; line-height: 20.8px; background-color: rgb(255, 255, 255);" />
+                                            <strong>+ 421 Hoàng Văn Thụ, Q. Tân Bình, TPHCM</strong><br />
+                                            <strong>+ 169 Hoàng Diệu, Q. Hải Châu, TP Đà Nẵng</strong><br style="line-height: 20.8px;" />
+                                            &nbsp;
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p>Đặt hàng qua ĐT(8:30 - 21:30): <b style="font-size: 16px;color: red">0949512609</b></p>
+
+                                <div id="parameter">
+                                    <h3 class="title2"><b>Thông số <span>kỹ thuật</span></b></h3>
+                                    <div class="option_focus">
+                                        <span>@Html.Raw(@item.ThongSoKyThuat)</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div id="danh-gia">
+                        <h3 class="title2"><b>Đánh giá <span>chi tiết</span></b></h3>
+                        <span>@Html.Raw(@item.MoTa)</span>
+                        <div class="clear"></div>
+                    </div>
+
+                    <!--Modal tu van-->
+                    <div class="modal fade" id="order-product-old" style="z-index: 33333;" tabindex="-1" role="dialog"
+                         aria-labelledby="send-orderLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form id="sendconsultancy" name="sendconsultancy" method="post" action="" class="form-horizontal">
+                                    <button id="close-order" type="button" class="close closepopup" data-dismiss="modal">
+                                        <span aria-hidden="true">
+                                            X
+                                        </span>
+                                    </button>
+
+                                    <div class="modal-body" style="overflow: hidden;">
+                                        <div class="col-md-5">
+                                            <p style="text-align: center;"><img src="~/Content/client/product/@item.HinhAnh" alt='images' /></p>
+                                            <p style="font-size: 16px;font-weight: bold;">@item.TenHangHoa</p>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h4 class="title_popup">Thông tin người đăng ký</h4>
+                                            <input type="hidden" name="do_submit" value="1" />
+
+                                            <div class="form-group">
+                                                <input name="order_name" id="order_name" class="form-control" placeholder="Họ tên của bạn (Bắt buộc)" type="text" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="order_phone" id="order_phone" class="form-control" placeholder="Số di động (bắt buộc)" type="text" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="order_email" id="order_email" class="form-control" placeholder="Email (Bắt buộc)" type="text" value="" />
+                                            </div>
+                                            <div class="form-group" style="margin-bottom: 0;">
+                                                <input type="hidden" name="p_id" value="472" id="p_id" />
+                                                <input type="hidden" name="do_submit_consultancy" value="1" />
+                                                <button id="btnSubmit" name="btnSubmit" type="submit" class="btn-tragop" value="xác nhận"
+                                                        style="padding-bottom: 8px">
+                                                    Xác nhận
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="note_consultancy">
+                                            <p>
+                                                + Gửi thông tin chúng tôi sẽ gọi lại cho bạn ngay tức thì<br />
+                                                + Tiết Kiệm tiền điện thoại cho bạn<br />
+                                                + Tư vấn kỹ lưỡng hơn<br />
+                                                + Chăm sóc chu đáo hơn
+                                            </p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <script>
+
+                            //valid form
+                            jQuery('#sendconsultancy').bootstrapValidator({
+                                message: 'This value is not valid',
+                                feedbackIcons: {
+                                    valid: 'glyphicon glyphicon-ok',
+                                    invalid: 'glyphicon glyphicon-remove',
+                                    validating: 'glyphicon glyphicon-refresh'
+                                },
+                                fields: {
+                                    'order_name': {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Không được để trống'
+                                            }
+                                        }
+                                    },
+                                    'order_phone': {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Không được để trống'
+                                            },
+                                            regexp: {
+                                                regexp: /^[0-9]+$/,
+                                                message: 'Chỉ dùng số'
+                                            },
+                                            stringLength: {
+                                                min: 10,
+                                                max: 11,
+                                                message: '10 hoặc 11 số'
+                                            }
+                                        }
+                                    },
+                                    'order_email': {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Không được để trống'
+                                            },
+                                            emailAddress: {
+                                                message: 'Không đúng định dạng email'
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                            jQuery('#close-order').click(function () {
+                                jQuery('#sendOrder').data('bootstrapValidator').resetForm(true);
+                            });
+
+
+                        </script>
+
+                    </div>
+
+                    <!--Modal tu van-->
+                    <!--Modal parameter -->
+                    
+                    <!--Modal parameter -->
+                    <!-- nhận xét bình luận -->
+                    <div id="binh-luan">
+                        <h3 class="title2"><b>Bình luận <span>sản phẩm</span></b></h3>
+                        <div id="reviewSubmitArea" class="review-summary">
+                            <div class="review-sum-box row">
+                                <div class="col-md-9 col-sm-8 col-xs-12 col-lg-9 review-submit">
+                                    <script language=javascript>
+                                        var js_lang = new Array();
+                                        js_lang['announce'] = "Thông báo";
+                                        js_lang['error'] = "Báo lỗi";
+                                        js_lang['err_name_empty'] = "Vui lòng nhập họ tên";
+                                        js_lang['err_email_empty'] = "Vui lòng nhập email";
+                                        js_lang['err_email_invalid'] = "Email không hợp lệ";
+                                        js_lang['security_code_invalid'] = "Mã bảo vệ không đúng";
+                                        js_lang['err_security_code_empty'] = "Vui lòng nhập vòng các số ở hình bên";
+                                        js_lang['err_title_empty'] = "";
+                                        js_lang['err_content_comment_empty'] = "";
+                                        js_lang['send_comment_success'] = "Viết đánh giá thành công . Vui lòng đợi xét duyệt của BQT";
+                                        js_lang['err_mark_empty'] = "Vui lòng cho điểm đánh giá";
+                                        js_lang['mess_error_post'] = "";
+                                        $(document).ready(function () {
+
+                                            $('#rater_buttons a').click(function () {
+                                                jQuery('#rater_buttons a').removeClass('rater_selected');
+                                                jQuery(this).addClass('rater_selected');
+                                                var str = this.id;
+                                                var rate = str.replace("rater_", "");
+                                                $("#hvote").val(rate);
+                                            });
+
+                                            $("#btnSendCmt .btn_comment").click(function () {
+                                                var content = $("#txtComment").val();
+                                                if (content.length < 10) {
+                                                    jAlert('Vui lòng nhập nội dung tối thiểu 10 ký tự', 'Báo lỗi', function () {
+                                                        $("#txtComment").focus();
+                                                    });
+                                                } else {
+                                                    $("#btnSendCmt").hide();
+                                                    $(".showdropdown").show();
+                                                    $("#name").val('');
+                                                    $("#email").val('');
+                                                }
+
+                                            });
+
+                                            $(".closeIfo").click(function () {
+                                                $("#btnSendCmt").show();
+                                                $(".showdropdown").hide();
+                                            });
+
+                                        });
+                                    </script>
+                                    <script type="text/javascript" src="~/Content/client/modules/product/js/comment.js"></script>
+                                    <div class="box_mid">
+                                        <div class="boxComment">
+                                            <div class="divWrite">
+                                                <form action="#" method="post" name="fComment" id="fComment"
+                                                      onsubmit="return vnTcomment.post_comment('472','vn');">
+                                                    <b>Hãy chia sẻ sự đam mê và hiểu biết của bạn đối với sản phẩm này</b>
+                                                    <div class="text_cmt">
+                                                        <textarea name="txtComment" placeholder="Nhập nội dung nhận xét tại đây. Vui lòng viết Tiếng Việt có dấu" id="txtComment"
+                                                                  style="width:100%" class="textarea"></textarea>
+                                                    </div>
+
+                                                    <div class="dropdown sendclick" id="btnSendCmt"><span class="btn_comment">Gửi</span></div>
+
+                                                    <div class="showdropdown">
+                                                        <div class="closeIfo">X Đóng</div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="vote" id="rater">
+                                                                    <p>Đánh giá của bạn về sản phẩm này</p>
+                                                                    <div id="rater_buttons" style="display: block; ">
+                                                                        <a class="order_0 rater_button" href="javascript:void(0)" id="rater_1"
+                                                                           title="Rất không hài lòng"></a>
+                                                                        <a class="order_1 rater_button" href="javascript:void(0)" id="rater_2"
+                                                                           title="Không hài lòng"></a>
+                                                                        <a class="order_2 rater_button" href="javascript:void(0)" id="rater_3"
+                                                                           title="Bình thường"></a>
+                                                                        <a class="order_3 rater_button" href="javascript:void(0)" id="rater_4"
+                                                                           title="Hài lòng"></a>
+                                                                        <a class="order_4 rater_button" href="javascript:void(0)" id="rater_5"
+                                                                           title="Rất hài lòng"></a>
+                                                                        <input type="hidden" value="" name="hvote" id="hvote" />
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12 col_info">
+                                                                <span>Nhập thông tin của bạn</span>
+                                                                <p>
+                                                                    <input name="name" id="name" type="text" class="textfiled" value="" style="width:100%"
+                                                                           placeholder="Họ tên (Bắt buộc)" />
+                                                                </p>
+                                                                <p>
+                                                                    <input name="email" id="email" type="text" class="textfiled" value="" style="width:100%"
+                                                                           placeholder="Email" />
+                                                                </p>
+                                                                <p style="text-align: right">
+                                                                    <input name="p_id" value="472" type="hidden" />
+                                                                    <button name="btnSend" id="btnSend" value="submit" class="btn_comment" type="submit">
+                                                                        <span>Hoàn tất & gửi</span>
+                                                                    </button>
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-4 col-xs-12 col-lg-3 nopadding-left col_rating">
+                                    <div class="review-sum-total">
+                                        <h4>Đánh Giá Trung Bình</h4>
+                                        <p class="total-review-point"> 0/5 </p>
+                                        <div class="rating-box">
+                                            <div class="rating" style="width:0%"></div>
+                                        </div>
+                                        <p>0 nhận xét</p>
+                                        <ul class="review-percent-detail">
+                                            <li class="clearfix">
+                                                <span class="rating-num">5 sao</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success" title=" đánh giá 5 sao"
+                                                         style="width: " aria-valuemax="100" aria-valuemin="0"
+                                                         aria-valuenow="" role="progressbar">
+                                                        <span class="sr-only"> Complete</span>
+                                                    </div>
+                                                </div>
+                                                <span class="rating-num-total"></span>
+                                            </li>
+
+                                            <li class="clearfix">
+                                                <span class="rating-num">4 sao</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success" title=" đánh giá 4 sao"
+                                                         style="width: " aria-valuemax="100" aria-valuemin="0"
+                                                         aria-valuenow="" role="progressbar">
+                                                        <span class="sr-only"> Complete</span>
+                                                    </div>
+                                                </div>
+                                                <span class="rating-num-total"></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <span class="rating-num">3 sao</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success" title=" đánh giá 3 sao"
+                                                         style="width: " aria-valuemax="100" aria-valuemin="0"
+                                                         aria-valuenow="" role="progressbar">
+                                                        <span class="sr-only"> Complete</span>
+                                                    </div>
+                                                </div>
+                                                <span class="rating-num-total"></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <span class="rating-num">2 sao</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success" title=" đánh giá 2 sao"
+                                                         style="width: " aria-valuemax="100" aria-valuemin="0"
+                                                         aria-valuenow="" role="progressbar">
+                                                        <span class="sr-only"> Complete</span>
+                                                    </div>
+                                                </div>
+                                                <span class="rating-num-total"></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <span class="rating-num">1 sao</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success" title=" đánh giá 1 sao"
+                                                         style="width: " aria-valuemax="100" aria-valuemin="0"
+                                                         aria-valuenow="" role="progressbar">
+                                                        <span class="sr-only"> Complete</span>
+                                                    </div>
+                                                </div>
+                                                <span class="rating-num-total"></span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="reviewShowArea" class="review-show">
+                        <div class="title_commet">Có <span>0</span> bình luận</div>
+                        <div id="ext_comment"></div>
+                    </div>
+                    <div class="facebook-comment" style="padding-top:10px;"><div class="fb-comments" data-href="#" data-width="800" data-num-posts="5" data-colorscheme="light"></div></div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

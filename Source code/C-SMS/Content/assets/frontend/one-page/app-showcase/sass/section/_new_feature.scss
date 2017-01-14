@@ -1,0 +1,49 @@
+/* ========================================================================
+ * SECTION NEW FEATURE
+ * ======================================================================== */
+#new-feature{
+  padding: 50px 0;
+  color: #FFFFFF;
+  .new-feature-title{
+    margin-bottom: 25px;
+    .label{
+      padding: 5px 10px;
+      font-size: 15px;
+      vertical-align: top;
+      @include border-radius(15px 2px);
+    }
+  }
+  .new-feature-icon{
+    li{
+      vertical-align: bottom;
+      &:first-child{
+        margin-right: 10px;
+      }
+      a{
+        color: #FFFFFF;
+        text-decoration: none;
+        text-align: center;
+        i{
+          display: block;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .new-feature-image{
+    text-align: center;
+    img{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 800px){
+  #new-feature{
+    .new-feature-title{
+      font-size: 30px;
+    }
+    .new-feature-icon{
+      margin-bottom: 50px;
+    }
+  }
+}

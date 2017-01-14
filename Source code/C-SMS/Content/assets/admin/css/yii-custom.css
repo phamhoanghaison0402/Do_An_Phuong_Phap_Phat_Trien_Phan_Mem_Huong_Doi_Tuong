@@ -1,0 +1,56 @@
+/* ========================================================================
+ * COLOR YII
+ * ======================================================================== */
+.gradient-yii-to-top {
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #DE451D), color-stop(0.5, #A3C43F), color-stop(1, #006DB5));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(bottom, #DE451D 0%, #A3C43F 50%, #006DB5 100%);
+}
+
+.gradient-yii-to-bottom-right, #header .navbar-header, #sidebar-left.sidebar-box .sidebar-menu > li.active > a > .icon i, #sidebar-left.sidebar-rounded .sidebar-menu > li.active > a > .icon i, #sidebar-left.sidebar-circle .sidebar-menu > li.active > a > .icon i, body.page-sidebar-minimize #header .navbar-minimize > a, .bg-theme, .sign-header {
+  /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #de451d), color-stop(0.5, #a3c43f), color-stop(1, #006db5));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top left, #de451d 0%, #a3c43f 50%, #006db5 100%);
+}
+
+/* ========================================================================
+ * NAVBAR HEADER
+ * ======================================================================== */
+/* ========================================================================
+ * SIDEBAR
+ * ======================================================================== */
+/* ========================================================================
+ * BACKGROUND THEME
+ * ======================================================================== */
+.bg-theme {
+  border: none !important;
+}
+
+/* ========================================================================
+ * SIGN
+ * ======================================================================== */
+.sign-header {
+  border-bottom: 10px solid rgba(207, 207, 212, 0.72) !important;
+}
+
+.sign-text:before {
+  height: 0px !important;
+}
+.sign-text span {
+  background-color: transparent !important;
+}

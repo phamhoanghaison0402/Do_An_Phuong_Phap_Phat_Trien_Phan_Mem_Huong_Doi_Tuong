@@ -1,0 +1,517 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * FORM
+ * ======================================================================== */
+
+/* ========================================================================
+ * TABLE OF CONTENTS
+ * ========================================================================
+   01. FORM
+   02. FORM HORIZONTAL
+   03. FORM BODY
+   04. FORM BORDERED
+   05. FORM STRIPED
+   06. FORM BODY
+   07. FORM FOOTER
+   08. CONTEXTUAL CLASSES CHECKBOX
+   09. CHECKBOX
+   10. RADIO
+   11. VALIDATION STATES
+   12. STATIC CONTROL
+   13. INPUT WITH ICONS
+   14. INPUT WITH SPINNERS
+   15. FORM MISC
+   16. IE SUPPORT
+ * ======================================================================== */
+form{
+  .form-group{
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    .fileinput{
+      width: 100%;
+    }
+    .error{
+      display: none;
+      font-size: 12px;
+      font-style: italic;
+      color: @red;
+      + .help-block{
+        display: none;
+      }
+    }
+    &.no-padding{
+      .form-control-feedback {
+        right: 4px !important;
+      }
+    }
+    .control-label{
+      padding-top: 3px;
+      font-weight: 300;
+    }
+    &.has-feedback{
+      &.has-feedback-sm{
+        button.form-control-feedback{
+          width: 22px;
+          height: 22px;
+          font-size: 12px;
+          top: 4px;
+          right: 4px;
+        }
+      }
+      button.form-control-feedback{
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        line-height: 6px;
+        position: absolute;
+        pointer-events: auto !important;
+        &:before{
+          position: absolute;
+          left: 6px;
+          top: 8px;
+        }
+      }
+    }
+    .has-color(primary,@color-primary);
+    .has-color(info,@color-info);
+    .has-color(success,@color-success);
+    .has-color(warning,@color-warning);
+    .has-color(error,@color-danger);
+    &.form-group-inline{
+      input, .help-inline{
+        display: inline-block;
+      }
+      input{
+        width: 75%;
+        margin-right: 5px;
+      }
+    }
+    &.form-group-divider{
+      background-color: @color-default;
+      padding: 0px;
+      margin-bottom: 0px;
+      .form-inner{
+        border-left: 5px solid darken(@color-theme,5%);
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .label-circle{
+          display: inline !important;
+        }
+      }
+    }
+    &.form-footer{
+      background-color: @color-default;
+      margin-bottom: 0px;
+    }
+  }
+  .help-block, .help-inline{
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 0px;
+  }
+}
+
+/* ========================================================================
+ * FORM HORIZONTAL
+ * ======================================================================== */
+.form-horizontal{
+  .form-group{
+    .checkbox{
+      padding-top: 2px;
+    }
+    .checkbox-inline{
+      padding-top: 1px;
+    }
+    .radio{
+      padding-top: 4px;
+    }
+    .radio-inline{
+      padding-top: 0px;
+    }
+  }
+}
+
+/* ========================================================================
+ * FORM BORDERED
+ * ======================================================================== */
+.form-bordered{
+  .form-body{
+    padding: 0px;
+  }
+  .form-group{
+    padding: 15px 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid @border-color;
+    &:first-child{
+      border-top: none;
+    }
+    .chosen-container{
+      &:last-child{
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * FORM STRIPED
+ * ======================================================================== */
+.form-striped{
+  .form-body{
+    padding: 0px;
+  }
+  .form-group{
+    padding: 15px 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid @border-color;
+    &:first-child{
+      border-top: none;
+    }
+    &:nth-child(2n+1){
+      background-color: lighten(@color-default,1%);
+    }
+    .chosen-container{
+      &:last-child{
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * FORM BODY
+ * ======================================================================== */
+.form-body{
+  padding: 10px;
+}
+
+/* ========================================================================
+ * FORM FOOTER
+ * ======================================================================== */
+.form-footer{
+  padding: 10px;
+  background-color: #F5F5F5;
+  border-top: 1px solid @border-color;
+  [class*="col-"]{
+    .btn{
+      margin-left: 5px;
+    }
+  }
+}
+
+/* ========================================================================
+ * CHECKBOX
+ * ======================================================================== */
+.ckbox{
+  input[type=checkbox]{
+    opacity: 0;
+    &:checked + label::after{
+      font-family: 'FontAwesome';
+      content: "\F00C";
+      position: absolute;
+      top: 0;
+      left: 0px;
+      display: inline-block;
+      font-size: 10px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      color: #FFF;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+  &.rounded{
+    input[type=checkbox]{
+      &:checked {
+        + label::after, + label::before{
+          .border-radius(@rounded);
+        }
+      }
+    }
+    label{
+      &:before{
+        .border-radius(@rounded);
+      }
+    }
+  }
+  &.circle{
+    input[type=checkbox]{
+      &:checked + label::after, &:checked + label::before{
+        .border-radius(@circle);
+      }
+    }
+    label{
+      &:before{
+        .border-radius(@circle);
+      }
+    }
+  }
+  &.ckbox-default{
+    input[type=checkbox]{
+      &:checked + label::after{
+        color: gray;
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * RADIO
+ * ======================================================================== */
+.rdio{
+  input[type=radio]{
+    opacity: 0;
+    &:checked + label::after{
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      display: inline-block;
+      font-size: 11px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &.rounded{
+    input[type=radio]{
+      &:checked + label::after, &:checked + label::before{
+        .border-radius(@rounded);
+      }
+    }
+    label{
+      &:before{
+        .border-radius(@rounded);
+      }
+    }
+  }
+  &.circle{
+    input[type=radio]{
+      &:checked + label::after, &:checked + label::before{
+        .border-radius(@circle);
+      }
+    }
+    label{
+      &:before{
+        .border-radius(@circle);
+      }
+    }
+  }
+  &.rdio-default{
+    input[type=radio]{
+      &:checked + label::after{
+        color: gray;
+      }
+    }
+  }
+}
+
+.text-center{
+  .ckbox, .rdio{
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 0px;
+  }
+}
+.ckbox,.rdio{
+  position: relative;
+  margin-top: 3px;
+  label{
+    padding-left: 10px;
+    cursor: pointer;
+    margin-bottom: 7px !important;
+    &:before{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      content: '';
+      display: inline-block;
+      border: 1px solid #BBB;
+      background: #FFF;
+    }
+  }
+}
+
+.ckbox-teal{
+  input[type=checkbox]{
+    &:checked + label::after{
+      border-color: @color-teal;
+      background-color: @color-teal;
+    }
+  }
+}
+
+/* ========================================================================
+ * CONTEXTUAL CLASSES CHECKBOX
+ * ======================================================================== */
+.ckbox-color(default,@color-default);
+.ckbox-color(primary,@color-primary);
+.ckbox-color(success,@color-success);
+.ckbox-color(info,@color-info);
+.ckbox-color(warning,@color-warning);
+.ckbox-color(danger,@color-danger);
+.ckbox-color(lilac,@color-lilac);
+.ckbox-color(inverse,@color-inverse);
+
+// CONTEXTUAL CLASSES RADIO ---------------------------------------------------
+.rdio-color(default,@color-default);
+.rdio-color(primary,@color-primary);
+.rdio-color(success,@color-success);
+.rdio-color(info,@color-info);
+.rdio-color(warning,@color-warning);
+.rdio-color(danger,@color-danger);
+.rdio-color(lilac,@color-lilac);
+.rdio-color(inverse,@color-inverse);
+.rdio-teal{
+  input[type=radio]{
+    &:checked + label::after{
+      border-color: @color-teal;
+      background-color: @color-teal;
+    }
+  }
+}
+
+/* ========================================================================
+ * VALIDATION STATE
+ * ======================================================================== */
+.has-feedback {
+  label {
+    ~ .form-control-feedback {
+      top: 28px;
+    }
+  }
+}
+
+/* ========================================================================
+ * STATIC CONTROL
+ * ======================================================================== */
+.form-control-static{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* ========================================================================
+ * INPUT WITH ICONS
+ * ======================================================================== */
+.input-icon {
+  > i{
+    color: @border-color;
+    display: block;
+    position: absolute;
+    margin: 10px 2px 4px 10px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center;
+  }
+  > .form-control {
+    padding-left: 33px;
+  }
+  &.right{
+    > i{
+      right: 8px;
+      float: right;
+    }
+    &[class*="col-"]{
+      > i{
+        right: 16px;
+      }
+    }
+    > .form-control{
+      padding-right: 33px;
+      padding-left: 12px;
+    }
+  }
+}
+
+/* ========================================================================
+ * INPUT WITH SPINNERS
+ * ======================================================================== */
+input.spinner[type="text"],
+input.spinner[type="password"],
+input.spinner[type="datetime"],
+input.spinner[type="datetime-local"],
+input.spinner[type="date"],
+input.spinner[type="month"],
+input.spinner[type="time"],
+input.spinner[type="week"],
+input.spinner[type="number"],
+input.spinner[type="email"],
+input.spinner[type="url"],
+input.spinner[type="search"],
+input.spinner[type="tel"],
+input.spinner[type="color"] {
+  background-image: url('../../global/img/loader/general/1.gif') !important;
+  background-repeat: no-repeat;
+  background-position: right 6px bottom 6px;
+  background-size: 20px Auto;
+  &.flat{
+    background-image: url('../../global/img/loader/flat/1.gif') !important;
+  }
+}
+
+/* ========================================================================
+ * FORM MISC
+ * ======================================================================== */
+.input-group-addon{
+  .border-radius(0px);
+  min-width: 39px;
+  .ckbox, .rdio{
+    position: absolute;
+    top: 4px;
+    left: 10px;
+  }
+}
+
+.input-group-lg, .input-group-sm, .input-group-xs {
+  > .form-control, > .input-group-addon, > .input-group-btn > .btn{
+    .border-radius(0px);
+  }
+}
+
+.input-sm, .form-group-sm .form-control{
+  .border-radius(0px);
+}
+
+.form-control{
+  .border-radius(0px);
+  .box-shadow(none);
+}
+
+@media (max-width: 640px){
+  .form-inner-all{
+    [class*="col-"]{
+      &:last-child{
+        .form-control{
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================
+ * IE SUPPORT
+ * ======================================================================== */
+//.ie{
+//   form {
+//     .form-group.has-feedback {
+//       button.form-control-feedback{
+//         &:before{
+//           top: 2px;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,88 @@
+/* ========================================================================
+ * RIBBONS
+ * ======================================================================== */
+.ribbon-wrapper{
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  z-index: 250;
+  &.top-left{
+    left: -2px;
+    .ribbon{
+      @include transform(rotate(-45deg));
+      left: -30px;
+    }
+  }
+  &.bottom-right{
+    right: -2px;
+    bottom: -2px;
+    top: inherit;
+    .ribbon{
+      @include transform(rotate(-45deg));
+      left: -6px;
+      top: 40px;
+    }
+  }
+  &.bottom-left{
+    left: -3px;
+    bottom: -3px;
+    top: inherit;
+    .ribbon{
+      left: -28px;
+      top: 40px;
+    }
+  }
+  .ribbon{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFF;
+    text-align: center;
+    @include transform(rotate(45deg));
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #797979;
+    &:before{
+      left: 0;
+      bottom: -1px;
+    }
+    &:after{
+      right: 0;
+    }
+    &:before, &:after{
+      content: "";
+      border-top: 2px solid #797979;
+      border-left: 2px solid rgba(0, 0, 0, 0);
+      border-right: 2px solid rgba(0, 0, 0, 0);
+      position: absolute;
+      bottom: -2px;
+    }
+    &.ribbon-shadow{
+      @include box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+    }
+    &.transparent{
+      background-color: RGBA(121, 121, 121, 0.34) !important;
+      border: none !important;
+    }
+  }
+}
+
+@include ribbon-color(default,$color-default);
+@include ribbon-color(primary,$color-primary);
+@include ribbon-color(success,$color-success);
+@include ribbon-color(info,$color-info);
+@include ribbon-color(warning,$color-warning);
+@include ribbon-color(danger,$color-danger);
+@include ribbon-color(lilac,$color-lilac);
+@include ribbon-color(teals,$color-teal);
+@include ribbon-color(inverse,$color-inverse);
+

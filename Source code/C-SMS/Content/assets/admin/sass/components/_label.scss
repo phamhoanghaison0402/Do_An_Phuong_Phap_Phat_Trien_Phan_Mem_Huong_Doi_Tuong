@@ -1,0 +1,27 @@
+/* ========================================================================
+ * LABEL
+ * ======================================================================== */
+.label{
+  @include border-radius(0px);
+}
+
+.label-default{
+  color: #999 !important;
+}
+@include label-color(default,$color-default);
+@include label-color(primary,$color-primary);
+@include label-color(success,$color-success);
+@include label-color(info,$color-info);
+@include label-color(warning,$color-warning);
+@include label-color(danger,$color-danger);
+@include label-color(lilac,$color-lilac);
+@include label-color(teals,$color-teal);
+@include label-color(inverse,$color-inverse);
+
+.label-circle{
+  @include border-radius(50%);
+  line-height: 10px;
+  height: 15px;
+  width: 15px;
+  display: block;
+}

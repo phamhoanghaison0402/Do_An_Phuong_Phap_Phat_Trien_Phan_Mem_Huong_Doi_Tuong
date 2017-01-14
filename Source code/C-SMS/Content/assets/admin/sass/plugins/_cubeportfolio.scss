@@ -1,0 +1,54 @@
+/* ========================================================================
+ * CUBEPORTFOLIO
+ * ======================================================================= */
+.cbp{
+  margin-bottom: 20px;
+}
+.cbp-panel{
+  width: 100%;
+}
+.cbp-l-filters-list{
+  .cbp-filter-item{
+    margin-top: 0;
+  }
+}
+.cbp-l-filters-list-first, .cbp-l-filters-list-last{
+  @include border-radius(0);
+}
+.cbp-l-loadMore-button{
+  .cbp-l-loadMore-link, .cbp-l-loadMore-button-link{
+    margin-bottom: 20px;
+  }
+}
+.cbp-l-filters-button{
+  margin-bottom: 5px;
+  .cbp-filter-item{
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+}
+#grid-container{
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+.cbp-l-project-details-list {
+  list-style: none;
+  padding: 0;
+}
+.cbp-l-project-related-wrap{
+  padding: 0;
+  a{
+    text-decoration: none;
+  }
+}
+.cbp-l-project-details-visit{
+  text-decoration: none !important;
+}
+.cbp-l-filters-dropdown{
+  margin-bottom: 0;
+}
+.cbp-l-caption-buttonLeft, .cbp-l-caption-buttonRight{
+  &:hover{
+    color: white !important;
+  }
+}

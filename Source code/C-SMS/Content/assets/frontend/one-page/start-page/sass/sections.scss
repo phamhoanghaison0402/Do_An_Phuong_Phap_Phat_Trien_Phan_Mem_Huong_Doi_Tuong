@@ -1,0 +1,18 @@
+// COMPASS LIBRARY
+@import "compass/css3";
+
+// CORE
+@import "../../../../global/sass/core/variable";
+@import "../../../../global/sass/core/mixins";
+@import "../../../../global/sass/core/functions";
+
+/* ========================================================================
+ * SECTIONS
+ * ======================================================================== */
+@import "sections/banner";
+@import "sections/live_preview";
+@import "sections/top_reason";
+@import "sections/blankon_version";
+@import "sections/features";
+@import "sections/supported_resolutions";
+@import "sections/summary";

@@ -1,0 +1,124 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Common.Models.HangHoa>
+@using Common.Ultil
+@{
+    ViewBag.Title = "Tìm Kiếm Sản Phẩm";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div id="vnt-container" class="container">
+    <section class="newshot-block row">
+        <div class="col-md-6 col-sm-6 col-xs-12 block">
+            <div class="block-inner">
+                <a class='table' href='#' title='LG V10: Điện thoại thời trang'>
+                    <div class='inner'>
+                        <h3>LG V10: Điện thoại thời trang</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/v10_1.png" alt="LG V10: Điện thoại thời trang" />
+                </figure>
+            </div>
+        </div><div class="col-md-6 col-sm-6 col-xs-12 block last">
+            <div class="block-inner">
+                <a class='table' href='#' title='Chuyên các dòng Samsung độc nhất'>
+                    <div class='inner'>
+                        <h3>Chuyên các dòng Samsung độc nhất</h3>
+                        <span></span>
+                        <i class='fa fa-angle-right'></i>
+                    </div>
+                </a><figure>
+                    <div class="frame"><span> </span></div>
+                    <img src="~/Content/client/vnt_upload/weblink/banner/DSC_8642.jpg" alt="Chuyên các dòng Samsung độc nhất" />
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="vnt-content">
+        <div class="main row">
+            <div class="box_mid">
+                <div class="mid-title">
+                    <div class="titleL">Kết quả tìm kiếm</div>
+                    <div class="titleR"></div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="boxProduct">
+                    <div class="mess_result" style="padding:10px; text-align:center;">
+                        Tìm thấy <b class=font_err>@ViewBag.TimKiemSanPham.Count</b> sản phẩm
+                    </div>
+                    <div id="List_Product" class="List_Product grid-bound grid-bound-km">
+                        @foreach (var item in Model)
+                        {
+                            FormatNumber number = new FormatNumber();
+                            var url = "/HangHoa/" + "ChiTietSanPham/" + @item.MaHangHoa;
+
+                            <div class='item1 nopadding product-grid'>
+                                <div class='boxItem'>
+                                    <a href="@url" title='@item.TenHangHoa'>
+                                        <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                                    </a>
+                                    <h3><a href="@url" title='@item.TenHangHoa'>@item.TenHangHoa</a> </h3>
+                                    <h3 title="@item.TenHangHoa">Xuất Xứ: @item.XuatXu</h3>
+                                    <p class="price">
+                                        @if (@item.GiamGia > 0)
+                                        {
+                                            <span class="price-promotion">@number.FormatNumbers(@item.GiamGia.ToString()) đ &nbsp;</span>
+                                            <span class="price-primary price-old">@number.FormatNumbers(@item.GiaBan.ToString()) đ</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="price-promotion">@number.FormatNumbers(@item.GiaBan.ToString()) đ &nbsp;</span>
+                                        }
+
+                                    </p>
+                                    <div class="btn-km-bound">
+                                        <div class="btn-order-bound"><a class="btn-order-link" href="/PhieuDatHang/DatHang?maHangHoa=@item.MaHangHoa&soLuong=1">Đặt ngay</a></div>
+                                        <div class="btn-view-bound"><a class="btn-view-link" href="@url">Xem ngay</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    @*<div id="List_Product" class="List_Product Cat_pro_sub grid-bound grid-bound-home">
+                        @foreach (var item in Model)
+                        {
+                            FormatNumber number = new FormatNumber();
+                            var url = "/HangHoa/ChiTietSanPham/" + item.MaHangHoa;
+                            <div class='item1 nopadding product-grid'>
+                                <div class='boxItem'>
+                                    <a href="@url" title='@item.TenHangHoa'>
+                                        <img src="~/Content/client/product/@item.HinhAnh" alt='@item.TenHangHoa' title='@item.TenHangHoa' />
+                                    </a>
+                                    <h3>@item.TenHangHoa</h3>
+                                    <p class="price">@number.FormatNumbers(@item.GiaBan.ToString()) đ</p>
+
+                                    <div class="product-hover">
+                                        <a href="@url" title="@item.TenHangHoa">
+                                            <h3 title="@item.TenHangHoa">@item.TenHangHoa</h3>
+                                            <p class="price">@number.FormatNumbers(@item.GiaBan.ToString()) đ</p>
+                                            <div class="km"></div>
+                                        </a>
+                                        <a href="@url" class="more">Xem ngay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>*@
+                    <div class="pull-left">
+                        @Html.PagedListPager(Model, page => Url.Action("TimKiemSanPham",
+                        new { page, searchString = ViewBag.SearchString, status = ViewBag.Status }),
+                        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "list" }))
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</div>

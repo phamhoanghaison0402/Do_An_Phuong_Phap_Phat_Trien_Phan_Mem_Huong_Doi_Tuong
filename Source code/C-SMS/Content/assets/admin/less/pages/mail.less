@@ -1,0 +1,250 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * MAIL
+ * ======================================================================== */
+// NAV EMAIL ---------------------------------------------------
+.nav-email{
+  > li {
+    &:first-child{
+      + li{
+        &:active{
+          margin-top: 0px;
+        }
+      }
+    }
+    + li{
+      margin-top: 1px;
+    }
+  }
+  li{
+    background-color: white;
+    &.active{
+      background-color: transparent;
+      .label{
+        background-color: white;
+        color: black;
+      }
+    }
+    a{
+      color: black;
+      .border-radius(0px);
+      &:hover{
+        background-color: @color-default;
+      }
+      i{
+        margin-right: 5px;
+      }
+      .label{
+        margin-top: -1px;
+      }
+    }
+  }
+}
+
+// TABLE EMAIL ---------------------------------------------------
+.table-email{
+  tr{
+    &:first-child{
+      td{
+        border-top: none;
+      }
+    }
+    td{
+      vertical-align: top !important;
+      &:first-child, &:nth-child(2){
+        text-align: center;
+        width: 35px;
+      }
+    }
+    &.unread, &.selected{
+      background-color: @color-default;
+    }
+  }
+  .media{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    h4{
+      margin: 0px;
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+  .media-object{
+    width: 35px;
+    .border-radius(2px);
+  }
+  .media-meta, .media-attach{
+    font-size: 11px;
+    color: #999;
+    position: absolute;
+    right: 10px;
+  }
+  .media-meta{
+    top: 0px;
+  }
+  .media-attach{
+    bottom: 0px;
+    i{
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+  .email-summary{
+    margin: 0px 110px 0px 0px;
+    strong{
+      color: #333;
+    }
+    span{
+      line-height: 1;
+      &.label{
+        padding: 1px 5px 2px;
+      }
+    }
+  }
+  .ckbox{
+    line-height: 0px;
+    margin-left: 8px;
+  }
+  .star{
+    margin-left: 6px;
+    &.star-checked{
+      i{
+        color: goldenrod;
+      }
+    }
+  }
+}
+
+.nav-email-subtitle{
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.compose-mail{
+  position: relative;
+  padding: 15px;
+  textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid @border-color;
+  }
+}
+
+.view-mail{
+  padding: 10px;
+  font-weight: 300;
+}
+
+.attachment-mail{
+  padding: 10px;
+  width: 100%;
+  display: inline-block;
+  margin: 20px 0px;
+  border-top: 1px solid #EFF2F7;
+  p{
+    margin-bottom: 0px;
+  }
+  a{
+    color: #32323A;
+  }
+  ul{
+    padding: 0px;
+    li{
+      float: left;
+      width: 200px;
+      margin-right: 15px;
+      margin-top: 15px;
+      list-style: none;
+      a{
+        &.atch-thumb{
+          img{
+            width: 200px;
+            margin-bottom: 10px;
+          }
+        }
+        &.name{
+          span{
+            float: right;
+            color: #767676;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px){
+  .compose-mail-wrapper{
+    .compose-mail{
+      padding: 0px;
+    }
+  }
+}
+
+@media (max-width: 360px){
+
+  .mail-wrapper{
+    .panel-sub-heading{
+      text-align: center;
+      .pull-left, .pull-right{
+        float: none !important;
+        display: block;
+      }
+      .pull-right{
+        margin-top: 10px;
+      }
+      img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+      }
+    }
+    .panel-footer{
+      text-align: center;
+      .pull-right{
+        float: none !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .attachment-mail{
+      ul{
+        padding: 0px;
+        li{
+          width: 100%;
+          a.atch-thumb{
+            img{
+              width: 100% !important;
+            }
+          }
+          .links{
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .compose-mail-wrapper{
+    .search-mail{
+      input{
+        width: 130px;
+      }
+    }
+    .panel-sub-heading{
+      padding: 10px 7px;
+    }
+  }
+
+}

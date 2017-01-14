@@ -1,0 +1,92 @@
+/* ========================================================================
+ * LABEL
+ * ======================================================================== */
+.label {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.label-default {
+  color: #999 !important;
+}
+.label-default {
+  background-color: #eeeeee;
+}
+.label-default.label-stroke {
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  color: #eeeeee;
+}
+.label-primary {
+  background-color: #00b1e1;
+}
+.label-primary.label-stroke {
+  background-color: transparent;
+  border: 1px solid #00b1e1;
+  color: #00b1e1;
+}
+.label-success {
+  background-color: #8cc152;
+}
+.label-success.label-stroke {
+  background-color: transparent;
+  border: 1px solid #8cc152;
+  color: #8cc152;
+}
+.label-info {
+  background-color: #63d3e9;
+}
+.label-info.label-stroke {
+  background-color: transparent;
+  border: 1px solid #63d3e9;
+  color: #63d3e9;
+}
+.label-warning {
+  background-color: #f6bb42;
+}
+.label-warning.label-stroke {
+  background-color: transparent;
+  border: 1px solid #f6bb42;
+  color: #f6bb42;
+}
+.label-danger {
+  background-color: #e9573f;
+}
+.label-danger.label-stroke {
+  background-color: transparent;
+  border: 1px solid #e9573f;
+  color: #e9573f;
+}
+.label-lilac {
+  background-color: #906094;
+}
+.label-lilac.label-stroke {
+  background-color: transparent;
+  border: 1px solid #906094;
+  color: #906094;
+}
+.label-teals {
+  background-color: #37bc9b;
+}
+.label-teals.label-stroke {
+  background-color: transparent;
+  border: 1px solid #37bc9b;
+  color: #37bc9b;
+}
+.label-inverse {
+  background-color: #2a2a2a;
+}
+.label-inverse.label-stroke {
+  background-color: transparent;
+  border: 1px solid #2a2a2a;
+  color: #2a2a2a;
+}
+.label-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 10px;
+  height: 15px;
+  width: 15px;
+  display: block;
+}

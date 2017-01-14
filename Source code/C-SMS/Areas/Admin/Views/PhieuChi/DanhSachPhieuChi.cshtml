@@ -1,0 +1,73 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Common.ViewModels.PhieuChiViewModel>
+@using Common.Ultil
+
+<br />
+<table class="table table-bordered table-middle table-lilac">
+    <thead>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Số phiếu chi")
+            </th>
+            <th class="text-center">
+                @Html.DisplayName("Ngày chi")
+            </th>
+            <th class="text-center">
+                @Html.DisplayName("Nhân viên")
+            </th>
+            <th class="text-center">
+                @Html.DisplayName("Tổng tiền (VNĐ)")
+            </th>
+            <th class="text-center">
+                @Html.DisplayName("Ghi chú")
+            </th>
+            <th class="text-center">
+                @Html.DisplayName("Trạng thái")
+            </th>
+            <th class="text-center">
+                Hành động
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            FormatNumber number = new FormatNumber();
+            <tr style="text-align:center">
+                <td>@item.soPhieuChi</td>
+                <td>@item.ngayChi.ToString("dd/MM/yyyy")</td>
+                <td>@item.tenNhanVien</td>
+                <td>@number.FormatNumbers(@item.tongTienChi.ToString())</td>
+                <td>@item.ghiChu</td>
+                @if (@item.trangThai == true)
+                {
+                    <td>Hoàn thành</td>
+                    <td>
+                        <a href="@Url.Action("Detail", new { id = item.soPhieuChi })" class="btn btn-sm btn-success btn-xs btn-push"><i class="fa fa-eye"></i> Xem</a>
+                        @if (@item.ngayChi.ToString("dd/MM/yyyy") == @DateTime.Now.ToString("dd/MM/yyyy"))
+                        {
+                            <a href="@Url.Action("Delete", new { id = item.soPhieuChi })" class="btn btn-sm btn-danger btn-xs btn-push"><i class="fa fa-trash"></i> Hủy</a>
+                        }
+                    </td>
+                }
+                else
+                {
+                    <td>Đã hủy</td>
+                    <td>
+                        <a href="@Url.Action("Detail", new { id = item.soPhieuChi })" cla class="btn btn-sm btn-success btn-xs btn-push"><i class="fa fa-eye"></i> Xem</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pull-left" style="padding-top:20px">
+    <h3 class="panel-title">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</h3>
+</div>
+<div class="pull-right">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>
+
+<script src="~/Scripts/bootstrap.min.js"></script>

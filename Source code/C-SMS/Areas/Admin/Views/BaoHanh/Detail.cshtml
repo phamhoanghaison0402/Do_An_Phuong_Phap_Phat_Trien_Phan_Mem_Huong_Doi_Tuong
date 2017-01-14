@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Thông tin chi tiết phiếu bảo hành";
+    Layout = "~/Areas/Admin/Views/Layout/HomeLayout.cshtml";
+}
+
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-list-alt"></i>Phiếu Bảo Hành</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <button class="btn btn-lg btn-success btn-xs btn-push" onclick="@("window.location.href='" + @Url.Action("Index", "BaoHanh") + "'"); ">
+                <i class="glyphicon glyphicon-arrow-left"></i> Quay lại
+            </button>
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            @{Html.RenderAction("ThongTinPhieuBaoHanh", "BaoHanh");}
+
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.min.js"></script>

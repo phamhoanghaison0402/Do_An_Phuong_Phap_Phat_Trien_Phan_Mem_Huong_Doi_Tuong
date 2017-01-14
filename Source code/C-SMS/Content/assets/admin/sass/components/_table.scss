@@ -1,0 +1,211 @@
+/* ========================================================================
+ * TABLE
+ * ======================================================================== */
+.table{
+  margin-bottom: 0px;
+  // THEAD ---------------------------------------------------
+  thead{
+    tr{
+      th{
+        background-color: $color-default;
+        border-color: darken($color-default,5%) darken($color-default,5%) darken($color-default,7%);
+        vertical-align: middle;
+        border-width: 1px 1px 7px;
+        border-style: solid;
+        font-weight: 400;
+        font-size: 13px;
+        &:first-child{
+          border-left: none;
+        }
+        &:last-child{
+          border-right: none;
+        }
+      }
+    }
+    .sorting{
+      &:after {
+        margin-left: 5px;
+        content: "\f0dc";
+        font-family: 'FontAwesome';
+      }
+    }
+    .sorting_asc{
+      &:after {
+        margin-left: 5px;
+        content: "\f0dd";
+        font-family: 'FontAwesome';
+      }
+    }
+    .sorting_desc{
+      &:after {
+        margin-left: 5px;
+        content: "\f0de";
+        font-family: 'FontAwesome';
+      }
+    }
+    .sorting_asc_disabled{
+      &:after {
+        margin-left: 5px;
+        color:rgba(255,255,255,0.3);
+        content: "\f0dd";
+        font-family: 'FontAwesome';
+      }
+    }
+    .sorting_desc_disabled{
+      &:after {
+        margin-left: 5px;
+        color:rgba(255,255,255,0.3);
+        content: "\f0de";
+        font-family: 'FontAwesome';
+      }
+    }
+  }
+
+  // TBODY ---------------------------------------------------
+   tbody{
+     tr{
+       @include table-border-color(danger, 3px, $color-danger);
+       @include table-border-color(success, 3px, $color-success);
+       @include table-border-color(primary, 3px, $color-primary);
+       @include table-border-color(info, 3px, $color-info);
+       @include table-border-color(warning, 3px, $color-warning);
+       @include table-border-color(inverse, 3px, $color-inverse);
+       @include table-border-color(lilac, 3px, $color-lilac);
+       &:first-child{
+         td{
+           &:first-child{
+             &:before{
+               top: 2px !important;
+             }
+           }
+         }
+       }
+       td{
+         background-color: #FBFBFB;
+        > a{
+          margin-right: 5px;
+          i{
+            color: #636E7B;
+          }
+        }
+         .btn{
+           &.btn-success, &.btn-danger, &.btn-primary, &.btn-info, &.btn-warning{
+             i{
+               color: white;
+             }
+           }
+         }
+      }
+    }
+  }
+
+  // TFOOT ---------------------------------------------------
+  tfoot{
+     tr{
+      th{
+        vertical-align: middle;
+        background-color: $color-default;
+        border-width: 7px 1px 1px;
+        border-style: solid;
+        border-color: darken($color-default,7%) darken($color-default,5%) darken($color-default,5%);
+        font-weight: 400;
+        font-size: 13px;
+        border-bottom: none;
+        &:first-child{
+          border-left: none;
+        }
+        &:last-child{
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  // TABLE STRIPED ---------------------------------------------------
+  &.table-striped{
+     tbody{
+       tr{
+        &:nth-child(odd){
+           td,  th{
+            background-color: lighten($page-content-bg,1%);
+          }
+        }
+      }
+    }
+  }
+}
+
+table{
+  &.table-bordered{
+    tbody{
+      tr{
+        td{
+          &:first-child{
+            &:before{
+              left: -2px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table{
+  &.dataTable{
+    thead{
+      .sorting, .sorting_asc, .sorting_desc, .sorting_asc_disabled, .sorting_desc_disabled{
+        background: none;
+      }
+    }
+  }
+}
+
+@include table-color(primary,$color-primary);
+@include table-color(success,$color-success);
+@include table-color(info,$color-info);
+@include table-color(warning,$color-warning);
+@include table-color(danger,$color-danger);
+@include table-color(lilac,$color-lilac);
+@include table-color(inverse,$color-inverse);
+.table-teal{
+  thead{
+    tr{
+      th{
+        background-color: $color-teal !important;
+        border-color: lighten($color-teal,5%) lighten($color-teal,5%) darken($color-teal,7%) !important;
+        color: #fff;
+      }
+    }
+  }
+  tfoot{
+    tr{
+      th{
+        background-color: $color-teal !important;
+        border-color: darken($color-teal,7%) darken($color-teal,5%) darken($color-teal,5%) !important;
+      }
+    }
+  }
+}
+
+.table-responsive{
+  &.rounded{
+    overflow: auto !important;
+  }
+}
+
+.table-middle{
+  tr{
+    th, td{
+      vertical-align: middle !important;
+    }
+  }
+}
+
+.table-no-border{
+  tr{
+    td{
+      border-top: none !important;
+    }
+  }
+}

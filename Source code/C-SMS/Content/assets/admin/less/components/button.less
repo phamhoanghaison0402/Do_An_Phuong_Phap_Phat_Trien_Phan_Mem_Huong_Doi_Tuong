@@ -1,0 +1,170 @@
+// CORE
+@import "../../../global/less/core/variable.less";
+@import "../../../global/less/core/mixins.less";
+@import "../../../global/less/core/functions.less";
+
+/* ========================================================================
+ * BUTTON
+ * ======================================================================== */
+.btn{
+  .transition(all 0.3s);
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  font-weight: 300;
+  .border-radius(0px);
+  &:after{
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    .transition(all 0.3s);
+    .border-radius(0px);
+  }
+  &:before{
+    speak: none;
+    text-transform: none;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.btn-default{
+  color: #999 !important;
+  border-color: #CCC !important;
+}
+.button-color(default,@color-default);
+.button-color(primary,@color-primary);
+.button-color(success,@color-success);
+.button-color(info,@color-info);
+.button-color(warning,@color-warning);
+.button-color(danger,@color-danger);
+.button-color(lilac,@color-lilac);
+.button-color(inverse,@color-inverse);
+.btn-teal{
+  color: #FFF;
+  background-color: @color-teal;
+  border-color: darken(@color-teal,5%);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+  &:hover,&:focus,&:active{
+    color: #FFF !important;
+    background-color: darken(@color-teal,5%);
+  }
+
+  // BUTTON STROKE SOCIAL
+  &.btn-stroke{
+    border: 1px double @color-teal;
+    background-color: transparent;
+    color: @color-teal;
+    &:hover{
+      color: #FFF !important;
+      background-color: darken(@color-teal,5%);
+    }
+  }
+
+  // BUTTON SOLID SOCIAL ---------------------------------------------------
+  &.btn-solid{
+    border: 1px solid @color-teal;
+  }
+
+  // BUTTON DASHED SOCIAL ---------------------------------------------------
+  &.btn-dashed{
+    border: 1px dashed @color-teal;
+  }
+
+  // BUTTON DOTTED SOCIAL ---------------------------------------------------
+  &.btn-dotted{
+    border: 1px dotted @color-teal;
+  }
+
+  // BUTTON DOUBLE SOCIAL ---------------------------------------------------
+  &.btn-double{
+    border: 4px double @color-teal;
+  }
+
+  // BUTTON INSET SOCIAL ---------------------------------------------------
+  &.btn-inset{
+    border: 4px inset @color-teal;
+  }
+
+  // BUTTON CIRCLE SOCIAL ---------------------------------------------------
+  &.btn-circle{
+    padding-left: 0;
+    padding-right: 0;
+    width: 34px;
+    .border-radius(50% 50% 50% 50%);
+  }
+}
+
+.social-button-color(bitbucket,@social-bitbucket);
+.social-button-color(behance,@social-behance);
+.social-button-color(delicious,@social-delicious);
+.social-button-color(dribbble,@social-dribbble);
+.social-button-color(facebook,@social-facebook);
+.social-button-color(flickr,@social-flickr);
+.social-button-color(foursquare,@social-foursquare);
+.social-button-color(googleplus,@social-googleplus);
+.social-button-color(instagram,@social-instagram);
+.social-button-color(linkedin,@social-linkedin);
+.social-button-color(path,@social-path);
+.social-button-color(pinterest,@social-pinterest);
+.social-button-color(rss,@social-rss);
+.social-button-color(skype,@social-skype);
+.social-button-color(soundcloud,@social-soundcloud);
+.social-button-color(tumblr,@social-tumblr);
+.social-button-color(twitter,@social-twitter);
+.social-button-color(vimeo,@social-vimeo);
+.social-button-color(wordpress,@social-wordpress);
+.social-button-color(yahoo,@social-yahoo);
+.social-button-color(youtube,@social-youtube);
+
+.btn-icon-stacked{
+  text-align: left;
+  padding: 10px 10px 10px 45px;
+  position: relative;
+  &:focus,&:active{
+    color: white;
+  }
+  i{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  span{
+    display: block;
+    font-size: 13px;
+    line-height: normal;
+  }
+}
+
+.btn-compose-email{
+  padding: 10px 0px;
+  margin-bottom: 20px;
+}
+
+.btn-group-vertical {
+  > .btn{
+    &.rounded{
+      &:first-child{
+        &:not(:last-child){
+          .border-radius(3px 3px 0px 0px);
+        }
+      }
+      &:last-child{
+        &:not(:first-child){
+          .border-radius(0px 0px 3px 3px);
+        }
+      }
+    }
+    &:first-child{
+      &:not(:last-child){
+        .border-radius(0px);
+      }
+    }
+    &:last-child{
+      &:not(:first-child){
+        .border-radius(0px);
+      }
+    }
+  }
+}
